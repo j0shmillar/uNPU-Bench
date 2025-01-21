@@ -17,7 +17,7 @@ from tqdm import tqdm
 from yolo_dataset import YoloV1DataSet
 from yolov1_loss_function import Yolov1_Loss
 
-mod = importlib.import_module("yolov1_bn_model_noaffine")
+mod = importlib.import_module("yolov1_max78000")
 
 import ai8x
 
