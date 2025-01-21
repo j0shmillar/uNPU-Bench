@@ -1,0 +1,5 @@
+../drivers/fsl_lpflexcomm.c:87:10:LP_FLEXCOMM_GetInterruptStatus	0	static
+../drivers/fsl_lpflexcomm.c:95:10:LP_FLEXCOMM_GetInstance	8	static
+../drivers/fsl_lpflexcomm.c:147:10:LP_FLEXCOMM_Init	8	static
+../drivers/fsl_lpflexcomm.c:164:6:LP_FLEXCOMM_Deinit	8	static
+../drivers/fsl_lpflexcomm.c:175:6:LP_FLEXCOMM_SetIRQHandler	8	static
