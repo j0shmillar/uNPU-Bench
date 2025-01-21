@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "person_detect_model_data_vela.h": "c",
+        "powermode.h": "c",
+        "hx_drv_sensorctrl.h": "c",
+        "allon_sensor_tflm.h": "c",
+        "common_config.h": "c"
+    }
+}
