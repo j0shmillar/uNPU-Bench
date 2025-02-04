@@ -1,0 +1,4 @@
+../source/infer.cpp:24:6:void Rgb565StridedToBgr888(const uint16_t*, int, int, int, int, int, uint8_t*, int, uint8_t)	80	static
+../source/infer.cpp:71:6:void Rgb565StridedToRgb888(const uint16_t*, int, int, int, int, int, uint8_t*, int, uint8_t)	80	static
+../source/infer.cpp:120:6:void ezh_copy_slice_to_model_input(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t)	80	static
+../source/infer.cpp:151:6:void infer()	88	static

@@ -8,9 +8,9 @@
 
 extern "C" {
 
-#define MODEL_IN_W	88
-#define MODEL_IN_H  88
-#define MODEL_IN_C	48
+#define MODEL_IN_W	80
+#define MODEL_IN_H  80
+#define MODEL_IN_C	3
 #define MODEL_IN_COLOR_BGR 0
 
 
