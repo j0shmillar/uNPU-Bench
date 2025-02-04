@@ -40,7 +40,7 @@
 
 
 npu_model_data:
-	.incbin "../source/model/ai85-camvid-unet-large-q.tflite"
+	.incbin "../source/model/unet_qat_full_integer_quant_eiq.tflite"
 npu_model_data_end:
 
 od_image_data:

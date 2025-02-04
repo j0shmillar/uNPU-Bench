@@ -10,7 +10,7 @@ import ai8x
 class YoloV1DataSet(Dataset):
 
     def __init__(self, imgs_dir="./VOC2007/Train/JPEGImages",
-                 annotations_dir="./VOC2007/Train/Annotations", img_size=224, S=7, B=2,
+                 annotations_dir="./VOC2007/Train/Annotations", img_size=224, S=12, B=2,
                  ClassesFile="./VOC2007/Train/VOC_remain_class.data", img_per_class=None,
                  train_root="./VOC2007/Train/ImageSets/Main/", ms_logger=None):
         
@@ -195,7 +195,7 @@ class YoloV1DataSet(Dataset):
         img_data = cv2.resize(img_data, (self.img_size, self.img_size), interpolation=cv2.INTER_AREA)
         return img_data
 
-def YoloV1_getdataset(data, load_train=True, load_test=True, img_size=(224, 224)):
+def YoloV1_getdataset(data, load_train=True, load_test=True):
 
     """ Returns FaceID Dataset for dimensionality reduction
     """
@@ -223,11 +223,29 @@ def YoloV1_getdataset(data, load_train=True, load_test=True, img_size=(224, 224)
 def YoloV1_224_getdataset(data, load_train=True, load_test=True):
     return YoloV1_getdataset(data, load_train, load_test, im_size=(224, 224), use_memory=False)
 
+def YoloV1_128_getdataset(data, load_train=True, load_test=True):
+    return YoloV1_getdataset(data, load_train, load_test, im_size=(128, 128), use_memory=False)
+
+def YoloV1_96_getdataset(data, load_train=True, load_test=True):
+    return YoloV1_getdataset(data, load_train, load_test, im_size=(96, 96), use_memory=False)
+
 datasets = [
     {
-        'name': 'yolov1dataset',
+        'name': 'yolov1dataset_256',
         'input': (3,224,224),
         'output': ('person', 'bird', 'cat', 'cow', 'dog', 'horse', 'sheep', 'aeroplane', 'bicycle', 'boat', 'bus', 'car', 'motorbike', 'train', 'bottle', 'chair', 'diningtable', 'pottedplant', 'sofa', 'tvmonitor'),
         'loader': YoloV1_224_getdataset
+    },
+    {
+        'name': 'yolov1dataset_128',
+        'input': (3,128,128),
+        'output': ('person', 'bird', 'cat', 'cow', 'dog', 'horse', 'sheep', 'aeroplane', 'bicycle', 'boat', 'bus', 'car', 'motorbike', 'train', 'bottle', 'chair', 'diningtable', 'pottedplant', 'sofa', 'tvmonitor'),
+        'loader': YoloV1_128_getdataset
+    },
+    {
+        'name': 'yolov1dataset_96',
+        'input': (3,96,96),
+        'output': ('person', 'bird', 'cat', 'cow', 'dog', 'horse', 'sheep', 'aeroplane', 'bicycle', 'boat', 'bus', 'car', 'motorbike', 'train', 'bottle', 'chair', 'diningtable', 'pottedplant', 'sofa', 'tvmonitor'),
+        'loader': YoloV1_96_getdataset
     },
 ]

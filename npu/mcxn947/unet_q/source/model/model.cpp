@@ -44,7 +44,7 @@ status_t MODEL_Init(void)
     s_model = tflite::GetModel(npu_model_data);
     if (s_model->version() != TFLITE_SCHEMA_VERSION)
     {
-        PRINTF("Model provided is schema version %d not equal "
+        PRINTF("Model provided is schema version %d not equal " 
                "to supported version %d.",
                s_model->version(), TFLITE_SCHEMA_VERSION);
         return kStatus_Fail;

@@ -17,7 +17,7 @@ from tqdm import tqdm
 from yolo_dataset import YoloV1DataSet
 from yolov1_loss_function import Yolov1_Loss
 
-mod = importlib.import_module("yolov1_max78000")
+mod = importlib.import_module("yolov1_96_max78000")
 
 import ai8x
 
@@ -68,7 +68,8 @@ def dataset_init(logger):
                             annotations_dir=f"{dataset_root}/Annotations",
                             ClassesFile=f"{dataset_root}/VOC_person.data",
                             train_root=f"{dataset_root}/ImageSets/Main/",
-                            ms_logger=logger)
+                            ms_logger=logger,
+                            img_size=96)
     
     dataLoader = DataLoader(dataSet, batch_size=args.batch_size, shuffle=True, num_workers=4)
     return dataSet, dataLoader

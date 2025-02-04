@@ -1,0 +1,4 @@
+../source/toy_recognize.cpp:33:6:void Rgb565StridedToBgr888(const uint16_t*, int, int, int, int, int, uint8_t*, int, uint8_t)	80	static
+../source/toy_recognize.cpp:80:6:void Rgb565StridedToRgb888(const uint16_t*, int, int, int, int, int, uint8_t*, int, uint8_t)	80	static
+../source/toy_recognize.cpp:129:6:void ezh_copy_slice_to_model_input(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t)	80	static
+../source/toy_recognize.cpp:160:6:void toy_recognize()	80	static

@@ -16,7 +16,7 @@ extern "C" {
 
 __attribute__((section (".model_input_buffer"))) static uint8_t model_input_buf[MODEL_IN_W*MODEL_IN_H*MODEL_IN_C] = {0};
 
-uint32_t s_infUs = 0;
+uint32_t s_Us = 0;
 volatile uint8_t g_isImgBufReady = 0;
 #define WND_X0 0
 #define WND_Y0 0
@@ -173,6 +173,7 @@ void infer()
 
     while(1)
     {
+	    auto startTime = TIMER_GetTimeInUS();
         uint8_t *pOut = inputData;
         for (int i = 0; i < MODEL_IN_W; i++)
         {
@@ -184,15 +185,25 @@ void infer()
                 }
             }
         }
-
-        auto startTime = TIMER_GetTimeInUS();
-        MODEL_RunInference();
-        auto endTime = TIMER_GetTimeInUS();
-
+		auto endTime = TIMER_GetTimeInUS();
         auto dt = endTime - startTime;
-        s_infUs = (uint32_t)dt;
+        s_Us = (uint32_t)dt;
 
-        MODEL_ProcessOutput(outputData, &outputDims, outputType, dt);
+		PRINTF("memory i/o: %d us\n", s_Us);
+
+        startTime = TIMER_GetTimeInUS();
+        MODEL_RunInference();
+        endTime = TIMER_GetTimeInUS();
+        dt = endTime - startTime;
+        s_Us = (uint32_t)dt;
+
+		PRINTF("inference: %d us\n", s_Us);
+
+		// startTime = TIMER_GetTimeInUS();
+        // MODEL_ProcessOutput(outputData, &outputDims, outputType, dt);
+		// endTime = TIMER_GetTimeInUS();
+        // dt = endTime - startTime;
+        // s_Us = (uint32_t)dt;
     }
 }
 

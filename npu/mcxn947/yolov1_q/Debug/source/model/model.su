@@ -1,0 +1,11 @@
+../source/model/model.cpp:75:9:int8_t* GetTensorData(TfLiteTensor*, tensor_dims_t*, tensor_type_t*)	8	static
+../source/model/model.cpp:40:10:status_t MODEL_Init()	32	static
+../source/model/model.cpp:64:10:status_t MODEL_RunInference()	8	static
+../source/model/model.cpp:75:9:int8_t* GetTensorData(TfLiteTensor*, tensor_dims_t*, tensor_type_t*)	8	static
+../source/model/model.cpp:102:9:int8_t* MODEL_GetInputTensorData(tensor_dims_t*, tensor_type_t*)	16	static
+../source/model/model.cpp:109:9:int8_t* MODEL_GetOutputTensorData(tensor_dims_t*, tensor_type_t*)	16	static
+../source/model/model.cpp:117:6:void MODEL_ConvertInput(uint8_t*, tensor_dims_t*, tensor_type_t)	4	static
+../source/model/model.cpp:143:13:const char* MODEL_GetModelName()	0	static
+../source/model/model.cpp:148:8:size_t MODEL_GetArenaUsedBytes(size_t*)	0	static
+../source/model/model.cpp:155:15:TfLiteTensor* MODEL_GetOutputTensor(uint32_t)	0	static
+../source/model/model.cpp:161:10:uint32_t MODEL_GetOutputSize()	8	static

@@ -8,8 +8,8 @@
  * MCUXpresso IDE v11.9.0_prc2 [Build 2107] [2023-11-24] on Apr 11, 2024, 3:37:03 PM
  */
 
-INCLUDE "frdmmcxn947_fashion_mnist_recognition_Release_library.ld"
-INCLUDE "frdmmcxn947_fashion_mnist_recognition_Release_memory.ld"
+INCLUDE "frdmmcxn947_unet_Release_library.ld"
+INCLUDE "frdmmcxn947_unet_Release_memory.ld"
 
 ENTRY(ResetISR)
 

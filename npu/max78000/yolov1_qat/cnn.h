@@ -23,7 +23,7 @@ typedef int16_t q15_t;
 
 /*
   SUMMARY OF OPS
-  Hardware: 429,002,448 ops (420,963,312 macc; 8,039,136 comp; 0 add; 0 mul; 0 bitwise)
+  Hardware: 428,987,552 ops (420,948,416 macc; 8,039,136 comp; 0 add; 0 mul; 0 bitwise)
     Layer 0: 89,915,392 ops (86,704,128 macc; 3,211,264 comp; 0 add; 0 mul; 0 bitwise)
     Layer 1: 176,920,576 ops (173,408,256 macc; 3,512,320 comp; 0 add; 0 mul; 0 bitwise)
     Layer 2: 11,189,248 ops (10,838,016 macc; 351,232 comp; 0 add; 0 mul; 0 bitwise)
@@ -47,15 +47,15 @@ typedef int16_t q15_t;
     Layer 20: 203,840 ops (200,704 macc; 3,136 comp; 0 add; 0 mul; 0 bitwise)
     Layer 21: 50,960 ops (50,176 macc; 784 comp; 0 add; 0 mul; 0 bitwise)
     Layer 22: 13,328 ops (12,544 macc; 784 comp; 0 add; 0 mul; 0 bitwise)
-    Layer 23: 24,304 ops (24,304 macc; 0 comp; 0 add; 0 mul; 0 bitwise)
+    Layer 23: 9,408 ops (9,408 macc; 0 comp; 0 add; 0 mul; 0 bitwise)
 
   RESOURCE USAGE
-  Weight memory: 298,800 bytes out of 442,368 bytes total (67.5%)
-  Bias memory:   991 bytes out of 2,048 bytes total (48.4%)
+  Weight memory: 105,984 bytes out of 442,368 bytes total (24.0%)
+  Bias memory:   972 bytes out of 2,048 bytes total (47.5%)
 */
 
 /* Number of outputs for this network */
-#define CNN_NUM_OUTPUTS 1519
+#define CNN_NUM_OUTPUTS 588
 
 /* Use this timer to time the inference */
 #define CNN_INFERENCE_TIMER MXC_TMR0

@@ -12,7 +12,7 @@ from ai8x import QuantizationAwareModule
 
 class Yolov1_net(nn.Module):
 
-    def __init__(self, B=2, num_classes=5, bias=False, **kwargs):
+    def __init__(self, B=2, num_classes=2, bias=False, **kwargs):
         super().__init__()
         print("YOLO V1 Model_Z {} class (224 input), {} bounding boxes.".format(num_classes, B))
         self.B = B

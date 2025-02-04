@@ -11,14 +11,13 @@
 
 tflite::MicroOpResolver &MODEL_GetOpsResolver()
 {
-    static tflite::MicroMutableOpResolver<19> s_microOpResolver;
+    static tflite::MicroMutableOpResolver<20> s_microOpResolver;
 
     s_microOpResolver.AddPad();
     s_microOpResolver.AddConcatenation();
     s_microOpResolver.AddSlice();
     s_microOpResolver.AddQuantize();
     s_microOpResolver.AddResizeNearestNeighbor();
-
     s_microOpResolver.AddTranspose();
     s_microOpResolver.AddSplit();
     s_microOpResolver.AddConv2D();
@@ -30,11 +29,10 @@ tflite::MicroOpResolver &MODEL_GetOpsResolver()
     s_microOpResolver.AddMinimum();
     s_microOpResolver.AddMaximum();
     s_microOpResolver.AddMaxPool2D();
-
+    s_microOpResolver.AddTransposeConv();
     s_microOpResolver.AddSoftmax();
     s_microOpResolver.AddReshape();
-    s_microOpResolver.AddCustom(tflite::GetString_NEUTRON_GRAPH(),
-        tflite::Register_NEUTRON_GRAPH());
+    s_microOpResolver.AddCustom(tflite::GetString_NEUTRON_GRAPH(), tflite::Register_NEUTRON_GRAPH());
 
     return s_microOpResolver;
 }

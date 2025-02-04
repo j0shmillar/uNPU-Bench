@@ -5,7 +5,7 @@ import sys
 
 class Yolov1_Loss(nn.Module):
 
-    def __init__(self, S=7, B=2, Classes=20, l_coord=5, l_noobj=0.5):
+    def __init__(self, S=12, B=2, Classes=20, l_coord=5, l_noobj=0.5):
         # 有物体的box损失权重设为l_coord,没有物体的box损失权重设置为l_noobj
         super(Yolov1_Loss, self).__init__()
         self.S = S
