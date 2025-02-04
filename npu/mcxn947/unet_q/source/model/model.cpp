@@ -33,14 +33,10 @@ extern tflite::MicroOpResolver &MODEL_GetOpsResolver();
 extern uint8_t npu_model_data[];
 constexpr int kTensorArenaSize = (256) * 1024;
 
-// An area of memory to use for input, output, and intermediate arrays.
-// (Can be adjusted based on the model needs.)
 static uint8_t s_tensorArena[kTensorArenaSize] __ALIGNED(16);
 
 status_t MODEL_Init(void)
 {
-    // Map the model into a usable data structure. This doesn't involve any
-    // copying or parsing, it's a very lightweight operation.
     s_model = tflite::GetModel(npu_model_data);
     if (s_model->version() != TFLITE_SCHEMA_VERSION)
     {
@@ -50,17 +46,12 @@ status_t MODEL_Init(void)
         return kStatus_Fail;
     }
 
-    // Pull in only the operation implementations we need.
-    // This relies on a complete list of all the ops needed by this graph.
-    // NOLINTNEXTLINE(runtime-global-variables)
     tflite::MicroOpResolver &micro_op_resolver = MODEL_GetOpsResolver();
 
-    // Build an interpreter to run the model with.
     static tflite::MicroInterpreter static_interpreter(
         s_model, micro_op_resolver, s_tensorArena, kTensorArenaSize);
     s_interpreter = &static_interpreter;
 
-    // Allocate memory from the tensor_arena for the model's tensors.
     TfLiteStatus allocate_status = s_interpreter->AllocateTensors();
     if (allocate_status != kTfLiteOk)
     {

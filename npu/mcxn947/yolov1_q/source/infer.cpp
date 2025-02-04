@@ -166,7 +166,6 @@ typedef struct {
     int class_id;        // Predicted class
 } detection_t;
 
-// Improved numerical stability for softmax
 void softmax(const float* input, float* output, int length) {
     float max_val = input[0];
     for (int i = 1; i < length; i++) {
@@ -193,22 +192,16 @@ float sigmoid(float x) {
     return 1.0f / (1.0f + expf(-x));
 }
 
-// New function to handle slicing and activation
 void process_model_output(const float* conv_output, float* processed_output) {
-    // Process each spatial location
     for (int h = 0; h < OUT_H; h++) {
         for (int w = 0; w < OUT_W; w++) {
             const int out_base_idx = (h * OUT_W + w) * TOTAL_CH;
             const int conv_base_idx = (h * CONV_OUT_W + w) * CONV_OUT_C;
-            
-            // First slice -> sigmoid
-            // Taking first channel from conv output
+
             processed_output[out_base_idx] = sigmoid(conv_output[conv_base_idx]);
-            
-            // Second slice -> softmax
-            // Taking second channel from conv output
+
             float softmax_input[SOFTMAX_CH];
-            softmax_input[0] = conv_output[conv_base_idx + 1];  // Taking second channel
+            softmax_input[0] = conv_output[conv_base_idx + 1];  
             softmax(&softmax_input[0], &processed_output[out_base_idx + SIGMOID_CH], SOFTMAX_CH);
         }
     }
@@ -272,7 +265,6 @@ void infer() {
     const float CONFIDENCE_THRESHOLD = 0.5f;
 
     while(1) {
-        // Time memory operations
         auto startTime = TIMER_GetTimeInUS();
         int8_t *pOut = inputData;
         for (int i = 0; i < MODEL_IN_W; i++) {
@@ -287,7 +279,6 @@ void infer() {
         s_Us = (uint32_t)dt;
         PRINTF("Memory I/O: %d us\n", s_Us);
 
-        // Time inference
         startTime = TIMER_GetTimeInUS();
         MODEL_RunInference();
         endTime = TIMER_GetTimeInUS();
