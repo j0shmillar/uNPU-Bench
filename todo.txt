@@ -1,0 +1,4 @@
+TODO
+- 1 converter for every model
+- Train from model/* directory (update save paths + names)
+- some renaming (+ rm _q files)

@@ -1,8 +1,7 @@
-# python train.py --deterministic --model ai85unetsmall --out-fold-ratio 1 --dataset CamVid_s80_c3 --device MAX78000 --qat-policy None --use-bias --cpu --regression
+#python train.py --deterministic --model ai85ressimplenet --dataset CIFAR100 --device MAX78000  --use-bias  --qat-policy None --cpu "$@"
 
 import argparse
 import sys
-import os
 
 import onnx
 import torch
@@ -10,7 +9,7 @@ import onnx2tf
 
 import numpy as np
 
-import unet_max78000 as mod
+import resnet_max78000 as mod
 
 sys.path.append("/Users/joshmillar/Desktop/phd/mcu-nn-eval/ai8x-training") # TODO fix
 import ai8x
@@ -42,12 +41,12 @@ def convert(input_file, arguments):
     if arguments.verbose:
         print(f"\nmodel keys (state_dict):\n{', '.join(list(checkpoint_state.keys()))}")
 
-    model = mod.AI85UNet(num_classes=3, num_channels=3, dimensions=(80, 80))
+    model = mod.AI85ResNet()
 
     model.load_state_dict(checkpoint_state)
     model.eval()
 
-    input_fp32 = torch.randn(1, 3, 80, 80)
+    input_fp32 = torch.randn(1, 3, 32, 32)
 
     onnx_f = input_file.replace('.pth.tar', '.onnx') # TODO fix
 
@@ -69,7 +68,7 @@ def convert(input_file, arguments):
     
     input_file = onnx_f
 
-    rm_unsupported_ops.run(input_file, input_file, unsupported_ops=[], placeholder_shape = [1, 1, 80, 80]) # TODO fix...class or regress?
+    rm_unsupported_ops.run(input_file, input_file, unsupported_ops=[]) # TODO fix...class or regress? auto get placeholder shape
 
     try:
         print("converting to tf/tflite...", input_file)
@@ -80,7 +79,7 @@ def convert(input_file, arguments):
             verbosity="debug", 
             output_integer_quantized_tflite=True,
             custom_input_op_name_np_data_path=[
-                ["input", "./model/unet/sample_unet.npy", np.random.rand(3).tolist(), np.random.rand(3).tolist()]], # TODO fix
+                ["input", "./model/resnet/sample_resnet.npy", np.random.rand(3).tolist(), np.random.rand(3).tolist()]], # TODO fix
             quant_type="per-tensor",
             disable_group_convolution=True,
             enable_batchmatmul_unfold=True)
@@ -93,11 +92,11 @@ def convert(input_file, arguments):
 def main():
     global args
     parser = argparse.ArgumentParser()
-    parser.add_argument('-m', '--model', default='./model/unet/unet.pth.tar', help='path to checkpoint file') 
+    parser.add_argument('-m', '--model', default='./model/resnet/resnet.pth.tar', help='path to checkpoint file') 
     parser.add_argument('-q', '--quantize', action='store_true', default=False, help='quantize tflite model')
     parser.add_argument('-n', '--n_samples', default=10, help='number of rep samples for quantization')
     parser.add_argument('-v', '--verbose', action='store_true', default=False, help='verbose mode')
-    parser.add_argument('-p', '--path', default='./model/unet/quant', help='output folder path')
+    parser.add_argument('-p', '--path', default='./model/resnet/quant', help='output folder path')
     args = parser.parse_args()
 
     convert(args.model, args)

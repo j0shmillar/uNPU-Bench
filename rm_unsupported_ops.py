@@ -76,7 +76,7 @@ def run(input_model_path, output_model_path, unsupported_ops = ['Sigmoid', 'Soft
         if any(output in node.output for node in new_nodes):
             shape_info = get_tensor_shape(output, graph)
             if not shape_info:
-                print("Falling back to placeholder shape") # TODO fix
+                print("Falling back to placeholder shape") # TODO fix - auto get placeholder shape
                 shape_info = placeholder_shape
             new_output_name = f"output_{i}"
             new_output = helper.make_tensor_value_info(new_output_name, TensorProto.FLOAT, shape_info)

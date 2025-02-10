@@ -16,6 +16,7 @@ import ai8x
 
 ai8x.set_device(85, 0, True)
 
+sys.path.append("/Users/joshmillar/Desktop/phd/mcu-nn-eval/") # TODO fix
 import rm_unsupported_ops
 
 args = None
@@ -39,7 +40,7 @@ def convert(input_file, arguments):
     if arguments.verbose:
         print(f"\nmodel keys (state_dict):\n{', '.join(list(checkpoint_state.keys()))}")
 
-    dataset_root = "data/VOC2007"
+    dataset_root = "./model/yolo/data/VOC2007"
     dataSet = ds.YoloV1DataSet(imgs_dir=f"{dataset_root}/Test/JPEGImages", annotations_dir=f"{dataset_root}/Test/Annotations", ClassesFile=f"{dataset_root}/VOC_person.data", train_root=f"{dataset_root}/Test/ImageSets/Main/")
     model = mod.Yolov1_net(num_classes=dataSet.Classes, bias=True)
 
@@ -48,26 +49,25 @@ def convert(input_file, arguments):
 
     input_fp32 = torch.randn(1, 3, 96, 96)
 
-    onnx_f = input_file.replace('.pth.tar', '.tf') # TODO fix
-    onnx_path = args.path+"/"+onnx_f # TODO recursively make save path
+    onnx_f = input_file.replace('.pth.tar', '.onnx') # TODO fix
 
     try:
         torch.onnx.export(
             model,
             input_fp32,
-            onnx_path,
+            onnx_f,
             export_params=True,
             do_constant_folding=True,
             input_names=['input'],
             output_names=['output'])
-        print(f"ONNX model saved to {onnx_path}")
-        onnx_model = onnx.load(onnx_path)
+        print(f"ONNX model saved to {onnx_f}")
+        onnx_model = onnx.load(onnx_f)
         print("exported model opset:", onnx_model.opset_import[0].version)
     except Exception as e:
         print(f"failed to export ONNX model: {e}")
         return 0
 
-    input_file = onnx_path
+    input_file = onnx_f
 
     rm_unsupported_ops.run(input_file, input_file, placeholder_shape = [1, 12, 12, 12]) 
 
@@ -80,7 +80,7 @@ def convert(input_file, arguments):
             verbosity="debug", 
             output_integer_quantized_tflite=True,
             custom_input_op_name_np_data_path=[
-                ["input", "./model/unet/sample_yolo.npy", np.random.rand(3).tolist(), np.random.rand(3).tolist()]], # TODO fix
+                ["input", "./model/yolo/sample_yolo.npy", np.random.rand(3).tolist(), np.random.rand(3).tolist()]], # TODO fix
             quant_type="per-tensor",
             disable_group_convolution=True,
             enable_batchmatmul_unfold=True)
@@ -93,11 +93,11 @@ def convert(input_file, arguments):
 def main():
     global args
     parser = argparse.ArgumentParser()
-    parser.add_argument('-m', '--model', default='yolo.pth.tar', help='path to checkpoint file')
+    parser.add_argument('-m', '--model', default='./model/yolo/yolov1.pth.tar', help='path to checkpoint file')
     parser.add_argument('-q', '--quantize', action='store_true', default=False, help='quantize tflite model')
     parser.add_argument('-n', '--n_samples', default=10, help='number of rep samples for quantization')
     parser.add_argument('-v', '--verbose', action='store_true', default=False, help='verbose mode')
-    parser.add_argument('-p', '--path', default='./out', help='output folder path')
+    parser.add_argument('-p', '--path', default='./model/yolo/quant', help='output folder path')
     args = parser.parse_args()
 
     convert(args.model, args)
