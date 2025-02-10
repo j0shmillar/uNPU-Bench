@@ -46,7 +46,7 @@ def convert(input_file, arguments):
     model.load_state_dict(checkpoint_state)
     model.eval()
 
-    input_fp32 = torch.randn(23, 256, 3)
+    input_fp32 = torch.randn(1, 256, 3)
 
     onnx_f = input_file.replace('.pth.tar', '.onnx') # TODO fix
 

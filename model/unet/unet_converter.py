@@ -2,7 +2,6 @@
 
 import argparse
 import sys
-import os
 
 import onnx
 import torch

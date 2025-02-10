@@ -1,4 +1,7 @@
 TODO
-- 1 converter for every model
+- 1 converter for every model (1st rename 'model_converter')
 - Train from model/* directory (update save paths + names)
-- some renaming (+ rm _q files)
+- some renaming (eg yolov1 -> yolo or vv) + rm _q files
+- vendor ai8x libs? compare
+- autoenc: 23 = batch dim, right?
+- autoenc: conversion...something isn't right? 
