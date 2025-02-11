@@ -1,5 +1,0 @@
-/Users/joshmillar/Desktop/phd/npus/grove/test/Seeed_Grove_Vision_AI_Module_V2/we2_image_gen_local/output_case1_sec_wlcsp/inter_files/cm55m_s_application_p1_s1.img 0x10000000 0x3a02957c 0x0010000 0
-/Users/joshmillar/Desktop/phd/npus/grove/test/Seeed_Grove_Vision_AI_Module_V2/we2_image_gen_local/output_case1_sec_wlcsp/inter_files/cm55m_s_application_p1_s2.img 0x3401f000 0x3a029d3c 0x0010000 0
-/Users/joshmillar/Desktop/phd/npus/grove/test/Seeed_Grove_Vision_AI_Module_V2/we2_image_gen_local/output_case1_sec_wlcsp/inter_files/cm55m_s_application_p1_s3.img 0x100007c0 0x3a03751c 0x0010000 0
-/Users/joshmillar/Desktop/phd/npus/grove/test/Seeed_Grove_Vision_AI_Module_V2/we2_image_gen_local/output_case1_sec_wlcsp/inter_files/cm55m_s_application_p1_s4.img 0x340a97e0 0x3a044688 0x0010000 0
-/Users/joshmillar/Desktop/phd/npus/grove/test/Seeed_Grove_Vision_AI_Module_V2/we2_image_gen_local/output_case1_sec_wlcsp/inter_files/cm55m_s_application_p1_s5.img 0x1000d92c 0x3a0b71e8 0x0010000 0

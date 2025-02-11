@@ -1,0 +1,1 @@
+/Users/joshmillar/Desktop/phd/mcu-nn-eval/npu/grove/we2_image_gen_local/output_case1_sec_wlcsp/hx_layout_ota.bin

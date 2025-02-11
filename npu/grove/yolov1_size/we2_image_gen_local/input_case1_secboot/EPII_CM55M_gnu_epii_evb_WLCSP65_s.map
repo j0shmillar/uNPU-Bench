@@ -1,0 +1,53 @@
+
+input_case1_secboot/EPII_CM55M_gnu_epii_evb_WLCSP65_s.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .table        000007c0  10000000  10000000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  1 .text_2       0000e008  3401f000  3401f000  00020000  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .text         00007b1c  100007c0  100007c0  000017c0  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .noinit       0001f400  3402d020  3402d020  0002e008  2**5
+                  ALLOC
+  4 .rodata       000158ac  30000000  30000000  0000a000  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 .ARM.exidx    00000008  100082dc  100082dc  000092dc  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  6 .copy.table   0000000c  100082e4  100082e4  000092e4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  7 .data         000001ec  300158b0  300158b0  0001f8b0  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+  8 .zero.table   00000008  100082f0  100082f0  000092f0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  9 .bss          00002820  30015aa0  30015aa0  0001fa9c  2**3
+                  ALLOC
+ 10 .noinit       00000000  300182c0  300182c0  00000000  2**2
+                  ALLOC
+ 11 .heap         00010000  300182c0  300182c0  0002e008  2**0
+                  CONTENTS
+ 12 .stack        00010000  30030000  30030000  0003e008  2**0
+                  CONTENTS
+ 13 .ARM.attributes 0000003a  00000000  00000000  0004e008  2**0
+                  CONTENTS, READONLY
+ 14 .comment      00000089  00000000  00000000  0004e042  2**0
+                  CONTENTS, READONLY
+ 15 .debug_line_str 000002bc  00000000  00000000  0004e0cb  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 16 .debug_info   00389d10  00000000  00000000  0004e387  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 17 .debug_abbrev 0001a24a  00000000  00000000  003d8097  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 18 .debug_loclists 0006b2b3  00000000  00000000  003f22e1  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 19 .debug_aranges 00004b78  00000000  00000000  0045d594  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 20 .debug_rnglists 0000b583  00000000  00000000  0046210c  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 21 .debug_line   000672fa  00000000  00000000  0046d68f  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 22 .debug_str    000eeb59  00000000  00000000  004d4989  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 23 .debug_frame  0000ec84  00000000  00000000  005c34e4  2**2
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
