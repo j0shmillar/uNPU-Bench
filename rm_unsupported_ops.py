@@ -67,6 +67,7 @@ def run(input_model_path, output_model_path, unsupported_ops = ['Sigmoid', 'Soft
 
     new_outputs = []
     existing_outputs = [output.name for output in graph.output]
+
     new_output_names = existing_outputs + list(orphan_outputs)
     new_output_names = set(new_output_names)
 

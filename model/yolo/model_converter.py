@@ -1,5 +1,3 @@
-#python train.py --deterministic --model ai85ressimplenet --dataset CIFAR100 --device MAX78000  --use-bias  --qat-policy None --cpu "$@"
-
 import argparse
 import sys
 
@@ -9,7 +7,8 @@ import onnx2tf
 
 import numpy as np
 
-import resnet_max78000 as mod
+import yolov1_96_max78000 as mod
+import yolo_dataset as ds
 
 sys.path.append("/Users/joshmillar/Desktop/phd/mcu-nn-eval/ai8x-training") # TODO fix
 import ai8x
@@ -29,9 +28,8 @@ def exp2_symbolic(g, input):
 torch.onnx.register_custom_op_symbolic("aten::exp2", exp2_symbolic, opset_version=12)
 
 def convert(input_file, arguments):
-
-    print("converting ", input_file)
-    checkpoint = torch.load(input_file, map_location='cpu', weights_only=False)
+    print("converting to onnx...", input_file)
+    checkpoint = torch.load(input_file, map_location='cpu', weights_only=False) # map_location=lambda storage, loc: storage?
 
     if 'state_dict' not in checkpoint:
         print("no `state_dict` in file.")
@@ -41,12 +39,14 @@ def convert(input_file, arguments):
     if arguments.verbose:
         print(f"\nmodel keys (state_dict):\n{', '.join(list(checkpoint_state.keys()))}")
 
-    model = mod.AI85ResNet()
+    dataset_root = "./model/yolo/data/VOC2007"
+    dataSet = ds.YoloV1DataSet(imgs_dir=f"{dataset_root}/Test/JPEGImages", annotations_dir=f"{dataset_root}/Test/Annotations", ClassesFile=f"{dataset_root}/VOC_person.data", train_root=f"{dataset_root}/Test/ImageSets/Main/")
+    model = mod.Yolov1_net(num_classes=dataSet.Classes, bias=True)
 
-    model.load_state_dict(checkpoint_state)
+    model.load_state_dict(checkpoint_state, strict=False)
     model.eval()
 
-    input_fp32 = torch.randn(1, 3, 32, 32)
+    input_fp32 = torch.randn(1, 3, 96, 96)
 
     onnx_f = input_file.replace('.pth.tar', '.onnx') # TODO fix
 
@@ -56,7 +56,8 @@ def convert(input_file, arguments):
             input_fp32,
             onnx_f,
             export_params=True,
-            do_constant_folding=True, 
+            opset_version=19,
+            do_constant_folding=True,
             input_names=['input'],
             output_names=['output'])
         print(f"ONNX model saved to {onnx_f}")
@@ -65,10 +66,10 @@ def convert(input_file, arguments):
     except Exception as e:
         print(f"failed to export ONNX model: {e}")
         return 0
-    
+
     input_file = onnx_f
 
-    rm_unsupported_ops.run(input_file, input_file, unsupported_ops=[]) # TODO fix...class or regress? auto get placeholder shape
+    rm_unsupported_ops.run(input_file, input_file, placeholder_shape = [1, 12, 12, 12]) 
 
     try:
         print("converting to tf/tflite...", input_file)
@@ -79,7 +80,7 @@ def convert(input_file, arguments):
             verbosity="debug", 
             output_integer_quantized_tflite=True,
             custom_input_op_name_np_data_path=[
-                ["input", "./model/resnet/sample_resnet.npy", np.random.rand(3).tolist(), np.random.rand(3).tolist()]], # TODO fix
+                ["input", "./model/yolo/sample_data_nhwc.npy", np.random.rand(3).tolist(), np.random.rand(3).tolist()]], # TODO fix
             quant_type="per-tensor",
             disable_group_convolution=True,
             enable_batchmatmul_unfold=True)
@@ -92,15 +93,14 @@ def convert(input_file, arguments):
 def main():
     global args
     parser = argparse.ArgumentParser()
-    parser.add_argument('-m', '--model', default='./model/resnet/resnet.pth.tar', help='path to checkpoint file') 
+    parser.add_argument('-m', '--model', default='./model/yolo/yolov1.pth.tar', help='path to checkpoint file')
     parser.add_argument('-q', '--quantize', action='store_true', default=False, help='quantize tflite model')
     parser.add_argument('-n', '--n_samples', default=10, help='number of rep samples for quantization')
     parser.add_argument('-v', '--verbose', action='store_true', default=False, help='verbose mode')
-    parser.add_argument('-p', '--path', default='./model/resnet/quant', help='output folder path')
+    parser.add_argument('-p', '--path', default='./model/yolo/quant', help='output folder path')
     args = parser.parse_args()
 
     convert(args.model, args)
 
 if __name__=='__main__':
     main()
-

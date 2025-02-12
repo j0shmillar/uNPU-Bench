@@ -1,4 +1,4 @@
-# python train.py --deterministic --model ai85nascifarnet --dataset CIFAR10 --device MAX78000 --use-bias --qat-policy None --cpu "$@"
+#python train.py --deterministic --regression --epochs 400 --optimizer Adam --lr 0.001 --wd 0 --model ai85autoencoder --use-bias --dataset SampleMotorDataLimerick_ForTrain --device MAX78000 --batch-size 32 --validation-split 0 --show-train-accuracy full --qat-policy None "$@"
 
 import argparse
 import sys
@@ -9,7 +9,7 @@ import onnx2tf
 
 import numpy as np
 
-import nas_max78000 as mod
+import autoenc_max78000 as mod
 
 sys.path.append("/Users/joshmillar/Desktop/phd/mcu-nn-eval/ai8x-training") # TODO fix
 import ai8x
@@ -41,12 +41,12 @@ def convert(input_file, arguments):
     if arguments.verbose:
         print(f"\nmodel keys (state_dict):\n{', '.join(list(checkpoint_state.keys()))}")
 
-    model = mod.AI85NAS()
+    model = mod.AI85AutoEnc()
 
     model.load_state_dict(checkpoint_state)
     model.eval()
 
-    input_fp32 = torch.randn(1, 3, 32, 32)
+    input_fp32 = torch.randn(1, 256, 3)
 
     onnx_f = input_file.replace('.pth.tar', '.onnx') # TODO fix
 
@@ -79,7 +79,7 @@ def convert(input_file, arguments):
             verbosity="debug", 
             output_integer_quantized_tflite=True,
             custom_input_op_name_np_data_path=[
-                ["input", "./model/nas/sample_nas.npy", np.random.rand(3).tolist(), np.random.rand(3).tolist()]], # TODO fix
+                ["input", "./model/autoenc/sample_data_nhwc.npy", np.random.rand(3).tolist(), np.random.rand(3).tolist()]], # TODO fix
             quant_type="per-tensor",
             disable_group_convolution=True,
             enable_batchmatmul_unfold=True)
@@ -92,11 +92,11 @@ def convert(input_file, arguments):
 def main():
     global args
     parser = argparse.ArgumentParser()
-    parser.add_argument('-m', '--model', default='./model/nas/nas.pth.tar', help='path to checkpoint file') 
+    parser.add_argument('-m', '--model', default='./model/autoenc/autoenc.pth.tar', help='path to checkpoint file') 
     parser.add_argument('-q', '--quantize', action='store_true', default=False, help='quantize tflite model')
     parser.add_argument('-n', '--n_samples', default=10, help='number of rep samples for quantization')
     parser.add_argument('-v', '--verbose', action='store_true', default=False, help='verbose mode')
-    parser.add_argument('-p', '--path', default='./model/nas/quant', help='output folder path')
+    parser.add_argument('-p', '--path', default='./model/autoenc/quant', help='output folder path')
     args = parser.parse_args()
 
     convert(args.model, args)

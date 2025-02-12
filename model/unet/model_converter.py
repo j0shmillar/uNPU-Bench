@@ -79,7 +79,7 @@ def convert(input_file, arguments):
             verbosity="debug", 
             output_integer_quantized_tflite=True,
             custom_input_op_name_np_data_path=[
-                ["input", "./model/unet/sample_unet.npy", np.random.rand(3).tolist(), np.random.rand(3).tolist()]], # TODO fix
+                ["input", "./model/unet/sample_data_nhwc.npy", np.random.rand(3).tolist(), np.random.rand(3).tolist()]], # TODO fix
             quant_type="per-tensor",
             disable_group_convolution=True,
             enable_batchmatmul_unfold=True)
