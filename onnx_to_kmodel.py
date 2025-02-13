@@ -1,43 +1,13 @@
 import os
 import argparse
 import numpy as np
-import onnxsim
-import onnx
 import nncase
-
-def parse_model_input_output(model_file):
-    onnx_model = onnx.load(model_file)
-    input_all = [node.name for node in onnx_model.graph.input]
-    input_initializer = [node.name for node in onnx_model.graph.initializer]
-    input_names = list(set(input_all) - set(input_initializer))
-    input_tensors = [node for node in onnx_model.graph.input if node.name in input_names]
-    inputs = []
-    onnx_type = input_tensors[0].type.tensor_type
-    input_dict = {}
-    input_dict['name'] = input_tensors[0].name
-    input_dict['dtype'] = onnx.helper.tensor_dtype_to_np_dtype(onnx_type.elem_type)
-    input_dict['shape'] = [(i.dim_value if i.dim_value != 0 else d) for i, d in zip(onnx_type.shape.dim, [1, 3, 32, 32])] #TODO dynamic shape
-    inputs.append(input_dict)
-    return onnx_model, inputs
-
-
-def onnx_simplify(model_file, dump_dir):
-    onnx_model, inputs = parse_model_input_output(model_file)
-    onnx_model = onnx.shape_inference.infer_shapes(onnx_model)
-    input_shapes = {}
-    for input in inputs:
-        input_shapes[input['name']] = input['shape']
-    onnx_model, check = onnxsim.simplify(onnx_model, overwrite_input_shapes=input_shapes)
-    model_file = os.path.join(dump_dir, 'simplified.onnx')
-    onnx.save_model(onnx_model, model_file)
-    return model_file
 
 
 def read_model_file(model_file):
     with open(model_file, 'rb') as f:
         model_content = f.read()
     return model_content
-
 
 def generate_data(shapes, sample):
     data_all = []
@@ -52,8 +22,8 @@ def main():
     parser = argparse.ArgumentParser(prog="nncase")
     #TODO add non random data option
     parser.add_argument("--target", type=str, default='k230', help='target to run')
-    parser.add_argument("--model", type=str, default='avg_10.onnx', help='onnx model file')
-    parser.add_argument("--kmodel", type=str, default='avg_10.kmodel', help='kmodel file')
+    parser.add_argument("--model", type=str, default='model.onnx', help='onnx model file')
+    parser.add_argument("--kmodel", type=str, default='model.kmodel', help='kmodel file')
     parser.add_argument("--ptq", type=str, help='ptq method,such as int8,int16,wint16,NoClip_int16,NoClip_wint16')
     args = parser.parse_args()
 
@@ -64,8 +34,6 @@ def main():
     dump_dir = 'tmp/nanotracker_head'
     if not os.path.exists(dump_dir):
         os.makedirs(dump_dir)
-
-    model_file = onnx_simplify(args.model, dump_dir)
 
     compile_options = nncase.CompileOptions()
     compile_options.target = args.target
@@ -98,7 +66,7 @@ def main():
 
     compiler = nncase.Compiler(compile_options)
 
-    model_content = read_model_file(model_file)
+    model_content = read_model_file(args.model)
     import_options = nncase.ImportOptions()
     compiler.import_onnx(model_content, import_options)
 
