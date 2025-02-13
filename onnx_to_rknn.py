@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     rknn = RKNN(verbose=False)
 
-    mean_values, std_values = np.zeros([c]), np.ones([c])
+    mean_values, std_values = np.zeros([int(c)]), np.ones([int(c)])
     rknn.config(mean_values=mean_values.tolist(), std_values=std_values.tolist(), target_platform='rv1103', disable_rules=['convert_identity_to_reshape'])
 
     ret = rknn.load_onnx(model=model_path)

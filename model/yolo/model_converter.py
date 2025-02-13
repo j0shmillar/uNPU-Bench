@@ -15,9 +15,6 @@ import ai8x
 
 ai8x.set_device(85, 0, True)
 
-sys.path.append("/Users/joshmillar/Desktop/phd/mcu-nn-eval/") # TODO fix
-import rm_unsupported_ops
-
 args = None
 
 def exp2_symbolic(g, input):
@@ -40,7 +37,7 @@ def convert(input_file, arguments):
         print(f"\nmodel keys (state_dict):\n{', '.join(list(checkpoint_state.keys()))}")
 
     dataset_root = "./model/yolo/data/VOC2007"
-    dataSet = ds.YoloV1DataSet(imgs_dir=f"{dataset_root}/Test/JPEGImages", annotations_dir=f"{dataset_root}/Test/Annotations", ClassesFile=f"{dataset_root}/VOC_person.data", train_root=f"{dataset_root}/Test/ImageSets/Main/")
+    dataSet = ds.YoloV1DataSet(imgs_dir=f"{dataset_root}/JPEGImages", annotations_dir=f"{dataset_root}/Annotations", ClassesFile=f"{dataset_root}/VOC_person.data", train_root=f"{dataset_root}/ImageSets/Main/")
     model = mod.Yolov1_net(num_classes=dataSet.Classes, bias=True)
 
     model.load_state_dict(checkpoint_state, strict=False)
@@ -68,8 +65,6 @@ def convert(input_file, arguments):
         return 0
 
     input_file = onnx_f
-
-    rm_unsupported_ops.run(input_file, input_file, placeholder_shape = [1, 12, 12, 12]) 
 
     try:
         print("converting to tf/tflite...", input_file)
