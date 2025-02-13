@@ -1,0 +1,1856 @@
+ir_version: 8
+producer_name: "pytorch"
+producer_version: "2.3.1"
+domain: ""
+graph {
+  node {
+    input: "input"
+    input: "228"
+    input: "230"
+    output: "/conv1_1/Conv_output_0"
+    name: "/conv1_1/Conv"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "/conv1_1/Conv_output_0"
+    input: "/conv1_1/calc_out_scale/Exp_output_0"
+    output: "/conv1_1/scale/Mul_output_0"
+    name: "/conv1_1/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv1_1/scale/Mul_output_0"
+    output: "/conv1_1/activate/Relu_output_0"
+    name: "/conv1_1/activate/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "/conv1_1/activate/Relu_output_0"
+    input: "/conv1_1/Pow_output_0"
+    output: "/conv1_1/Mul_output_0"
+    name: "/conv1_1/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv1_1/Mul_output_0"
+    input: "232"
+    input: "234"
+    output: "/conv1_2/Conv_output_0"
+    name: "/conv1_2/Conv"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "/conv1_2/Conv_output_0"
+    input: "/conv1_1/calc_out_scale/Exp_output_0"
+    output: "/conv1_2/scale/Mul_output_0"
+    name: "/conv1_2/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv1_2/scale/Mul_output_0"
+    output: "/conv1_2/activate/Relu_output_0"
+    name: "/conv1_2/activate/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "/conv1_2/activate/Relu_output_0"
+    input: "/conv1_1/Pow_output_0"
+    output: "/conv1_2/Mul_output_0"
+    name: "/conv1_2/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv1_2/Mul_output_0"
+    input: "236"
+    input: "238"
+    output: "/conv1_3/Conv_output_0"
+    name: "/conv1_3/Conv"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "/conv1_3/Conv_output_0"
+    input: "/conv1_1/calc_out_scale/Exp_output_0"
+    output: "/conv1_3/scale/Mul_output_0"
+    name: "/conv1_3/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv1_3/scale/Mul_output_0"
+    output: "/conv1_3/activate/Relu_output_0"
+    name: "/conv1_3/activate/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "/conv1_3/activate/Relu_output_0"
+    input: "/conv1_1/Pow_output_0"
+    output: "/conv1_3/Mul_output_0"
+    name: "/conv1_3/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv1_3/Mul_output_0"
+    output: "/conv2_1/pool/MaxPool_output_0"
+    name: "/conv2_1/pool/MaxPool"
+    op_type: "MaxPool"
+    attribute {
+      name: "ceil_mode"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "/conv2_1/pool/MaxPool_output_0"
+    input: "240"
+    input: "242"
+    output: "/conv2_1/Conv_output_0"
+    name: "/conv2_1/Conv"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "/conv2_1/Conv_output_0"
+    input: "/conv1_1/calc_out_scale/Exp_output_0"
+    output: "/conv2_1/scale/Mul_output_0"
+    name: "/conv2_1/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv2_1/scale/Mul_output_0"
+    output: "/conv2_1/activate/Relu_output_0"
+    name: "/conv2_1/activate/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "/conv2_1/activate/Relu_output_0"
+    input: "/conv1_1/Pow_output_0"
+    output: "/conv2_1/Mul_output_0"
+    name: "/conv2_1/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv2_1/Mul_output_0"
+    input: "244"
+    input: "246"
+    output: "/conv2_2/Conv_output_0"
+    name: "/conv2_2/Conv"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "/conv2_2/Conv_output_0"
+    input: "/conv1_1/calc_out_scale/Exp_output_0"
+    output: "/conv2_2/scale/Mul_output_0"
+    name: "/conv2_2/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv2_2/scale/Mul_output_0"
+    output: "/conv2_2/activate/Relu_output_0"
+    name: "/conv2_2/activate/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "/conv2_2/activate/Relu_output_0"
+    input: "/conv1_1/Pow_output_0"
+    output: "/conv2_2/Mul_output_0"
+    name: "/conv2_2/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv2_2/Mul_output_0"
+    output: "/conv3_1/pool/MaxPool_output_0"
+    name: "/conv3_1/pool/MaxPool"
+    op_type: "MaxPool"
+    attribute {
+      name: "ceil_mode"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "/conv3_1/pool/MaxPool_output_0"
+    input: "248"
+    input: "250"
+    output: "/conv3_1/Conv_output_0"
+    name: "/conv3_1/Conv"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "/conv3_1/Conv_output_0"
+    input: "/conv1_1/calc_out_scale/Exp_output_0"
+    output: "/conv3_1/scale/Mul_output_0"
+    name: "/conv3_1/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv3_1/scale/Mul_output_0"
+    output: "/conv3_1/activate/Relu_output_0"
+    name: "/conv3_1/activate/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "/conv3_1/activate/Relu_output_0"
+    input: "/conv1_1/Pow_output_0"
+    output: "/conv3_1/Mul_output_0"
+    name: "/conv3_1/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv3_1/Mul_output_0"
+    input: "252"
+    input: "254"
+    output: "/conv3_2/Conv_output_0"
+    name: "/conv3_2/Conv"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "/conv3_2/Conv_output_0"
+    input: "/conv1_1/calc_out_scale/Exp_output_0"
+    output: "/conv3_2/scale/Mul_output_0"
+    name: "/conv3_2/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv3_2/scale/Mul_output_0"
+    output: "/conv3_2/activate/Relu_output_0"
+    name: "/conv3_2/activate/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "/conv3_2/activate/Relu_output_0"
+    input: "/conv1_1/Pow_output_0"
+    output: "/conv3_2/Mul_output_0"
+    name: "/conv3_2/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv3_2/Mul_output_0"
+    output: "/conv4_1/pool/MaxPool_output_0"
+    name: "/conv4_1/pool/MaxPool"
+    op_type: "MaxPool"
+    attribute {
+      name: "ceil_mode"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "/conv4_1/pool/MaxPool_output_0"
+    input: "256"
+    input: "258"
+    output: "/conv4_1/Conv_output_0"
+    name: "/conv4_1/Conv"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "/conv4_1/Conv_output_0"
+    input: "/conv1_1/calc_out_scale/Exp_output_0"
+    output: "/conv4_1/scale/Mul_output_0"
+    name: "/conv4_1/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv4_1/scale/Mul_output_0"
+    output: "/conv4_1/activate/Relu_output_0"
+    name: "/conv4_1/activate/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "/conv4_1/activate/Relu_output_0"
+    input: "/conv1_1/Pow_output_0"
+    output: "/conv4_1/Mul_output_0"
+    name: "/conv4_1/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv4_1/Mul_output_0"
+    input: "260"
+    input: "262"
+    output: "/conv4_2/Conv_output_0"
+    name: "/conv4_2/Conv"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "/conv4_2/Conv_output_0"
+    input: "/conv1_1/calc_out_scale/Exp_output_0"
+    output: "/conv4_2/scale/Mul_output_0"
+    name: "/conv4_2/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv4_2/scale/Mul_output_0"
+    output: "/conv4_2/activate/Relu_output_0"
+    name: "/conv4_2/activate/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "/conv4_2/activate/Relu_output_0"
+    input: "/conv1_1/Pow_output_0"
+    output: "/conv4_2/Mul_output_0"
+    name: "/conv4_2/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv4_2/Mul_output_0"
+    output: "/conv5_1/pool/MaxPool_output_0"
+    name: "/conv5_1/pool/MaxPool"
+    op_type: "MaxPool"
+    attribute {
+      name: "ceil_mode"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "/conv5_1/pool/MaxPool_output_0"
+    input: "264"
+    input: "266"
+    output: "/conv5_1/Conv_output_0"
+    name: "/conv5_1/Conv"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "/conv5_1/Conv_output_0"
+    input: "/conv1_1/calc_out_scale/Exp_output_0"
+    output: "/conv5_1/scale/Mul_output_0"
+    name: "/conv5_1/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv5_1/scale/Mul_output_0"
+    output: "/conv5_1/activate/Relu_output_0"
+    name: "/conv5_1/activate/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "/conv5_1/activate/Relu_output_0"
+    input: "/conv1_1/Pow_output_0"
+    output: "/conv5_1/Mul_output_0"
+    name: "/conv5_1/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/conv5_1/Mul_output_0"
+    output: "/global_avg_pool/GlobalAveragePool_output_0"
+    name: "/global_avg_pool/GlobalAveragePool"
+    op_type: "GlobalAveragePool"
+  }
+  node {
+    input: "/global_avg_pool/GlobalAveragePool_output_0"
+    output: "/Flatten_output_0"
+    name: "/Flatten"
+    op_type: "Flatten"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "/Flatten_output_0"
+    input: "onnx::Gemm_418"
+    input: "onnx::Gemm_419"
+    output: "/fc/Gemm_output_0"
+    name: "/fc/Gemm"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "beta"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "/fc/Gemm_output_0"
+    input: "/conv1_1/Pow_output_0"
+    output: "output"
+    name: "/fc/Mul"
+    op_type: "Mul"
+  }
+  name: "main_graph"
+  input {
+    name: "input"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "output"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 10
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv1_1/Conv_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv1_1/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv1_1/activate/Relu_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv1_1/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv1_2/Conv_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv1_2/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv1_2/activate/Relu_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv1_2/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv1_3/Conv_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv1_3/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv1_3/activate/Relu_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv1_3/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv2_1/pool/MaxPool_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv2_1/Conv_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv2_1/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv2_1/activate/Relu_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv2_1/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv2_2/Conv_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv2_2/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv2_2/activate/Relu_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv2_2/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv3_1/pool/MaxPool_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv3_1/Conv_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv3_1/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv3_1/activate/Relu_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv3_1/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv3_2/Conv_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv3_2/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv3_2/activate/Relu_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv3_2/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv4_1/pool/MaxPool_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv4_1/Conv_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv4_1/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv4_1/activate/Relu_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv4_1/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv4_2/Conv_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv4_2/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv4_2/activate/Relu_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv4_2/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv5_1/pool/MaxPool_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 2
+          }
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv5_1/Conv_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 2
+          }
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv5_1/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 2
+          }
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv5_1/activate/Relu_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 2
+          }
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/conv5_1/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 2
+          }
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/global_avg_pool/GlobalAveragePool_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/Flatten_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/fc/Gemm_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 10
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 17
+}

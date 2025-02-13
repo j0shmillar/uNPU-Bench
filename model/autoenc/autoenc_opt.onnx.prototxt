@@ -1,0 +1,808 @@
+ir_version: 8
+producer_name: "pytorch"
+producer_version: "2.3.1"
+domain: ""
+graph {
+  node {
+    input: "input"
+    input: "103"
+    input: "105"
+    output: "/en_conv1/Conv_output_0"
+    name: "/en_conv1/Conv"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "/en_conv1/Conv_output_0"
+    input: "/en_conv1/calc_out_scale/Exp_output_0"
+    output: "/en_conv1/scale/Mul_output_0"
+    name: "/en_conv1/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/en_conv1/scale/Mul_output_0"
+    output: "/en_conv1/activate/Relu_output_0"
+    name: "/en_conv1/activate/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "/en_conv1/activate/Relu_output_0"
+    input: "/en_conv1/Pow_output_0"
+    output: "/en_conv1/Mul_output_0"
+    name: "/en_conv1/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/en_conv1/Mul_output_0"
+    input: "107"
+    input: "109"
+    output: "/en_conv2/Conv_output_0"
+    name: "/en_conv2/Conv"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "/en_conv2/Conv_output_0"
+    input: "/en_conv1/calc_out_scale/Exp_output_0"
+    output: "/en_conv2/scale/Mul_output_0"
+    name: "/en_conv2/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/en_conv2/scale/Mul_output_0"
+    output: "/en_conv2/activate/Relu_output_0"
+    name: "/en_conv2/activate/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "/en_conv2/activate/Relu_output_0"
+    input: "/en_conv1/Pow_output_0"
+    output: "/en_conv2/Mul_output_0"
+    name: "/en_conv2/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/en_conv2/Mul_output_0"
+    input: "/Constant_output_0"
+    output: "/Reshape_output_0"
+    name: "/Reshape"
+    op_type: "Reshape"
+    attribute {
+      name: "allowzero"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "/Reshape_output_0"
+    input: "onnx::Gemm_240"
+    input: "onnx::Gemm_241"
+    output: "/en_lin1/Gemm_output_0"
+    name: "/en_lin1/Gemm"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "beta"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "/en_lin1/Gemm_output_0"
+    input: "/en_conv1/calc_out_scale/Exp_output_0"
+    output: "/en_lin1/scale/Mul_output_0"
+    name: "/en_lin1/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/en_lin1/scale/Mul_output_0"
+    output: "/en_lin1/activate/Relu_output_0"
+    name: "/en_lin1/activate/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "/en_lin1/activate/Relu_output_0"
+    input: "/en_conv1/Pow_output_0"
+    output: "/en_lin1/Mul_output_0"
+    name: "/en_lin1/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/en_lin1/Mul_output_0"
+    input: "onnx::MatMul_246"
+    output: "/en_lin2/MatMul_output_0"
+    name: "/en_lin2/MatMul"
+    op_type: "MatMul"
+  }
+  node {
+    input: "/en_lin2/MatMul_output_0"
+    input: "/en_conv1/calc_out_scale/Exp_output_0"
+    output: "/en_lin2/scale/Mul_output_0"
+    name: "/en_lin2/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/en_lin2/scale/Mul_output_0"
+    input: "/en_conv1/Pow_output_0"
+    output: "/en_lin2/Mul_output_0"
+    name: "/en_lin2/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/en_lin2/Mul_output_0"
+    input: "onnx::Gemm_250"
+    input: "onnx::Gemm_251"
+    output: "/de_lin1/Gemm_output_0"
+    name: "/de_lin1/Gemm"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "beta"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "/de_lin1/Gemm_output_0"
+    input: "/en_conv1/calc_out_scale/Exp_output_0"
+    output: "/de_lin1/scale/Mul_output_0"
+    name: "/de_lin1/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/de_lin1/scale/Mul_output_0"
+    output: "/de_lin1/activate/Relu_output_0"
+    name: "/de_lin1/activate/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "/de_lin1/activate/Relu_output_0"
+    input: "/en_conv1/Pow_output_0"
+    output: "/de_lin1/Mul_output_0"
+    name: "/de_lin1/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/de_lin1/Mul_output_0"
+    input: "onnx::Gemm_255"
+    input: "onnx::Gemm_256"
+    output: "/de_lin2/Gemm_output_0"
+    name: "/de_lin2/Gemm"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "beta"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "/de_lin2/Gemm_output_0"
+    input: "/en_conv1/calc_out_scale/Exp_output_0"
+    output: "/de_lin2/scale/Mul_output_0"
+    name: "/de_lin2/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/de_lin2/scale/Mul_output_0"
+    output: "/de_lin2/activate/Relu_output_0"
+    name: "/de_lin2/activate/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "/de_lin2/activate/Relu_output_0"
+    input: "/en_conv1/Pow_output_0"
+    output: "/de_lin2/Mul_output_0"
+    name: "/de_lin2/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/de_lin2/Mul_output_0"
+    input: "onnx::MatMul_261"
+    output: "/out_lin/MatMul_output_0"
+    name: "/out_lin/MatMul"
+    op_type: "MatMul"
+  }
+  node {
+    input: "/out_lin/MatMul_output_0"
+    input: "/en_conv1/calc_out_scale/Exp_output_0"
+    output: "/out_lin/scale/Mul_output_0"
+    name: "/out_lin/scale/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/out_lin/scale/Mul_output_0"
+    input: "/en_conv1/Pow_output_0"
+    output: "/out_lin/Mul_output_0"
+    name: "/out_lin/Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "/out_lin/Mul_output_0"
+    input: "/Constant_1_output_0"
+    output: "output"
+    name: "/Reshape_1"
+    op_type: "Reshape"
+    attribute {
+      name: "allowzero"
+      i: 0
+      type: INT
+    }
+  }
+  name: "main_graph"
+  input {
+    name: "input"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "output"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/en_conv1/Conv_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/en_conv1/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/en_conv1/activate/Relu_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/en_conv1/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/en_conv2/Conv_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/en_conv2/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/en_conv2/activate/Relu_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/en_conv2/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/Reshape_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/en_lin1/Gemm_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/en_lin1/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/en_lin1/activate/Relu_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/en_lin1/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/en_lin2/MatMul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/en_lin2/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/en_lin2/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/de_lin1/Gemm_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/de_lin1/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/de_lin1/activate/Relu_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/de_lin1/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/de_lin2/Gemm_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/de_lin2/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/de_lin2/activate/Relu_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/de_lin2/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/out_lin/MatMul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 768
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/out_lin/scale/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 768
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "/out_lin/Mul_output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 768
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 17
+}

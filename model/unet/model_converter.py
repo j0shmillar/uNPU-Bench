@@ -68,8 +68,6 @@ def convert(input_file, arguments):
     
     input_file = onnx_f
 
-    rm_unsupported_ops.run(input_file, input_file, unsupported_ops=[], placeholder_shape = [1, 1, 80, 80]) # TODO fix...class or regress?
-
     try:
         print("converting to tf/tflite...", input_file)
         onnx2tf.convert(
