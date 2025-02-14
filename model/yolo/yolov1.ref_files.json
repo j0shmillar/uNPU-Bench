@@ -1,0 +1,20 @@
+{
+  "version": "v1.15.beta.0-16-g4d532eefe-20250212",
+  "files": {
+    "origin_model": {
+      "path": "model/yolo/yolov1.onnx",
+      "last_modify": 1739456104.9113464
+    },
+    "origin_mlir": {
+      "path": "model/yolo/yolov1_origin.mlir",
+      "last_modify": 1739459150.3726
+    },
+    "top_mlir": {
+      "path": "model/yolo/yolov1.mlir",
+      "last_modify": 1739459150.8402817
+    }
+  },
+  "commands": {
+    "transform_cmd": "/workspace/tpu-mlir/python/tools/model_transform.py --model_name yolov1 --model_def model/yolo/yolov1.onnx --mlir model/yolo/yolov1.mlir"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "version": "v1.15.beta.0-16-g4d532eefe-20250212",
+  "files": {
+    "origin_model": {
+      "path": "model/resnet/resnet.onnx",
+      "last_modify": 1739457883.754893
+    },
+    "origin_mlir": {
+      "path": "model/resnet/resnet_origin.mlir",
+      "last_modify": 1739459249.6139936
+    },
+    "top_mlir": {
+      "path": "model/resnet/resnet.mlir",
+      "last_modify": 1739459249.9872746
+    }
+  },
+  "commands": {
+    "transform_cmd": "/workspace/tpu-mlir/python/tools/model_transform.py --model_name resnet --model_def model/resnet/resnet.onnx --mlir model/resnet/resnet.mlir"
+  }
+}

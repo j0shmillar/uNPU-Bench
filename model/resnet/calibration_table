@@ -1,0 +1,32 @@
+# mlir version: v1.15.beta.0-16-g4d532eefe-20250212
+# mlir: resnet.mlir
+# genetated time: 2025-02-15 00:09:34.367371
+# histogram number: 2048
+# sample number: 1
+# tune number: 5
+###
+# op_name    threshold    min    max
+input 3.6947594 -3.0731089 3.6947594
+/conv1/activate/Relu_output_0_Relu 2.4283576 -0.0000000 2.4283576
+/conv2/activate/Relu_output_0_Relu 0.8209106 -0.0000000 0.8209106
+/conv3/activate/Relu_output_0_Relu 0.3547804 -0.0000000 0.3547804
+/resid1/Add_output_0_Add 0.8683397 -0.0000000 0.8683397
+/conv4/activate/Relu_output_0_Relu 0.3732199 -0.0000000 0.3732199
+/conv5/pool/MaxPool_output_0_MaxPool 0.3732199 -0.0000000 0.3732199
+/conv5/activate/Relu_output_0_Relu 0.2157750 -0.0000000 0.2157750
+/conv6/activate/Relu_output_0_Relu 0.1296028 -0.0000000 0.1296028
+/resid2/Add_output_0_Add 0.2695823 -0.0000000 0.2695823
+/conv7/activate/Relu_output_0_Relu 0.1694133 -0.0000000 0.1694133
+/conv8/pool/MaxPool_output_0_MaxPool 0.1694133 -0.0000000 0.1694133
+/conv8/activate/Relu_output_0_Relu 0.0833045 -0.0000000 0.0833045
+/conv9/activate/Relu_output_0_Relu 0.0614942 -0.0000000 0.0614942
+/resid3/Add_output_0_Add 0.0993726 -0.0000000 0.0993726
+/conv10/pool/MaxPool_output_0_MaxPool 0.0993726 -0.0000000 0.0993726
+/conv10/activate/Relu_output_0_Relu 0.0823890 -0.0000000 0.0823890
+/conv11/pool/MaxPool_output_0_MaxPool 0.0823890 -0.0000000 0.0823890
+/conv11/activate/Relu_output_0_Relu 0.1253059 -0.0000000 0.1253059
+/conv12/activate/Relu_output_0_Relu 0.0697360 -0.0000000 0.0697360
+/conv13/pool/MaxPool_output_0_MaxPool 0.0697360 -0.0000000 0.0697360
+/conv13/activate/Relu_output_0_Relu 0.0380756 -0.0000000 0.0380756
+/conv14/Conv_output_0_Conv 0.0650768 -0.0650768 0.0630053
+output_Reshape 0.0650768 -0.0650768 0.0630053

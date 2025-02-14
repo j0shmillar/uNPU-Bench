@@ -1,0 +1,20 @@
+{
+  "version": "v1.15.beta.0-16-g4d532eefe-20250212",
+  "files": {
+    "origin_model": {
+      "path": "model/autoenc/autoenc.onnx",
+      "last_modify": 1739458708.2278657
+    },
+    "origin_mlir": {
+      "path": "model/autoenc/autoenc_origin.mlir",
+      "last_modify": 1739459176.6813874
+    },
+    "top_mlir": {
+      "path": "model/autoenc/autoenc.mlir",
+      "last_modify": 1739459177.0335388
+    }
+  },
+  "commands": {
+    "transform_cmd": "/workspace/tpu-mlir/python/tools/model_transform.py --model_name autoenc --model_def model/autoenc/autoenc.onnx --mlir model/autoenc/autoenc.mlir"
+  }
+}

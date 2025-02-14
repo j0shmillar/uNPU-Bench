@@ -1,0 +1,29 @@
+# mlir version: v1.15.beta.0-16-g4d532eefe-20250212
+# mlir: unet.mlir
+# genetated time: 2025-02-15 00:10:03.020021
+# histogram number: 2048
+# sample number: 1
+# tune number: 5
+###
+# op_name    threshold    min    max
+input 4.2522626 -4.2522626 4.1058946
+/enc1/activate/Relu_output_0_Relu 4.4933167 -0.0000000 4.4933167
+/enc2/pool/MaxPool_output_0_MaxPool 4.4933167 -0.0000000 4.4933167
+/enc2/activate/Relu_output_0_Relu 4.7134233 -0.0000000 4.7134233
+/enc3/pool/MaxPool_output_0_MaxPool 4.7134233 -0.0000000 4.7134233
+/enc3/activate/Relu_output_0_Relu 6.9417784 -0.0000000 7.0247941
+/bneck/pool/MaxPool_output_0_MaxPool 6.8795166 -0.0000000 7.0247941
+/bneck/activate/Relu_output_0_Relu 5.8565254 -0.0000000 5.8565254
+/Resize_output_0_Resize 5.5835447 -0.0000000 5.5835447
+/upconv3/activate/Relu_output_0_Relu 5.6056666 -0.0000000 5.6056666
+/Concat_output_0_Concat 6.6719773 -0.0000000 7.0247941
+/dec3/activate/Relu_output_0_Relu 4.5976319 -0.0000000 4.5976319
+/Resize_1_output_0_Resize 4.2184200 -0.0000000 4.2184200
+/upconv2/activate/Relu_output_0_Relu 3.0689635 -0.0000000 3.0689635
+/Concat_1_output_0_Concat 4.7134233 -0.0000000 4.7134233
+/dec2/activate/Relu_output_0_Relu 4.7432971 -0.0000000 4.7432971
+/Resize_2_output_0_Resize 3.9582424 0.0000000 3.9582424
+/upconv1/activate/Relu_output_0_Relu 2.7348382 -0.0000000 2.7348382
+/Concat_2_output_0_Concat 4.4933167 -0.0000000 4.4933167
+/dec1/activate/Relu_output_0_Relu 3.8469136 -0.0000000 3.8469136
+/conv/Conv_output_0_Conv 2.1205485 -1.8962356 2.1205485

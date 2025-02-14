@@ -1,0 +1,18 @@
+# mlir version: v1.15.beta.0-16-g4d532eefe-20250212
+# mlir: autoenc.mlir
+# genetated time: 2025-02-15 00:09:51.625028
+# histogram number: 2048
+# sample number: 1
+# tune number: 5
+###
+# op_name    threshold    min    max
+input 3.4038112 -2.6700850 3.4038112
+/en_conv1/activate/Relu_output_0_Relu 8.4142275 -0.0000000 8.4142275
+/en_conv2/activate/Relu_output_0_Relu 3.8203018 -0.0000000 3.8203018
+/Reshape_output_0_Reshape 3.8203018 -0.0000000 3.8203018
+/en_lin1/activate/Relu_output_0_Relu 2.9104850 0.0000000 2.9104850
+/en_lin2/MatMul_output_0_MatMul 3.2229207 -3.2229207 -1.0000336
+/de_lin1/activate/Relu_output_0_Relu 2.5109489 0.0000000 2.5109489
+/de_lin2/activate/Relu_output_0_Relu 1.6373050 0.0000000 1.6373050
+/out_lin/MatMul_output_0_MatMul 1.0454944 -1.0454944 0.1964886
+output_Reshape 1.0454944 -1.0454944 0.1964886

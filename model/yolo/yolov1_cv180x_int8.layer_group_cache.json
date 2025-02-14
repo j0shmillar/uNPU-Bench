@@ -1,0 +1,98 @@
+{
+  "opt": 2,
+  "GroupLayer": [
+    {
+      "base_group_idx": 0,
+      "start_idx": 0,
+      "end_idx": 1,
+      "group_cost": 207282,
+      "index": 0,
+      "locs": [
+        "/Conv_96/activate/Relu_output_0_Relu",
+        "/Conv_48/pool/MaxPool_output_0_MaxPool"
+      ],
+      "shape_secs": [
+        1,
+        1,
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "base_group_idx": 0,
+      "start_idx": 2,
+      "end_idx": 3,
+      "group_cost": 176780,
+      "index": 1,
+      "locs": [
+        "/Conv_48/activate/Relu_output_0_Relu",
+        "/Conv_24_1/pool/MaxPool_output_0_MaxPool"
+      ],
+      "shape_secs": [
+        1,
+        1,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "base_group_idx": 0,
+      "start_idx": 4,
+      "end_idx": 22,
+      "group_cost": 394331,
+      "index": 2,
+      "locs": [
+        "/Conv_24_1/activate/Relu_output_0_Relu",
+        "/Conv_24_2/activate/Relu_output_0_Relu",
+        "/Conv_24_3/activate/Relu_output_0_Relu",
+        "/Conv_24_4/activate/Relu_output_0_Relu",
+        "/Conv_24_5/activate/Relu_output_0_Relu",
+        "/Conv_24_6/activate/Relu_output_0_Relu",
+        "/Conv_12_1/pool/MaxPool_output_0_MaxPool",
+        "/Conv_12_1/activate/Relu_output_0_Relu",
+        "/Conv_12_2/activate/Relu_output_0_Relu",
+        "/Conv_12_3/activate/Relu_output_0_Relu",
+        "/Conv_12_4/activate/Relu_output_0_Relu",
+        "/Conv_12_5/activate/Relu_output_0_Relu",
+        "/Conv_12_6/activate/Relu_output_0_Relu",
+        "/Conv_7_1/activate/Relu_output_0_Relu",
+        "/Conv_7_2/activate/Relu_output_0_Relu",
+        "/Conv_Res_1/activate/Relu_output_0_Relu",
+        "/Conv_Res_2/activate/Relu_output_0_Relu",
+        "/Conv_Res_3/activate/Relu_output_0_Relu",
+        "/Conv_Res_4/Conv_output_0_Conv"
+      ],
+      "shape_secs": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "GlobalLayer": [
+    {
+      "index": 3,
+      "group_cost": 0,
+      "loc": "/Transpose_output_0_Transpose"
+    },
+    {
+      "index": 4,
+      "group_cost": 220,
+      "loc": "output_Slice"
+    },
+    {
+      "index": 5,
+      "group_cost": 67,
+      "loc": "667_Slice"
+    },
+    {
+      "index": 6,
+      "group_cost": 0,
+      "loc": "func.return"
+    }
+  ]
+}

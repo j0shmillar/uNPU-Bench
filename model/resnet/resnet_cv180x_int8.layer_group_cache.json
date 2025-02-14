@@ -1,0 +1,139 @@
+{
+  "opt": 2,
+  "GroupLayer": [
+    {
+      "base_group_idx": 0,
+      "start_idx": 1,
+      "end_idx": 2,
+      "group_cost": 215499,
+      "index": 1,
+      "locs": [
+        "/conv2/activate/Relu_output_0_Relu",
+        "/conv3/activate/Relu_output_0_Relu"
+      ],
+      "shape_secs": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "base_group_idx": 0,
+      "start_idx": 3,
+      "end_idx": 5,
+      "group_cost": 152862,
+      "index": 2,
+      "locs": [
+        "/resid1/Add_output_0_Add",
+        "/conv4/activate/Relu_output_0_Relu",
+        "/conv5/pool/MaxPool_output_0_MaxPool"
+      ],
+      "shape_secs": [
+        1,
+        1,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "base_group_idx": 0,
+      "start_idx": 6,
+      "end_idx": 12,
+      "group_cost": 214377,
+      "index": 3,
+      "locs": [
+        "/conv5/activate/Relu_output_0_Relu",
+        "/conv6/activate/Relu_output_0_Relu",
+        "/resid2/Add_output_0_Add",
+        "/conv7/activate/Relu_output_0_Relu",
+        "/conv8/pool/MaxPool_output_0_MaxPool",
+        "/conv8/activate/Relu_output_0_Relu",
+        "/conv9/activate/Relu_output_0_Relu"
+      ],
+      "shape_secs": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "base_group_idx": 0,
+      "start_idx": 13,
+      "end_idx": 15,
+      "group_cost": 28138,
+      "index": 4,
+      "locs": [
+        "/resid3/Add_output_0_Add",
+        "/conv10/pool/MaxPool_output_0_MaxPool",
+        "/conv10/activate/Relu_output_0_Relu"
+      ],
+      "shape_secs": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "base_group_idx": 0,
+      "start_idx": 16,
+      "end_idx": 17,
+      "group_cost": 32831,
+      "index": 5,
+      "locs": [
+        "/conv11/pool/MaxPool_output_0_MaxPool",
+        "/conv11/activate/Relu_output_0_Relu"
+      ],
+      "shape_secs": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "GlobalLayer": [
+    {
+      "index": 0,
+      "group_cost": 22279,
+      "loc": "/conv1/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 6,
+      "group_cost": 47087,
+      "loc": "/conv12/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 7,
+      "group_cost": 851,
+      "loc": "/conv13/pool/MaxPool_output_0_MaxPool"
+    },
+    {
+      "index": 8,
+      "group_cost": 98640,
+      "loc": "/conv13/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 9,
+      "group_cost": 8499,
+      "loc": "/conv14/Conv_output_0_Conv"
+    },
+    {
+      "index": 10,
+      "group_cost": 0,
+      "loc": "output_Reshape"
+    },
+    {
+      "index": 11,
+      "group_cost": 0,
+      "loc": "func.return"
+    }
+  ]
+}

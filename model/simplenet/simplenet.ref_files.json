@@ -1,0 +1,20 @@
+{
+  "version": "v1.15.beta.0-16-g4d532eefe-20250212",
+  "files": {
+    "origin_model": {
+      "path": "model/simplenet/simplenet.onnx",
+      "last_modify": 1739458245.6803293
+    },
+    "origin_mlir": {
+      "path": "model/simplenet/simplenet_origin.mlir",
+      "last_modify": 1739459199.4782557
+    },
+    "top_mlir": {
+      "path": "model/simplenet/simplenet.mlir",
+      "last_modify": 1739459199.8463006
+    }
+  },
+  "commands": {
+    "transform_cmd": "/workspace/tpu-mlir/python/tools/model_transform.py --model_name simplenet --model_def model/simplenet/simplenet.onnx --mlir model/simplenet/simplenet.mlir"
+  }
+}

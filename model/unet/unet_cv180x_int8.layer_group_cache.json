@@ -1,0 +1,147 @@
+{
+  "opt": 2,
+  "GroupLayer": [
+    {
+      "base_group_idx": 0,
+      "start_idx": 0,
+      "end_idx": 3,
+      "group_cost": 56990,
+      "index": 0,
+      "locs": [
+        "/enc1/activate/Relu_output_0_Relu",
+        "/enc2/pool/MaxPool_output_0_MaxPool",
+        "/enc2/activate/Relu_output_0_Relu",
+        "/enc3/pool/MaxPool_output_0_MaxPool"
+      ],
+      "shape_secs": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "base_group_idx": 0,
+      "start_idx": 4,
+      "end_idx": 6,
+      "group_cost": 99491,
+      "index": 1,
+      "locs": [
+        "/enc3/activate/Relu_output_0_Relu",
+        "/bneck/pool/MaxPool_output_0_MaxPool",
+        "/bneck/activate/Relu_output_0_Relu"
+      ],
+      "shape_secs": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "base_group_idx": 6,
+      "start_idx": 1,
+      "end_idx": 2,
+      "group_cost": 62630,
+      "index": 10,
+      "locs": [
+        "/Concat_1_output_0_Concat",
+        "/dec2/activate/Relu_output_0_Relu"
+      ],
+      "shape_secs": [
+        1,
+        1,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "base_group_idx": 9,
+      "start_idx": 2,
+      "end_idx": 3,
+      "group_cost": 254362,
+      "index": 15,
+      "locs": [
+        "/dec1/activate/Relu_output_0_Relu",
+        "/conv/Conv_output_0_Conv"
+      ],
+      "shape_secs": [
+        1,
+        1,
+        1,
+        3,
+        1
+      ]
+    }
+  ],
+  "GlobalLayer": [
+    {
+      "index": 2,
+      "group_cost": 0,
+      "loc": "/bneck/activate/Relu_output_0_Relu_pad_edge"
+    },
+    {
+      "index": 3,
+      "group_cost": 0,
+      "loc": "/Resize_output_0_Resize"
+    },
+    {
+      "index": 4,
+      "group_cost": 238918,
+      "loc": "/upconv3/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 5,
+      "group_cost": 0,
+      "loc": "/Concat_output_0_Concat"
+    },
+    {
+      "index": 6,
+      "group_cost": 238918,
+      "loc": "/dec3/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 7,
+      "group_cost": 0,
+      "loc": "/dec3/activate/Relu_output_0_Relu_pad_edge"
+    },
+    {
+      "index": 8,
+      "group_cost": 0,
+      "loc": "/Resize_1_output_0_Resize"
+    },
+    {
+      "index": 9,
+      "group_cost": 120296,
+      "loc": "/upconv2/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 11,
+      "group_cost": 0,
+      "loc": "/dec2/activate/Relu_output_0_Relu_pad_edge"
+    },
+    {
+      "index": 12,
+      "group_cost": 0,
+      "loc": "/Resize_2_output_0_Resize"
+    },
+    {
+      "index": 13,
+      "group_cost": 63083,
+      "loc": "/upconv1/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 14,
+      "group_cost": 0,
+      "loc": "/Concat_2_output_0_Concat"
+    },
+    {
+      "index": 16,
+      "group_cost": 0,
+      "loc": "func.return"
+    }
+  ]
+}

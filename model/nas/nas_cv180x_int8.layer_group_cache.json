@@ -1,0 +1,109 @@
+{
+  "opt": 2,
+  "GroupLayer": [
+    {
+      "base_group_idx": 0,
+      "start_idx": 0,
+      "end_idx": 3,
+      "group_cost": 773519,
+      "index": 0,
+      "locs": [
+        "/conv1_1/activate/Relu_output_0_Relu",
+        "/conv1_2/activate/Relu_output_0_Relu",
+        "/conv1_3/activate/Relu_output_0_Relu",
+        "/conv2_1/pool/MaxPool_output_0_MaxPool"
+      ],
+      "shape_secs": [
+        1,
+        1,
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "base_group_idx": 0,
+      "start_idx": 4,
+      "end_idx": 6,
+      "group_cost": 171981,
+      "index": 1,
+      "locs": [
+        "/conv2_1/activate/Relu_output_0_Relu",
+        "/conv2_2/activate/Relu_output_0_Relu",
+        "/conv3_1/pool/MaxPool_output_0_MaxPool"
+      ],
+      "shape_secs": [
+        1,
+        1,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "base_group_idx": 0,
+      "start_idx": 8,
+      "end_idx": 9,
+      "group_cost": 38831,
+      "index": 3,
+      "locs": [
+        "/conv3_2/activate/Relu_output_0_Relu",
+        "/conv4_1/pool/MaxPool_output_0_MaxPool"
+      ],
+      "shape_secs": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "GlobalLayer": [
+    {
+      "index": 2,
+      "group_cost": 164318,
+      "loc": "/conv3_1/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 4,
+      "group_cost": 49583,
+      "loc": "/conv4_1/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 5,
+      "group_cost": 52135,
+      "loc": "/conv4_2/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 6,
+      "group_cost": 2066,
+      "loc": "/conv5_1/pool/MaxPool_output_0_MaxPool"
+    },
+    {
+      "index": 7,
+      "group_cost": 62915,
+      "loc": "/conv5_1/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 8,
+      "group_cost": 4458,
+      "loc": "/global_avg_pool/GlobalAveragePool_output_0_GlobalAveragePool"
+    },
+    {
+      "index": 9,
+      "group_cost": 0,
+      "loc": "/Flatten_output_0_Flatten"
+    },
+    {
+      "index": 10,
+      "group_cost": 0,
+      "loc": "/fc/Gemm_output_0_Gemm"
+    },
+    {
+      "index": 11,
+      "group_cost": 0,
+      "loc": "func.return"
+    }
+  ]
+}

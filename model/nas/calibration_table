@@ -1,0 +1,26 @@
+# mlir version: v1.15.beta.0-16-g4d532eefe-20250212
+# mlir: nas.mlir
+# genetated time: 2025-02-15 00:10:12.946799
+# histogram number: 2048
+# sample number: 1
+# tune number: 5
+###
+# op_name    threshold    min    max
+input 3.3179448 -3.2944443 3.3179448
+/conv1_1/activate/Relu_output_0_Relu 12.1218214 -0.0000000 12.1218214
+/conv1_2/activate/Relu_output_0_Relu 9.6569738 -0.0000000 9.6569738
+/conv1_3/activate/Relu_output_0_Relu 8.1167288 -0.0000000 8.1167288
+/conv2_1/pool/MaxPool_output_0_MaxPool 8.1167288 -0.0000000 8.1167288
+/conv2_1/activate/Relu_output_0_Relu 5.3279667 -0.0000000 5.3279667
+/conv2_2/activate/Relu_output_0_Relu 5.1020741 -0.0000000 5.1020741
+/conv3_1/pool/MaxPool_output_0_MaxPool 5.1020741 -0.0000000 5.1020741
+/conv3_1/activate/Relu_output_0_Relu 3.6513591 -0.0000000 3.6513591
+/conv3_2/activate/Relu_output_0_Relu 3.5231848 -0.0000000 3.5231848
+/conv4_1/pool/MaxPool_output_0_MaxPool 3.5231848 -0.0000000 3.5231848
+/conv4_1/activate/Relu_output_0_Relu 2.7111974 -0.0000000 2.7111974
+/conv4_2/activate/Relu_output_0_Relu 3.0426676 -0.0000000 3.0426676
+/conv5_1/pool/MaxPool_output_0_MaxPool 3.0426676 -0.0000000 3.0426676
+/conv5_1/activate/Relu_output_0_Relu 2.6187215 -0.0000000 2.6187215
+/global_avg_pool/GlobalAveragePool_output_0_GlobalAveragePool 1.5737244 0.0000000 1.5737244
+/Flatten_output_0_Flatten 1.5737244 0.0000000 1.5737244
+/fc/Gemm_output_0_Gemm 4.6858711 -3.4059591 4.6858711

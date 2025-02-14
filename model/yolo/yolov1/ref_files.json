@@ -1,0 +1,36 @@
+{
+  "version": "v1.15.beta.0-16-g4d532eefe-20250212",
+  "commands": {
+    "transform_cmd": "/workspace/tpu-mlir/python/tools/model_transform.py --model_name yolov1 --model_def model/yolo/yolov1.onnx --mlir model/yolo/yolov1.mlir",
+    "deploy_cmd": "/workspace/tpu-mlir/python/tools/model_deploy.py --mlir yolov1.mlir --quant_input --quant_output --quantize INT8 --calibration_table calibration_table --chip cv180x --test_reference yolov1_top_f32_all_weight.npz --tolerance 0.85,0.45 --model yolov1.cvimodel",
+    "final": "tpuc-opt yolov1_cv180x_int8_sym_tpu.mlir --mlir-disable-threading --strip-io-quant=\"quant_input=True quant_output=True quant_input_list= quant_output_list= quant_output_bf16=False\" --processor-tpu-optimize --dev-parallel --weight-reorder  --subnet-divide=\"dynamic=False\" --op-reorder --future-update=\"rank=0 weight_list=\" --layer-group=\"opt=2 group_by_cores=auto compress_mode=none\"  --core-parallel --address-assign -o yolov1_cv180x_int8_sym_final.mlir --debug_cmd=",
+    "bmodel": "tpuc-opt yolov1_cv180x_int8_sym_final.mlir --codegen=\"model_file=yolov1.cvimodel embed_debug_info=False model_version=latest bmodel_only=False\" -o /dev/null"
+  },
+  "files": {
+    "tpuc_opt": {
+      "path": "../../../tpu-mlir/install/bin/tpuc-opt",
+      "last_modify": 1739369335.836143
+    },
+    "bmodel": {
+      "path": "../yolov1.cvimodel",
+      "last_modify": 1739549719.6838837
+    },
+    "final_mlir": {
+      "path": "../yolov1_cv180x_int8_sym_final.mlir",
+      "last_modify": 1739549719.327272
+    },
+    "tpu_mlir": {
+      "path": "../yolov1_cv180x_int8_sym_tpu.mlir",
+      "last_modify": 1739549718.489844
+    },
+    "context_dir": {
+      "path": ".",
+      "last_modify": 1739549719.7408137
+    }
+  },
+  "properties": {
+    "prefix": "yolov1_cv180x_int8_sym",
+    "chip": "cv180x",
+    "compare_all": false
+  }
+}

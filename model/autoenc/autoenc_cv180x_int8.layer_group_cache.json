@@ -1,0 +1,56 @@
+{
+  "opt": 2,
+  "GroupLayer": [],
+  "GlobalLayer": [
+    {
+      "index": 0,
+      "group_cost": 21302,
+      "loc": "/en_conv1/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 1,
+      "group_cost": 15887,
+      "loc": "/en_conv2/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 2,
+      "group_cost": 0,
+      "loc": "/Reshape_output_0_Reshape"
+    },
+    {
+      "index": 3,
+      "group_cost": 0,
+      "loc": "/en_lin1/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 4,
+      "group_cost": 0,
+      "loc": "/en_lin2/MatMul_output_0_MatMul"
+    },
+    {
+      "index": 5,
+      "group_cost": 0,
+      "loc": "/de_lin1/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 6,
+      "group_cost": 0,
+      "loc": "/de_lin2/activate/Relu_output_0_Relu"
+    },
+    {
+      "index": 7,
+      "group_cost": 0,
+      "loc": "/out_lin/MatMul_output_0_MatMul"
+    },
+    {
+      "index": 8,
+      "group_cost": 0,
+      "loc": "output_Reshape"
+    },
+    {
+      "index": 9,
+      "group_cost": 0,
+      "loc": "func.return"
+    }
+  ]
+}
