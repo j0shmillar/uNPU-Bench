@@ -36,3 +36,17 @@ adb shell
 cd root/luckfox_pico_{model}_demo
 ./luckfox_pico_{model} model/{model}.rknn
 ```
+
+### milkv
+
+```
+cd host-tools
+export PATH=$PATH:$(pwd)/gcc/riscv64-linux-musl-x86_64/bin
+cd ../cvitek-tdl-sdk-sg180x
+cd samples
+./compile_samples.sh
+scp sample_{model} root@192.168.42.1:/root/
+ssh root@192.168.42.1
+cd root
+./sample_{model} {model.cvimodel}
+```

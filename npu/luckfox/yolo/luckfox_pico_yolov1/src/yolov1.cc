@@ -327,6 +327,5 @@ int inference_yolov1_model(rknn_app_context_t *app_ctx, object_detect_result_lis
             detections[i].class_probs[detections[i].class_id]);
     }
 
-    post_process(app_ctx, app_ctx->output_mems, box_conf_threshold, nms_threshold, od_results);
     return ret;
 }
