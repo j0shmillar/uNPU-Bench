@@ -36,17 +36,15 @@ typedef enum
 } tensor_type_t;
 
 status_t MODEL_Init(void);
-int8_t* MODEL_GetInputTensorData(tensor_dims_t* dims, tensor_type_t* type);
-int8_t* MODEL_GetOutputTensorData(tensor_dims_t* dims, tensor_type_t* type);
+uint8_t* MODEL_GetInputTensorData(tensor_dims_t* dims, tensor_type_t* type);
+uint8_t* MODEL_GetOutputTensorData(tensor_dims_t* dims, tensor_type_t* type);
 void MODEL_ConvertInput(uint8_t* data, tensor_dims_t* dims, tensor_type_t type);
 status_t MODEL_RunInference(void);
 const char* MODEL_GetModelName(void);
 size_t MODEL_GetArenaUsedBytes(size_t *pMaxSize);
 TfLiteTensor* MODEL_GetOutputTensor(uint32_t idx);
-float *MODEL_GetAnchors();
-uint32_t MODEL_GetOutputSize();
 
-void infer();
+void run();
 #if defined(__cplusplus)
 }
 #endif /* __cplusplus */

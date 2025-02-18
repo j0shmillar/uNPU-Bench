@@ -38,7 +38,6 @@ drivers \
 eiq/tensorflow-lite/tensorflow/lite/micro \
 eiq/tensorflow-lite/tensorflow/lite/micro/kernels/neutron \
 source \
-source/image \
 source/model \
 startup \
 utilities \

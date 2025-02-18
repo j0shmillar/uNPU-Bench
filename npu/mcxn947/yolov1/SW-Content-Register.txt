@@ -1,11 +1,10 @@
-Package: yolo-on-mcxn947
+Package: yolov1
 Version: 1.0
 Outgoing License: LA_OPT_NXP_Software_License v53 December 2023 - Additional Distribution License granted, license in Section 2.3 applies
 License File: LICENSE
-Description and comments: yolo on mcxn947.
+Description and comments: multiple person detection based on machine learning algorithm, power by MCXN947.
 Origin: NXP (BSD-3-Clause)
         NXP (proprietary)
-        Neutron library (NXP proprietary)
         CMSIS (Apache-2.0) - https://github.com/ARM-software/CMSIS_5/releases/tag/5.6.0
         TensorFlow Lite ( Apache-2.0) - https://github.com/tensorflow/tensorflow
         gemmlowp (Apache-2.0) - https://github.com/google/gemmlowp

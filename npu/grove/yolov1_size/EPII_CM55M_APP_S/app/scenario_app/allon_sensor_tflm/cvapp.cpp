@@ -38,8 +38,8 @@
 #define TOTAL_CH (SIGMOID_CH + SOFTMAX_CH)
 #define MAX_DETECTIONS (OUT_H * OUT_W)
 
-#define TENSOR_ARENA_BUFSIZE  (125*1024)
-__attribute__(( section(".bss.NoInit"))) uint8_t tensor_arena_buf[TENSOR_ARENA_BUFSIZE] __ALIGNED(32);
+#define TENSOR_ARENA_BUFSIZE  (500*1024)
+__attribute__(( section(".bss.NoInit"), aligned(64) )) uint8_t tensor_arena_buf[TENSOR_ARENA_BUFSIZE];
 
 using namespace std;
 
@@ -53,7 +53,9 @@ TfLiteTensor* input, *output;
 };
 
 static void _arm_npu_irq_handler(void) {
+    xprintf("NPU IRQ triggered!\n");  // Debug print
     ethosu_irq_handler(&ethosu_drv);
+    xprintf("NPU IRQ handled!\n");  // Debug print after handling
 }
 
 static void _arm_npu_irq_init(void) {
@@ -64,8 +66,12 @@ static void _arm_npu_irq_init(void) {
 
 static int _arm_npu_init(bool security_enable, bool privilege_enable) {
     _arm_npu_irq_init();
-    return ethosu_init(&ethosu_drv, (void *)(U55_BASE), NULL, 0, security_enable, privilege_enable);
-}
+    
+    int status = ethosu_init(&ethosu_drv, (void *)(U55_BASE), NULL, 0, security_enable, privilege_enable);
+    xprintf("ethosu_init status: %d\n", status);  // Debug print
+
+    return status;
+} 
 
 int cv_init(bool security_enable, bool privilege_enable) {
     if (_arm_npu_init(security_enable, privilege_enable) != 0) return -1;
@@ -176,14 +182,21 @@ void generate_random_input(int8_t* input_data) {
 
 int cv_run() {
 
-    // time for input
+    xprintf("here1\n");
+
     generate_random_input(input->data.int8);
+
+    xprintf("Input type: %d\n", input->type);
+    xprintf("Output type: %d\n", output->type);
+    xprintf("here2\n");
 
     // time for invoke
     if (int_ptr->Invoke() != kTfLiteOk) {
         xprintf("invoke fail\n");
         return -1;
     }
+
+    xprintf("here3\n");
 
     float processed_output[OUT_H * OUT_W * TOTAL_CH];
     detection_t detections[MAX_DETECTIONS];

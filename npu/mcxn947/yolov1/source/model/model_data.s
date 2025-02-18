@@ -40,7 +40,7 @@
 
 
 npu_model_data:
-	.incbin "../source/model/yolov1_eiq_q.tflite"
+	.incbin "../source/model/yolov1_full_integer_quant_eiq.tflite"
 npu_model_data_end:
 
 od_image_data:

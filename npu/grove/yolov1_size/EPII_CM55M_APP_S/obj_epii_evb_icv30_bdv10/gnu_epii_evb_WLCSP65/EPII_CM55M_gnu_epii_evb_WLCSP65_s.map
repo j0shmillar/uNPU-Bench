@@ -535,7 +535,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000       0x19 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/timer_interface.o
  .debug_line    0x00000000      0x14f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/timer_interface.o
- .debug_str     0x00000000      0x2e7 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/timer_interface.o
+ .debug_str     0x00000000      0x2f3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/timer_interface.o
  .comment       0x00000000       0x46 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/timer_interface.o
  .debug_frame   0x00000000       0x30 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/timer_interface.o
  .ARM.attributes
@@ -4197,7 +4197,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000       0xe0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_utils.o)
  .debug_line    0x00000000      0xa8e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_utils.o)
- .debug_str     0x00000000     0x1716 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_utils.o)
+ .debug_str     0x00000000     0x1722 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_utils.o)
  .comment       0x00000000       0x46 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_utils.o)
  .debug_frame   0x00000000       0x70 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_utils.o)
  .ARM.attributes
@@ -4252,7 +4252,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000       0x79 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(non_persistent_arena_buffer_allocator.o)
  .debug_line    0x00000000      0xb93 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(non_persistent_arena_buffer_allocator.o)
- .debug_str     0x00000000     0x1f3c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(non_persistent_arena_buffer_allocator.o)
+ .debug_str     0x00000000     0x1f48 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(non_persistent_arena_buffer_allocator.o)
  .comment       0x00000000       0x46 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(non_persistent_arena_buffer_allocator.o)
  .debug_frame   0x00000000      0x154 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(non_persistent_arena_buffer_allocator.o)
  .ARM.attributes
@@ -4281,7 +4281,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000       0x25 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(persistent_arena_buffer_allocator.o)
  .debug_line    0x00000000      0x827 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(persistent_arena_buffer_allocator.o)
- .debug_str     0x00000000     0x17bc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(persistent_arena_buffer_allocator.o)
+ .debug_str     0x00000000     0x17c8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(persistent_arena_buffer_allocator.o)
  .comment       0x00000000       0x46 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(persistent_arena_buffer_allocator.o)
  .debug_frame   0x00000000       0x68 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(persistent_arena_buffer_allocator.o)
  .ARM.attributes
@@ -5013,7 +5013,7 @@ LOAD /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x100007bf                        __syscalls_flash_end__ = (. - 0x1)
                 0x100007c0                        __unprivileged_flash_start__ = .
 
-.text_2         0x3401f000     0xe008
+.text_2         0x3401f000     0xe0e8
  *libdriver.*:*(SORT_BY_ALIGNMENT(.text*) SORT_BY_ALIGNMENT(.rodata*))
  .text.hx_drv_scu_get_all_pinmux_cfg
                 0x3401f000      0x294 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu.o)
@@ -6229,48 +6229,50 @@ LOAD /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x3402c494                tflite::MicroMutableOpResolver<1u>::~MicroMutableOpResolver()
                 0x3402c494                tflite::MicroMutableOpResolver<1u>::~MicroMutableOpResolver()
  .rodata._ZNK6tflite22MicroMutableOpResolverILj1EE15GetOpDataParserENS_15BuiltinOperatorE.str1.4
-                0x3402c498      0x5b9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x3402c498      0x639 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
                                   0x8 (size before relaxing)
- *fill*         0x3402ca51        0x3 
+ *fill*         0x3402cad1        0x3 
  .text._ZNK6tflite22MicroMutableOpResolverILj1EE15GetOpDataParserENS_15BuiltinOperatorE
-                0x3402ca54       0x28 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
-                0x3402ca54                tflite::MicroMutableOpResolver<1u>::GetOpDataParser(tflite::BuiltinOperator) const
+                0x3402cad4       0x28 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x3402cad4                tflite::MicroMutableOpResolver<1u>::GetOpDataParser(tflite::BuiltinOperator) const
  .text._ZNK6tflite22MicroMutableOpResolverILj1EE6FindOpEPKc
-                0x3402ca7c       0x24 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
-                0x3402ca7c                tflite::MicroMutableOpResolver<1u>::FindOp(char const*) const
+                0x3402cafc       0x24 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x3402cafc                tflite::MicroMutableOpResolver<1u>::FindOp(char const*) const
+ .rodata._ZL20_arm_npu_irq_handlerv.str1.4
+                0x3402cb20       0x26 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
  .text._ZL20_arm_npu_irq_handlerv
-                0x3402caa0        0xc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x3402cb20       0x24 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
  .text._ZNK6tflite22MicroMutableOpResolverILj1EE6FindOpENS_15BuiltinOperatorE
-                0x3402caac       0x18 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
-                0x3402caac                tflite::MicroMutableOpResolver<1u>::FindOp(tflite::BuiltinOperator) const
+                0x3402cb44       0x18 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x3402cb44                tflite::MicroMutableOpResolver<1u>::FindOp(tflite::BuiltinOperator) const
  .text._ZNK6tflite15MicroOpResolver6FindOpENS_15BuiltinOperatorEi
-                0x3402cac4       0x34 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
-                0x3402cac4                tflite::MicroOpResolver::FindOp(tflite::BuiltinOperator, int) const
+                0x3402cb5c       0x34 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x3402cb5c                tflite::MicroOpResolver::FindOp(tflite::BuiltinOperator, int) const
  .text._ZNK6tflite15MicroOpResolver6FindOpEPKci
-                0x3402caf8       0x34 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
-                0x3402caf8                tflite::MicroOpResolver::FindOp(char const*, int) const
+                0x3402cb90       0x34 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x3402cb90                tflite::MicroOpResolver::FindOp(char const*, int) const
  .rodata.cv_init.str1.4
-                0x3402cb2c       0x41 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
- .text.cv_init  0x3402cb2c      0x1a4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
-                0x3402cb2c                cv_init
+                0x3402cbc4       0x59 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+ .text.cv_init  0x3402cbc4      0x1b0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x3402cbc4                cv_init
  .text._Z20process_model_outputPKfPf
-                0x3402ccd0       0xa4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
-                0x3402ccd0                process_model_output(float const*, float*)
+                0x3402cd74       0xa4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x3402cd74                process_model_output(float const*, float*)
  .text._Z18decode_predictionsPKfP11detection_tPif
-                0x3402cd74       0x94 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
-                0x3402cd74                decode_predictions(float const*, detection_t*, int*, float)
+                0x3402ce18       0x94 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x3402ce18                decode_predictions(float const*, detection_t*, int*, float)
  .rodata.cv_run.str1.4
-                0x3402ce08       0x6a obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
- .text.cv_run   0x3402ce08       0xe4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
-                0x3402ce08                cv_run
- *fill*         0x3402ceec        0x4 
+                0x3402ceac       0xa6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+ .text.cv_run   0x3402ceac      0x120 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x3402ceac                cv_run
+ *fill*         0x3402cfcc        0x4 
  .text.cv_run.__stub
-                0x3402cef0       0xe0 linker stubs
+                0x3402cfd0       0xe0 linker stubs
  .rodata._ZTVN6tflite22MicroMutableOpResolverILj1EEE
-                0x3402cfd0       0x34 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
-                0x3402cfd0                vtable for tflite::MicroMutableOpResolver<1u>
+                0x3402d0b0       0x34 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x3402d0b0                vtable for tflite::MicroMutableOpResolver<1u>
  .rodata._ZN12_GLOBAL__N_112tensor_arenaE
-                0x3402d004        0x4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x3402d0e4        0x4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
 
 .text           0x100007c0     0x7b1c
  *(SORT_BY_ALIGNMENT(.text*))
@@ -7242,10 +7244,10 @@ LOAD /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
 .model
  *person_detect_model_data_vela.o*(SORT_BY_ALIGNMENT(.text*) SORT_BY_ALIGNMENT(.rodata*))
 
-.noinit         0x3402d020    0x1f400
+.noinit         0x3402d100    0x7d000
  *(SORT_BY_ALIGNMENT(.bss.NoInit*))
- .bss.NoInit    0x3402d020    0x1f400 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
-                0x3402d020                tensor_arena_buf
+ .bss.NoInit    0x3402d100    0x7d000 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x3402d100                tensor_arena_buf
  *(SORT_BY_ALIGNMENT(.noinit*))
 
 .rodata         0x30000000    0x158ac
@@ -8443,7 +8445,7 @@ LOAD linker stubs
  .debug_line_str
                 0x000002bc       0xda /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+dp/hard/libgcc.a(_dvmd_tls.o)
 
-.debug_info     0x00000000   0x389d10
+.debug_info     0x00000000   0x389ded
  .debug_info    0x00000000     0x32cd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/WE2_core.o
  .debug_info    0x000032cd     0x14d1 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/system_WE2_ARMCM55.o
  .debug_info    0x0000479e      0x604 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/clib/console_io.o
@@ -8455,71 +8457,71 @@ LOAD linker stubs
  .debug_info    0x00007a22     0x13dd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/board/epii_evb/platform_driver_init.o
  .debug_info    0x00008dff      0x8a3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/allon_sensor_tflm.o
  .debug_info    0x000096a2      0x687 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/hardfault_handler.o
- .debug_info    0x00009d29    0x538ab obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
- .debug_info    0x0005d5d4      0x3b3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/yolov1_full_integer_quant_vela.o
- .debug_info    0x0005d987      0x1dd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/main.o
- .debug_info    0x0005db64     0x21f9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/driver_interface.o
- .debug_info    0x0005fd5d     0x6582 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtrustzone_cfg.a(trustzone_cfg.o)
- .debug_info    0x000662df      0x7e3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw2x2.o)
- .debug_info    0x00066ac2      0xddb obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw5x5.o)
- .debug_info    0x0006789d     0x139a obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_cdm.o)
- .debug_info    0x00068c37     0x2ae3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csirx.o)
- .debug_info    0x0006b71a     0x20cc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csitx.o)
- .debug_info    0x0006d7e6     0x3653 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_damc.o)
- .debug_info    0x00070e39     0x2455 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_dp.o)
- .debug_info    0x0007328e     0x2b0e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_edm.o)
- .debug_info    0x00075d9c     0x219a obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_gpio.o)
- .debug_info    0x00077f36      0x8f9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(gpio.o)
- .debug_info    0x0007882f     0x1fb0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hxautoi2c_mst.o)
- .debug_info    0x0007a7df     0x574f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_iic.o)
- .debug_info    0x0007ff2e     0x6211 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_iic.o)
- .debug_info    0x0008613f     0x334d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp.o)
- .debug_info    0x0008948c     0x1fff obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp1bitparser.o)
- .debug_info    0x0008b48b      0xf9f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inpovparser.o)
- .debug_info    0x0008c42a     0x11f9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_jpeg.o)
- .debug_info    0x0008d623     0x18ca obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mb.o)
- .debug_info    0x0008eeed     0x4900 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mpc.o)
- .debug_info    0x000937ed     0x26ce obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pmu.o)
- .debug_info    0x00095ebb     0x40a5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_ppc.o)
- .debug_info    0x00099f60     0x2abd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pwm.o)
- .debug_info    0x0009ca1d     0x3622 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_rtc.o)
- .debug_info    0x000a003f     0xdc53 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu.o)
- .debug_info    0x000adc92     0x8fb2 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu_ckgen.o)
- .debug_info    0x000b6c44     0x26c0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_sensorctrl.o)
- .debug_info    0x000b9304     0x4497 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_spi_m.o)
- .debug_info    0x000bd79b     0x6c6d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_spi.o)
- .debug_info    0x000c4408     0x1baf obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_swreg_aon.o)
- .debug_info    0x000c5fb7     0x5eda obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_timer.o)
- .debug_info    0x000cbe91      0xe98 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_tpg.o)
- .debug_info    0x000ccd29     0x3559 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_uart.o)
- .debug_info    0x000d0282     0x3c33 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_uart.o)
- .debug_info    0x000d3eb5     0x28d9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_watchdog.o)
- .debug_info    0x000d678e     0x5168 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_xdma.o)
- .debug_info    0x000db8f6     0x4e0d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(DMAC.o)
- .debug_info    0x000e0703      0xd86 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libcommon.a(xprintf.o)
- .debug_info    0x000e1489     0x1e7c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_driver.o)
- .debug_info    0x000e3305     0x55fe obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_device_u55_u65.o)
- .debug_info    0x000e8903      0xa58 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(debug_log.o)
- .debug_info    0x000e935b      0x8a7 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_error_reporter.o)
- .debug_info    0x000e9c02    0x53518 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_interpreter.o)
- .debug_info    0x0013d11a      0x510 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_log.o)
- .debug_info    0x0013d62a     0x12bc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_string.o)
- .debug_info    0x0013e8e6     0x928f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu.o)
- .debug_info    0x00147b75    0x104aa obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(schema_utils.o)
- .debug_info    0x0015801f    0x167a9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(op_resolver.o)
- .debug_info    0x0016e7c8      0x272 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(error_reporter.o)
- .debug_info    0x0016ea3a    0x4a54a obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_utils.o)
- .debug_info    0x001b8f84    0x50c08 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocator.o)
- .debug_info    0x00209b8c    0x49146 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_context.o)
- .debug_info    0x00252cd2    0x4c227 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_graph.o)
- .debug_info    0x0029eef9     0x374c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_resource_variable.o)
- .debug_info    0x002a2645     0x3b7c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(single_arena_buffer_allocator.o)
- .debug_info    0x002a61c1     0x1651 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(greedy_memory_planner.o)
- .debug_info    0x002a7812     0x48fa obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(kernel_util.o)
- .debug_info    0x002ac10c     0x1122 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(common.o)
- .debug_info    0x002ad22e    0x6c9de obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_conversions.o)
- .debug_info    0x00319c0c    0x21a85 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(memory_helpers.o)
- .debug_info    0x0033b691    0x4e67f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocation_info.o)
+ .debug_info    0x00009d29    0x53988 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+ .debug_info    0x0005d6b1      0x3b3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/yolov1_full_integer_quant_vela.o
+ .debug_info    0x0005da64      0x1dd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/main.o
+ .debug_info    0x0005dc41     0x21f9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/driver_interface.o
+ .debug_info    0x0005fe3a     0x6582 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtrustzone_cfg.a(trustzone_cfg.o)
+ .debug_info    0x000663bc      0x7e3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw2x2.o)
+ .debug_info    0x00066b9f      0xddb obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw5x5.o)
+ .debug_info    0x0006797a     0x139a obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_cdm.o)
+ .debug_info    0x00068d14     0x2ae3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csirx.o)
+ .debug_info    0x0006b7f7     0x20cc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csitx.o)
+ .debug_info    0x0006d8c3     0x3653 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_damc.o)
+ .debug_info    0x00070f16     0x2455 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_dp.o)
+ .debug_info    0x0007336b     0x2b0e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_edm.o)
+ .debug_info    0x00075e79     0x219a obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_gpio.o)
+ .debug_info    0x00078013      0x8f9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(gpio.o)
+ .debug_info    0x0007890c     0x1fb0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hxautoi2c_mst.o)
+ .debug_info    0x0007a8bc     0x574f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_iic.o)
+ .debug_info    0x0008000b     0x6211 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_iic.o)
+ .debug_info    0x0008621c     0x334d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp.o)
+ .debug_info    0x00089569     0x1fff obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp1bitparser.o)
+ .debug_info    0x0008b568      0xf9f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inpovparser.o)
+ .debug_info    0x0008c507     0x11f9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_jpeg.o)
+ .debug_info    0x0008d700     0x18ca obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mb.o)
+ .debug_info    0x0008efca     0x4900 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mpc.o)
+ .debug_info    0x000938ca     0x26ce obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pmu.o)
+ .debug_info    0x00095f98     0x40a5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_ppc.o)
+ .debug_info    0x0009a03d     0x2abd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pwm.o)
+ .debug_info    0x0009cafa     0x3622 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_rtc.o)
+ .debug_info    0x000a011c     0xdc53 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu.o)
+ .debug_info    0x000add6f     0x8fb2 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu_ckgen.o)
+ .debug_info    0x000b6d21     0x26c0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_sensorctrl.o)
+ .debug_info    0x000b93e1     0x4497 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_spi_m.o)
+ .debug_info    0x000bd878     0x6c6d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_spi.o)
+ .debug_info    0x000c44e5     0x1baf obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_swreg_aon.o)
+ .debug_info    0x000c6094     0x5eda obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_timer.o)
+ .debug_info    0x000cbf6e      0xe98 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_tpg.o)
+ .debug_info    0x000cce06     0x3559 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_uart.o)
+ .debug_info    0x000d035f     0x3c33 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_uart.o)
+ .debug_info    0x000d3f92     0x28d9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_watchdog.o)
+ .debug_info    0x000d686b     0x5168 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_xdma.o)
+ .debug_info    0x000db9d3     0x4e0d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(DMAC.o)
+ .debug_info    0x000e07e0      0xd86 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libcommon.a(xprintf.o)
+ .debug_info    0x000e1566     0x1e7c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_driver.o)
+ .debug_info    0x000e33e2     0x55fe obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_device_u55_u65.o)
+ .debug_info    0x000e89e0      0xa58 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(debug_log.o)
+ .debug_info    0x000e9438      0x8a7 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_error_reporter.o)
+ .debug_info    0x000e9cdf    0x53518 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_interpreter.o)
+ .debug_info    0x0013d1f7      0x510 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_log.o)
+ .debug_info    0x0013d707     0x12bc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_string.o)
+ .debug_info    0x0013e9c3     0x928f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu.o)
+ .debug_info    0x00147c52    0x104aa obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(schema_utils.o)
+ .debug_info    0x001580fc    0x167a9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(op_resolver.o)
+ .debug_info    0x0016e8a5      0x272 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(error_reporter.o)
+ .debug_info    0x0016eb17    0x4a54a obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_utils.o)
+ .debug_info    0x001b9061    0x50c08 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocator.o)
+ .debug_info    0x00209c69    0x49146 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_context.o)
+ .debug_info    0x00252daf    0x4c227 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_graph.o)
+ .debug_info    0x0029efd6     0x374c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_resource_variable.o)
+ .debug_info    0x002a2722     0x3b7c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(single_arena_buffer_allocator.o)
+ .debug_info    0x002a629e     0x1651 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(greedy_memory_planner.o)
+ .debug_info    0x002a78ef     0x48fa obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(kernel_util.o)
+ .debug_info    0x002ac1e9     0x1122 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(common.o)
+ .debug_info    0x002ad30b    0x6c9de obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_conversions.o)
+ .debug_info    0x00319ce9    0x21a85 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(memory_helpers.o)
+ .debug_info    0x0033b76e    0x4e67f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocation_info.o)
 
 .debug_abbrev   0x00000000    0x1a24a
  .debug_abbrev  0x00000000      0x52d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/WE2_core.o
@@ -8600,7 +8602,7 @@ LOAD linker stubs
  .debug_abbrev  0x000192d7      0xf73 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocation_info.o)
 
 .debug_loclists
-                0x00000000    0x6b2b3
+                0x00000000    0x6b2d0
  .debug_loclists
                 0x00000000     0x101e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/WE2_core.o
  .debug_loclists
@@ -8616,131 +8618,131 @@ LOAD linker stubs
  .debug_loclists
                 0x000015c7       0x29 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/board/epii_evb/board.o
  .debug_loclists
-                0x000015f0      0xbcf obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x000015f0      0xbec obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
  .debug_loclists
-                0x000021bf      0x861 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/driver_interface.o
+                0x000021dc      0x861 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/driver_interface.o
  .debug_loclists
-                0x00002a20     0x1d8f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtrustzone_cfg.a(trustzone_cfg.o)
+                0x00002a3d     0x1d8f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtrustzone_cfg.a(trustzone_cfg.o)
  .debug_loclists
-                0x000047af      0x5ba obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw2x2.o)
+                0x000047cc      0x5ba obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw2x2.o)
  .debug_loclists
-                0x00004d69      0xab8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw5x5.o)
+                0x00004d86      0xab8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw5x5.o)
  .debug_loclists
-                0x00005821      0x8d6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_cdm.o)
+                0x0000583e      0x8d6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_cdm.o)
  .debug_loclists
-                0x000060f7      0x5a3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csirx.o)
+                0x00006114      0x5a3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csirx.o)
  .debug_loclists
-                0x0000669a      0xa04 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csitx.o)
+                0x000066b7      0xa04 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csitx.o)
  .debug_loclists
-                0x0000709e     0x15ab obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_damc.o)
+                0x000070bb     0x15ab obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_damc.o)
  .debug_loclists
-                0x00008649      0x6fd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_dp.o)
+                0x00008666      0x6fd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_dp.o)
  .debug_loclists
-                0x00008d46      0xaac obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_edm.o)
+                0x00008d63      0xaac obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_edm.o)
  .debug_loclists
-                0x000097f2      0xbd5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_gpio.o)
+                0x0000980f      0xbd5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_gpio.o)
  .debug_loclists
-                0x0000a3c7      0x854 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(gpio.o)
+                0x0000a3e4      0x854 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(gpio.o)
  .debug_loclists
-                0x0000ac1b      0xa49 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hxautoi2c_mst.o)
+                0x0000ac38      0xa49 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hxautoi2c_mst.o)
  .debug_loclists
-                0x0000b664     0x2931 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_iic.o)
+                0x0000b681     0x2931 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_iic.o)
  .debug_loclists
-                0x0000df95     0x4428 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_iic.o)
+                0x0000dfb2     0x4428 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_iic.o)
  .debug_loclists
-                0x000123bd      0xf56 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp.o)
+                0x000123da      0xf56 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp.o)
  .debug_loclists
-                0x00013313      0x7a5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp1bitparser.o)
+                0x00013330      0x7a5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp1bitparser.o)
  .debug_loclists
-                0x00013ab8      0x5b4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inpovparser.o)
+                0x00013ad5      0x5b4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inpovparser.o)
  .debug_loclists
-                0x0001406c      0x8d4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_jpeg.o)
+                0x00014089      0x8d4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_jpeg.o)
  .debug_loclists
-                0x00014940      0x3a2 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mb.o)
+                0x0001495d      0x3a2 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mb.o)
  .debug_loclists
-                0x00014ce2     0x17d2 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mpc.o)
+                0x00014cff     0x17d2 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mpc.o)
  .debug_loclists
-                0x000164b4      0xb7e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pmu.o)
+                0x000164d1      0xb7e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pmu.o)
  .debug_loclists
-                0x00017032      0xf68 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_ppc.o)
+                0x0001704f      0xf68 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_ppc.o)
  .debug_loclists
-                0x00017f9a     0x1292 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pwm.o)
+                0x00017fb7     0x1292 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pwm.o)
  .debug_loclists
-                0x0001922c     0x15ee obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_rtc.o)
+                0x00019249     0x15ee obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_rtc.o)
  .debug_loclists
-                0x0001a81a     0x90cd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu.o)
+                0x0001a837     0x90cd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu.o)
  .debug_loclists
-                0x000238e7     0x6616 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu_ckgen.o)
+                0x00023904     0x6616 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu_ckgen.o)
  .debug_loclists
-                0x00029efd      0xe03 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_sensorctrl.o)
+                0x00029f1a      0xe03 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_sensorctrl.o)
  .debug_loclists
-                0x0002ad00      0xcc5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_spi_m.o)
+                0x0002ad1d      0xcc5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_spi_m.o)
  .debug_loclists
-                0x0002b9c5     0x3b68 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_spi.o)
+                0x0002b9e2     0x3b68 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_spi.o)
  .debug_loclists
-                0x0002f52d     0x120e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_swreg_aon.o)
+                0x0002f54a     0x120e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_swreg_aon.o)
  .debug_loclists
-                0x0003073b     0x2658 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_timer.o)
+                0x00030758     0x2658 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_timer.o)
  .debug_loclists
-                0x00032d93      0x700 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_tpg.o)
+                0x00032db0      0x700 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_tpg.o)
  .debug_loclists
-                0x00033493      0xbbf obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_uart.o)
+                0x000334b0      0xbbf obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_uart.o)
  .debug_loclists
-                0x00034052     0x26ad obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_uart.o)
+                0x0003406f     0x26ad obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_uart.o)
  .debug_loclists
-                0x000366ff      0xc77 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_watchdog.o)
+                0x0003671c      0xc77 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_watchdog.o)
  .debug_loclists
-                0x00037376     0x1bb8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_xdma.o)
+                0x00037393     0x1bb8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_xdma.o)
  .debug_loclists
-                0x00038f2e     0x483b obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(DMAC.o)
+                0x00038f4b     0x483b obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(DMAC.o)
  .debug_loclists
-                0x0003d769     0x1178 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libcommon.a(xprintf.o)
+                0x0003d786     0x1178 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libcommon.a(xprintf.o)
  .debug_loclists
-                0x0003e8e1      0xc85 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_driver.o)
+                0x0003e8fe      0xc85 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_driver.o)
  .debug_loclists
-                0x0003f566      0x51c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_device_u55_u65.o)
+                0x0003f583      0x51c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_device_u55_u65.o)
  .debug_loclists
-                0x0003fa82       0x29 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(debug_log.o)
+                0x0003fa9f       0x29 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(debug_log.o)
  .debug_loclists
-                0x0003faab       0x8e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_error_reporter.o)
+                0x0003fac8       0x8e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_error_reporter.o)
  .debug_loclists
-                0x0003fb39     0x46bd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_interpreter.o)
+                0x0003fb56     0x46bd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_interpreter.o)
  .debug_loclists
-                0x000441f6       0x3b obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_log.o)
+                0x00044213       0x3b obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_log.o)
  .debug_loclists
-                0x00044231     0x10e4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_string.o)
+                0x0004424e     0x10e4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_string.o)
  .debug_loclists
-                0x00045315      0xe0c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu.o)
+                0x00045332      0xe0c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu.o)
  .debug_loclists
-                0x00046121      0x272 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(schema_utils.o)
+                0x0004613e      0x272 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(schema_utils.o)
  .debug_loclists
-                0x00046393      0x3dc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(op_resolver.o)
+                0x000463b0      0x3dc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(op_resolver.o)
  .debug_loclists
-                0x0004676f       0x5c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(error_reporter.o)
+                0x0004678c       0x5c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(error_reporter.o)
  .debug_loclists
-                0x000467cb     0x14b6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_utils.o)
+                0x000467e8     0x14b6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_utils.o)
  .debug_loclists
-                0x00047c81     0x5105 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocator.o)
+                0x00047c9e     0x5105 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocator.o)
  .debug_loclists
-                0x0004cd86      0x5d4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_context.o)
+                0x0004cda3      0x5d4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_context.o)
  .debug_loclists
-                0x0004d35a     0x370f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_graph.o)
+                0x0004d377     0x370f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_graph.o)
  .debug_loclists
-                0x00050a69      0x4fe obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_resource_variable.o)
+                0x00050a86      0x4fe obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_resource_variable.o)
  .debug_loclists
-                0x00050f67      0x889 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(single_arena_buffer_allocator.o)
+                0x00050f84      0x889 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(single_arena_buffer_allocator.o)
  .debug_loclists
-                0x000517f0      0xec5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(greedy_memory_planner.o)
+                0x0005180d      0xec5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(greedy_memory_planner.o)
  .debug_loclists
-                0x000526b5      0xdce obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(kernel_util.o)
+                0x000526d2      0xdce obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(kernel_util.o)
  .debug_loclists
-                0x00053483      0x371 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(common.o)
+                0x000534a0      0x371 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(common.o)
  .debug_loclists
-                0x000537f4    0x13e44 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_conversions.o)
+                0x00053811    0x13e44 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_conversions.o)
  .debug_loclists
-                0x00067638      0x786 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(memory_helpers.o)
+                0x00067655      0x786 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(memory_helpers.o)
  .debug_loclists
-                0x00067dbe     0x34f5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocation_info.o)
+                0x00067ddb     0x34f5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocation_info.o)
 
 .debug_aranges  0x00000000     0x4b78
  .debug_aranges
@@ -8897,7 +8899,7 @@ LOAD linker stubs
                 0x00004b08       0x70 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocation_info.o)
 
 .debug_rnglists
-                0x00000000     0xb583
+                0x00000000     0xb58f
  .debug_rnglists
                 0x00000000      0x273 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/WE2_core.o
  .debug_rnglists
@@ -8921,135 +8923,135 @@ LOAD linker stubs
  .debug_rnglists
                 0x0000044d       0x32 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/hardfault_handler.o
  .debug_rnglists
-                0x0000047f      0x248 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+                0x0000047f      0x254 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
  .debug_rnglists
-                0x000006c7       0x13 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/main.o
+                0x000006d3       0x13 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/main.o
  .debug_rnglists
-                0x000006da       0xf7 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/driver_interface.o
+                0x000006e6       0xf7 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/driver_interface.o
  .debug_rnglists
-                0x000007d1      0x2a3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtrustzone_cfg.a(trustzone_cfg.o)
+                0x000007dd      0x2a3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtrustzone_cfg.a(trustzone_cfg.o)
  .debug_rnglists
-                0x00000a74       0x92 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw2x2.o)
+                0x00000a80       0x92 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw2x2.o)
  .debug_rnglists
-                0x00000b06      0x11f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw5x5.o)
+                0x00000b12      0x11f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw5x5.o)
  .debug_rnglists
-                0x00000c25      0x1c5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_cdm.o)
+                0x00000c31      0x1c5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_cdm.o)
  .debug_rnglists
-                0x00000dea      0x109 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csirx.o)
+                0x00000df6      0x109 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csirx.o)
  .debug_rnglists
-                0x00000ef3       0x89 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csitx.o)
+                0x00000eff       0x89 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csitx.o)
  .debug_rnglists
-                0x00000f7c      0x1a3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_damc.o)
+                0x00000f88      0x1a3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_damc.o)
  .debug_rnglists
-                0x0000111f      0x128 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_dp.o)
+                0x0000112b      0x128 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_dp.o)
  .debug_rnglists
-                0x00001247      0x216 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_edm.o)
+                0x00001253      0x216 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_edm.o)
  .debug_rnglists
-                0x0000145d       0xa0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_gpio.o)
+                0x00001469       0xa0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_gpio.o)
  .debug_rnglists
-                0x000014fd      0x143 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(gpio.o)
+                0x00001509      0x143 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(gpio.o)
  .debug_rnglists
-                0x00001640      0x154 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hxautoi2c_mst.o)
+                0x0000164c      0x154 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hxautoi2c_mst.o)
  .debug_rnglists
-                0x00001794      0x2be obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_iic.o)
+                0x000017a0      0x2be obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_iic.o)
  .debug_rnglists
-                0x00001a52      0x7eb obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_iic.o)
+                0x00001a5e      0x7eb obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_iic.o)
  .debug_rnglists
-                0x0000223d      0x295 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp.o)
+                0x00002249      0x295 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp.o)
  .debug_rnglists
-                0x000024d2      0x19a obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp1bitparser.o)
+                0x000024de      0x19a obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp1bitparser.o)
  .debug_rnglists
-                0x0000266c      0x182 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inpovparser.o)
+                0x00002678      0x182 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inpovparser.o)
  .debug_rnglists
-                0x000027ee      0x108 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_jpeg.o)
+                0x000027fa      0x108 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_jpeg.o)
  .debug_rnglists
-                0x000028f6       0xd9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mb.o)
+                0x00002902       0xd9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mb.o)
  .debug_rnglists
-                0x000029cf      0x721 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mpc.o)
+                0x000029db      0x721 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mpc.o)
  .debug_rnglists
-                0x000030f0       0x8c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pmu.o)
+                0x000030fc       0x8c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pmu.o)
  .debug_rnglists
-                0x0000317c      0x28c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_ppc.o)
+                0x00003188      0x28c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_ppc.o)
  .debug_rnglists
-                0x00003408      0x11e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pwm.o)
+                0x00003414      0x11e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pwm.o)
  .debug_rnglists
-                0x00003526      0x1fd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_rtc.o)
+                0x00003532      0x1fd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_rtc.o)
  .debug_rnglists
-                0x00003723      0x9c5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu.o)
+                0x0000372f      0x9c5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu.o)
  .debug_rnglists
-                0x000040e8      0x4fc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu_ckgen.o)
+                0x000040f4      0x4fc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu_ckgen.o)
  .debug_rnglists
-                0x000045e4      0x18a obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_sensorctrl.o)
+                0x000045f0      0x18a obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_sensorctrl.o)
  .debug_rnglists
-                0x0000476e      0x120 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_spi_m.o)
+                0x0000477a      0x120 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_spi_m.o)
  .debug_rnglists
-                0x0000488e      0x61d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_spi.o)
+                0x0000489a      0x61d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_spi.o)
  .debug_rnglists
-                0x00004eab      0x15f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_swreg_aon.o)
+                0x00004eb7      0x15f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_swreg_aon.o)
  .debug_rnglists
-                0x0000500a      0x309 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_timer.o)
+                0x00005016      0x309 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_timer.o)
  .debug_rnglists
-                0x00005313      0x197 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_tpg.o)
+                0x0000531f      0x197 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_tpg.o)
  .debug_rnglists
-                0x000054aa      0x123 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_uart.o)
+                0x000054b6      0x123 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_uart.o)
  .debug_rnglists
-                0x000055cd      0x37d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_uart.o)
+                0x000055d9      0x37d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_uart.o)
  .debug_rnglists
-                0x0000594a      0x29c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_watchdog.o)
+                0x00005956      0x29c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_watchdog.o)
  .debug_rnglists
-                0x00005be6      0x4d3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_xdma.o)
+                0x00005bf2      0x4d3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_xdma.o)
  .debug_rnglists
-                0x000060b9      0x228 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(DMAC.o)
+                0x000060c5      0x228 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(DMAC.o)
  .debug_rnglists
-                0x000062e1      0x220 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libcommon.a(xprintf.o)
+                0x000062ed      0x220 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libcommon.a(xprintf.o)
  .debug_rnglists
-                0x00006501      0x147 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_driver.o)
+                0x0000650d      0x147 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_driver.o)
  .debug_rnglists
-                0x00006648       0x7b obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_device_u55_u65.o)
+                0x00006654       0x7b obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_device_u55_u65.o)
  .debug_rnglists
-                0x000066c3       0x13 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(debug_log.o)
+                0x000066cf       0x13 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(debug_log.o)
  .debug_rnglists
-                0x000066d6       0x2b obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_error_reporter.o)
+                0x000066e2       0x2b obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_error_reporter.o)
  .debug_rnglists
-                0x00006701      0x623 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_interpreter.o)
+                0x0000670d      0x623 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_interpreter.o)
  .debug_rnglists
-                0x00006d24       0x19 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_log.o)
+                0x00006d30       0x19 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_log.o)
  .debug_rnglists
-                0x00006d3d      0x20c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_string.o)
+                0x00006d49      0x20c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_string.o)
  .debug_rnglists
-                0x00006f49      0x248 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu.o)
+                0x00006f55      0x248 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu.o)
  .debug_rnglists
-                0x00007191       0x76 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(schema_utils.o)
+                0x0000719d       0x76 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(schema_utils.o)
  .debug_rnglists
-                0x00007207       0x89 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(op_resolver.o)
+                0x00007213       0x89 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(op_resolver.o)
  .debug_rnglists
-                0x00007290       0x19 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(error_reporter.o)
+                0x0000729c       0x19 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(error_reporter.o)
  .debug_rnglists
-                0x000072a9      0x1ab obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_utils.o)
+                0x000072b5      0x1ab obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_utils.o)
  .debug_rnglists
-                0x00007454      0x9a2 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocator.o)
+                0x00007460      0x9a2 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocator.o)
  .debug_rnglists
-                0x00007df6       0xb8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_context.o)
+                0x00007e02       0xb8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_context.o)
  .debug_rnglists
-                0x00007eae      0x42e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_graph.o)
+                0x00007eba      0x42e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_graph.o)
  .debug_rnglists
-                0x000082dc       0x55 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_resource_variable.o)
+                0x000082e8       0x55 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_resource_variable.o)
  .debug_rnglists
-                0x00008331      0x10f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(single_arena_buffer_allocator.o)
+                0x0000833d      0x10f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(single_arena_buffer_allocator.o)
  .debug_rnglists
-                0x00008440      0x1cd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(greedy_memory_planner.o)
+                0x0000844c      0x1cd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(greedy_memory_planner.o)
  .debug_rnglists
-                0x0000860d      0x237 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(kernel_util.o)
+                0x00008619      0x237 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(kernel_util.o)
  .debug_rnglists
-                0x00008844       0x49 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(common.o)
+                0x00008850       0x49 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(common.o)
  .debug_rnglists
-                0x0000888d     0x23d4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_conversions.o)
+                0x00008899     0x23d4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_conversions.o)
  .debug_rnglists
-                0x0000ac61       0xe1 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(memory_helpers.o)
+                0x0000ac6d       0xe1 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(memory_helpers.o)
  .debug_rnglists
-                0x0000ad42      0x841 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocation_info.o)
+                0x0000ad4e      0x841 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocation_info.o)
 
-.debug_line     0x00000000    0x672fa
+.debug_line     0x00000000    0x6734f
  .debug_line    0x00000000     0x1586 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/WE2_core.o
  .debug_line    0x00001586      0x4d8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/system_WE2_ARMCM55.o
  .debug_line    0x00001a5e      0x25c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/clib/console_io.o
@@ -9061,152 +9063,152 @@ LOAD linker stubs
  .debug_line    0x00002d85      0x3cf obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/board/epii_evb/platform_driver_init.o
  .debug_line    0x00003154      0x1d6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/allon_sensor_tflm.o
  .debug_line    0x0000332a      0x372 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/hardfault_handler.o
- .debug_line    0x0000369c     0x1709 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
- .debug_line    0x00004da5      0x299 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/yolov1_full_integer_quant_vela.o
- .debug_line    0x0000503e      0x189 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/main.o
- .debug_line    0x000051c7      0x7c5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/driver_interface.o
- .debug_line    0x0000598c     0x2506 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtrustzone_cfg.a(trustzone_cfg.o)
- .debug_line    0x00007e92      0x712 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw2x2.o)
- .debug_line    0x000085a4      0xbf8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw5x5.o)
- .debug_line    0x0000919c      0xfc4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_cdm.o)
- .debug_line    0x0000a160      0xd72 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csirx.o)
- .debug_line    0x0000aed2      0xfde obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csitx.o)
- .debug_line    0x0000beb0      0xd91 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_damc.o)
- .debug_line    0x0000cc41      0xace obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_dp.o)
- .debug_line    0x0000d70f      0xff7 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_edm.o)
- .debug_line    0x0000e706      0xaad obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_gpio.o)
- .debug_line    0x0000f1b3      0x77f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(gpio.o)
- .debug_line    0x0000f932      0xc7e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hxautoi2c_mst.o)
- .debug_line    0x000105b0     0x2047 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_iic.o)
- .debug_line    0x000125f7     0x42e3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_iic.o)
- .debug_line    0x000168da     0x188d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp.o)
- .debug_line    0x00018167      0xdad obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp1bitparser.o)
- .debug_line    0x00018f14      0xc03 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inpovparser.o)
- .debug_line    0x00019b17      0xb7f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_jpeg.o)
- .debug_line    0x0001a696      0x8be obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mb.o)
- .debug_line    0x0001af54     0x2cdb obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mpc.o)
- .debug_line    0x0001dc2f     0x1681 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pmu.o)
- .debug_line    0x0001f2b0     0x223e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_ppc.o)
- .debug_line    0x000214ee     0x12dc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pwm.o)
- .debug_line    0x000227ca     0x1ff3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_rtc.o)
- .debug_line    0x000247bd     0x734c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu.o)
- .debug_line    0x0002bb09     0x4d35 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu_ckgen.o)
- .debug_line    0x0003083e      0xf48 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_sensorctrl.o)
- .debug_line    0x00031786     0x1426 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_spi_m.o)
- .debug_line    0x00032bac     0x373b obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_spi.o)
- .debug_line    0x000362e7      0xd61 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_swreg_aon.o)
- .debug_line    0x00037048     0x2e32 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_timer.o)
- .debug_line    0x00039e7a      0xbf4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_tpg.o)
- .debug_line    0x0003aa6e     0x1054 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_uart.o)
- .debug_line    0x0003bac2     0x1e46 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_uart.o)
- .debug_line    0x0003d908     0x1432 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_watchdog.o)
- .debug_line    0x0003ed3a     0x2c33 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_xdma.o)
- .debug_line    0x0004196d     0x2de7 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(DMAC.o)
- .debug_line    0x00044754     0x1196 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libcommon.a(xprintf.o)
- .debug_line    0x000458ea      0xcfb obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_driver.o)
- .debug_line    0x000465e5      0x8cb obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_device_u55_u65.o)
- .debug_line    0x00046eb0      0x2a6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(debug_log.o)
- .debug_line    0x00047156      0x462 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_error_reporter.o)
- .debug_line    0x000475b8     0x297a obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_interpreter.o)
- .debug_line    0x00049f32      0x3be obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_log.o)
- .debug_line    0x0004a2f0      0xc3f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_string.o)
- .debug_line    0x0004af2f     0x14e9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu.o)
- .debug_line    0x0004c418      0xb32 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(schema_utils.o)
- .debug_line    0x0004cf4a      0xc5a obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(op_resolver.o)
- .debug_line    0x0004dba4      0x292 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(error_reporter.o)
- .debug_line    0x0004de36     0x11e6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_utils.o)
- .debug_line    0x0004f01c     0x3694 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocator.o)
- .debug_line    0x000526b0      0xe03 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_context.o)
- .debug_line    0x000534b3     0x201c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_graph.o)
- .debug_line    0x000554cf      0xbe6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_resource_variable.o)
- .debug_line    0x000560b5      0xf47 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(single_arena_buffer_allocator.o)
- .debug_line    0x00056ffc      0xe64 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(greedy_memory_planner.o)
- .debug_line    0x00057e60     0x1394 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(kernel_util.o)
- .debug_line    0x000591f4      0x3fe obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(common.o)
- .debug_line    0x000595f2     0x9e30 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_conversions.o)
- .debug_line    0x00063422     0x1046 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(memory_helpers.o)
- .debug_line    0x00064468     0x2e92 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocation_info.o)
+ .debug_line    0x0000369c     0x175e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+ .debug_line    0x00004dfa      0x299 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/yolov1_full_integer_quant_vela.o
+ .debug_line    0x00005093      0x189 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/main.o
+ .debug_line    0x0000521c      0x7c5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/driver_interface.o
+ .debug_line    0x000059e1     0x2506 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtrustzone_cfg.a(trustzone_cfg.o)
+ .debug_line    0x00007ee7      0x712 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw2x2.o)
+ .debug_line    0x000085f9      0xbf8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw5x5.o)
+ .debug_line    0x000091f1      0xfc4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_cdm.o)
+ .debug_line    0x0000a1b5      0xd72 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csirx.o)
+ .debug_line    0x0000af27      0xfde obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csitx.o)
+ .debug_line    0x0000bf05      0xd91 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_damc.o)
+ .debug_line    0x0000cc96      0xace obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_dp.o)
+ .debug_line    0x0000d764      0xff7 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_edm.o)
+ .debug_line    0x0000e75b      0xaad obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_gpio.o)
+ .debug_line    0x0000f208      0x77f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(gpio.o)
+ .debug_line    0x0000f987      0xc7e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hxautoi2c_mst.o)
+ .debug_line    0x00010605     0x2047 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_iic.o)
+ .debug_line    0x0001264c     0x42e3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_iic.o)
+ .debug_line    0x0001692f     0x188d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp.o)
+ .debug_line    0x000181bc      0xdad obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp1bitparser.o)
+ .debug_line    0x00018f69      0xc03 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inpovparser.o)
+ .debug_line    0x00019b6c      0xb7f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_jpeg.o)
+ .debug_line    0x0001a6eb      0x8be obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mb.o)
+ .debug_line    0x0001afa9     0x2cdb obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mpc.o)
+ .debug_line    0x0001dc84     0x1681 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pmu.o)
+ .debug_line    0x0001f305     0x223e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_ppc.o)
+ .debug_line    0x00021543     0x12dc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pwm.o)
+ .debug_line    0x0002281f     0x1ff3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_rtc.o)
+ .debug_line    0x00024812     0x734c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu.o)
+ .debug_line    0x0002bb5e     0x4d35 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu_ckgen.o)
+ .debug_line    0x00030893      0xf48 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_sensorctrl.o)
+ .debug_line    0x000317db     0x1426 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_spi_m.o)
+ .debug_line    0x00032c01     0x373b obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_spi.o)
+ .debug_line    0x0003633c      0xd61 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_swreg_aon.o)
+ .debug_line    0x0003709d     0x2e32 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_timer.o)
+ .debug_line    0x00039ecf      0xbf4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_tpg.o)
+ .debug_line    0x0003aac3     0x1054 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_uart.o)
+ .debug_line    0x0003bb17     0x1e46 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_uart.o)
+ .debug_line    0x0003d95d     0x1432 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_watchdog.o)
+ .debug_line    0x0003ed8f     0x2c33 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_xdma.o)
+ .debug_line    0x000419c2     0x2de7 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(DMAC.o)
+ .debug_line    0x000447a9     0x1196 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libcommon.a(xprintf.o)
+ .debug_line    0x0004593f      0xcfb obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_driver.o)
+ .debug_line    0x0004663a      0x8cb obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_device_u55_u65.o)
+ .debug_line    0x00046f05      0x2a6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(debug_log.o)
+ .debug_line    0x000471ab      0x462 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_error_reporter.o)
+ .debug_line    0x0004760d     0x297a obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_interpreter.o)
+ .debug_line    0x00049f87      0x3be obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_log.o)
+ .debug_line    0x0004a345      0xc3f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_string.o)
+ .debug_line    0x0004af84     0x14e9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu.o)
+ .debug_line    0x0004c46d      0xb32 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(schema_utils.o)
+ .debug_line    0x0004cf9f      0xc5a obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(op_resolver.o)
+ .debug_line    0x0004dbf9      0x292 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(error_reporter.o)
+ .debug_line    0x0004de8b     0x11e6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_utils.o)
+ .debug_line    0x0004f071     0x3694 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocator.o)
+ .debug_line    0x00052705      0xe03 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_context.o)
+ .debug_line    0x00053508     0x201c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_graph.o)
+ .debug_line    0x00055524      0xbe6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_resource_variable.o)
+ .debug_line    0x0005610a      0xf47 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(single_arena_buffer_allocator.o)
+ .debug_line    0x00057051      0xe64 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(greedy_memory_planner.o)
+ .debug_line    0x00057eb5     0x1394 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(kernel_util.o)
+ .debug_line    0x00059249      0x3fe obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(common.o)
+ .debug_line    0x00059647     0x9e30 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_conversions.o)
+ .debug_line    0x00063477     0x1046 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(memory_helpers.o)
+ .debug_line    0x000644bd     0x2e92 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocation_info.o)
 
-.debug_str      0x00000000    0xeeb59
- .debug_str     0x00000000    0xeeb59 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/WE2_core.o
-                               0x3629 (size before relaxing)
- .debug_str     0x000eeb59     0x277b obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/system_WE2_ARMCM55.o
- .debug_str     0x000eeb59      0x5e3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/clib/console_io.o
- .debug_str     0x000eeb59      0x206 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/clib/retarget.o
- .debug_str     0x000eeb59      0x42d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/clib/gnu/retarget_io.o
- .debug_str     0x000eeb59      0x6cb obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/startup_WE2_ARMCM55.o
- .debug_str     0x000eeb59      0x450 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/board/epii_evb/board.o
- .debug_str     0x000eeb59     0x2ed3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/board/epii_evb/pinmux_init.o
- .debug_str     0x000eeb59     0x1c2c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/board/epii_evb/platform_driver_init.o
- .debug_str     0x000eeb59     0x16dd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/allon_sensor_tflm.o
- .debug_str     0x000eeb59      0x3d1 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/hardfault_handler.o
- .debug_str     0x000eeb59    0xa15e2 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
- .debug_str     0x000eeb59      0x4b5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/yolov1_full_integer_quant_vela.o
- .debug_str     0x000eeb59      0x327 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/main.o
- .debug_str     0x000eeb59     0x27e8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/driver_interface.o
- .debug_str     0x000eeb59     0x409c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtrustzone_cfg.a(trustzone_cfg.o)
- .debug_str     0x000eeb59      0x72f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw2x2.o)
- .debug_str     0x000eeb59      0x9f0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw5x5.o)
- .debug_str     0x000eeb59      0xb2d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_cdm.o)
- .debug_str     0x000eeb59     0x1ed7 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csirx.o)
- .debug_str     0x000eeb59     0x1a91 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csitx.o)
- .debug_str     0x000eeb59     0x3a39 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_damc.o)
- .debug_str     0x000eeb59     0x38c9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_dp.o)
- .debug_str     0x000eeb59     0x3c0f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_edm.o)
- .debug_str     0x000eeb59     0x2c83 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_gpio.o)
- .debug_str     0x000eeb59      0x3af obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(gpio.o)
- .debug_str     0x000eeb59     0x3514 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hxautoi2c_mst.o)
- .debug_str     0x000eeb59     0x4ad6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_iic.o)
- .debug_str     0x000eeb59     0x3dd6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_iic.o)
- .debug_str     0x000eeb59     0x3631 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp.o)
- .debug_str     0x000eeb59     0x3353 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp1bitparser.o)
- .debug_str     0x000eeb59      0xc8c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inpovparser.o)
- .debug_str     0x000eeb59      0xb45 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_jpeg.o)
- .debug_str     0x000eeb59     0x2957 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mb.o)
- .debug_str     0x000eeb59     0x3991 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mpc.o)
- .debug_str     0x000eeb59     0x477b obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pmu.o)
- .debug_str     0x000eeb59     0x4203 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_ppc.o)
- .debug_str     0x000eeb59     0x31c1 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pwm.o)
- .debug_str     0x000eeb59     0x32eb obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_rtc.o)
- .debug_str     0x000eeb59     0x8ac4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu.o)
- .debug_str     0x000eeb59     0x53e5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu_ckgen.o)
- .debug_str     0x000eeb59     0x36c0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_sensorctrl.o)
- .debug_str     0x000eeb59     0x46ea obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_spi_m.o)
- .debug_str     0x000eeb59     0x4718 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_spi.o)
- .debug_str     0x000eeb59     0x166d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_swreg_aon.o)
- .debug_str     0x000eeb59     0x3560 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_timer.o)
- .debug_str     0x000eeb59      0xf5f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_tpg.o)
- .debug_str     0x000eeb59     0x41b3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_uart.o)
- .debug_str     0x000eeb59     0x3a71 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_uart.o)
- .debug_str     0x000eeb59     0x3168 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_watchdog.o)
- .debug_str     0x000eeb59     0x4105 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_xdma.o)
- .debug_str     0x000eeb59     0x3eaf obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(DMAC.o)
- .debug_str     0x000eeb59      0x3fb obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libcommon.a(xprintf.o)
- .debug_str     0x000eeb59      0xe56 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_driver.o)
- .debug_str     0x000eeb59     0x2401 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_device_u55_u65.o)
- .debug_str     0x000eeb59      0x631 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(debug_log.o)
- .debug_str     0x000eeb59      0x848 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_error_reporter.o)
- .debug_str     0x000eeb59    0x9cdf3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_interpreter.o)
- .debug_str     0x000eeb59      0x4f3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_log.o)
- .debug_str     0x000eeb59      0x752 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_string.o)
- .debug_str     0x000eeb59     0x95a3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu.o)
- .debug_str     0x000eeb59    0x1a375 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(schema_utils.o)
- .debug_str     0x000eeb59    0x27fb3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(op_resolver.o)
- .debug_str     0x000eeb59      0x2f9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(error_reporter.o)
- .debug_str     0x000eeb59    0x8f2a0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_utils.o)
- .debug_str     0x000eeb59    0x913ca obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocator.o)
- .debug_str     0x000eeb59    0x8e259 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_context.o)
- .debug_str     0x000eeb59    0x8efa7 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_graph.o)
- .debug_str     0x000eeb59     0x1f55 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_resource_variable.o)
- .debug_str     0x000eeb59     0x255d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(single_arena_buffer_allocator.o)
- .debug_str     0x000eeb59      0xeea obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(greedy_memory_planner.o)
- .debug_str     0x000eeb59     0x2749 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(kernel_util.o)
- .debug_str     0x000eeb59      0xc70 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(common.o)
- .debug_str     0x000eeb59    0x5a6b1 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_conversions.o)
- .debug_str     0x000eeb59    0x3781d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(memory_helpers.o)
- .debug_str     0x000eeb59    0x8f5aa obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocation_info.o)
+.debug_str      0x00000000    0xeeb65
+ .debug_str     0x00000000    0xeeb65 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/WE2_core.o
+                               0x3635 (size before relaxing)
+ .debug_str     0x000eeb65     0x2787 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/system_WE2_ARMCM55.o
+ .debug_str     0x000eeb65      0x5ef obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/clib/console_io.o
+ .debug_str     0x000eeb65      0x212 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/clib/retarget.o
+ .debug_str     0x000eeb65      0x439 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/clib/gnu/retarget_io.o
+ .debug_str     0x000eeb65      0x6d7 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/startup_WE2_ARMCM55.o
+ .debug_str     0x000eeb65      0x45c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/board/epii_evb/board.o
+ .debug_str     0x000eeb65     0x2edf obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/board/epii_evb/pinmux_init.o
+ .debug_str     0x000eeb65     0x1c38 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/board/epii_evb/platform_driver_init.o
+ .debug_str     0x000eeb65     0x16e9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/allon_sensor_tflm.o
+ .debug_str     0x000eeb65      0x3dd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/hardfault_handler.o
+ .debug_str     0x000eeb65    0xa15f5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+ .debug_str     0x000eeb65      0x4c1 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/yolov1_full_integer_quant_vela.o
+ .debug_str     0x000eeb65      0x333 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/main.o
+ .debug_str     0x000eeb65     0x27f4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/driver_interface.o
+ .debug_str     0x000eeb65     0x40a8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtrustzone_cfg.a(trustzone_cfg.o)
+ .debug_str     0x000eeb65      0x72f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw2x2.o)
+ .debug_str     0x000eeb65      0x9f0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw5x5.o)
+ .debug_str     0x000eeb65      0xb2d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_cdm.o)
+ .debug_str     0x000eeb65     0x1ed7 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csirx.o)
+ .debug_str     0x000eeb65     0x1a91 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csitx.o)
+ .debug_str     0x000eeb65     0x3a39 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_damc.o)
+ .debug_str     0x000eeb65     0x38c9 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_dp.o)
+ .debug_str     0x000eeb65     0x3c0f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_edm.o)
+ .debug_str     0x000eeb65     0x2c83 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_gpio.o)
+ .debug_str     0x000eeb65      0x3af obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(gpio.o)
+ .debug_str     0x000eeb65     0x3514 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hxautoi2c_mst.o)
+ .debug_str     0x000eeb65     0x4ad6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_iic.o)
+ .debug_str     0x000eeb65     0x3dd6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_iic.o)
+ .debug_str     0x000eeb65     0x3631 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp.o)
+ .debug_str     0x000eeb65     0x3353 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp1bitparser.o)
+ .debug_str     0x000eeb65      0xc8c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inpovparser.o)
+ .debug_str     0x000eeb65      0xb45 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_jpeg.o)
+ .debug_str     0x000eeb65     0x2957 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mb.o)
+ .debug_str     0x000eeb65     0x3991 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mpc.o)
+ .debug_str     0x000eeb65     0x477b obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pmu.o)
+ .debug_str     0x000eeb65     0x4203 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_ppc.o)
+ .debug_str     0x000eeb65     0x31c1 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pwm.o)
+ .debug_str     0x000eeb65     0x32eb obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_rtc.o)
+ .debug_str     0x000eeb65     0x8ac4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu.o)
+ .debug_str     0x000eeb65     0x53e5 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu_ckgen.o)
+ .debug_str     0x000eeb65     0x36c0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_sensorctrl.o)
+ .debug_str     0x000eeb65     0x46ea obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_spi_m.o)
+ .debug_str     0x000eeb65     0x4718 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_spi.o)
+ .debug_str     0x000eeb65     0x166d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_swreg_aon.o)
+ .debug_str     0x000eeb65     0x3560 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_timer.o)
+ .debug_str     0x000eeb65      0xf5f obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_tpg.o)
+ .debug_str     0x000eeb65     0x41b3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_uart.o)
+ .debug_str     0x000eeb65     0x3a71 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_uart.o)
+ .debug_str     0x000eeb65     0x3168 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_watchdog.o)
+ .debug_str     0x000eeb65     0x4105 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_xdma.o)
+ .debug_str     0x000eeb65     0x3eaf obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(DMAC.o)
+ .debug_str     0x000eeb65      0x407 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libcommon.a(xprintf.o)
+ .debug_str     0x000eeb65      0xe62 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_driver.o)
+ .debug_str     0x000eeb65     0x240d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_device_u55_u65.o)
+ .debug_str     0x000eeb65      0x63d obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(debug_log.o)
+ .debug_str     0x000eeb65      0x854 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_error_reporter.o)
+ .debug_str     0x000eeb65    0x9cdff obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_interpreter.o)
+ .debug_str     0x000eeb65      0x4ff obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_log.o)
+ .debug_str     0x000eeb65      0x75e obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_string.o)
+ .debug_str     0x000eeb65     0x95af obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu.o)
+ .debug_str     0x000eeb65    0x1a381 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(schema_utils.o)
+ .debug_str     0x000eeb65    0x27fbf obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(op_resolver.o)
+ .debug_str     0x000eeb65      0x305 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(error_reporter.o)
+ .debug_str     0x000eeb65    0x8f2ac obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_utils.o)
+ .debug_str     0x000eeb65    0x913d6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocator.o)
+ .debug_str     0x000eeb65    0x8e265 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_context.o)
+ .debug_str     0x000eeb65    0x8efb3 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_graph.o)
+ .debug_str     0x000eeb65     0x1f61 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_resource_variable.o)
+ .debug_str     0x000eeb65     0x2569 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(single_arena_buffer_allocator.o)
+ .debug_str     0x000eeb65      0xef6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(greedy_memory_planner.o)
+ .debug_str     0x000eeb65     0x2755 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(kernel_util.o)
+ .debug_str     0x000eeb65      0xc7c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(common.o)
+ .debug_str     0x000eeb65    0x5a6bd obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_conversions.o)
+ .debug_str     0x000eeb65    0x37829 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(memory_helpers.o)
+ .debug_str     0x000eeb65    0x8f5b6 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocation_info.o)
 
-.debug_frame    0x00000000     0xec84
+.debug_frame    0x00000000     0xec90
  .debug_frame   0x00000000      0x3c4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/WE2_core.o
  .debug_frame   0x000003c4       0x84 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/system_WE2_ARMCM55.o
  .debug_frame   0x00000448       0x84 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/device/clib/console_io.o
@@ -9218,118 +9220,118 @@ LOAD linker stubs
  .debug_frame   0x000006cc       0x2c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/board/epii_evb/platform_driver_init.o
  .debug_frame   0x000006f8       0x30 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/allon_sensor_tflm.o
  .debug_frame   0x00000728       0xa0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/hardfault_handler.o
- .debug_frame   0x000007c8      0x238 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
- .debug_frame   0x00000a00       0x28 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/main.o
- .debug_frame   0x00000a28      0x3e4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/driver_interface.o
- .debug_frame   0x00000e0c      0x390 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtrustzone_cfg.a(trustzone_cfg.o)
- .debug_frame   0x0000119c      0x13c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw2x2.o)
- .debug_frame   0x000012d8      0x1e8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw5x5.o)
- .debug_frame   0x000014c0      0x348 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_cdm.o)
- .debug_frame   0x00001808      0x29c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csirx.o)
- .debug_frame   0x00001aa4      0x22c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csitx.o)
- .debug_frame   0x00001cd0      0x55c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_damc.o)
- .debug_frame   0x0000222c      0x288 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_dp.o)
- .debug_frame   0x000024b4      0x2bc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_edm.o)
- .debug_frame   0x00002770      0x234 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_gpio.o)
- .debug_frame   0x000029a4       0xfc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(gpio.o)
- .debug_frame   0x00002aa0      0x2bc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hxautoi2c_mst.o)
- .debug_frame   0x00002d5c      0x69c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_iic.o)
- .debug_frame   0x000033f8      0x298 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_iic.o)
- .debug_frame   0x00003690      0x410 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp.o)
- .debug_frame   0x00003aa0      0x294 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp1bitparser.o)
- .debug_frame   0x00003d34      0x274 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inpovparser.o)
- .debug_frame   0x00003fa8      0x21c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_jpeg.o)
- .debug_frame   0x000041c4      0x174 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mb.o)
- .debug_frame   0x00004338      0x9b8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mpc.o)
- .debug_frame   0x00004cf0      0x13c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pmu.o)
- .debug_frame   0x00004e2c      0x578 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_ppc.o)
- .debug_frame   0x000053a4      0x2d0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pwm.o)
- .debug_frame   0x00005674      0x40c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_rtc.o)
- .debug_frame   0x00005a80     0x2030 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu.o)
- .debug_frame   0x00007ab0      0xc34 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu_ckgen.o)
- .debug_frame   0x000086e4      0x2fc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_sensorctrl.o)
- .debug_frame   0x000089e0      0x4ec obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_spi_m.o)
- .debug_frame   0x00008ecc      0x420 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_spi.o)
- .debug_frame   0x000092ec      0x5f4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_swreg_aon.o)
- .debug_frame   0x000098e0      0x5a0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_timer.o)
- .debug_frame   0x00009e80      0x1ac obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_tpg.o)
- .debug_frame   0x0000a02c      0x47c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_uart.o)
- .debug_frame   0x0000a4a8      0x2bc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_uart.o)
- .debug_frame   0x0000a764      0x24c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_watchdog.o)
- .debug_frame   0x0000a9b0      0x8ac obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_xdma.o)
- .debug_frame   0x0000b25c      0x560 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(DMAC.o)
- .debug_frame   0x0000b7bc      0x200 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libcommon.a(xprintf.o)
- .debug_frame   0x0000b9bc      0x250 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_driver.o)
- .debug_frame   0x0000bc0c      0x130 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_device_u55_u65.o)
- .debug_frame   0x0000bd3c       0x20 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(debug_log.o)
- .debug_frame   0x0000bd5c       0x48 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_error_reporter.o)
- .debug_frame   0x0000bda4      0x22c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_interpreter.o)
- .debug_frame   0x0000bfd0       0x60 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_log.o)
- .debug_frame   0x0000c030       0x6c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_string.o)
- .debug_frame   0x0000c09c      0x11c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu.o)
- .debug_frame   0x0000c1b8       0x40 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(schema_utils.o)
- .debug_frame   0x0000c1f8       0x34 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(op_resolver.o)
- .debug_frame   0x0000c22c       0x6c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(error_reporter.o)
- .debug_frame   0x0000c298       0xd0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_utils.o)
- .debug_frame   0x0000c368      0x4c0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocator.o)
- .debug_frame   0x0000c828      0x184 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_context.o)
- .debug_frame   0x0000c9ac      0x1c8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_graph.o)
- .debug_frame   0x0000cb74       0xf8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_resource_variable.o)
- .debug_frame   0x0000cc6c      0x280 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(single_arena_buffer_allocator.o)
- .debug_frame   0x0000ceec      0x1f8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(greedy_memory_planner.o)
- .debug_frame   0x0000d0e4      0x274 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(kernel_util.o)
- .debug_frame   0x0000d358       0xd8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(common.o)
- .debug_frame   0x0000d430      0x84c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_conversions.o)
- .debug_frame   0x0000dc7c       0xc8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(memory_helpers.o)
- .debug_frame   0x0000dd44      0x198 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocation_info.o)
- .debug_frame   0x0000dedc       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libm.a(libm_a-sf_exp.o)
- .debug_frame   0x0000df08       0x98 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libm.a(libm_a-math_errf.o)
- .debug_frame   0x0000dfa0       0x40 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-assert.o)
- .debug_frame   0x0000dfe0       0x28 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-exit.o)
- .debug_frame   0x0000e008       0x30 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-malloc.o)
- .debug_frame   0x0000e038       0x50 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-mallocr.o)
- .debug_frame   0x0000e088       0x30 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-mlock.o)
- .debug_frame   0x0000e0b8       0x44 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-rand.o)
- .debug_frame   0x0000e0fc      0x144 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-findfp.o)
- .debug_frame   0x0000e240       0x64 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-fprintf.o)
- .debug_frame   0x0000e2a4       0x3c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-fputs.o)
- .debug_frame   0x0000e2e0       0x40 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-wbuf.o)
- .debug_frame   0x0000e320       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-wsetup.o)
- .debug_frame   0x0000e34c       0x34 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-fwalk.o)
- .debug_frame   0x0000e380       0x4c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-fwrite.o)
- .debug_frame   0x0000e3cc       0x58 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-makebuf.o)
- .debug_frame   0x0000e424       0x6c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-printf.o)
- .debug_frame   0x0000e490       0x3c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-puts.o)
- .debug_frame   0x0000e4cc       0x20 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-memset.o)
- .debug_frame   0x0000e4ec       0x28 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-strncmp.o)
- .debug_frame   0x0000e514       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-isattyr.o)
- .debug_frame   0x0000e540       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-sbrkr.o)
- .debug_frame   0x0000e56c       0x20 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-errno.o)
- .debug_frame   0x0000e58c       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-init.o)
- .debug_frame   0x0000e5b8       0xb0 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-lock.o)
- .debug_frame   0x0000e668       0x38 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-reent.o)
- .debug_frame   0x0000e6a0       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-fstatr.o)
- .debug_frame   0x0000e6cc       0x20 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-aeabi_atexit.o)
- .debug_frame   0x0000e6ec       0x20 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-strcmp.o)
- .debug_frame   0x0000e70c       0x70 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-strtoll.o)
- .debug_frame   0x0000e77c       0x28 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-abort.o)
- .debug_frame   0x0000e7a4       0x38 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-freer.o)
- .debug_frame   0x0000e7dc       0xa8 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
- .debug_frame   0x0000e884       0x60 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
- .debug_frame   0x0000e8e4       0x5c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-fflush.o)
- .debug_frame   0x0000e940       0x88 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-stdio.o)
- .debug_frame   0x0000e9c8       0xcc /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-signal.o)
- .debug_frame   0x0000ea94       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-lseekr.o)
- .debug_frame   0x0000eac0       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-readr.o)
- .debug_frame   0x0000eaec       0x3c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-signalr.o)
- .debug_frame   0x0000eb28       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-writer.o)
- .debug_frame   0x0000eb54       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-closer.o)
- .debug_frame   0x0000eb80       0x28 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-cxa_atexit.o)
- .debug_frame   0x0000eba8       0x28 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-memchr-stub.o)
- .debug_frame   0x0000ebd0       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+dp/hard/libgcc.a(_aeabi_uldivmod.o)
- .debug_frame   0x0000ebfc       0x30 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+dp/hard/libgcc.a(_fixdfdi.o)
- .debug_frame   0x0000ec2c       0x20 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+dp/hard/libgcc.a(_fixunsdfdi.o)
- .debug_frame   0x0000ec4c       0x38 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+dp/hard/libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x000007c8      0x244 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/cvapp.o
+ .debug_frame   0x00000a0c       0x28 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/main.o
+ .debug_frame   0x00000a34      0x3e4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/interface/driver_interface.o
+ .debug_frame   0x00000e18      0x390 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtrustzone_cfg.a(trustzone_cfg.o)
+ .debug_frame   0x000011a8      0x13c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw2x2.o)
+ .debug_frame   0x000012e4      0x1e8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hw5x5.o)
+ .debug_frame   0x000014cc      0x348 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_cdm.o)
+ .debug_frame   0x00001814      0x29c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csirx.o)
+ .debug_frame   0x00001ab0      0x22c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_csitx.o)
+ .debug_frame   0x00001cdc      0x55c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_damc.o)
+ .debug_frame   0x00002238      0x288 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_dp.o)
+ .debug_frame   0x000024c0      0x2bc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_edm.o)
+ .debug_frame   0x0000277c      0x234 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_gpio.o)
+ .debug_frame   0x000029b0       0xfc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(gpio.o)
+ .debug_frame   0x00002aac      0x2bc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_hxautoi2c_mst.o)
+ .debug_frame   0x00002d68      0x69c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_iic.o)
+ .debug_frame   0x00003404      0x298 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_iic.o)
+ .debug_frame   0x0000369c      0x410 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp.o)
+ .debug_frame   0x00003aac      0x294 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inp1bitparser.o)
+ .debug_frame   0x00003d40      0x274 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_inpovparser.o)
+ .debug_frame   0x00003fb4      0x21c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_jpeg.o)
+ .debug_frame   0x000041d0      0x174 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mb.o)
+ .debug_frame   0x00004344      0x9b8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_mpc.o)
+ .debug_frame   0x00004cfc      0x13c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pmu.o)
+ .debug_frame   0x00004e38      0x578 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_ppc.o)
+ .debug_frame   0x000053b0      0x2d0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_pwm.o)
+ .debug_frame   0x00005680      0x40c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_rtc.o)
+ .debug_frame   0x00005a8c     0x2030 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu.o)
+ .debug_frame   0x00007abc      0xc34 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_scu_ckgen.o)
+ .debug_frame   0x000086f0      0x2fc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_sensorctrl.o)
+ .debug_frame   0x000089ec      0x4ec obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_spi_m.o)
+ .debug_frame   0x00008ed8      0x420 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_spi.o)
+ .debug_frame   0x000092f8      0x5f4 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_swreg_aon.o)
+ .debug_frame   0x000098ec      0x5a0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_timer.o)
+ .debug_frame   0x00009e8c      0x1ac obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_tpg.o)
+ .debug_frame   0x0000a038      0x47c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_uart.o)
+ .debug_frame   0x0000a4b4      0x2bc obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(dw_uart.o)
+ .debug_frame   0x0000a770      0x24c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_watchdog.o)
+ .debug_frame   0x0000a9bc      0x8ac obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(hx_drv_xdma.o)
+ .debug_frame   0x0000b268      0x560 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libdriver.a(DMAC.o)
+ .debug_frame   0x0000b7c8      0x200 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libcommon.a(xprintf.o)
+ .debug_frame   0x0000b9c8      0x250 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_driver.o)
+ .debug_frame   0x0000bc18      0x130 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu_device_u55_u65.o)
+ .debug_frame   0x0000bd48       0x20 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(debug_log.o)
+ .debug_frame   0x0000bd68       0x48 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_error_reporter.o)
+ .debug_frame   0x0000bdb0      0x22c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_interpreter.o)
+ .debug_frame   0x0000bfdc       0x60 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_log.o)
+ .debug_frame   0x0000c03c       0x6c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_string.o)
+ .debug_frame   0x0000c0a8      0x11c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(ethosu.o)
+ .debug_frame   0x0000c1c4       0x40 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(schema_utils.o)
+ .debug_frame   0x0000c204       0x34 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(op_resolver.o)
+ .debug_frame   0x0000c238       0x6c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(error_reporter.o)
+ .debug_frame   0x0000c2a4       0xd0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_utils.o)
+ .debug_frame   0x0000c374      0x4c0 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocator.o)
+ .debug_frame   0x0000c834      0x184 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_context.o)
+ .debug_frame   0x0000c9b8      0x1c8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_graph.o)
+ .debug_frame   0x0000cb80       0xf8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_resource_variable.o)
+ .debug_frame   0x0000cc78      0x280 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(single_arena_buffer_allocator.o)
+ .debug_frame   0x0000cef8      0x1f8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(greedy_memory_planner.o)
+ .debug_frame   0x0000d0f0      0x274 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(kernel_util.o)
+ .debug_frame   0x0000d364       0xd8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(common.o)
+ .debug_frame   0x0000d43c      0x84c obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(flatbuffer_conversions.o)
+ .debug_frame   0x0000dc88       0xc8 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(memory_helpers.o)
+ .debug_frame   0x0000dd50      0x198 obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/libtflmtag2209_u55tag2205_cmsisnn_gnu.a(micro_allocation_info.o)
+ .debug_frame   0x0000dee8       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libm.a(libm_a-sf_exp.o)
+ .debug_frame   0x0000df14       0x98 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libm.a(libm_a-math_errf.o)
+ .debug_frame   0x0000dfac       0x40 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-assert.o)
+ .debug_frame   0x0000dfec       0x28 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-exit.o)
+ .debug_frame   0x0000e014       0x30 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-malloc.o)
+ .debug_frame   0x0000e044       0x50 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-mallocr.o)
+ .debug_frame   0x0000e094       0x30 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-mlock.o)
+ .debug_frame   0x0000e0c4       0x44 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-rand.o)
+ .debug_frame   0x0000e108      0x144 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-findfp.o)
+ .debug_frame   0x0000e24c       0x64 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-fprintf.o)
+ .debug_frame   0x0000e2b0       0x3c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-fputs.o)
+ .debug_frame   0x0000e2ec       0x40 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-wbuf.o)
+ .debug_frame   0x0000e32c       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-wsetup.o)
+ .debug_frame   0x0000e358       0x34 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-fwalk.o)
+ .debug_frame   0x0000e38c       0x4c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-fwrite.o)
+ .debug_frame   0x0000e3d8       0x58 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-makebuf.o)
+ .debug_frame   0x0000e430       0x6c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-printf.o)
+ .debug_frame   0x0000e49c       0x3c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-puts.o)
+ .debug_frame   0x0000e4d8       0x20 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-memset.o)
+ .debug_frame   0x0000e4f8       0x28 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-strncmp.o)
+ .debug_frame   0x0000e520       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-isattyr.o)
+ .debug_frame   0x0000e54c       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-sbrkr.o)
+ .debug_frame   0x0000e578       0x20 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-errno.o)
+ .debug_frame   0x0000e598       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-init.o)
+ .debug_frame   0x0000e5c4       0xb0 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-lock.o)
+ .debug_frame   0x0000e674       0x38 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-reent.o)
+ .debug_frame   0x0000e6ac       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-fstatr.o)
+ .debug_frame   0x0000e6d8       0x20 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-aeabi_atexit.o)
+ .debug_frame   0x0000e6f8       0x20 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-strcmp.o)
+ .debug_frame   0x0000e718       0x70 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-strtoll.o)
+ .debug_frame   0x0000e788       0x28 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-abort.o)
+ .debug_frame   0x0000e7b0       0x38 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-freer.o)
+ .debug_frame   0x0000e7e8       0xa8 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
+ .debug_frame   0x0000e890       0x60 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
+ .debug_frame   0x0000e8f0       0x5c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-fflush.o)
+ .debug_frame   0x0000e94c       0x88 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-stdio.o)
+ .debug_frame   0x0000e9d4       0xcc /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-signal.o)
+ .debug_frame   0x0000eaa0       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-lseekr.o)
+ .debug_frame   0x0000eacc       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-readr.o)
+ .debug_frame   0x0000eaf8       0x3c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-signalr.o)
+ .debug_frame   0x0000eb34       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-writer.o)
+ .debug_frame   0x0000eb60       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-closer.o)
+ .debug_frame   0x0000eb8c       0x28 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-cxa_atexit.o)
+ .debug_frame   0x0000ebb4       0x28 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+dp/hard/libc_nano.a(libc_a-memchr-stub.o)
+ .debug_frame   0x0000ebdc       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+dp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x0000ec08       0x30 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+dp/hard/libgcc.a(_fixdfdi.o)
+ .debug_frame   0x0000ec38       0x20 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+dp/hard/libgcc.a(_fixunsdfdi.o)
+ .debug_frame   0x0000ec58       0x38 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+dp/hard/libgcc.a(_udivmoddi4.o)
 
 Cross Reference Table
 

@@ -53,8 +53,6 @@ enum _smartdma_camera_api
     kEZH_Camera_320240_Div16_Buf = 1U,  
     kEZH_Camera_480320_Whole_Buf = 2U,
 	kEZH_Camera_320240_GrayScale_Div4_Buf = 3U,
-	kEZH_Camera_320240_GrayScale_Div16_Buf = 4U,
-	EZH_Camera_384_384_Div16_Buf = 5U,
 };
 
 /*!

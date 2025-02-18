@@ -31,7 +31,7 @@ cd npu/luckfox/{model}
 ```
 then
 ```
-adb push luckfox_pico_{model}_demo root
+adb push luckfox_pico_{model} root
 adb shell
 cd root/luckfox_pico_{model}_demo
 ./luckfox_pico_{model} model/{model}.rknn
@@ -42,11 +42,43 @@ cd root/luckfox_pico_{model}_demo
 ```
 cd host-tools
 export PATH=$PATH:$(pwd)/gcc/riscv64-linux-musl-x86_64/bin
-cd ../cvitek-tdl-sdk-sg180x
-cd samples
+cd npu/milk-v
+cd sample
 ./compile_samples.sh
-scp sample_{model} root@192.168.42.1:/root/
+scp -O sample_{model} root@192.168.42.1:/root/
+scp -O ../../model/{model}/{model}.cvimage
 ssh root@192.168.42.1
 cd root
-./sample_{model} {model.cvimodel}
+./sample_{model} {model}.cvimodel
+```
+
+### canmv
+build boot image (linux)
+```
+docker pull ghcr.io/kendryte/k230_sdk
+docker images | grep ghcr.io/kendryte/k230_sdk
+cd k230_sdk
+git clone -b v1.0.1 --single-branch https://github.com/kendryte/k230_sdk.git
+cd k230_sdk
+make prepare_sourcecode
+docker run -u root -it -v $(pwd):$(pwd) -v $(pwd)/toolchain:/opt/toolchain -w $(pwd) ghcr.io/kendryte/k230_sdk /bin/bash
+make CONF=k230_canmv_defconfig
+```
+flash boot image with ```sudo dd if=sysimage-sdcard.img of=/dev/sdc bs=1m oflag=sync```
+
+build app image (add app path to build_app_sub.sh) (linux)
+```
+sudo apt-get update
+sudo apt-get install -y dotnet-sdk-7.0
+cd k230_sdk
+docker run -u root -it -v $(pwd):$(pwd) -v $(pwd)/toolchain:/opt/toolchain -w $(pwd) ghcr.io/kendryte/k230_sdk /bin/bash
+cd src/reference/ai_poc
+./build_app.sh {app_name}
+```
+build written to ```k230_sdk/src/reference/ai_poc/k230_sdk```
+
+flash app image
+```
+picocom /dev/ttyACM1
+scp -r username@domain_or_IP:source_directory destination_directory_on_board
 ```

@@ -11,7 +11,6 @@ RM := rm -rf
 -include utilities/subdir.mk
 -include startup/subdir.mk
 -include source/model/subdir.mk
--include source/image/subdir.mk
 -include source/subdir.mk
 -include eiq/tensorflow-lite/tensorflow/lite/micro/kernels/neutron/subdir.mk
 -include eiq/tensorflow-lite/tensorflow/lite/micro/subdir.mk
@@ -58,7 +57,7 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := yolov1_q
+BUILD_ARTIFACT_NAME := yolov1
 BUILD_ARTIFACT_EXTENSION := axf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
@@ -70,24 +69,24 @@ all:
 	+@$(MAKE) --no-print-directory main-build && $(MAKE) --no-print-directory post-build
 
 # Main-build Target
-main-build: yolov1_q.axf
+main-build: yolov1.axf
 
 # Tool invocations
-yolov1_q.axf: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
+yolov1.axf: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU C++ Linker'
-	arm-none-eabi-c++ -nostdlib -L"/Users/joshmillar/Desktop/phd/mcu-nn-eval/npu/mcxn947/yolov1_q/eiq/tensorflow-lite/lib" -L"/Users/joshmillar/Desktop/phd/mcu-nn-eval/npu/mcxn947/yolov1_q/eiq/tensorflow-lite/third_party/neutron" -Xlinker -no-warn-rwx-segments -Xlinker -Map="yolov1_q.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -T yolov1_q_Debug.ld -o "yolov1_q.axf" $(OBJS) $(USER_OBJS) $(LIBS) -ltflm -lNeutronDriver -lNeutronFirmware
+	arm-none-eabi-c++ -nostdlib -L"/Users/joshmillar/Desktop/phd/mcu-nn-eval/npu/mcxn947/yolov1/eiq/tensorflow-lite/lib" -L"/Users/joshmillar/Desktop/phd/mcu-nn-eval/npu/mcxn947/yolov1/eiq/tensorflow-lite/third_party/neutron" -Xlinker -no-warn-rwx-segments -Xlinker -Map="yolov1.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -T yolov1_Debug.ld -o "yolov1.axf" $(OBJS) $(USER_OBJS) $(LIBS) -ltflm -lNeutronDriver -lNeutronFirmware
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) yolov1_q.axf
+	-$(RM) yolov1.axf
 	-@echo ' '
 
 post-build:
 	-@echo 'Performing post-build steps'
-	-arm-none-eabi-size "yolov1_q.axf"; # arm-none-eabi-objcopy -v -O binary "yolov1_q.axf" "yolov1_q.bin" ; # checksum -p MCXN947 -d "yolov1_q.bin";
+	-arm-none-eabi-size "yolov1.axf"; # arm-none-eabi-objcopy -v -O binary "yolov1.axf" "yolov1.bin" ; # checksum -p MCXN947 -d "yolov1.bin";
 	-@echo ' '
 
 .PHONY: all clean dependents main-build post-build

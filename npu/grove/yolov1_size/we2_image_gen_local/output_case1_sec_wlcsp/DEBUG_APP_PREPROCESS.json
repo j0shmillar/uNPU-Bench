@@ -11,7 +11,7 @@
             "output": "output_case1_sec_wlcsp/inter_files/cm55m_s_application_idx0_.table.bin"
         },
         "IDX1_.text_2": {
-            "length": "0x0000e008",
+            "length": "0x0000e0e8",
             "vma": "0x3401f000",
             "index": 1,
             "sec_name": ".text_2",

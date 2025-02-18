@@ -21,13 +21,13 @@
             "section_2": {
                 "type": 3,
                 "section_number": 2,
-                "sec_size": "0xE008",
+                "sec_size": "0xE0E8",
                 "version": 2,
                 "output": "output_case1_sec_wlcsp/inter_files/cm55m_s_application_p1_s2.img",
                 "div_cnt": 1,
                 "align": 0,
                 "sec_offset": "0x0",
-                "div_sec_size": "0xe008",
+                "div_sec_size": "0xe0e8",
                 "sec_type": 0,
                 "sec_dst": "0x3401f000"
             },
@@ -70,7 +70,7 @@
                 "sec_type": 1,
                 "sec_dst": "0x100082dc"
             },
-            "output_sec": "/Users/joshmillar/Desktop/phd/mcu-nn-eval/npu/grove/we2_image_gen_local/output_case1_sec_wlcsp/inter_files/sign_formal_cm55m_s_application_p1.img"
+            "output_sec": "/Users/joshmillar/Desktop/phd/mcu-nn-eval/npu/grove/yolov1_size/we2_image_gen_local/output_case1_sec_wlcsp/inter_files/sign_formal_cm55m_s_application_p1.img"
         },
         "part_2": {
             "section_1": {
@@ -113,7 +113,7 @@
                 "sec_type": 2,
                 "sec_dst": "0x100082f0"
             },
-            "output_sec": "/Users/joshmillar/Desktop/phd/mcu-nn-eval/npu/grove/we2_image_gen_local/output_case1_sec_wlcsp/inter_files/sign_formal_cm55m_s_application_p2.img"
+            "output_sec": "/Users/joshmillar/Desktop/phd/mcu-nn-eval/npu/grove/yolov1_size/we2_image_gen_local/output_case1_sec_wlcsp/inter_files/sign_formal_cm55m_s_application_p2.img"
         },
         "part_count": 2
     }

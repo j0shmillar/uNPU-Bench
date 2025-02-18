@@ -127,77 +127,27 @@ void BOARD_InitPins(void)
     CLOCK_EnableClock(kCLOCK_Port2);
     /* Enables the clock for PORT3: Enables clock */
     CLOCK_EnableClock(kCLOCK_Port3);
-    CLOCK_EnableClock(kCLOCK_Port4);
-
-    CLOCK_EnableClock(kCLOCK_Gpio0);
-    CLOCK_EnableClock(kCLOCK_Gpio1);
-    CLOCK_EnableClock(kCLOCK_Gpio2);
-    CLOCK_EnableClock(kCLOCK_Gpio3);
-    CLOCK_EnableClock(kCLOCK_Gpio4);
     gpio_pin_config_t gpio1_pinG4_config = {
         .pinDirection = kGPIO_DigitalOutput,
         .outputLogic = 0U
     };
-    /* Initialize GPIO functionality on pin PIO1_18 (pin G4) CAM PWdown */
+    /* Initialize GPIO functionality on pin PIO1_18 (pin G4)  */
     GPIO_PinInit(GPIO1, 18U, &gpio1_pinG4_config);
 
     gpio_pin_config_t gpio1_pinG5_config = {
         .pinDirection = kGPIO_DigitalOutput,
         .outputLogic = 1U
     };
-    /* Initialize GPIO functionality on pin PIO1_19 (pin G5)  CAM rst*/
+    /* Initialize GPIO functionality on pin PIO1_19 (pin G5)  */
     GPIO_PinInit(GPIO1, 19U, &gpio1_pinG5_config);
-
-    /* P0_4 is selected for SMARTDMA arch B 0  CAM VSync*/
+    /* P0_4 is selected for SMARTDMA arch B 0 */
     INPUTMUX_AttachSignal(INPUTMUX0, 0U, kINPUTMUX_GpioPort0Pin4ToSmartDma);
-    /* P0_11 is selected for SMARTDMA arch B 1 CAM HSync*/
+    /* P0_11 is selected for SMARTDMA arch B 1 */
     INPUTMUX_AttachSignal(INPUTMUX0, 1U, kINPUTMUX_GpioPort0Pin11ToSmartDma);
-    /* P0_5 is selected for SMARTDMA arch B 2 CAM PCLK*/
+    /* P0_5 is selected for SMARTDMA arch B 2 */
     INPUTMUX_AttachSignal(INPUTMUX0, 2U, kINPUTMUX_GpioPort0Pin5ToSmartDma);
 
-    /* PORT3_2 (pin D15) is configured as FC7_P0 I2C SDA*/
-	PORT_SetPinMux(PORT3, 2U, kPORT_MuxAlt2);
-
-	PORT3->PCR[2] = ((PORT3->PCR[2] &
-					/* Mask bits to zero which are setting */
-					(~(PORT_PCR_PS_MASK | PORT_PCR_PE_MASK | PORT_PCR_IBE_MASK)))
-
-				   /* Pull Select: Enables internal pullup resistor. */
-				   | PORT_PCR_PS(PCR_PS_ps1)
-
-				   /* Pull Enable: Enables. */
-				   | PORT_PCR_PE(PCR_PE_pe1)
-
-				   /* Input Buffer Enable: Enables. */
-				   | PORT_PCR_IBE(PCR_IBE_ibe1));
-
-	  /* PORT3_3 (pin D16) is configured as FC7_P1 I2C SCL*/
-	  PORT_SetPinMux(PORT3, 3U, kPORT_MuxAlt2);
-
-	  PORT3->PCR[3] = ((PORT3->PCR[3] &
-						/* Mask bits to zero which are setting */
-						(~(PORT_PCR_PS_MASK | PORT_PCR_PE_MASK | PORT_PCR_IBE_MASK)))
-
-					   /* Pull Select: Enables internal pullup resistor. */
-					   | PORT_PCR_PS(PCR_PS_ps1)
-
-					   /* Pull Enable: Enables. */
-					   | PORT_PCR_PE(PCR_PE_pe1)
-
-					   /* Input Buffer Enable: Enables. */
-					   | PORT_PCR_IBE(PCR_IBE_ibe1));
-
-	  /* PORT3_18 (pin K16) is configured as PIO3_18 */
-		PORT_SetPinMux(PORT3, 18U, kPORT_MuxAlt7);
-
-		PORT3->PCR[18] = ((PORT3->PCR[18] &
-						   /* Mask bits to zero which are setting */
-						   (~(PORT_PCR_IBE_MASK)))
-
-						  /* Input Buffer Enable: Enables. */
-						  | PORT_PCR_IBE(PCR_IBE_ibe1));
-
-    /* PORT0_11 (pin B11) is configured as PIO0_11 CAM HSync*/
+    /* PORT0_11 (pin B11) is configured as PIO0_11 */
     PORT_SetPinMux(PORT0, 11U, kPORT_MuxAlt0);
 
     PORT0->PCR[11] = ((PORT0->PCR[11] &
@@ -207,7 +157,7 @@ void BOARD_InitPins(void)
                       /* Input Buffer Enable: Enables. */
                       | PORT_PCR_IBE(PCR_IBE_ibe1));
 
-    /* PORT0_4 (pin B14) is configured as PIO0_4 CAM VSYNC*/
+    /* PORT0_4 (pin B14) is configured as PIO0_4 */
     PORT_SetPinMux(PORT0, 4U, kPORT_MuxAlt0);
 
     PORT0->PCR[4] = ((PORT0->PCR[4] &
@@ -217,7 +167,7 @@ void BOARD_InitPins(void)
                      /* Input Buffer Enable: Enables. */
                      | PORT_PCR_IBE(PCR_IBE_ibe1));
 
-    /* PORT0_5 (pin A14) is configured as PIO0_5 CAM PCLK*/
+    /* PORT0_5 (pin A14) is configured as PIO0_5 */
     PORT_SetPinMux(PORT0, 5U, kPORT_MuxAlt0);
 
     PORT0->PCR[5] = ((PORT0->PCR[5] &
@@ -262,7 +212,7 @@ void BOARD_InitPins(void)
 
                      /* Input Buffer Enable: Enables. */
                      | PORT_PCR_IBE(PCR_IBE_ibe1));
-    /* PORT2_2 (pin H3) is configured as CLKOUT CAM CLKIn */
+    /* PORT2_2 (pin H3) is configured as CLKOUT */
      PORT_SetPinMux(PORT2, 2U, kPORT_MuxAlt1);
 
      PORT2->PCR[2] = ((PORT2->PCR[2] &
@@ -271,7 +221,7 @@ void BOARD_InitPins(void)
 
                       /* Input Buffer Enable: Enables. */
                       | PORT_PCR_IBE(PCR_IBE_ibe1));
-    /* PORT1_10 (pin C3) is configured as PIO1_10 CAM D6 */
+    /* PORT1_10 (pin C3) is configured as PIO1_10 */
     PORT_SetPinMux(PORT1, 10U, kPORT_MuxAlt7);
 
     PORT1->PCR[10] = ((PORT1->PCR[10] &
@@ -284,7 +234,7 @@ void BOARD_InitPins(void)
                       /* Input Buffer Enable: Enables. */
                       | PORT_PCR_IBE(PCR_IBE_ibe1));
 
-    /* PORT1_11 (pin D3) is configured as PIO1_11 CAM D7 */
+    /* PORT1_11 (pin D3) is configured as PIO1_11 */
     PORT_SetPinMux(PORT1, 11U, kPORT_MuxAlt7);
 
     PORT1->PCR[11] = ((PORT1->PCR[11] &
@@ -298,7 +248,7 @@ void BOARD_InitPins(void)
                       | PORT_PCR_IBE(PCR_IBE_ibe1));
 
 
-    /* PORT1_4 (pin A4) is configured as PIO1_4  CAM D0*/
+    /* PORT1_4 (pin A4) is configured as PIO1_4 */
     PORT_SetPinMux(PORT1, 4U, kPORT_MuxAlt7);
 
     PORT1->PCR[4] = ((PORT1->PCR[4] &
@@ -311,7 +261,7 @@ void BOARD_InitPins(void)
                      /* Input Buffer Enable: Enables. */
                      | PORT_PCR_IBE(PCR_IBE_ibe1));
 
-    /* PORT1_5 (pin B3) is configured as PIO1_5 CAM D1*/
+    /* PORT1_5 (pin B3) is configured as PIO1_5 */
     PORT_SetPinMux(PORT1, 5U, kPORT_MuxAlt7);
 
     PORT1->PCR[5] = ((PORT1->PCR[5] &
@@ -324,7 +274,7 @@ void BOARD_InitPins(void)
                      /* Input Buffer Enable: Enables. */
                      | PORT_PCR_IBE(PCR_IBE_ibe1));
 
-    /* PORT1_6 (pin B2) is configured as PIO1_6 CAM D2*/
+    /* PORT1_6 (pin B2) is configured as PIO1_6 */
     PORT_SetPinMux(PORT1, 6U, kPORT_MuxAlt7);
 
     PORT1->PCR[6] = ((PORT1->PCR[6] &
@@ -337,7 +287,7 @@ void BOARD_InitPins(void)
                      /* Input Buffer Enable: Enables. */
                      | PORT_PCR_IBE(PCR_IBE_ibe1));
 
-    /* PORT1_7 (pin A2) is configured as PIO1_7 CAM D3*/
+    /* PORT1_7 (pin A2) is configured as PIO1_7 */
     PORT_SetPinMux(PORT1, 7U, kPORT_MuxAlt7);
 
     PORT1->PCR[7] = ((PORT1->PCR[7] &
@@ -363,7 +313,7 @@ void BOARD_InitPins(void)
                      /* Input Buffer Enable: Enables. */
                      | PORT_PCR_IBE(PCR_IBE_ibe1));
 
-    /* PORT1_9 (pin B1) is configured as PIO1_9*/
+    /* PORT1_9 (pin B1) is configured as PIO1_9 */
     PORT_SetPinMux(PORT1, 9U, kPORT_MuxAlt2);
 
     PORT1->PCR[9] = ((PORT1->PCR[9] &
@@ -375,7 +325,7 @@ void BOARD_InitPins(void)
 
                      /* Input Buffer Enable: Enables. */
                      | PORT_PCR_IBE(PCR_IBE_ibe1));
-    /* PORT3_4 (pin F14) is configured as PIO3_4 CAM D4*/
+    /* PORT3_4 (pin F14) is configured as PIO3_4 */
     PORT_SetPinMux(PORT3, 4U, kPORT_MuxAlt7);
 
     PORT3->PCR[4] = ((PORT3->PCR[4] &
@@ -385,7 +335,7 @@ void BOARD_InitPins(void)
                      /* Input Buffer Enable: Enables. */
                      | PORT_PCR_IBE(PCR_IBE_ibe1));
 
-    /* PORT3_5 (pin G14) is configured as PIO3_5 CAM D5*/
+    /* PORT3_5 (pin G14) is configured as PIO3_5 */
     PORT_SetPinMux(PORT3, 5U, kPORT_MuxAlt7);
 
     PORT3->PCR[5] = ((PORT3->PCR[5] &
@@ -407,7 +357,7 @@ void BOARD_InitPins(void)
                      | PORT_PCR_IBE(PCR_IBE_ibe1));
 										 
 										 
-	/* PORT1_22 (pin A4) is configured as PIO1_22 */
+										     /* PORT1_4 (pin A4) is configured as PIO1_4 */
     PORT_SetPinMux(PORT1, 22U, kPORT_MuxAlt7);
 
     PORT1->PCR[22] = ((PORT1->PCR[22] &
@@ -419,7 +369,47 @@ void BOARD_InitPins(void)
 
                      /* Input Buffer Enable: Enables. */
                      | PORT_PCR_IBE(PCR_IBE_ibe1));
+    /* PORT3_2 (pin D15) is configured as FC7_P0 */
+      PORT_SetPinMux(PORT3, 2U, kPORT_MuxAlt2);
 
+      PORT3->PCR[2] = ((PORT3->PCR[2] &
+                        /* Mask bits to zero which are setting */
+                        (~(PORT_PCR_PS_MASK | PORT_PCR_PE_MASK | PORT_PCR_IBE_MASK)))
+
+                       /* Pull Select: Enables internal pullup resistor. */
+                       | PORT_PCR_PS(PCR_PS_ps1)
+
+                       /* Pull Enable: Enables. */
+                       | PORT_PCR_PE(PCR_PE_pe1)
+
+                       /* Input Buffer Enable: Enables. */
+                       | PORT_PCR_IBE(PCR_IBE_ibe1));
+
+      /* PORT3_3 (pin D16) is configured as FC7_P1 */
+      PORT_SetPinMux(PORT3, 3U, kPORT_MuxAlt2);
+
+      PORT3->PCR[3] = ((PORT3->PCR[3] &
+                        /* Mask bits to zero which are setting */
+                        (~(PORT_PCR_PS_MASK | PORT_PCR_PE_MASK | PORT_PCR_IBE_MASK)))
+
+                       /* Pull Select: Enables internal pullup resistor. */
+                       | PORT_PCR_PS(PCR_PS_ps1)
+
+                       /* Pull Enable: Enables. */
+                       | PORT_PCR_PE(PCR_PE_pe1)
+
+                       /* Input Buffer Enable: Enables. */
+                       | PORT_PCR_IBE(PCR_IBE_ibe1));
+
+      /* PORT3_18 (pin K16) is configured as PIO3_18 */
+        PORT_SetPinMux(PORT3, 18U, kPORT_MuxAlt7);
+
+        PORT3->PCR[18] = ((PORT3->PCR[18] &
+                           /* Mask bits to zero which are setting */
+                           (~(PORT_PCR_IBE_MASK)))
+
+                          /* Input Buffer Enable: Enables. */
+                          | PORT_PCR_IBE(PCR_IBE_ibe1));
 }
 
 /* FUNCTION ************************************************************************************************************

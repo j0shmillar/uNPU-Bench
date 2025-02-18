@@ -24,32 +24,42 @@ limitations under the License.
 
 #include "fsl_debug_console.h"
 #include "model.h"
-#include "model_data.h"
 
 static const tflite::Model* s_model = nullptr;
 static tflite::MicroInterpreter* s_interpreter = nullptr;
 
 extern tflite::MicroOpResolver &MODEL_GetOpsResolver();
 extern uint8_t npu_model_data[];
-constexpr int kTensorArenaSize = (368) * 1024;
-
+constexpr int kTensorArenaSize = (330) * 1024;
 // An area of memory to use for input, output, and intermediate arrays.
 // (Can be adjusted based on the model needs.)
 static uint8_t s_tensorArena[kTensorArenaSize] __ALIGNED(16);
+const char* MODEL_NAME = "yolov1";
 
 status_t MODEL_Init(void)
 {
+    // Map the model into a usable data structure. This doesn't involve any
+    // copying or parsing, it's a very lightweight operation.
     s_model = tflite::GetModel(npu_model_data);
     if (s_model->version() != TFLITE_SCHEMA_VERSION)
     {
-        PRINTF("Model schema version mismatch!");
+        PRINTF("Model provided is schema version %d not equal "
+               "to supported version %d.",
+               s_model->version(), TFLITE_SCHEMA_VERSION);
         return kStatus_Fail;
     }
 
+    // Pull in only the operation implementations we need.
+    // This relies on a complete list of all the ops needed by this graph.
+    // NOLINTNEXTLINE(runtime-global-variables)
     tflite::MicroOpResolver &micro_op_resolver = MODEL_GetOpsResolver();
 
-    s_interpreter = new tflite::MicroInterpreter(s_model, micro_op_resolver, s_tensorArena, kTensorArenaSize);
+    // Build an interpreter to run the model with.
+    static tflite::MicroInterpreter static_interpreter(
+        s_model, micro_op_resolver, s_tensorArena, kTensorArenaSize);
+    s_interpreter = &static_interpreter;
 
+    // Allocate memory from the tensor_arena for the model's tensors.
     TfLiteStatus allocate_status = s_interpreter->AllocateTensors();
     if (allocate_status != kTfLiteOk)
     {
@@ -59,7 +69,6 @@ status_t MODEL_Init(void)
 
     return kStatus_Success;
 }
-
 
 status_t MODEL_RunInference(void)
 {
@@ -72,7 +81,7 @@ status_t MODEL_RunInference(void)
     return kStatus_Success;
 }
 
-int8_t* GetTensorData(TfLiteTensor* tensor, tensor_dims_t* dims, tensor_type_t* type)
+uint8_t* GetTensorData(TfLiteTensor* tensor, tensor_dims_t* dims, tensor_type_t* type)
 {
     switch (tensor->type)
     {
@@ -96,17 +105,17 @@ int8_t* GetTensorData(TfLiteTensor* tensor, tensor_dims_t* dims, tensor_type_t* 
         dims->data[i] = tensor->dims->data[i];
     }
 
-    return tensor->data.int8;
+    return tensor->data.uint8;
 }
 
-int8_t* MODEL_GetInputTensorData(tensor_dims_t* dims, tensor_type_t* type)
+uint8_t* MODEL_GetInputTensorData(tensor_dims_t* dims, tensor_type_t* type)
 {
     TfLiteTensor* inputTensor = s_interpreter->input(0);
 
     return GetTensorData(inputTensor, dims, type);
 }
 
-int8_t* MODEL_GetOutputTensorData(tensor_dims_t* dims, tensor_type_t* type)
+uint8_t* MODEL_GetOutputTensorData(tensor_dims_t* dims, tensor_type_t* type)
 {
     TfLiteTensor* outputTensor = s_interpreter->output(0);
 
@@ -132,7 +141,7 @@ void MODEL_ConvertInput(uint8_t* data, tensor_dims_t* dims, tensor_type_t type)
             for (int i = size - 1; i >= 0; i--)
             {
                 reinterpret_cast<float*>(data)[i] =
-                    (static_cast<int>(data[i]) - MODEL_INPUT_MEAN) / MODEL_INPUT_STD;
+                    (static_cast<int>(data[i]) - 0) / 1;
             }
             break;
         default:
@@ -156,10 +165,3 @@ TfLiteTensor* MODEL_GetOutputTensor(uint32_t idx)
 {
     return s_interpreter->output(idx);
 }
-
-
-uint32_t MODEL_GetOutputSize()
-{
-    return s_interpreter->outputs_size();
-}
-

@@ -1,8 +1,5 @@
-../source/infer.cpp:36:6:void Rgb565StridedToBgr888(const uint16_t*, int, int, int, int, int, uint8_t*, int, uint8_t)	80	static
-../source/infer.cpp:83:6:void Rgb565StridedToRgb888(const uint16_t*, int, int, int, int, int, uint8_t*, int, uint8_t)	80	static
-../source/infer.cpp:132:6:void ezh_copy_slice_to_model_input(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t)	80	static
-../source/infer.cpp:170:6:void softmax(const float*, float*, int)	40	static
-../source/infer.cpp:190:7:float sigmoid(float)	8	static
-../source/infer.cpp:197:6:void process_model_output(const float*, float*)	48	static
-../source/infer.cpp:217:6:void decode_predictions(const float*, detection_t*, int*, float)	12	static
-../source/infer.cpp:246:6:void infer()	4176	static
+../source/infer.cpp:47:7:void softmax(const float*, float*, int)	40	static
+../source/infer.cpp:67:8:float sigmoid(float)	8	static
+../source/infer.cpp:73:7:void process_yolo_output(const float*, float*, int)	80	static
+../source/infer.cpp:104:7:void extract_detections(const float*, detection_t*, int*, float, int)	24	static
+../source/infer.cpp:162:7:void run()	176	static
