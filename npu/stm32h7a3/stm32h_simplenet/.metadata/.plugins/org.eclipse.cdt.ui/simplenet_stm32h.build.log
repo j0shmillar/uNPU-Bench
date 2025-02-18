@@ -1,0 +1,10 @@
+17:04:05 **** Incremental Build of configuration Debug for project simplenet_stm32h ****
+make -j8 all 
+arm-none-eabi-size   simplenet_stm32h.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 455120	   7828	  46944	 509892	  7c7c4	simplenet_stm32h.elf
+Finished building: default.size.stdout
+ 
+
+17:04:05 Build Finished. 0 errors, 0 warnings. (took 283ms)
+

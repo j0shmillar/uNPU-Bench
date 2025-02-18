@@ -1,0 +1,1659 @@
+2025-02-18 15:54:17,002 [INFO] Activator:170 - 
+
+
+2025-02-18 15:54:17,002 [INFO] Activator:171 - !SESSION log4j initialized
+2025-02-18 15:54:23,073 [INFO] McuFinderGlobals:39 - Set McuFinder mode to 2 (CubeIDE integrated)
+2025-02-18 15:54:23,837 [INFO] ApplicationProperties:181 - Using Application install path: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236
+2025-02-18 15:54:23,854 [INFO] DbMcusXml:74 - Set database path to: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/mcu/
+2025-02-18 15:54:23,858 [INFO] DbBoardsPdsc:56 - Set plugin database path to: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/boardmanager/
+2025-02-18 15:54:23,858 [INFO] DbMcus:258 - Set plugin images path to: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/
+2025-02-18 15:54:23,858 [INFO] DbBoards:264 - Set plugin images path to: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/
+2025-02-18 15:54:23,858 [INFO] DbExamples:333 - Set plugin images path to: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/
+2025-02-18 15:54:23,879 [INFO] DbMcusAds:85 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:23,879 [INFO] DbMcusDocs:110 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:23,879 [INFO] DbMcusJson:65 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:23,879 [INFO] DbBoardsDocs:110 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:23,879 [INFO] DbBoardsJson:58 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:23,879 [INFO] CrossReferenceDbSqlite:196 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/cs/
+2025-02-18 15:54:23,879 [INFO] DbExamplesSqlite:690 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:24,001 [INFO] RulesReader:52 - Compatibility file has been processed (237 Rules)
+2025-02-18 15:54:24,096 [INFO] MicroXplorer:622 - Detected Java Version = 11.0.9.1
+2025-02-18 15:54:24,097 [INFO] DbMcusXml:74 - Set database path to: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/mcu/
+2025-02-18 15:54:24,097 [INFO] DbBoardsPdsc:56 - Set plugin database path to: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/boardmanager/
+2025-02-18 15:54:24,097 [INFO] DbMcus:258 - Set plugin images path to: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/
+2025-02-18 15:54:24,097 [INFO] DbBoards:264 - Set plugin images path to: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/
+2025-02-18 15:54:24,097 [INFO] DbExamples:333 - Set plugin images path to: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/
+2025-02-18 15:54:24,097 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,097 [INFO] DbMcusAds:85 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:24,097 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,097 [INFO] DbMcusDocs:110 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:24,097 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,097 [INFO] DbMcusJson:65 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:24,097 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,097 [INFO] DbBoardsDocs:110 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:24,097 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,097 [INFO] DbBoardsJson:58 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:24,097 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,097 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,097 [INFO] CrossReferenceDbSqlite:196 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/cs/
+2025-02-18 15:54:24,097 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,097 [INFO] DbExamplesSqlite:690 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:24,176 [INFO] MainPanel:204 - HeapMemory: 268435456
+2025-02-18 15:54:24,258 [INFO] DbMcusXml:74 - Set database path to: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/mcu/
+2025-02-18 15:54:24,258 [INFO] DbBoardsPdsc:56 - Set plugin database path to: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/boardmanager/
+2025-02-18 15:54:24,258 [INFO] DbMcus:258 - Set plugin images path to: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/
+2025-02-18 15:54:24,258 [INFO] DbBoards:264 - Set plugin images path to: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/
+2025-02-18 15:54:24,258 [INFO] DbExamples:333 - Set plugin images path to: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/
+2025-02-18 15:54:24,258 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,258 [INFO] DbMcusAds:85 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:24,258 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,258 [INFO] DbMcusDocs:110 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:24,258 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,258 [INFO] DbMcusJson:65 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:24,258 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,258 [INFO] DbBoardsDocs:110 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:24,258 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,258 [INFO] DbBoardsJson:58 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:24,258 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,258 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,258 [INFO] CrossReferenceDbSqlite:196 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/cs/
+2025-02-18 15:54:24,258 [WARN] DbFile:35 - Overriding database path with different value: C:\Users\yh621\.stmcufinder\plugins\mcufinder/ => C:\Users\yh621\.stmcufinder\plugins\mcufinder
+2025-02-18 15:54:24,258 [INFO] DbExamplesSqlite:690 - Set database path to: C:\Users\yh621\.stmcufinder\plugins\mcufinder//mcu/
+2025-02-18 15:54:24,286 [INFO] ApplicationProperties:181 - Using Application install path: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236
+2025-02-18 15:54:24,286 [INFO] PluginManage:178 - Search for loadable plugins [exclusion list=, ]
+2025-02-18 15:54:24,286 [INFO] PluginManage:292 - Check plugin analytics
+2025-02-18 15:54:24,459 [INFO] AnalyticsPlugin:233 - Accepted Software Licenses: STM32CubeMX.6.2.1,STM32CubeMX.5.6.1,STM32CubeMX.6.6.1,STM32CubeMX.5.3.0,STM32CubeMX.6.5.0
+2025-02-18 15:54:24,459 [INFO] AnalyticsPlugin:235 - Accepted CMSIS Pack Licenses: STMicroelectronics.X-CUBE-AI.7.3.0
+2025-02-18 15:54:24,459 [INFO] AnalyticsPlugin:237 - Accepted Firmware Licenses: 
+2025-02-18 15:54:24,459 [INFO] PluginManage:342 - Loaded plugin analytics (category:tool,tabindex:-1)
+2025-02-18 15:54:24,459 [INFO] PluginManage:292 - Check plugin clock
+2025-02-18 15:54:24,494 [INFO] PluginManage:342 - Loaded plugin clock (category:base,tabindex:2)
+2025-02-18 15:54:24,494 [INFO] PluginManage:292 - Check plugin ddr
+2025-02-18 15:54:24,494 [INFO] PluginManage:342 - Loaded plugin ddr (category:tool,tabindex:6)
+2025-02-18 15:54:24,494 [INFO] PluginManage:292 - Check plugin filemanager
+2025-02-18 15:54:24,639 [INFO] PluginManage:342 - Loaded plugin filemanager (category:base,tabindex:10)
+2025-02-18 15:54:24,639 [INFO] PluginManage:292 - Check plugin ipmanager
+2025-02-18 15:54:24,652 [INFO] PluginManage:342 - Loaded plugin ipmanager (category:base,tabindex:5)
+2025-02-18 15:54:24,652 [INFO] PluginManage:292 - Check plugin pinoutandconfiguration
+2025-02-18 15:54:24,680 [INFO] PluginManage:342 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2025-02-18 15:54:24,680 [INFO] PluginManage:292 - Check plugin pinoutconfig
+2025-02-18 15:54:24,721 [INFO] PluginManage:342 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2025-02-18 15:54:24,721 [INFO] PluginManage:292 - Check plugin power
+2025-02-18 15:54:24,748 [INFO] PluginManage:342 - Loaded plugin power (category:power,tabindex:4)
+2025-02-18 15:54:24,759 [INFO] PluginManage:292 - Check plugin projectmanager
+2025-02-18 15:54:24,778 [INFO] PluginManage:342 - Loaded plugin projectmanager (category:projectmanager,tabindex:3)
+2025-02-18 15:54:24,778 [INFO] PluginManage:292 - Check plugin thirdparty
+2025-02-18 15:54:25,170 [INFO] PluginManage:342 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2025-02-18 15:54:25,170 [INFO] PluginManage:292 - Check plugin tools
+2025-02-18 15:54:25,170 [WARN] IntegrityCheckThread:59 - waiting for thirdparty lock release [integrity check]
+2025-02-18 15:54:25,174 [INFO] IntegrityCheckThread:61 - entering critical section [integrity check]
+2025-02-18 15:54:25,174 [INFO] ThirdPartyUpdaterWithRetryManager:56 - Updater plugin not ready yet. [1/15]
+2025-02-18 15:54:25,292 [INFO] PluginManage:342 - Loaded plugin tools (category:base,tabindex:7)
+2025-02-18 15:54:25,292 [INFO] PluginManage:292 - Check plugin tutovideos
+2025-02-18 15:54:25,592 [INFO] PluginManage:342 - Loaded plugin tutovideos (category:base,tabindex:-1)
+2025-02-18 15:54:25,592 [INFO] PluginManage:292 - Check plugin updater
+2025-02-18 15:54:25,608 [INFO] PluginManage:342 - Loaded plugin updater (category:base,tabindex:12)
+2025-02-18 15:54:25,608 [INFO] PluginManage:265 - PluginManage : Loaded plugins [13]
+2025-02-18 15:54:25,779 [INFO] PinOutPanel:1435 - setPackage(No Configuration,No Configuration)
+2025-02-18 15:54:25,875 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:25,875 [INFO] PluginManager:203 - loadIPPluginJar : add adc
+2025-02-18 15:54:25,942 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:25,942 [INFO] PluginManager:203 - loadIPPluginJar : add aes
+2025-02-18 15:54:26,023 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:26,023 [INFO] PluginManager:203 - loadIPPluginJar : add can
+2025-02-18 15:54:26,081 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:26,081 [INFO] PluginManager:203 - loadIPPluginJar : add comp
+2025-02-18 15:54:26,150 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:26,150 [INFO] PluginManager:203 - loadIPPluginJar : add cryp
+2025-02-18 15:54:26,222 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:26,222 [INFO] PluginManager:203 - loadIPPluginJar : add dfsdm
+2025-02-18 15:54:26,241 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:26,242 [INFO] PluginManager:203 - loadIPPluginJar : add dma
+2025-02-18 15:54:26,282 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:26,282 [INFO] PluginManager:203 - loadIPPluginJar : add fatfs
+2025-02-18 15:54:26,379 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:26,379 [INFO] PluginManager:203 - loadIPPluginJar : add fmc
+2025-02-18 15:54:26,396 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:26,396 [INFO] PluginManager:203 - loadIPPluginJar : add freertos
+2025-02-18 15:54:26,459 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:26,459 [INFO] PluginManager:203 - loadIPPluginJar : add genericplugin
+2025-02-18 15:54:26,647 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:26,647 [INFO] PluginManager:203 - loadIPPluginJar : add gfxmmu
+2025-02-18 15:54:26,853 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:26,853 [INFO] PluginManager:203 - loadIPPluginJar : add gic
+2025-02-18 15:54:26,877 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:26,877 [INFO] PluginManager:203 - loadIPPluginJar : add gpio
+2025-02-18 15:54:27,177 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:27,177 [INFO] PluginManager:203 - loadIPPluginJar : add gtzc
+2025-02-18 15:54:27,227 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:27,235 [INFO] PluginManager:203 - loadIPPluginJar : add hash
+2025-02-18 15:54:27,326 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:27,326 [INFO] PluginManager:203 - loadIPPluginJar : add i2c
+2025-02-18 15:54:27,409 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:27,409 [INFO] PluginManager:203 - loadIPPluginJar : add i2s
+2025-02-18 15:54:27,427 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:27,427 [INFO] PluginManager:203 - loadIPPluginJar : add ipddr
+2025-02-18 15:54:27,495 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:27,495 [INFO] PluginManager:203 - loadIPPluginJar : add lorawan
+2025-02-18 15:54:27,567 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:27,567 [INFO] PluginManager:203 - loadIPPluginJar : add ltdc
+2025-02-18 15:54:27,583 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:27,583 [INFO] PluginManager:203 - loadIPPluginJar : add mdma
+2025-02-18 15:54:27,599 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:27,599 [INFO] PluginManager:203 - loadIPPluginJar : add nvic
+2025-02-18 15:54:27,692 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:27,692 [INFO] PluginManager:203 - loadIPPluginJar : add opamp
+2025-02-18 15:54:27,787 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:27,787 [INFO] PluginManager:203 - loadIPPluginJar : add openamp
+2025-02-18 15:54:27,878 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:27,879 [INFO] PluginManager:203 - loadIPPluginJar : add pdm2pcm
+2025-02-18 15:54:27,896 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:27,896 [INFO] PluginManager:203 - loadIPPluginJar : add plateformsettings
+2025-02-18 15:54:27,937 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:27,937 [INFO] PluginManager:203 - loadIPPluginJar : add quadspi
+2025-02-18 15:54:27,959 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:27,959 [INFO] PluginManager:203 - loadIPPluginJar : add resmgrutility
+2025-02-18 15:54:28,052 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:28,052 [INFO] PluginManager:203 - loadIPPluginJar : add sai
+2025-02-18 15:54:28,134 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:28,134 [INFO] PluginManager:203 - loadIPPluginJar : add spi
+2025-02-18 15:54:28,187 [INFO] ThirdPartyUpdaterWithRetryManager:56 - Updater plugin not ready yet. [2/15]
+2025-02-18 15:54:28,231 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:28,231 [INFO] PluginManager:203 - loadIPPluginJar : add stm32_wpan
+2025-02-18 15:54:28,288 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:28,288 [INFO] PluginManager:203 - loadIPPluginJar : add tim
+2025-02-18 15:54:28,407 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:28,407 [INFO] PluginManager:203 - loadIPPluginJar : add touchsensing
+2025-02-18 15:54:28,456 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:28,456 [INFO] PluginManager:203 - loadIPPluginJar : add tracer_emb
+2025-02-18 15:54:28,531 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:28,537 [INFO] PluginManager:203 - loadIPPluginJar : add ts
+2025-02-18 15:54:28,589 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:28,589 [INFO] PluginManager:203 - loadIPPluginJar : add tsc
+2025-02-18 15:54:28,637 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:28,637 [INFO] PluginManager:203 - loadIPPluginJar : add ucpd
+2025-02-18 15:54:28,729 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:54:28,729 [INFO] PluginManager:203 - loadIPPluginJar : add usart
+2025-02-18 15:54:29,057 [FATAL] Updater:284 - Updater called before beeing initialized
+2025-02-18 15:54:29,152 [FATAL] Updater:284 - Updater called before beeing initialized
+2025-02-18 15:54:29,170 [INFO] DbMcusAds:132 - JSON generation date=Tue Dec 17 16:01:15 GMT 2024 (1734451275111)
+2025-02-18 15:54:29,170 [FATAL] Updater:284 - Updater called before beeing initialized
+2025-02-18 15:54:29,257 [WARN] DetailPanel:315 - Failed to get advertising image, set to default
+2025-02-18 15:54:29,430 [FATAL] Updater:284 - Updater called before beeing initialized
+2025-02-18 15:54:29,437 [FATAL] Updater:284 - Updater called before beeing initialized
+2025-02-18 15:54:29,437 [FATAL] Updater:284 - Updater called before beeing initialized
+2025-02-18 15:54:29,437 [WARN] DetailPanel:315 - Failed to get advertising image, set to default
+2025-02-18 15:54:29,437 [FATAL] Updater:284 - Updater called before beeing initialized
+2025-02-18 15:54:29,475 [FATAL] Updater:284 - Updater called before beeing initialized
+2025-02-18 15:54:29,475 [WARN] ThirdParty:796 - waiting for thirdparty lock release [close project]
+2025-02-18 15:54:31,201 [INFO] ThirdPartyUpdaterWithRetryManager:56 - Updater plugin not ready yet. [3/15]
+2025-02-18 15:54:34,202 [FATAL] Updater:284 - Updater called before beeing initialized
+2025-02-18 15:54:34,202 [ERROR] AbstractThirdPartyUpdaterManager:153 - class java.lang.Integer cannot be cast to class java.util.List (java.lang.Integer and java.util.List are in module java.base of loader 'bootstrap')
+2025-02-18 15:54:34,202 [INFO] ThirdParty:900 - Integrity check success = false
+2025-02-18 15:54:34,203 [INFO] IntegrityCheckThread:75 - exiting critical section [integrity check]
+2025-02-18 15:54:34,203 [INFO] IntegrityCheckThread:78 - End integrity checks thread
+2025-02-18 15:54:34,203 [INFO] ThirdParty:798 - entering critical section [close project]
+2025-02-18 15:54:34,203 [INFO] ThirdParty:809 - exiting critical section [close project]
+2025-02-18 15:54:34,208 [INFO] PinOutPanel:1435 - setPackage(No Configuration,No Configuration)
+2025-02-18 15:54:34,208 [FATAL] Updater:284 - Updater called before beeing initialized
+2025-02-18 15:54:34,222 [ERROR] Updater:1065 - MainUpdater not yet initialized. External WinMGr cannot be set.
+2025-02-18 15:54:34,238 [INFO] Updater:1002 - Updater Version found : 6.2.1
+2025-02-18 15:54:34,254 [INFO] ApplicationProperties:181 - Using Application install path: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236
+2025-02-18 15:54:34,602 [INFO] MainUpdater:2661 - connection check result : 10
+2025-02-18 15:54:34,602 [INFO] MainUpdater:255 - Updater Check For Update Now.
+2025-02-18 15:54:34,602 [INFO] MicroXplorer:472 - Change Database Version : DB.6.0.21
+2025-02-18 15:54:34,720 [INFO] CheckServerUpdateThread:102 - End of CheckServer Thread
+2025-02-18 15:54:34,754 [INFO] MainUpdater:2661 - connection check result : 10
+2025-02-18 15:54:35,306 [INFO] CrossSelectorPresenter:1330 - Cross Selector saved comparison directory: C:\Users\yh621\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2025-02-18 15:54:35,306 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
+2025-02-18 15:54:35,306 [INFO] FinderPluginLoader:87 - Searching for filters in installed packs
+2025-02-18 15:54:35,306 [INFO] FinderPluginLoader:100 - Found C:\Users\yh621\STM32Cube\Repository\Packs\STMicroelectronics\X-CUBE-AI\8.0.1\CubeMX\plugins\ip\ai.8.0.1.jar
+2025-02-18 15:54:35,306 [INFO] FinderPluginLoader:100 - Found C:\Users\yh621\STM32Cube\Repository\Packs\STMicroelectronics\X-CUBE-AI\8.0.0\CubeMX\plugins\ip\ai.8.0.0.jar
+2025-02-18 15:54:35,306 [INFO] FinderPluginLoader:100 - Found C:\Users\yh621\STM32Cube\Repository\Packs\STMicroelectronics\X-CUBE-AI\7.3.0\CubeMX\plugins\ip\ai.7.3.0.jar
+2025-02-18 15:54:35,306 [INFO] FinderPluginLoader:100 - Found C:\Users\yh621\STM32Cube\Repository\Packs\STMicroelectronics\X-CUBE-AI\7.0.0\CubeMX\plugins\ip\ai.7.0.0.jar
+2025-02-18 15:54:35,306 [INFO] FinderPluginLoader:100 - Found C:\Users\yh621\STM32Cube\Repository\Packs\STMicroelectronics\X-CUBE-AI\6.0.0\CubeMX\plugins\ip\ai.6.0.0.jar
+2025-02-18 15:54:35,306 [INFO] FinderPluginLoader:100 - Found C:\Users\yh621\STM32Cube\Repository\Packs\STMicroelectronics\X-CUBE-AI\5.2.0\CubeMX\plugins\ip\ai.5.2.0.jar
+2025-02-18 15:54:35,306 [INFO] FinderPluginLoader:100 - Found C:\Users\yh621\STM32Cube\Repository\Packs\STMicroelectronics\X-CUBE-AI\5.1.2\CubeMX\plugins\ip\ai.5.1.2.jar
+2025-02-18 15:54:35,306 [INFO] FinderPluginLoader:110 - Loading ai.8.0.1
+2025-02-18 15:54:35,406 [INFO] McuExtendedFiltersManager:89 - Add MCU extended filter: Artificial Intelligence
+2025-02-18 15:54:35,406 [INFO] DbMcusXml:100 - Load MCU database from D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/mcu/families.xml
+2025-02-18 15:54:36,282 [INFO] DbMcusJson:94 - JSON generation date=Tue Nov 16 16:17:54 GMT 2021 (1637079474)
+2025-02-18 15:54:36,911 [INFO] DbMcus:175 - Found 1906 MCUs (1866 are supported by CubeMX, 1920 are visible in CubeMX)
+2025-02-18 15:54:36,925 [INFO] ApiDb:251 - Load user favorites file C:\Users\yh621/.stm32cubeide/favorites.mcus.txt: 1 item(s)
+2025-02-18 15:54:36,925 [INFO] ApiDb:255 - User favorites MCUs=[STM32H7A3ZITxQ]
+2025-02-18 15:54:36,925 [INFO] DbMcus:187 - Set 1 / 1 favorites MCUs
+2025-02-18 15:54:37,094 [INFO] AInterface:109 - AInterface using toolDir: C:/Users/yh621/STM32Cube/Repository//Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows
+2025-02-18 15:54:37,481 [INFO] DetailPanel:310 - Set advertising image to C:/Users/yh621/STM32Cube/Repository/\en.prom-stm32n6-mcu-finder.png
+2025-02-18 15:54:37,892 [INFO] DbBoardsPdsc:90 - Found 24 items
+2025-02-18 15:54:37,908 [INFO] DbBoardsPdsc:90 - Found 9 items
+2025-02-18 15:54:37,926 [INFO] DbBoardsPdsc:90 - Found 33 items
+2025-02-18 15:54:37,942 [INFO] DbBoardsPdsc:90 - Found 1 items
+2025-02-18 15:54:37,959 [INFO] DbBoardsPdsc:90 - Found 46 items
+2025-02-18 15:54:37,975 [INFO] DbBoardsPdsc:90 - Found 41 items
+2025-02-18 15:54:37,991 [INFO] DbBoardsPdsc:90 - Found 2 items
+2025-02-18 15:54:38,007 [INFO] DbBoardsPdsc:90 - Found 5 items
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board NUCLEO-WB15CC: unknown feature type=, name=, username=Three user LEDs, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board NUCLEO-WB15CC: unknown feature type=, name=, username=One reset and three user push-buttons, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board NUCLEO-WB15CC: unknown feature type=, name=, username=Arduino Uno V3 expansion connector, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board NUCLEO-WB15CC: unknown feature type=, name=, username=ST morpho extension pin headers for full access to all STM32WB I/Os, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board NUCLEO-WB15CC: unknown feature type=, name=, username=Integrated PCB antenna and SMA connector footprint, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board NUCLEO-WB15CC: unknown feature type=, name=, username=Flexible power-supply options: ST-LINK, USB VBUS, or external sources, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board NUCLEO-WB15CC: unknown feature type=, name=, username=On-board footprint to mount a CR2032 battery socket, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board NUCLEO-WB15CC: unknown feature type=, name=, username=On-board ST-LINK/V2-1 debugger/programmer with USB re-enumeration capability: mass storage, Virtual COM port, and debug port, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board NUCLEO-WB15CC: unknown feature type=, name=, username=Comprehensive free software libraries and examples available with the STM32CubeWB MCU Package, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board NUCLEO-WB15CC: unknown feature type=, name=, username=Support of a wide choice of Integrated Development Environments (IDEs) including IAR Embedded Workbench, MDK-ARM, STM32CubeIDE, and Mbed Studio, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board STM32H7B3I-DK: unknown feature type=Audio, name=, username=Audio stereo codec with Headphone Amp (CS42L51-CNZ), n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board STM32H735G-DK: unknown feature type=Audio, name=, username=Audio stereo codec with Headphone Amp (WM8994ECS/R), n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board STM32WB5MM-DK: unknown feature type=, name=, username=Time-of-Flight and gesture-detection sensor, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board STM32WB5MM-DK: unknown feature type=, name=, username=3 push-buttons (2 users and 1 reset) and 1 touch key button, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board STM32WB5MM-DK: unknown feature type=, name=, username=Flexible power-supply options: ST-LINK/V2-1 USB connector, 5 V delivered by ARDUINO® or external connector, USB charger, or USB power, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board STM32WB5MM-DK: unknown feature type=, name=, username=On-board ST-LINK/V2-1 debugger/programmer with USB re-enumeration capability: Virtual COM port and debug port, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board STM32WB5MM-DK: unknown feature type=, name=, username=Comprehensive free software libraries and examples available with the STM32CubeWB MCU Package, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board STM32WB5MM-DK: unknown feature type=, name=, username=Support of a wide choice of Integrated Development Environments (IDEs) including IAR Embedded Workbench®, MDK-ARM, and STM32CubeIDE, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board STM32H7B3I-EVAL: unknown feature type=Audio, name=, username=Multi-Channel Audio Codec (CS42L51-CNZ), n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board STM32H7B3I-EVAL: unknown feature type=Meter, name=, username=Power-metering and Temperature-monitoring with sigma-delta modulators, n=1
+2025-02-18 15:54:38,007 [WARN] DbBoardsPdsc:254 - Board STM32H7B3I-EVAL: unknown feature type=Motor, name=, username=Motor Control, n=1
+2025-02-18 15:54:38,051 [INFO] DbBoardsJson:87 - JSON generation date=Tue Nov 16 16:17:54 GMT 2021 (1637079474)
+2025-02-18 15:54:38,051 [INFO] DbBoards:117 - Found 167 boards (158 are supported by CubeMX)
+2025-02-18 15:54:38,059 [INFO] DbBoardsDocs:143 - JSON generation date=Tue Nov 16 16:17:54 GMT 2021 (1637079474)
+2025-02-18 15:54:38,059 [INFO] DbBoardsDocs:79 - Found 209 boards documents
+2025-02-18 15:54:38,059 [WARN] DbBoards:127 - board B-L475E-IOT01A2 has no document id list !
+2025-02-18 15:54:38,059 [WARN] DbBoards:127 - board NUCLEO-H743ZI has no document id list !
+2025-02-18 15:54:38,075 [WARN] DbBoards:127 - board NUCLEO-WL55JC2 has no document id list !
+2025-02-18 15:54:38,075 [WARN] DbBoards:127 - board P-NUCLEO-WB55-Nucleo has no document id list !
+2025-02-18 15:54:38,075 [WARN] DbBoards:127 - board P-NUCLEO-WB55-USBDongle has no document id list !
+2025-02-18 15:54:38,075 [WARN] DbBoards:127 - board STEVAL-BFA001V1B has no document id list !
+2025-02-18 15:54:38,075 [WARN] DbBoards:127 - board STEVAL-BFA001V2B has no document id list !
+2025-02-18 15:54:38,075 [WARN] DbBoards:127 - board STEVAL-IDP005V1 has no document id list !
+2025-02-18 15:54:38,075 [WARN] DbBoards:127 - board STEVAL-IDP005V2 has no document id list !
+2025-02-18 15:54:38,075 [WARN] DbBoards:127 - board STEVAL-MKSBOX1V1 has no document id list !
+2025-02-18 15:54:38,075 [WARN] DbBoards:127 - board STEVAL-STWINKT1 has no document id list !
+2025-02-18 15:54:38,075 [WARN] DbBoards:127 - board STEVAL-STWINKT1B has no document id list !
+2025-02-18 15:54:38,075 [WARN] DbBoards:127 - board STM32439I-EVAL2 has no document id list !
+2025-02-18 15:54:38,076 [WARN] DbBoards:127 - board STM32F401C-DISCO has no document id list !
+2025-02-18 15:54:38,076 [WARN] DbBoards:127 - board STM32F769I-DISC1 has no document id list !
+2025-02-18 15:54:38,076 [WARN] DbBoards:127 - board STM32G474E-EVAL1 has no document id list !
+2025-02-18 15:54:38,076 [WARN] DbBoards:127 - board STM32H743I-EVAL2 has no document id list !
+2025-02-18 15:54:38,076 [WARN] DbBoards:127 - board STM32H747I-DISC1 has no document id list !
+2025-02-18 15:54:38,076 [WARN] DbBoards:127 - board STM32H753I-EVAL2 has no document id list !
+2025-02-18 15:54:38,076 [WARN] DbBoards:127 - board STM32L-DISCOVERY has no document id list !
+2025-02-18 15:54:38,239 [ERROR] DbBoards:189 - Image file not found for board B-U585I-IOT02A: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/boards/B-U585I-IOT02A_small.jpg
+2025-02-18 15:54:38,339 [ERROR] DbBoards:189 - Image file not found for board NUCLEO-F413ZH: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/boards/nucleo-f413zh_small.jpg
+2025-02-18 15:54:38,506 [ERROR] DbBoards:189 - Image file not found for board NUCLEO-L552ZE-Q: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/boards/nucleo_l552ze_q_small.jpg
+2025-02-18 15:54:38,506 [ERROR] DbBoards:189 - Image file not found for board NUCLEO-U575ZI-Q: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/boards/nucleo-u575zi-q_small.jpg
+2025-02-18 15:54:38,506 [ERROR] DbBoards:189 - Image file not found for board NUCLEO-WB15CC: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/boards/nucleo-wb15cc_small.jpg
+2025-02-18 15:54:38,506 [ERROR] DbBoards:189 - Image file not found for board NUCLEO-WB55RG: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/boards/nucleo-wb55rg_small.jpg
+2025-02-18 15:54:40,192 [ERROR] DbBoards:189 - Image file not found for board STM32U575I-EV: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\/plugins/mcufinder/images/boards/stm32u575i-ev_small.jpg
+2025-02-18 15:54:40,274 [INFO] ApiDb:251 - Load user favorites file C:\Users\yh621/.stm32cubeide/favorites.boards.txt: 0 item(s)
+2025-02-18 15:54:40,274 [INFO] ApiDb:255 - User favorites Boards=[]
+2025-02-18 15:54:40,274 [INFO] DbBoards:206 - Set 0 / 0 favorites Boards
+2025-02-18 15:54:44,154 [INFO] DbMcusDocs:143 - JSON generation date=Tue Nov 16 16:17:54 GMT 2021 (1637079474)
+2025-02-18 15:54:44,399 [INFO] DbMcusDocs:79 - Found 682 MCUs documents
+2025-02-18 15:55:04,642 [INFO] MainUpdater:2661 - connection check result : 10
+2025-02-18 15:55:04,643 [INFO] MainUpdater:2661 - connection check result : 10
+2025-02-18 15:55:04,768 [INFO] MicroXplorer:442 - Change Database Path : 
+2025-02-18 15:55:04,769 [INFO] MicroXplorer:472 - Change Database Version : DB.6.0.21
+2025-02-18 15:55:04,769 [WARN] ThirdParty:796 - waiting for thirdparty lock release [close project]
+2025-02-18 15:55:04,769 [INFO] ThirdParty:798 - entering critical section [close project]
+2025-02-18 15:55:04,769 [INFO] ThirdParty:809 - exiting critical section [close project]
+2025-02-18 15:55:04,773 [INFO] PinOutPanel:1435 - setPackage(No Configuration,No Configuration)
+2025-02-18 15:55:04,775 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 434859728 Bytes (532676608)
+2025-02-18 15:55:04,777 [INFO] MicroXplorer:442 - Change Database Path : 
+2025-02-18 15:55:04,777 [INFO] MicroXplorer:472 - Change Database Version : DB.6.0.21
+2025-02-18 15:55:04,778 [INFO] OpenFileManager:303 - Change cursor
+2025-02-18 15:55:04,795 [WARN] IntegrityCheckThread:59 - waiting for thirdparty lock release [integrity check]
+2025-02-18 15:55:04,795 [INFO] IntegrityCheckThread:61 - entering critical section [integrity check]
+2025-02-18 15:55:05,020 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.FP-SNS-MOTENVWB1.1.4.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:05,101 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.FP-ATR-ASTRA1.2.0.1
+2025-02-18 15:55:05,129 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.X-CUBE-SMBUS.2.1.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:05,166 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-WB05N.1.1.0
+2025-02-18 15:55:05,254 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-F7.1.1.0
+2025-02-18 15:55:05,285 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AI.7.1.0
+2025-02-18 15:55:05,312 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.FP-SNS-MOTENV1.4.3.2.pdsc: PDSC version is not supported
+2025-02-18 15:55:05,329 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.FP-SNS-FLIGHT1.5.0.1.pdsc: PDSC version is not supported
+2025-02-18 15:55:05,349 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE1.6.2.3
+2025-02-18 15:55:05,379 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE1.6.2.4
+2025-02-18 15:55:05,403 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.FP-SNS-FLIGHT1.5.0.2.pdsc: PDSC version is not supported
+2025-02-18 15:55:05,426 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.X-CUBE-DISPLAY.3.0.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:05,450 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE1.7.0.0
+2025-02-18 15:55:05,493 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC10.1.0.0
+2025-02-18 15:55:05,525 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.X-CUBE-BLEMGR.4.0.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:05,563 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.22.0
+2025-02-18 15:55:05,589 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.22.1
+2025-02-18 15:55:05,699 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-MEMS1.9.3.0
+2025-02-18 15:55:06,017 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AI.7.2.0
+2025-02-18 15:55:06,043 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AI.10.0.0
+2025-02-18 15:55:06,070 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.FP-SNS-SMARTAG2.1.2.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:06,216 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-MEMS1.11.1.0
+2025-02-18 15:55:06,536 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] 1 : Invalid condition id : UX_CORESTACK_Condition cause : null
+2025-02-18 15:55:06,538 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] 1 : Invalid condition id : UX_CORESTACK_Condition cause : null
+2025-02-18 15:55:06,547 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] 1 : Invalid condition id : UX_CORESTACK_Condition cause : null
+2025-02-18 15:55:06,549 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] 1 : Invalid condition id : UX_CORESTACK_Condition cause : null
+2025-02-18 15:55:06,551 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] 1 : Invalid condition id : UX_CORESTACK_Condition cause : null
+2025-02-18 15:55:06,554 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-WL.2.0.0
+2025-02-18 15:55:06,581 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.FP-SNS-MOTENV1.5.0.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:06,606 [WARN] PackLoader:226 - Cannot read IP mode file for wolfSSL.I-CUBE-wolfMQTT.1.19.0
+2025-02-18 15:55:06,630 [WARN] PackLoader:226 - Cannot read IP mode file for WES.I-CUBE-Cesium.1.3.0
+2025-02-18 15:55:06,664 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE2.3.3.0
+2025-02-18 15:55:06,692 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-DISPLAY.2.2.0
+2025-02-18 15:55:06,740 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOF1.3.2.0
+2025-02-18 15:55:06,790 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ISPU.1.0.0
+2025-02-18 15:55:06,821 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC9.1.0.0
+2025-02-18 15:55:06,900 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-H7.2.1.0
+2025-02-18 15:55:06,925 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.21.1
+2025-02-18 15:55:06,948 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.21.0
+2025-02-18 15:55:06,968 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.21.3
+2025-02-18 15:55:07,041 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-MEMS1.9.4.0
+2025-02-18 15:55:07,531 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ALGOBUILD.1.3.0
+2025-02-18 15:55:07,603 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-G0.1.1.0
+2025-02-18 15:55:07,635 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-SAFEA1.1.2.2
+2025-02-18 15:55:07,661 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC4.3.0.0
+2025-02-18 15:55:07,722 [WARN] PackLoader:226 - Cannot read IP mode file for SEGGER.I-CUBE-embOS.1.2.1
+2025-02-18 15:55:07,782 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\EmbeddedOffice.I-CUBE-FS-RTOS.1.0.1.pdsc: PDSC version is not supported
+2025-02-18 15:55:07,810 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.X-CUBE-BLEMGR.3.0.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:07,830 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLEMGR.1.3.0
+2025-02-18 15:55:07,868 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.X-CUBE-TCPP.4.2.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:07,871 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\RealThread.X-CUBE-RT-Thread_Nano.4.1.1.pdsc: PDSC version is not supported
+2025-02-18 15:55:07,887 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.FP-ATR-SIGFOX1.3.2.0
+2025-02-18 15:55:07,903 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\quantropi.X-CUBE-qispace-sdk-base.1.9.3.pdsc: PDSC version is not supported
+2025-02-18 15:55:07,922 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-EEPRMA1.5.1.0
+2025-02-18 15:55:07,951 [WARN] PackLoader:226 - Cannot read IP mode file for emotas.I-CUBE-CANOPEN.1.1.2
+2025-02-18 15:55:07,972 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.20.0
+2025-02-18 15:55:08,039 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-MEMS1.9.5.0
+2025-02-18 15:55:08,390 [WARN] PackLoader:226 - Cannot read IP mode file for SEGGER.I-CUBE-embOS.1.3.1
+2025-02-18 15:55:08,479 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ALGOBUILD.1.4.0
+2025-02-18 15:55:08,554 [WARN] PackLoader:226 - Cannot read IP mode file for SEGGER.I-CUBE-embOS.1.3.0
+2025-02-18 15:55:08,627 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AI.9.1.0
+2025-02-18 15:55:08,647 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-GNSS1.6.0.0
+2025-02-18 15:55:08,692 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-F4.1.1.0
+2025-02-18 15:55:08,711 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ISPU.2.1.0
+2025-02-18 15:55:08,723 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLEMGR.1.2.0
+2025-02-18 15:55:08,772 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-L5.2.0.0
+2025-02-18 15:55:08,837 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-MEMS1.9.6.0
+2025-02-18 15:55:09,072 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-EEPRMA1.4.2.0
+2025-02-18 15:55:09,100 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC6.3.1.0
+2025-02-18 15:55:09,126 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\ITTIA_DB.I-CUBE-ITTIADB.8.8.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:09,154 [WARN] PackLoader:226 - Cannot read IP mode file for emotas.I-CUBE-CANOPEN.1.1.3
+2025-02-18 15:55:09,206 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLEMGR.2.0.0
+2025-02-18 15:55:09,227 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.X-CUBE-DPower.1.2.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:09,248 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC4.2.0.5
+2025-02-18 15:55:09,276 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC4.2.0.4
+2025-02-18 15:55:09,341 [WARN] ConditionMgr:437 - getConditionDescription Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2025-02-18 15:55:09,342 [WARN] ConditionMgr:437 - getConditionDescription Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2025-02-18 15:55:09,346 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-H7.3.1.0
+2025-02-18 15:55:09,347 [WARN] ConditionMgr:1040 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2025-02-18 15:55:09,347 [WARN] ConditionMgr:1040 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2025-02-18 15:55:09,347 [WARN] ConditionMgr:1040 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2025-02-18 15:55:09,349 [WARN] ConditionMgr:1040 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2025-02-18 15:55:09,349 [WARN] ConditionMgr:1040 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2025-02-18 15:55:09,376 [ERROR] Engine:519 - STMicroelectronics.X-CUBE-AI.7.3.0: Software pack already exists
+2025-02-18 15:55:09,398 [WARN] PackLoader:226 - Cannot read IP mode file for wolfSSL.I-CUBE-wolfSSL.5.5.4
+2025-02-18 15:55:09,423 [WARN] PackLoader:226 - Cannot read IP mode file for wolfSSL.I-CUBE-wolfSSL.5.5.1
+2025-02-18 15:55:09,444 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.X-CUBE-FREERTOS.1.3.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:09,470 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC7.1.0.1
+2025-02-18 15:55:09,504 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC7.1.0.0
+2025-02-18 15:55:09,521 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC6.3.0.0
+2025-02-18 15:55:09,566 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-EEPRMA1.4.1.0
+2025-02-18 15:55:09,591 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AI.8.1.0
+2025-02-18 15:55:09,764 [WARN] ConditionMgr:437 - getConditionDescription Invalid condition id : LAN8742 Phy interface Condition cause : null
+2025-02-18 15:55:09,764 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-L4.2.0.0
+2025-02-18 15:55:09,764 [WARN] ConditionMgr:1040 - genDependencies : Invalid condition id : LAN8742 Phy interface Condition cause : null
+2025-02-18 15:55:09,764 [WARN] ConditionMgr:1040 - genDependencies : Invalid condition id : LAN8742 Phy interface Condition cause : null
+2025-02-18 15:55:09,764 [WARN] ConditionMgr:1040 - genDependencies : Invalid condition id : LAN8742 Phy interface Condition cause : null
+2025-02-18 15:55:09,780 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-SFXS2LP1.4.0.0
+2025-02-18 15:55:09,804 [ERROR] Engine:519 - STMicroelectronics.X-CUBE-AI.7.3.0: Software pack already exists
+2025-02-18 15:55:09,840 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-H7.3.0.0
+2025-02-18 15:55:09,857 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ISPU.1.1.0
+2025-02-18 15:55:09,904 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-H7.3.3.0
+2025-02-18 15:55:09,943 [WARN] PackLoader:226 - Cannot read IP mode file for RoweBots.I-CUBE-UNISONRTOS.5.5.0-4
+2025-02-18 15:55:10,112 [WARN] ConditionMgr:437 - getConditionDescription Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2025-02-18 15:55:10,114 [WARN] ConditionMgr:437 - getConditionDescription Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2025-02-18 15:55:10,116 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-WB.2.0.0
+2025-02-18 15:55:10,116 [WARN] ConditionMgr:1040 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2025-02-18 15:55:10,116 [WARN] ConditionMgr:1040 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2025-02-18 15:55:10,116 [WARN] ConditionMgr:1040 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2025-02-18 15:55:10,116 [WARN] ConditionMgr:1040 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2025-02-18 15:55:10,116 [WARN] ConditionMgr:1040 - genDependencies : Invalid condition id : UX DEVICE CLASS RTOS Condition cause : null
+2025-02-18 15:55:10,137 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.X-CUBE-FREERTOS.1.0.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:10,156 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.X-CUBE-FREERTOS.1.0.1.pdsc: PDSC version is not supported
+2025-02-18 15:55:10,187 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-GNSS1.7.0.1
+2025-02-18 15:55:10,209 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.FP-SNS-STBOX1.2.0.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:10,253 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-L5.1.1.0
+2025-02-18 15:55:10,416 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-SUBG2.5.0.0
+2025-02-18 15:55:10,450 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\Cesanta.I-CUBE-Mongoose.7.13.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:10,476 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.X-CUBE-TOF1.3.3.1.pdsc: PDSC version is not supported
+2025-02-18 15:55:10,505 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-G4.2.0.0
+2025-02-18 15:55:10,533 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOF1.3.3.0
+2025-02-18 15:55:10,564 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.FP-ATR-ASTRA1.1.1.1
+2025-02-18 15:55:10,579 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\Infineon.AIROC-Wi-Fi-Bluetooth-STM32.1.5.1.pdsc: PDSC version is not supported
+2025-02-18 15:55:10,597 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.FP-SNS-MOTENVWB1.1.3.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:10,629 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-G4.1.0.0
+2025-02-18 15:55:10,682 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-L4.1.0.0
+2025-02-18 15:55:10,710 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.X-CUBE-IPS.3.1.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:10,730 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.X-CUBE-ALS.1.0.2.pdsc: PDSC version is not supported
+2025-02-18 15:55:10,801 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-MEMS1.10.0.0
+2025-02-18 15:55:11,003 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.X-CUBE-FREERTOS.1.1.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:11,026 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.24.2
+2025-02-18 15:55:11,078 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-WL.1.0.0
+2025-02-18 15:55:11,106 [WARN] PackLoader:226 - Cannot read IP mode file for wolfSSL.I-CUBE-wolfTPM.3.4.0
+2025-02-18 15:55:11,135 [WARN] PackLoader:226 - Cannot read IP mode file for portGmbH.I-Cube-SoM-uGOAL.1.1.0
+2025-02-18 15:55:11,159 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ALS.1.0.1
+2025-02-18 15:55:11,352 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-WB.1.1.0
+2025-02-18 15:55:11,404 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-L5.1.0.0
+2025-02-18 15:55:11,424 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-EEPRMA1.3.1.1
+2025-02-18 15:55:11,476 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-H7RS.1.0.0
+2025-02-18 15:55:11,502 [WARN] PackLoader:226 - Cannot read IP mode file for STMicroelectronics.FP-ATR-ASTRA1.2.0.0
+2025-02-18 15:55:11,525 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.X-CUBE-TOF1.3.4.2.pdsc: PDSC version is not supported
+2025-02-18 15:55:11,545 [ERROR] Engine:519 - C:\Users\yh621\.stm32cubemx\thirdparties\pdsc\STMicroelectronics.X-CUBE-TOF1.3.4.0.pdsc: PDSC version is not supported
+2025-02-18 15:55:11,555 [WARN] PackLoader:226 - Cannot read IP mode file for wolfSSL.I-CUBE-wolfSSH.1.4.17
+2025-02-18 15:55:11,573 [INFO] ThirdParty:900 - Integrity check success = true
+2025-02-18 15:55:11,574 [INFO] IntegrityCheckThread:75 - exiting critical section [integrity check]
+2025-02-18 15:55:11,574 [INFO] IntegrityCheckThread:78 - End integrity checks thread
+2025-02-18 15:55:19,017 [INFO] Context:587 - Trying to add GPIOservice into a context  which must be forbidden
+2025-02-18 15:55:20,934 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) Unable to find key (Mcu.ThirdPartyNb) in loaded IOC file
+2025-02-18 15:55:20,934 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) Unable to find key (Mcu.PinsNb) in loaded IOC file
+2025-02-18 15:55:20,934 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) Unable to find key (Mcu.IPNb) in loaded IOC file
+2025-02-18 15:55:21,031 [WARN] ApiManager:294 - Cannot register API 'Board Extension:GNSS1A1' from pack STMicroelectronics.X-CUBE-GNSS1.6.0.0: no header file found
+2025-02-18 15:55:21,031 [WARN] ApiManager:294 - Cannot register API 'Board Support:Custom' from pack STMicroelectronics.X-CUBE-GNSS1.6.0.0: no header file found
+2025-02-18 15:55:21,031 [WARN] ApiManager:294 - Cannot register API 'Data Exchange:lib_gnss' from pack STMicroelectronics.X-CUBE-GNSS1.6.0.0: no header file found
+2025-02-18 15:55:21,051 [WARN] ApiManager:294 - Cannot register API 'Wireless:STM32WB05N' from pack STMicroelectronics.X-CUBE-WB05N.1.1.0: no header file found
+2025-02-18 15:55:21,354 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS01A3' from pack STMicroelectronics.X-CUBE-MEMS1.9.6.0: no header file found
+2025-02-18 15:55:21,355 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS01A2' from pack STMicroelectronics.X-CUBE-MEMS1.9.6.0: no header file found
+2025-02-18 15:55:21,355 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS02A1' from pack STMicroelectronics.X-CUBE-MEMS1.9.6.0: no header file found
+2025-02-18 15:55:21,373 [WARN] ApiManager:294 - Cannot register API 'Board Extension:EEPRMA2' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.2.0: no header file found
+2025-02-18 15:55:21,373 [WARN] ApiManager:294 - Cannot register API 'Board Extension:PGEEZ1' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.2.0: no header file found
+2025-02-18 15:55:21,373 [WARN] ApiManager:294 - Cannot register API 'Board Part:M24' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.2.0: no header file found
+2025-02-18 15:55:21,373 [WARN] ApiManager:294 - Cannot register API 'Board Part:M95' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.2.0: no header file found
+2025-02-18 15:55:21,373 [WARN] ApiManager:294 - Cannot register API 'Board Part:M95P32' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.2.0: no header file found
+2025-02-18 15:55:21,373 [WARN] ApiManager:294 - Cannot register API 'PGEEZ1:SPI' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.2.0: no header file found
+2025-02-18 15:55:21,373 [WARN] ApiManager:294 - Cannot register API 'PGEEZ1:QDSPI' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.2.0: no header file found
+2025-02-18 15:55:21,375 [WARN] ApiManager:294 - Cannot register API 'Board Extension:NFC06A1' from pack STMicroelectronics.X-CUBE-NFC6.3.1.0: no header file found
+2025-02-18 15:55:21,376 [WARN] ApiManager:294 - Cannot register API 'Board Extension:NFC08A1' from pack STMicroelectronics.X-CUBE-NFC6.3.1.0: no header file found
+2025-02-18 15:55:21,377 [WARN] ApiManager:294 - Cannot register API 'Wireless:BlueNRG-MS' from pack STMicroelectronics.X-CUBE-BLE1.6.2.3: no header file found
+2025-02-18 15:55:21,378 [WARN] ApiManager:294 - Cannot register API 'Wireless:BlueNRG-MS' from pack STMicroelectronics.X-CUBE-BLE1.6.2.4: no header file found
+2025-02-18 15:55:21,385 [INFO] RtosManager:470 - Registered RTOS mode: class=CMSIS, group=RTOS, mode=CMSIS_V1, owner=FREERTOS
+2025-02-18 15:55:21,386 [INFO] RtosManager:470 - Registered RTOS mode: class=CMSIS, group=RTOS2, mode=CMSIS_V2, owner=FREERTOS
+2025-02-18 15:55:21,386 [INFO] RtosManager:470 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V1, owner=FREERTOS
+2025-02-18 15:55:21,386 [INFO] RtosManager:470 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V2, owner=FREERTOS
+2025-02-18 15:55:21,386 [WARN] ModelIntegratedComponent:182 - Missing modes for component STMicroelectronics:FreeRTOS:0.0.1:STMicroelectronics:RTOS:FreeRTOS:Core:::10.2.0:
+2025-02-18 15:55:21,390 [WARN] ApiManager:294 - Cannot register API 'Board Extension:NFC04A1' from pack STMicroelectronics.X-CUBE-NFC4.2.0.5: no header file found
+2025-02-18 15:55:21,391 [WARN] ApiManager:294 - Cannot register API 'Board Extension:NFC04A1' from pack STMicroelectronics.X-CUBE-NFC4.2.0.4: no header file found
+2025-02-18 15:55:21,395 [WARN] ApiManager:294 - Cannot register API 'Wireless:BlueNRG-MS' from pack STMicroelectronics.X-CUBE-BLE1.7.0.0: no header file found
+2025-02-18 15:55:21,395 [WARN] ApiManager:294 - Cannot register API 'Board Extension:NFC10A1' from pack STMicroelectronics.X-CUBE-NFC10.1.0.0: no header file found
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2025-02-18 15:55:21,395 [WARN] ApiManager:294 - Cannot register API 'Board Extension:NFC07A1' from pack STMicroelectronics.X-CUBE-NFC7.1.0.1: no header file found
+2025-02-18 15:55:21,395 [WARN] ApiManager:294 - Cannot register API 'Board Extension:NFC07A1' from pack STMicroelectronics.X-CUBE-NFC7.1.0.0: no header file found
+2025-02-18 15:55:21,395 [WARN] ApiManager:294 - Cannot register API 'Board Extension:NFC06A1' from pack STMicroelectronics.X-CUBE-NFC6.3.0.0: no header file found
+2025-02-18 15:55:21,395 [WARN] ApiManager:294 - Cannot register API 'Board Extension:NFC08A1' from pack STMicroelectronics.X-CUBE-NFC6.3.0.0: no header file found
+2025-02-18 15:55:21,727 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS01A3' from pack STMicroelectronics.X-CUBE-MEMS1.9.3.0: no header file found
+2025-02-18 15:55:21,727 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS01A2' from pack STMicroelectronics.X-CUBE-MEMS1.9.3.0: no header file found
+2025-02-18 15:55:21,727 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS02A1' from pack STMicroelectronics.X-CUBE-MEMS1.9.3.0: no header file found
+2025-02-18 15:55:21,735 [WARN] ApiManager:294 - Cannot register API 'Board Extension:EEPRMA1' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2025-02-18 15:55:21,735 [WARN] ApiManager:294 - Cannot register API 'Board Extension:EEPRMA2' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2025-02-18 15:55:21,735 [WARN] ApiManager:294 - Cannot register API 'Board Extension:PGEEZ1' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2025-02-18 15:55:21,735 [WARN] ApiManager:294 - Cannot register API 'Board Part:M24' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2025-02-18 15:55:21,735 [WARN] ApiManager:294 - Cannot register API 'Board Part:M95' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2025-02-18 15:55:21,735 [WARN] ApiManager:294 - Cannot register API 'Board Part:M95P32' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2025-02-18 15:55:21,735 [WARN] ApiManager:294 - Cannot register API 'PGEEZ1:SPI' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2025-02-18 15:55:21,735 [WARN] ApiManager:294 - Cannot register API 'PGEEZ1:QDSPI' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2025-02-18 15:55:22,050 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS01A3' from pack STMicroelectronics.X-CUBE-MEMS1.11.1.0: no header file found
+2025-02-18 15:55:22,050 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS02A1' from pack STMicroelectronics.X-CUBE-MEMS1.11.1.0: no header file found
+2025-02-18 15:55:22,050 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS4A1' from pack STMicroelectronics.X-CUBE-MEMS1.11.1.0: no header file found
+2025-02-18 15:55:22,067 [WARN] ApiManager:294 - Cannot register API 'Board Extension:S2868A1' from pack STMicroelectronics.X-CUBE-SFXS2LP1.4.0.0: no header file found
+2025-02-18 15:55:22,067 [WARN] ApiManager:294 - Cannot register API 'Board Extension:S2868A2' from pack STMicroelectronics.X-CUBE-SFXS2LP1.4.0.0: no header file found
+2025-02-18 15:55:22,067 [WARN] ApiManager:294 - Cannot register API 'Board Extension:S2915A1' from pack STMicroelectronics.X-CUBE-SFXS2LP1.4.0.0: no header file found
+2025-02-18 15:55:22,071 [WARN] ApiManager:294 - Cannot register API 'Wireless:BlueNRG-2' from pack STMicroelectronics.X-CUBE-BLE2.3.3.0: no header file found
+2025-02-18 15:55:22,073 [WARN] ApiManager:294 - Cannot register API 'Board Extension:NFC09A1' from pack STMicroelectronics.X-CUBE-NFC9.1.0.0: no header file found
+2025-02-18 15:55:22,088 [WARN] ApiManager:294 - Cannot register API 'Board Extension:GNSS1A1' from pack STMicroelectronics.X-CUBE-GNSS1.7.0.1: no header file found
+2025-02-18 15:55:22,088 [WARN] ApiManager:294 - Cannot register API 'Board Support:Custom' from pack STMicroelectronics.X-CUBE-GNSS1.7.0.1: no header file found
+2025-02-18 15:55:22,088 [WARN] ApiManager:294 - Cannot register API 'Data Exchange:lib_gnss' from pack STMicroelectronics.X-CUBE-GNSS1.7.0.1: no header file found
+2025-02-18 15:55:22,277 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS01A3' from pack STMicroelectronics.X-CUBE-MEMS1.9.4.0: no header file found
+2025-02-18 15:55:22,277 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS01A2' from pack STMicroelectronics.X-CUBE-MEMS1.9.4.0: no header file found
+2025-02-18 15:55:22,277 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS02A1' from pack STMicroelectronics.X-CUBE-MEMS1.9.4.0: no header file found
+2025-02-18 15:55:22,294 [WARN] ApiManager:294 - Cannot register API 'Board Extension:STSAFEA1' from pack STMicroelectronics.X-CUBE-SAFEA1.1.2.2: no header file found
+2025-02-18 15:55:22,294 [WARN] ApiManager:294 - Cannot register API 'Board Part:STSAFEA110' from pack STMicroelectronics.X-CUBE-SAFEA1.1.2.2: no header file found
+2025-02-18 15:55:22,294 [WARN] ApiManager:294 - Cannot register API 'Security:ST_Cryptolib' from pack STMicroelectronics.X-CUBE-SAFEA1.1.2.2: no header file found
+2025-02-18 15:55:22,294 [WARN] ApiManager:294 - Cannot register API 'Security:MbedTLS' from pack STMicroelectronics.X-CUBE-SAFEA1.1.2.2: no header file found
+2025-02-18 15:55:22,294 [WARN] ApiManager:294 - Cannot register API 'Board Extension:NFC04A1' from pack STMicroelectronics.X-CUBE-NFC4.3.0.0: no header file found
+2025-02-18 15:55:22,294 [WARN] ApiManager:294 - Cannot register API 'Board Extension:S2868A1' from pack STMicroelectronics.X-CUBE-SUBG2.5.0.0: no header file found
+2025-02-18 15:55:22,294 [WARN] ApiManager:294 - Cannot register API 'Board Extension:S2868A2' from pack STMicroelectronics.X-CUBE-SUBG2.5.0.0: no header file found
+2025-02-18 15:55:22,294 [WARN] ApiManager:294 - Cannot register API 'Board Extension:S2915A1' from pack STMicroelectronics.X-CUBE-SUBG2.5.0.0: no header file found
+2025-02-18 15:55:22,310 [WARN] ApiManager:294 - Cannot register API 'Board Extension:EEPRMA2' from pack STMicroelectronics.X-CUBE-EEPRMA1.5.1.0: no header file found
+2025-02-18 15:55:22,310 [WARN] ApiManager:294 - Cannot register API 'Board Extension:PGEEZ1' from pack STMicroelectronics.X-CUBE-EEPRMA1.5.1.0: no header file found
+2025-02-18 15:55:22,310 [WARN] ApiManager:294 - Cannot register API 'Board Extension:EEICA1' from pack STMicroelectronics.X-CUBE-EEPRMA1.5.1.0: no header file found
+2025-02-18 15:55:22,310 [WARN] ApiManager:294 - Cannot register API 'Board Part:M24' from pack STMicroelectronics.X-CUBE-EEPRMA1.5.1.0: no header file found
+2025-02-18 15:55:22,310 [WARN] ApiManager:294 - Cannot register API 'Board Part:M95' from pack STMicroelectronics.X-CUBE-EEPRMA1.5.1.0: no header file found
+2025-02-18 15:55:22,314 [WARN] ApiManager:294 - Cannot register API 'Board Part:M95P32' from pack STMicroelectronics.X-CUBE-EEPRMA1.5.1.0: no header file found
+2025-02-18 15:55:22,314 [WARN] ApiManager:294 - Cannot register API 'Board Part:M24256E-F' from pack STMicroelectronics.X-CUBE-EEPRMA1.5.1.0: no header file found
+2025-02-18 15:55:22,314 [WARN] ApiManager:294 - Cannot register API 'Board Part:M24M01E-F' from pack STMicroelectronics.X-CUBE-EEPRMA1.5.1.0: no header file found
+2025-02-18 15:55:22,314 [WARN] ApiManager:294 - Cannot register API 'PGEEZ1:SPI' from pack STMicroelectronics.X-CUBE-EEPRMA1.5.1.0: no header file found
+2025-02-18 15:55:22,314 [WARN] ApiManager:294 - Cannot register API 'PGEEZ1:QDSPI' from pack STMicroelectronics.X-CUBE-EEPRMA1.5.1.0: no header file found
+2025-02-18 15:55:22,511 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS01A3' from pack STMicroelectronics.X-CUBE-MEMS1.10.0.0: no header file found
+2025-02-18 15:55:22,511 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS02A1' from pack STMicroelectronics.X-CUBE-MEMS1.10.0.0: no header file found
+2025-02-18 15:55:22,511 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS4A1' from pack STMicroelectronics.X-CUBE-MEMS1.10.0.0: no header file found
+2025-02-18 15:55:22,842 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS01A3' from pack STMicroelectronics.X-CUBE-MEMS1.9.5.0: no header file found
+2025-02-18 15:55:22,843 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS01A2' from pack STMicroelectronics.X-CUBE-MEMS1.9.5.0: no header file found
+2025-02-18 15:55:22,843 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS02A1' from pack STMicroelectronics.X-CUBE-MEMS1.9.5.0: no header file found
+2025-02-18 15:55:22,868 [WARN] ApiManager:294 - Cannot register API 'Board Extension:EEPRMA1' from pack STMicroelectronics.X-CUBE-EEPRMA1.3.1.1: no header file found
+2025-02-18 15:55:22,871 [WARN] ApiManager:294 - Cannot register API 'Board Extension:EEPRMA2' from pack STMicroelectronics.X-CUBE-EEPRMA1.3.1.1: no header file found
+2025-02-18 15:56:10,322 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 995235328 Bytes (1049624576)
+2025-02-18 15:56:10,342 [WARN] ThirdParty:762 - waiting for thirdparty lock release [change project]
+2025-02-18 15:56:10,342 [INFO] ThirdParty:764 - entering critical section [change project]
+2025-02-18 15:56:10,342 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 6.0.0
+2025-02-18 15:56:10,342 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2025-02-18 15:56:10,342 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F4 1.1.0
+2025-02-18 15:56:10,342 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 2.0.1
+2025-02-18 15:56:10,342 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-WB05N 1.1.0
+2025-02-18 15:56:10,342 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 2.1.0
+2025-02-18 15:56:10,342 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 1.2.0
+2025-02-18 15:56:10,342 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F7 1.1.0
+2025-02-18 15:56:10,342 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L5 2.0.0
+2025-02-18 15:56:10,342 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2025-02-18 15:56:10,342 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 9.6.0
+2025-02-18 15:56:10,342 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 4.2.0
+2025-02-18 15:56:10,342 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC6 3.1.0
+2025-02-18 15:56:10,342 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 7.1.0
+2025-02-18 15:56:10,345 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 6.2.3
+2025-02-18 15:56:10,345 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 6.2.4
+2025-02-18 15:56:10,345 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2025-02-18 15:56:10,345 [INFO] ThirdParty:952 - CMSIS Pack Vendor :emotas I-CUBE-CANOPEN 1.1.3
+2025-02-18 15:56:10,345 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 2.0.0
+2025-02-18 15:56:10,345 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 2.0.5
+2025-02-18 15:56:10,345 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 2.0.4
+2025-02-18 15:56:10,345 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 3.1.0
+2025-02-18 15:56:10,345 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2025-02-18 15:56:10,345 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 7.0.0
+2025-02-18 15:56:10,345 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC10 1.0.0
+2025-02-18 15:56:10,345 [INFO] ThirdParty:952 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSL 5.5.4
+2025-02-18 15:56:10,345 [INFO] ThirdParty:952 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSL 5.5.1
+2025-02-18 15:56:10,346 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2025-02-18 15:56:10,346 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.22.0
+2025-02-18 15:56:10,346 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC7 1.0.1
+2025-02-18 15:56:10,346 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2025-02-18 15:56:10,346 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC7 1.0.0
+2025-02-18 15:56:10,346 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.22.1
+2025-02-18 15:56:10,346 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC6 3.0.0
+2025-02-18 15:56:10,346 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 9.3.0
+2025-02-18 15:56:10,346 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 4.1.0
+2025-02-18 15:56:10,346 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 7.2.0
+2025-02-18 15:56:10,346 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 10.0.0
+2025-02-18 15:56:10,346 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 11.1.0
+2025-02-18 15:56:10,346 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 8.1.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 6.0.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfMQTT 1.19.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L4 2.0.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :WES I-CUBE-Cesium 1.3.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SFXS2LP1 4.0.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE2 3.3.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DISPLAY 2.2.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.2.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 3.0.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 1.0.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 1.1.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 3.3.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :RoweBots I-CUBE-UNISONRTOS 5.5.0-4
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC9 1.0.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 2.1.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 8.0.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WB 2.0.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.21.1
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.21.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 7.0.1
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.21.3
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 9.4.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 7.3.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.3.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L5 1.1.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G0 1.1.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 8.0.1
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SAFEA1 1.2.2
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 3.0.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 5.0.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :SEGGER I-CUBE-embOS 1.2.1
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2025-02-18 15:56:10,347 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G4 2.0.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.3.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 1.1.1
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 1.3.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-SIGFOX1 3.2.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G4 1.0.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L4 1.0.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 5.1.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :emotas I-CUBE-CANOPEN 1.1.2
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.20.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 10.0.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.24.2
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WL 1.0.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfTPM 3.4.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :portGmbH I-Cube-SoM-uGOAL 1.1.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALS 1.0.1
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 9.5.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 7.0.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WB 1.1.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :SEGGER I-CUBE-embOS 1.3.1
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.4.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L5 1.0.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :SEGGER I-CUBE-embOS 1.3.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 3.1.1
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7RS 1.0.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 2.0.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 9.1.0
+2025-02-18 15:56:10,351 [INFO] ThirdParty:952 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSH 1.4.17
+2025-02-18 15:56:10,351 [INFO] ThirdParty:770 - exiting critical section [change project]
+2025-02-18 15:56:11,182 [INFO] PinOutPanel:1435 - setPackage(No Configuration,No Configuration)
+2025-02-18 15:56:11,182 [INFO] PinOutPanel:1435 - setPackage(STM32H7A3ZITxQ,LQFP144)
+2025-02-18 15:56:12,483 [INFO] UtilMem:74 - Before build in PCC Used Memory: 951903776 Bytes (1049624576)
+2025-02-18 15:56:13,480 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/yh621/.stm32cubemx/plugins/power
+2025-02-18 15:56:13,558 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/yh621/.stm32cubemx/plugins/power
+2025-02-18 15:56:13,872 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/yh621/.stm32cubemx/plugins/power
+2025-02-18 15:56:13,888 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/yh621/.stm32cubemx/plugins/power
+2025-02-18 15:56:14,185 [INFO] UtilMem:74 - After build in PCC Used Memory: 980285768 Bytes (1049624576)
+2025-02-18 15:56:14,245 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,246 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,246 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,246 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,246 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,246 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,247 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,247 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,248 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,248 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,249 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,249 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,249 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,250 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,250 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,250 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,251 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,251 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,252 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,252 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,252 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,252 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,252 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,252 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,252 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,252 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,252 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,252 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,252 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,252 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,252 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,255 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,255 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,255 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,255 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,255 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,257 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,257 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,257 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,257 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,257 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,257 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,257 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,257 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,257 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,257 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,257 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,257 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,257 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,266 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,266 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,267 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,267 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,267 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,267 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,267 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,267 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,267 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,274 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,275 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,277 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,277 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,277 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,277 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,277 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,277 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,277 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,277 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,286 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,287 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,289 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,290 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,290 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,292 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,293 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,294 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,295 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,297 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,298 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,298 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,298 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,298 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,298 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,304 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,306 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,307 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,309 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,324 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,326 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,328 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,330 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,332 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,334 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,336 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,338 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,339 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,339 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,339 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:56:14,440 [INFO] ApiDbMcu:458 - Load IP Config File for PDM2PCM
+2025-02-18 15:56:14,499 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] toolchainItems.length=====1
+2025-02-18 15:56:14,642 [INFO] OpenFileManager:323 - Restore cursor
+2025-02-18 15:56:16,086 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 982747712 Bytes (1049624576)
+2025-02-18 15:56:17,312 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 957995144 Bytes (1049624576)
+2025-02-18 15:56:17,707 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2025-02-18 15:56:17,707 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2025-02-18 15:56:17,707 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2025-02-18 15:56:17,712 [INFO] CodeGenerator:641 - code generatio: config db path: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\
+2025-02-18 15:56:18,727 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\MXTmpFiles\license.tmp_save
+2025-02-18 15:56:19,053 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\MXTmpFiles\license.tmp
+2025-02-18 15:56:19,919 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2025-02-18 15:56:19,943 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\MXTmpFiles\cortex.tmp_save
+2025-02-18 15:56:20,033 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\MXTmpFiles\cortex.tmp
+2025-02-18 15:56:20,057 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Src\stm32h7xx_it.c_save
+2025-02-18 15:56:20,216 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Src\stm32h7xx_it.c
+2025-02-18 15:56:20,216 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Inc\stm32h7xx_it.h_save
+2025-02-18 15:56:20,337 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Inc\stm32h7xx_it.h
+2025-02-18 15:56:20,461 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Src\stm32h7xx_hal_msp.c_save
+2025-02-18 15:56:20,624 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Src\stm32h7xx_hal_msp.c
+2025-02-18 15:56:20,641 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\MXTmpFiles\system.tmp_save
+2025-02-18 15:56:20,746 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\MXTmpFiles\system.tmp
+2025-02-18 15:56:20,776 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Inc\stm32h7xx_hal_conf.h_save
+2025-02-18 15:56:20,918 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Inc\stm32h7xx_hal_conf.h
+2025-02-18 15:56:21,082 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Inc\main.h_save
+2025-02-18 15:56:21,243 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Inc\main.h
+2025-02-18 15:56:21,266 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Src\main.c_save
+2025-02-18 15:56:21,449 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Src\main.c
+2025-02-18 15:56:22,515 [INFO] ProjectBuilder:2460 - Time for Copy HAL[1] : 136mS.
+2025-02-18 15:56:22,527 [INFO] ProjectBuilder:3418 - Project Generator version: 3.13.0-B3
+2025-02-18 15:56:23,637 [INFO] ConfigFileManager:1242 - The Die is : DIE480
+2025-02-18 15:56:23,669 [INFO] ApiDbMcu:458 - Load IP Config File for FATFS
+2025-02-18 15:56:23,727 [INFO] ApiDbMcu:458 - Load IP Config File for FREERTOS
+2025-02-18 15:56:23,753 [INFO] ApiDbMcu:458 - Load IP Config File for LIBJPEG
+2025-02-18 15:56:23,813 [INFO] ApiDbMcu:458 - Load IP Config File for MBEDTLS
+2025-02-18 15:56:23,874 [INFO] ApiDbMcu:458 - Load IP Config File for USB_DEVICE
+2025-02-18 15:56:23,900 [INFO] ApiDbMcu:458 - Load IP Config File for USB_HOST
+2025-02-18 15:56:33,146 [INFO] ProjectBuilder:3584 - Time for Generating toolchain IDE Files: 10619mS.
+2025-02-18 15:56:33,148 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 0mS.
+2025-02-18 15:56:33,150 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 0mS.
+2025-02-18 15:56:34,211 [INFO] ApiDb:276 - Save user favorites file C:\Users\yh621/.stm32cubeide/favorites.mcus.txt: 1 item(s)
+2025-02-18 15:56:34,212 [INFO] ApiDb:280 - User favorites MCUs=[STM32H7A3ZITxQ]
+2025-02-18 15:57:55,655 [INFO] ApiDbMcu:458 - Load IP Config File for STMicroelectronics.X-CUBE-AI.8.0.1
+2025-02-18 15:57:55,869 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:57:55,884 [INFO] PluginManager:203 - loadIPPluginJar : add ai.8.0.1
+2025-02-18 15:57:56,235 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2025-02-18 15:58:02,316 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:02,318 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:02,318 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:02,392 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:02,392 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:02,392 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:02,800 [INFO] AIMainUI:1259 - Restoring parameters from IP...
+2025-02-18 15:58:02,800 [INFO] AIMainUI:1378 - No old model detected
+2025-02-18 15:58:02,822 [INFO] AI:946 - getUI adding AI com.st.microxplorer.plugins.ip.ai.AI@2b89a5e8 on STMicroelectronics.X-CUBE-AI.8.0.1
+2025-02-18 15:58:02,822 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:02,822 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:02,822 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:04,254 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:04,254 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:04,254 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:04,313 [INFO] AI:946 - getUI adding AI com.st.microxplorer.plugins.ip.ai.AI@2b89a5e8 on STMicroelectronics.X-CUBE-AI.8.0.1
+2025-02-18 15:58:04,313 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:04,313 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:04,313 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:05,059 [INFO] BoardParameter:82 - Mode not set IP=RCC mode=BYPASS Clock Source
+2025-02-18 15:58:05,931 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:05,931 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:05,931 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:06,161 [INFO] AI:946 - getUI adding AI com.st.microxplorer.plugins.ip.ai.AI@2b89a5e8 on STMicroelectronics.X-CUBE-AI.8.0.1
+2025-02-18 15:58:06,161 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:06,161 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:06,161 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:06,667 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:06,667 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:06,667 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 15:58:10,403 [INFO] AInterface:109 - AInterface using toolDir: C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows
+2025-02-18 15:58:10,456 [INFO] AIModelDetailledView:2080 - Analysis status: -
+2025-02-18 15:58:10,456 [INFO] AIModelDetailledView:861 - Selected model: Keras
+2025-02-18 15:58:13,490 [INFO] AIModelDetailledView:861 - Selected model: TFLite
+2025-02-18 15:59:11,995 [INFO] AInterface:235 - ModelName:network; files:[F:\verified_model\autoenc_full_integer_quant.tflite]; type:TFLite; compression:None
+2025-02-18 15:59:11,996 [INFO] AInterface:506 - workspaceTempDir: C:\Users\yh621\AppData\Local\Temp\mxAI_workspace4798032049008576972563627879783
+2025-02-18 15:59:11,997 [INFO] AInterface:1042 - Setting Env: C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows
+2025-02-18 15:59:12,500 [INFO] STM32CubeIDEBuilder:257 - Looking for gnu-tools-for-stm32 tools/bin/arm-none-eabi-gcc.exe in D:\STM32CubeIDE_1.6.1\STM32CubeIDE
+2025-02-18 15:59:12,500 [INFO] STM32CubeIDEBuilder:283 - checking D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\bin\arm-none-eabi-gcc.exe
+2025-02-18 15:59:12,500 [INFO] STM32CubeIDEBuilder:286 - ret=D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\bin\arm-none-eabi-gcc.exe
+2025-02-18 15:59:12,500 [INFO] STM32CubeIDEBuilder:300 - returning D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\bin\arm-none-eabi-gcc.exe
+2025-02-18 15:59:12,500 [INFO] AInterface:1099 - Custom PATH variable: C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows;C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/mingw64/bin;C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/mingw64/libexec/gcc/x86_64-w64-mingw32/7.3.0;C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/node/bin;D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\bin
+2025-02-18 15:59:12,500 [INFO] CmdLine:100 - Command: C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/stm32ai analyze --name network -m F:/verified_model/autoenc_full_integer_quant.tflite --type tflite --compression none --verbosity 1 --workspace C:\Users\yh621\AppData\Local\Temp\mxAI_workspace4798032049008576972563627879783 --output C:\Users\yh621\.stm32cubemx\network_output --allocate-inputs --series stm32h7 --allocate-outputs 
+2025-02-18 15:59:12,535 [INFO] AIModelDetailledView:2080 - Analysis status: pending
+2025-02-18 16:00:17,935 [INFO] CmdLine:67 - Neural Network Tools for STM32AI v1.7.0 (STM.ai v8.0.1-19451)
+2025-02-18 16:00:18,358 [INFO] CmdLine:67 - Applied 2 of 2 optimizations
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  Exec/report summary (analyze)
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  ---------------------------------------------------------------------------------------------------------
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  model file         :   F:\verified_model\autoenc_full_integer_quant.tflite                               
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  type               :   tflite                                                                            
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  c_name             :   network                                                                           
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  compression        :   none                                                                              
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  options            :   allocate-inputs, allocate-outputs                                                 
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  optimization       :   balanced                                                                          
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  target/series      :   stm32h7                                                                           
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  workspace dir      :   C:\Users\yh621\AppData\Local\Temp\mxAI_workspace4798032049008576972563627879783   
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  output dir         :   C:\Users\yh621\.stm32cubemx\network_output                                        
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  model_fmt          :   ss/sa                                                                             
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  model_name         :   autoenc_full_integer_quant                                                        
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  model_hash         :   2d20351c09010923a1fc1bcc47a55495                                                  
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  params #           :   136,800 items (134.62 KiB)                                                        
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  ---------------------------------------------------------------------------------------------------------
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  input 1/1          :   'serving_default_input0' (domain:activations/**default**)                         
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -                     :   768 items, 768 B, ai_i8, s=0.05147701, zp=27, (1,3,1,256)                         
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -  output 1/1         :   'dense_7' (domain:activations/**default**)                                        
+2025-02-18 16:00:18,708 [INFO] CmdLine:67 -                     :   768 items, 768 B, ai_i8, s=0.00573800, zp=67, (1,1,1,768)                         
+2025-02-18 16:00:18,716 [INFO] CmdLine:67 -  macc               :   203,108                                                                           
+2025-02-18 16:00:18,716 [INFO] CmdLine:67 -  weights (ro)       :   140,944 B (137.64 KiB) (1 segment) / -406,256(-74.2%) vs float model              
+2025-02-18 16:00:18,716 [INFO] CmdLine:67 -  activations (rw)   :   7,360 B (7.19 KiB) (1 segment) *                                                  
+2025-02-18 16:00:18,716 [INFO] CmdLine:67 -  ram (total)        :   7,360 B (7.19 KiB) = 7,360 + 0 + 0                                                
+2025-02-18 16:00:18,716 [INFO] CmdLine:67 -  ---------------------------------------------------------------------------------------------------------
+2025-02-18 16:00:18,716 [INFO] CmdLine:67 -  (*) 'input'/'output' buffers can be used from the activations buffer
+2025-02-18 16:00:22,084 [INFO] CmdLine:67 -  Model name - autoenc_full_integer_quant ['serving_default_input0'] ['dense_7']
+2025-02-18 16:00:22,084 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:00:22,084 [INFO] CmdLine:67 -  m_id   layer (original)                  oshape                param/size          macc             connected to
+2025-02-18 16:00:22,084 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:00:22,084 [INFO] CmdLine:67 -  0      serving_default_input0 ()         [b:1,h:3,c:256]
+2025-02-18 16:00:22,084 [INFO] CmdLine:67 -         reshape_0 (RESHAPE)               [b:1,h:1,w:3,c:256]                              serving_default_input0
+2025-02-18 16:00:22,084 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  1      conv2d_1 (CONV_2D)                [b:1,h:1,w:3,c:128]   32,896/33,280     98,432                reshape_0
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -         nl_1_nl (CONV_2D)                 [b:1,h:1,w:3,c:128]                        384                 conv2d_1
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  2      conv2d_2 (CONV_2D)                [b:1,h:1,w:1,c:64]    24,640/24,832     24,640                  nl_1_nl
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -         nl_2_nl (CONV_2D)                 [b:1,h:1,w:1,c:64]                          64                 conv2d_2
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  3      reshape_3 (FULLY_CONNECTED)       [b:1,c:64]                                                      nl_2_nl
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -         dense_3_dense (FULLY_CONNECTED)   [b:1,c:32]            2,080/2,176        2,080                reshape_3
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -         nl_3_nl_nl (FULLY_CONNECTED)      [b:1,c:32]                                  32            dense_3_dense
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  4      dense_4 (FULLY_CONNECTED)         [b:1,c:4]             128/128              128               nl_3_nl_nl
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  5      dense_5 (FULLY_CONNECTED)         [b:1,c:32]            160/256              160                  dense_4
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -         nl_5_nl (FULLY_CONNECTED)         [b:1,c:32]                                  32                  dense_5
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  6      dense_6 (FULLY_CONNECTED)         [b:1,c:96]            3,168/3,456        3,168                  nl_5_nl
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -         nl_6_nl (FULLY_CONNECTED)         [b:1,c:96]                                  96                  dense_6
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  7      dense_7 (FULLY_CONNECTED)         [b:1,c:768]           73,728/73,728     73,728                  nl_6_nl
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  8      reshape_8 (RESHAPE)               [b:1,h:256,c:3]                                                 dense_7
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  model/c-model: macc=202,944/203,108 +164(+0.1%) weights=137,856/140,944 +3,088(+2.2%) activations=--/7,360 io=--/0
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  Number of operations per c-layer
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ------- ------ ----------------------- --------- ------------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  c_id    m_id   name (type)                   #op         type
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ------- ------ ----------------------- --------- ------------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  0       1      conv2d_1 (conv2d)          98,432   smul_s8_s8
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  1       2      conv2d_2 (conv2d)          24,640   smul_s8_s8
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  2       3      dense_3_dense (dense)       2,080   smul_s8_s8
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  3       4      dense_4 (dense)               132   smul_s8_s8
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  4       5      dense_5 (dense)               160   smul_s8_s8
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  5       6      dense_6 (dense)             3,168   smul_s8_s8
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  6       7      dense_7 (dense)            74,496   smul_s8_s8
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ------- ------ ----------------------- --------- ------------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  total                                    203,108
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  Number of operation types
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ---------------- --------- -----------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  operation type           #           %
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ---------------- --------- -----------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  smul_s8_s8         203,108      100.0%
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  Complexity report (model)
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ------ ----------- ------------------------- ------------------------- ------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  m_id   name        c_macc                    c_rom                     c_id
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ------ ----------- ------------------------- ------------------------- ------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  1      conv2d_1    ||||||||||||||||  48.5%   |||||||           23.6%   [0]
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  2      conv2d_2    ||||              12.1%   |||||             17.6%   [1]
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  3      reshape_3   |                  1.0%   |                  1.5%   [2]
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  4      dense_4     |                  0.1%   |                  0.1%   [3]
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  5      dense_5     |                  0.1%   |                  0.2%   [4]
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  6      dense_6     |                  1.6%   |                  2.5%   [5]
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  7      dense_7     ||||||||||||      36.7%   ||||||||||||||||  54.5%   [6]
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ------ ----------- ------------------------- ------------------------- ------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  macc=203,108 weights=140,944 act=7,360 ram_io=0
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  Requested memory size per segment ("stm32h7" series)
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  ----------------------------- -------- --------- ------- -------
+2025-02-18 16:00:22,099 [INFO] CmdLine:67 -  module                            text    rodata    data     bss
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  ----------------------------- -------- --------- ------- -------
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  NetworkRuntime801_CM7_GCC.a     27,836         0       0       0
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  network.o                          864       371   3,236     144
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  network_data.o                      52        16      88       0
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  lib (toolchain)*                   104         0       0       0
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  ----------------------------- -------- --------- ------- -------
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  RT total**                      28,856       387   3,324     144
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  ----------------------------- -------- --------- ------- -------
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  *weights*                            0   140,944       0       0
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  *activations*                        0         0       0   7,360
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  *io*                                 0         0       0       0
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  ----------------------------- -------- --------- ------- -------
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  TOTAL                           28,856   141,331   3,324   7,504
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  ----------------------------- -------- --------- ------- -------
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  *  toolchain objects (libm/libgcc*)
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -  ** RT - AI runtime objects (kernels+infrastructure)
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -   Summary per memory device type
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -   ----------------------------------------------
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -   .\device       FLASH       %      RAM       %
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -   ----------------------------------------------
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -   RT total      32,567   18.8%    3,468   32.0%
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -   ----------------------------------------------
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -   TOTAL        173,511           10,828
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 -   ----------------------------------------------
+2025-02-18 16:00:22,115 [INFO] CmdLine:67 - Creating txt report file C:\Users\yh621\.stm32cubemx\network_output\network_analyze_report.txt
+2025-02-18 16:00:22,576 [INFO] CmdLine:67 - elapsed time (analyze): 4.626s
+2025-02-18 16:00:23,069 [INFO] CmdLine:132 - stm32ai exit with status: 0
+2025-02-18 16:00:23,077 [INFO] AInterface:594 - Successfully load: network
+2025-02-18 16:00:23,096 [INFO] AIModelDetailledView:1055 - Model file:      autoenc_full_integer_quant.tflite
+2025-02-18 16:00:23,096 [INFO] AIModelDetailledView:1055 - Total Flash:     173511 B (169.44 KiB)
+2025-02-18 16:00:23,098 [INFO] AIModelDetailledView:1055 -     Weights:     140944 B (137.64 KiB)
+2025-02-18 16:00:23,098 [INFO] AIModelDetailledView:1055 -     Library:     32567 B (31.80 KiB)
+2025-02-18 16:00:23,098 [INFO] AIModelDetailledView:1055 - Total Ram:       10828 B (10.57 KiB)
+2025-02-18 16:00:23,098 [INFO] AIModelDetailledView:1055 -     Activations: 7360 B (7.19 KiB)
+2025-02-18 16:00:23,098 [INFO] AIModelDetailledView:1055 -     Library:     3468 B (3.39 KiB)
+2025-02-18 16:00:23,098 [INFO] AIModelDetailledView:1055 -     Input:       768 B (included in Activations)
+2025-02-18 16:00:23,098 [INFO] AIModelDetailledView:1055 -     Output:      768 B (included in Activations)
+2025-02-18 16:00:23,100 [INFO] AIModelDetailledView:1055 - Done
+2025-02-18 16:00:23,100 [INFO] AIModelDetailledView:2409 - Analyze complete on AI model
+2025-02-18 16:00:23,402 [INFO] AIModelDetailledView:2080 - Analysis status: done
+2025-02-18 16:00:30,959 [INFO] AInterface:506 - workspaceTempDir: C:\Users\yh621\AppData\Local\Temp\mxAI_workspace5587689153007765823107913067161
+2025-02-18 16:00:30,959 [INFO] AInterface:1042 - Setting Env: C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows
+2025-02-18 16:00:30,959 [INFO] AInterface:1099 - Custom PATH variable: C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows;C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/mingw64/bin;C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/mingw64/libexec/gcc/x86_64-w64-mingw32/7.3.0;C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/node/bin
+2025-02-18 16:00:30,959 [INFO] CmdLine:100 - Command: C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/stm32ai validate --name network -m F:/verified_model/autoenc_full_integer_quant.tflite --type tflite --compression none --verbosity 1 --workspace C:\Users\yh621\AppData\Local\Temp\mxAI_workspace5587689153007765823107913067161 --output C:\Users\yh621\.stm32cubemx\network_output --allocate-inputs --allocate-outputs 
+2025-02-18 16:00:35,995 [INFO] CmdLine:67 - Neural Network Tools for STM32AI v1.7.0 (STM.ai v8.0.1-19451)
+2025-02-18 16:00:36,393 [INFO] CmdLine:67 - Applied 2 of 2 optimizations
+2025-02-18 16:00:36,632 [INFO] CmdLine:67 - Copying the AI runtime files to the user workspace: C:\Users\yh621\AppData\Local\Temp\mxAI_workspace5587689153007765823107913067161\inspector_network\workspace
+2025-02-18 16:00:39,366 [INFO] CmdLine:67 -  
+2025-02-18 16:00:39,366 [INFO] CmdLine:67 -  Exec/report summary (validate)
+2025-02-18 16:00:39,366 [INFO] CmdLine:67 -  ---------------------------------------------------------------------------------------------------------
+2025-02-18 16:00:39,366 [INFO] CmdLine:67 -  model file         :   F:\verified_model\autoenc_full_integer_quant.tflite                               
+2025-02-18 16:00:39,366 [INFO] CmdLine:67 -  type               :   tflite                                                                            
+2025-02-18 16:00:39,366 [INFO] CmdLine:67 -  c_name             :   network                                                                           
+2025-02-18 16:00:39,366 [INFO] CmdLine:67 -  compression        :   none                                                                              
+2025-02-18 16:00:39,366 [INFO] CmdLine:67 -  options            :   allocate-inputs, allocate-outputs                                                 
+2025-02-18 16:00:39,366 [INFO] CmdLine:67 -  optimization       :   balanced                                                                          
+2025-02-18 16:00:39,366 [INFO] CmdLine:67 -  target/series      :   generic                                                                           
+2025-02-18 16:00:39,366 [INFO] CmdLine:67 -  workspace dir      :   C:\Users\yh621\AppData\Local\Temp\mxAI_workspace5587689153007765823107913067161   
+2025-02-18 16:00:39,366 [INFO] CmdLine:67 -  output dir         :   C:\Users\yh621\.stm32cubemx\network_output                                        
+2025-02-18 16:00:39,366 [INFO] CmdLine:67 -  model_fmt          :   ss/sa                                                                             
+2025-02-18 16:00:39,381 [INFO] CmdLine:67 -  model_name         :   autoenc_full_integer_quant                                                        
+2025-02-18 16:00:39,381 [INFO] CmdLine:67 -  model_hash         :   2d20351c09010923a1fc1bcc47a55495                                                  
+2025-02-18 16:00:39,381 [INFO] CmdLine:67 -  params #           :   136,800 items (134.62 KiB)                                                        
+2025-02-18 16:00:39,381 [INFO] CmdLine:67 -  ---------------------------------------------------------------------------------------------------------
+2025-02-18 16:00:39,381 [INFO] CmdLine:67 -  input 1/1          :   'serving_default_input0' (domain:activations/**default**)                         
+2025-02-18 16:00:39,382 [INFO] CmdLine:67 -                     :   768 items, 768 B, ai_i8, s=0.05147701, zp=27, (1,3,1,256)                         
+2025-02-18 16:00:39,382 [INFO] CmdLine:67 -  output 1/1         :   'dense_7' (domain:activations/**default**)                                        
+2025-02-18 16:00:39,382 [INFO] CmdLine:67 -                     :   768 items, 768 B, ai_i8, s=0.00573800, zp=67, (1,1,1,768)                         
+2025-02-18 16:00:39,382 [INFO] CmdLine:67 -  macc               :   203,108                                                                           
+2025-02-18 16:00:39,382 [INFO] CmdLine:67 -  weights (ro)       :   140,944 B (137.64 KiB) (1 segment) / -406,256(-74.2%) vs float model              
+2025-02-18 16:00:39,382 [INFO] CmdLine:67 -  activations (rw)   :   7,360 B (7.19 KiB) (1 segment) *                                                  
+2025-02-18 16:00:39,382 [INFO] CmdLine:67 -  ram (total)        :   7,360 B (7.19 KiB) = 7,360 + 0 + 0                                                
+2025-02-18 16:00:39,382 [INFO] CmdLine:67 -  ---------------------------------------------------------------------------------------------------------
+2025-02-18 16:00:39,387 [INFO] CmdLine:67 -  (*) 'input'/'output' buffers can be used from the activations buffer
+2025-02-18 16:00:39,387 [INFO] CmdLine:67 - Setting validation data...
+2025-02-18 16:00:39,387 [INFO] CmdLine:67 -  generating random data, size=10, seed=42, range=(0, 1)
+2025-02-18 16:00:39,387 [INFO] CmdLine:67 -  I[1]: (10, 3, 1, 256)/int8, min/max=[-128, 127], mean/std=[-1.558, 73.640], scale=0.05147701 zp=27, serving_default_input0
+2025-02-18 16:00:39,387 [INFO] CmdLine:67 -  No output/reference samples are provided
+2025-02-18 16:00:39,403 [INFO] CmdLine:67 - Running the STM AI c-model (AI RUNNER)...(name=network, mode=x86)
+2025-02-18 16:00:39,603 [INFO] CmdLine:67 -  X86 shared lib (C:\Users\yh621\AppData\Local\Temp\mxAI_workspace5587689153007765823107913067161\inspector_network\workspace\lib\libai_network.dll) ['network']
+2025-02-18 16:00:39,603 [INFO] CmdLine:67 -   Summary "network" - ['network']
+2025-02-18 16:00:39,603 [INFO] CmdLine:67 -   -------------------------------------------------------------------------------------------------------------
+2025-02-18 16:00:39,603 [INFO] CmdLine:67 -   inputs/ouputs      :   1/1
+2025-02-18 16:00:39,603 [INFO] CmdLine:67 -   input_1            :   input_1, (1,3,1,256), int8, 768 bytes, S:0.05147701 O:27 SA, in activations buffer
+2025-02-18 16:00:39,603 [INFO] CmdLine:67 -   output_1           :   output_1, (1,1,1,768), int8, 768 bytes, S:0.00573800 O:67 SA, in activations buffer
+2025-02-18 16:00:39,603 [INFO] CmdLine:67 -   n_nodes            :   7
+2025-02-18 16:00:39,603 [INFO] CmdLine:67 -   compile_datetime   :   Feb 18 2025 16:00:38
+2025-02-18 16:00:39,603 [INFO] CmdLine:67 -   activations        :   7360
+2025-02-18 16:00:39,603 [INFO] CmdLine:67 -   weights            :   140944
+2025-02-18 16:00:39,603 [INFO] CmdLine:67 -   macc               :   203108
+2025-02-18 16:00:39,603 [INFO] CmdLine:67 -   -------------------------------------------------------------------------------------------------------------
+2025-02-18 16:00:39,603 [INFO] CmdLine:67 -   runtime            :   STM.AI 8.0.0 (Tools 8.0.1)
+2025-02-18 16:00:39,603 [INFO] CmdLine:67 -   capabilities       :   IO_ONLY, PER_LAYER, PER_LAYER_WITH_DATA
+2025-02-18 16:00:39,603 [INFO] CmdLine:67 -   device             :   AMD64 Intel64 Family 6 Model 140 Stepping 1, GenuineIntel (Windows)
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -  NOTE: duration and exec time per layer is just an indication. They are dependent of the HOST-machine work-load.
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -   STM.AI Profiling results v1.2 - network
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -   ------------------------------------------------------------
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -   nb sample(s)    :   10
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -   duration        :   0.177ms by sample (0.156/0.226/0.028)
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -   macc            :   203108
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -   ------------------------------------------------------------
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -   HOST duration   :   0.009s (total)
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -   ------------------------------------------------------------
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    Inference time per node
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    ----------------------------------------------------------------------
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    c_id    m_id   type             dur (ms)     %            name
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    ----------------------------------------------------------------------
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    0       1      Conv2D (0x103)        0.065     36.9%      ai_node_0
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    1       2      Conv2D (0x103)        0.055     31.3%      ai_node_1
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    2       3      Dense (0x104)         0.005      2.8%      ai_node_2
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    3       4      Dense (0x104)         0.001      0.3%      ai_node_3
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    4       5      Dense (0x104)         0.001      0.5%      ai_node_4
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    5       6      Dense (0x104)         0.003      1.6%      ai_node_5
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    6       7      Dense (0x104)         0.047     26.3%      ai_node_6
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    ----------------------------------------------------------------------
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    total                                0.177
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    ----------------------------------------------------------------------
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    Statistic per tensor
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    -----------------------------------------------------------------------
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    tensor   shape/type            min   max      mean      std name
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    -----------------------------------------------------------------------
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    I.0      (1,3,1,256)/int8     -128   127    -1.558   73.640 input_1
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    O.0      (1,1,1,768)/int8     -128   127   -14.619   38.459 output_1
+2025-02-18 16:00:39,620 [INFO] CmdLine:67 -    -----------------------------------------------------------------------
+2025-02-18 16:00:40,004 [INFO] CmdLine:67 - Running the TFlite model...
+2025-02-18 16:00:40,051 [ERROR] CmdLine:53 - INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+2025-02-18 16:00:40,066 [INFO] CmdLine:67 - Saving validation data...
+2025-02-18 16:00:40,066 [INFO] CmdLine:67 -  output directory: C:\Users\yh621\.stm32cubemx\network_output
+2025-02-18 16:00:40,066 [INFO] CmdLine:67 -  creating C:\Users\yh621\.stm32cubemx\network_output\network_val_io.npz
+2025-02-18 16:00:40,066 [INFO] CmdLine:67 -  m_outputs_1: (10, 1, 1, 768)/int8, min/max=[-128, 127], mean/std=[-14.619, 38.459], dense_7
+2025-02-18 16:00:40,085 [INFO] CmdLine:67 -  c_outputs_1: (10, 1, 1, 768)/int8, min/max=[-128, 127], mean/std=[-14.619, 38.459], scale=0.00573800 zp=67, dense_7
+2025-02-18 16:00:40,088 [INFO] CmdLine:67 - Computing the metrics...
+2025-02-18 16:00:40,088 [INFO] CmdLine:67 -  Cross accuracy report #1 (reference vs C-model)
+2025-02-18 16:00:40,088 [INFO] CmdLine:67 -  ----------------------------------------------------------------------------------------------------
+2025-02-18 16:00:40,104 [INFO] CmdLine:67 -  notes: - r/int8 data are dequantized with s=0.005738 zp=67
+2025-02-18 16:00:40,104 [INFO] CmdLine:67 -         - p/int8 data are dequantized with s=0.005738 zp=67
+2025-02-18 16:00:40,104 [INFO] CmdLine:67 -         - ACC metric is not computed ("--classifier" option can be used to force it)
+2025-02-18 16:00:40,104 [INFO] CmdLine:67 -         - the output of the reference model is used as ground truth/reference value
+2025-02-18 16:00:40,104 [INFO] CmdLine:67 -         - 10 samples (768 items per sample)
+2025-02-18 16:00:40,104 [INFO] CmdLine:67 -   acc=n.a., rmse=0.000000000, mae=0.000000000, l2r=0.000000000, nse=100.00%
+2025-02-18 16:00:40,121 [INFO] CmdLine:67 -  Evaluation report (summary)
+2025-02-18 16:00:40,121 [INFO] CmdLine:67 -  ------------------------------------------------------------------------------------------------------------------------------------------------
+2025-02-18 16:00:40,121 [INFO] CmdLine:67 -  Output       acc    rmse        mae         l2r         mean        std         nse         cos         tensor
+2025-02-18 16:00:40,121 [INFO] CmdLine:67 -  ------------------------------------------------------------------------------------------------------------------------------------------------
+2025-02-18 16:00:40,121 [INFO] CmdLine:67 -  X-cross #1   n.a.   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   1.0000000   1.0000000   dense_7, ai_i8, (1,1,1,768), m_id=[7]
+2025-02-18 16:00:40,121 [INFO] CmdLine:67 -  ------------------------------------------------------------------------------------------------------------------------------------------------
+2025-02-18 16:00:40,121 [INFO] CmdLine:67 -   acc  : Classification accuracy (all classes)
+2025-02-18 16:00:40,121 [INFO] CmdLine:67 -   rmse : Root Mean Squared Error
+2025-02-18 16:00:40,121 [INFO] CmdLine:67 -   mae  : Mean Absolute Error
+2025-02-18 16:00:40,121 [INFO] CmdLine:67 -   l2r  : L2 relative error
+2025-02-18 16:00:40,121 [INFO] CmdLine:67 -   nse  : Nash-Sutcliffe efficiency criteria
+2025-02-18 16:00:40,121 [INFO] CmdLine:67 -   cos  : COsine Similarity
+2025-02-18 16:00:40,121 [INFO] CmdLine:67 - Creating txt report file C:\Users\yh621\.stm32cubemx\network_output\network_validate_report.txt
+2025-02-18 16:00:40,423 [INFO] CmdLine:67 - elapsed time (validate): 4.428s
+2025-02-18 16:00:40,935 [INFO] CmdLine:132 - stm32ai exit with status: 0
+2025-02-18 16:00:40,953 [INFO] AInterface:594 - Successfully load: network
+2025-02-18 16:00:40,999 [INFO] AIModelDetailledView:2491 - Validation ended
+2025-02-18 16:01:40,442 [WARN] IP:2088 - Cortex_Div not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - Cortex_DivARG not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SDMMC1Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - HSIDiv not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - USART16910Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SRDPPRE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPUART1Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - RCC_RTC_Clock_Source_FROM_HSE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - USART234578Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVR3 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SPI123Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVR2 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SAI1Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVR1 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SAI2BEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVP3 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SAI2AEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - CDPPRE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPTIM1Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVQ1 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPTIM2Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVP2 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPTIM345Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVP1 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - I2C123Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVQ3 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - I2C4Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVQ2 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SPDIFEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - HPRE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - ADCEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVM2 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - FDCANEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - CDPPRE1 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - OCSPIEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVM3 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - FMCEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - CDPPRE2 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SPI6Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVM1 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - CDCPRE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SPI45Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - RCC_MCODiv1 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SWPEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - RCC_MCODiv2 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - IWDGEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVN1 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DAC1Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVN2 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DAC2Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVN3 not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - ExtClockEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - CKPERSourceSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - MCO1OutPutEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - PLLSource not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SYSCLKSource not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - MCO2OutPutEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - QSPICLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - MCO2I2SEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - FMCCLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - HSEState not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SWPCLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LSEState not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - FDCANCLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SPDIFCLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - Spi45ClockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SPI123CLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SAI1CLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPTIM1CLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - CECCLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - USBCLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - I2C123CLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - RNGCLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - RCC_TIM_PRescaler_Selection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - USART16CLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - VDD_VALUE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - USART234578CLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - PWR_Regulator_Voltage_Scale not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SPI6CLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - HSE_Timout not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SAI2BCLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LSE_Timout not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - ADCCLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - FLatency not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPTIM345CLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - PLL1_VCI_Range not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPTIM2CLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - PLL2_VCI_Range not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - I2C4CLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - PLL3_VCI_Range not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPUART1CLockSelection not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - Source not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - RCC_MCO1Source not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - ReloadValueType not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - RCC_MCO2Source not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - ReloadValue not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LSI_VALUE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - HSI_VALUE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - CSI_VALUE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - HSI48_VALUE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LSE_VALUE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - HSE_VALUE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - CSICalibrationValue not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - EXTERNAL_CLOCK_VALUE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - HSICalibrationValue not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - CKPERFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - PLL1_VCO_SEL not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - CDCPREFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - PLL2_VCO_SEL not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - HCLKFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - PLL3_VCO_SEL not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - I2C4Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - PLL3FRACN not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - FMCFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SWPMI1Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - APB2Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - I2C123Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - APB4Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPTIM345Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPUART1Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SDMMCFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - RTCFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - WatchDogFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SPI6Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVQ2Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - CortexFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - USBFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - FDCANFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPTIM2Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - CpuClockFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - HCLK3ClockFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SAI1Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - APB3Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SPI123Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVR2Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SAI2AFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPTIM1Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVQ1Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SYSCLKFreq_VALUE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - ADCFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - QSPIFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SPI45Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - RNGFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVP2Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVP3Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - APB1Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - USART234578Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SPDIFRXFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SAI2BFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DFSDMFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - AXIClockFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - USART16Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - CECFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVR1Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DIVR3Freq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - MCO1PinFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - MCO2PinFreq_Value not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DFSDMEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - EnableHSE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - EnableHSERTCDevisor not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - RTCEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - EnableLSERTC not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - EnableLSE not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - CECEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - USBEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - RNGEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SDMMC1Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - USART16910Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPUART1Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - USART234578Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SPI123Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SAI1Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SAI2BEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SAI2AEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPTIM1Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPTIM2Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LPTIM345Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - I2C123Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - I2C4Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SPDIFEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - ADCEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - FDCANEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - OCSPIEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - FMCEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SPI6Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SPI45Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - SWPEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - IWDGEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DAC1Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - DAC2Enable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - ExtClockEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - MCO1OutPutEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - MCO2OutPutEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - MCO2I2SEnable not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - HSEState not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,442 [WARN] IP:2088 - LSEState not found: check if there is a RefParameter without a condition.
+2025-02-18 16:01:40,706 [INFO] AI:946 - getUI adding AI com.st.microxplorer.plugins.ip.ai.AI@2b89a5e8 on STMicroelectronics.X-CUBE-AI.8.0.1
+2025-02-18 16:01:40,706 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:01:40,706 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:01:40,706 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:01:40,953 [INFO] AI:946 - getUI adding AI com.st.microxplorer.plugins.ip.ai.AI@2b89a5e8 on STMicroelectronics.X-CUBE-AI.8.0.1
+2025-02-18 16:01:40,953 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:01:40,953 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:01:40,953 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:02:22,863 [INFO] AI:946 - getUI adding AI com.st.microxplorer.plugins.ip.ai.AI@2b89a5e8 on STMicroelectronics.X-CUBE-AI.8.0.1
+2025-02-18 16:02:22,864 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:02:22,864 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:02:22,864 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:02:23,204 [INFO] AI:946 - getUI adding AI com.st.microxplorer.plugins.ip.ai.AI@2b89a5e8 on STMicroelectronics.X-CUBE-AI.8.0.1
+2025-02-18 16:02:23,204 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:02:23,204 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:02:23,204 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:02:26,272 [INFO] AI:946 - getUI adding AI com.st.microxplorer.plugins.ip.ai.AI@2b89a5e8 on STMicroelectronics.X-CUBE-AI.8.0.1
+2025-02-18 16:02:26,272 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:02:26,272 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:02:26,272 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:02:26,561 [INFO] AI:946 - getUI adding AI com.st.microxplorer.plugins.ip.ai.AI@2b89a5e8 on STMicroelectronics.X-CUBE-AI.8.0.1
+2025-02-18 16:02:26,562 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:02:26,562 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:02:26,562 [INFO] Middleware:501 - instanceName : STMicroelectronics.X-CUBE-AI.8.0.1 bspName : COM Port check condition success for : !SEMDeviceJjApplicationJjApplicationTemplate
+2025-02-18 16:02:29,104 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 1038022920 Bytes (1073741824)
+2025-02-18 16:02:29,248 [INFO] AIModelDetailledView:2080 - Analysis status: -
+2025-02-18 16:02:29,250 [INFO] AInterface:235 - ModelName:network; files:[F:\verified_model\autoenc_full_integer_quant.tflite]; type:TFLite; compression:None
+2025-02-18 16:02:29,250 [INFO] AInterface:506 - workspaceTempDir: C:\Users\yh621\AppData\Local\Temp\mxAI_workspace67705907300016191446452967887085
+2025-02-18 16:02:29,250 [INFO] AInterface:1042 - Setting Env: C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows
+2025-02-18 16:02:29,448 [INFO] STM32CubeIDEBuilder:257 - Looking for gnu-tools-for-stm32 tools/bin/arm-none-eabi-gcc.exe in D:\STM32CubeIDE_1.6.1\STM32CubeIDE
+2025-02-18 16:02:29,448 [INFO] STM32CubeIDEBuilder:283 - checking D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\bin\arm-none-eabi-gcc.exe
+2025-02-18 16:02:29,448 [INFO] STM32CubeIDEBuilder:286 - ret=D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\bin\arm-none-eabi-gcc.exe
+2025-02-18 16:02:29,448 [INFO] STM32CubeIDEBuilder:300 - returning D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\bin\arm-none-eabi-gcc.exe
+2025-02-18 16:02:29,448 [INFO] AInterface:1099 - Custom PATH variable: C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows;C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/mingw64/bin;C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/mingw64/libexec/gcc/x86_64-w64-mingw32/7.3.0;C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/node/bin;D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\bin
+2025-02-18 16:02:29,448 [INFO] CmdLine:100 - Command: C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/stm32ai analyze --name network -m F:/verified_model/autoenc_full_integer_quant.tflite --type tflite --compression none --verbosity 1 --workspace C:\Users\yh621\AppData\Local\Temp\mxAI_workspace67705907300016191446452967887085 --output C:\Users\yh621\.stm32cubemx\network_output --allocate-inputs --series stm32h7 --allocate-outputs 
+2025-02-18 16:02:29,448 [INFO] AIModelDetailledView:2080 - Analysis status: pending
+2025-02-18 16:02:37,180 [INFO] CmdLine:67 - Neural Network Tools for STM32AI v1.7.0 (STM.ai v8.0.1-19451)
+2025-02-18 16:02:37,930 [INFO] CmdLine:67 - Applied 2 of 2 optimizations
+2025-02-18 16:02:38,392 [INFO] CmdLine:67 -  
+2025-02-18 16:02:38,393 [INFO] CmdLine:67 -  Exec/report summary (analyze)
+2025-02-18 16:02:38,393 [INFO] CmdLine:67 -  ----------------------------------------------------------------------------------------------------------
+2025-02-18 16:02:38,394 [INFO] CmdLine:67 -  model file         :   F:\verified_model\autoenc_full_integer_quant.tflite                                
+2025-02-18 16:02:38,394 [INFO] CmdLine:67 -  type               :   tflite                                                                             
+2025-02-18 16:02:38,394 [INFO] CmdLine:67 -  c_name             :   network                                                                            
+2025-02-18 16:02:38,395 [INFO] CmdLine:67 -  compression        :   none                                                                               
+2025-02-18 16:02:38,395 [INFO] CmdLine:67 -  options            :   allocate-inputs, allocate-outputs                                                  
+2025-02-18 16:02:38,395 [INFO] CmdLine:67 -  optimization       :   balanced                                                                           
+2025-02-18 16:02:38,396 [INFO] CmdLine:67 -  target/series      :   stm32h7                                                                            
+2025-02-18 16:02:38,396 [INFO] CmdLine:67 -  workspace dir      :   C:\Users\yh621\AppData\Local\Temp\mxAI_workspace67705907300016191446452967887085   
+2025-02-18 16:02:38,396 [INFO] CmdLine:67 -  output dir         :   C:\Users\yh621\.stm32cubemx\network_output                                         
+2025-02-18 16:02:38,396 [INFO] CmdLine:67 -  model_fmt          :   ss/sa                                                                              
+2025-02-18 16:02:38,397 [INFO] CmdLine:67 -  model_name         :   autoenc_full_integer_quant                                                         
+2025-02-18 16:02:38,397 [INFO] CmdLine:67 -  model_hash         :   2d20351c09010923a1fc1bcc47a55495                                                   
+2025-02-18 16:02:38,397 [INFO] CmdLine:67 -  params #           :   136,800 items (134.62 KiB)                                                         
+2025-02-18 16:02:38,398 [INFO] CmdLine:67 -  ----------------------------------------------------------------------------------------------------------
+2025-02-18 16:02:38,398 [INFO] CmdLine:67 -  input 1/1          :   'serving_default_input0' (domain:activations/**default**)                          
+2025-02-18 16:02:38,398 [INFO] CmdLine:67 -                     :   768 items, 768 B, ai_i8, s=0.05147701, zp=27, (1,3,1,256)                          
+2025-02-18 16:02:38,398 [INFO] CmdLine:67 -  output 1/1         :   'dense_7' (domain:activations/**default**)                                         
+2025-02-18 16:02:38,399 [INFO] CmdLine:67 -                     :   768 items, 768 B, ai_i8, s=0.00573800, zp=67, (1,1,1,768)                          
+2025-02-18 16:02:38,399 [INFO] CmdLine:67 -  macc               :   203,108                                                                            
+2025-02-18 16:02:38,399 [INFO] CmdLine:67 -  weights (ro)       :   140,944 B (137.64 KiB) (1 segment) / -406,256(-74.2%) vs float model               
+2025-02-18 16:02:38,400 [INFO] CmdLine:67 -  activations (rw)   :   7,360 B (7.19 KiB) (1 segment) *                                                   
+2025-02-18 16:02:38,401 [INFO] CmdLine:67 -  ram (total)        :   7,360 B (7.19 KiB) = 7,360 + 0 + 0                                                 
+2025-02-18 16:02:38,401 [INFO] CmdLine:67 -  ----------------------------------------------------------------------------------------------------------
+2025-02-18 16:02:38,401 [INFO] CmdLine:67 -  (*) 'input'/'output' buffers can be used from the activations buffer
+2025-02-18 16:02:40,682 [INFO] CmdLine:67 -  Model name - autoenc_full_integer_quant ['serving_default_input0'] ['dense_7']
+2025-02-18 16:02:40,683 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:02:40,684 [INFO] CmdLine:67 -  m_id   layer (original)                  oshape                param/size          macc             connected to
+2025-02-18 16:02:40,685 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:02:40,685 [INFO] CmdLine:67 -  0      serving_default_input0 ()         [b:1,h:3,c:256]
+2025-02-18 16:02:40,686 [INFO] CmdLine:67 -         reshape_0 (RESHAPE)               [b:1,h:1,w:3,c:256]                              serving_default_input0
+2025-02-18 16:02:40,687 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:02:40,687 [INFO] CmdLine:67 -  1      conv2d_1 (CONV_2D)                [b:1,h:1,w:3,c:128]   32,896/33,280     98,432                reshape_0
+2025-02-18 16:02:40,687 [INFO] CmdLine:67 -         nl_1_nl (CONV_2D)                 [b:1,h:1,w:3,c:128]                        384                 conv2d_1
+2025-02-18 16:02:40,688 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:02:40,689 [INFO] CmdLine:67 -  2      conv2d_2 (CONV_2D)                [b:1,h:1,w:1,c:64]    24,640/24,832     24,640                  nl_1_nl
+2025-02-18 16:02:40,690 [INFO] CmdLine:67 -         nl_2_nl (CONV_2D)                 [b:1,h:1,w:1,c:64]                          64                 conv2d_2
+2025-02-18 16:02:40,691 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:02:40,691 [INFO] CmdLine:67 -  3      reshape_3 (FULLY_CONNECTED)       [b:1,c:64]                                                      nl_2_nl
+2025-02-18 16:02:40,692 [INFO] CmdLine:67 -         dense_3_dense (FULLY_CONNECTED)   [b:1,c:32]            2,080/2,176        2,080                reshape_3
+2025-02-18 16:02:40,693 [INFO] CmdLine:67 -         nl_3_nl_nl (FULLY_CONNECTED)      [b:1,c:32]                                  32            dense_3_dense
+2025-02-18 16:02:40,693 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:02:40,694 [INFO] CmdLine:67 -  4      dense_4 (FULLY_CONNECTED)         [b:1,c:4]             128/128              128               nl_3_nl_nl
+2025-02-18 16:02:40,694 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:02:40,695 [INFO] CmdLine:67 -  5      dense_5 (FULLY_CONNECTED)         [b:1,c:32]            160/256              160                  dense_4
+2025-02-18 16:02:40,695 [INFO] CmdLine:67 -         nl_5_nl (FULLY_CONNECTED)         [b:1,c:32]                                  32                  dense_5
+2025-02-18 16:02:40,696 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:02:40,696 [INFO] CmdLine:67 -  6      dense_6 (FULLY_CONNECTED)         [b:1,c:96]            3,168/3,456        3,168                  nl_5_nl
+2025-02-18 16:02:40,697 [INFO] CmdLine:67 -         nl_6_nl (FULLY_CONNECTED)         [b:1,c:96]                                  96                  dense_6
+2025-02-18 16:02:40,697 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:02:40,698 [INFO] CmdLine:67 -  7      dense_7 (FULLY_CONNECTED)         [b:1,c:768]           73,728/73,728     73,728                  nl_6_nl
+2025-02-18 16:02:40,699 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:02:40,699 [INFO] CmdLine:67 -  8      reshape_8 (RESHAPE)               [b:1,h:256,c:3]                                                 dense_7
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  ------ --------------------------------- --------------------- --------------- -------- ------------------------
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  model/c-model: macc=202,944/203,108 +164(+0.1%) weights=137,856/140,944 +3,088(+2.2%) activations=--/7,360 io=--/0
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  Number of operations per c-layer
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  ------- ------ ----------------------- --------- ------------
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  c_id    m_id   name (type)                   #op         type
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  ------- ------ ----------------------- --------- ------------
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  0       1      conv2d_1 (conv2d)          98,432   smul_s8_s8
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  1       2      conv2d_2 (conv2d)          24,640   smul_s8_s8
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  2       3      dense_3_dense (dense)       2,080   smul_s8_s8
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  3       4      dense_4 (dense)               132   smul_s8_s8
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  4       5      dense_5 (dense)               160   smul_s8_s8
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  5       6      dense_6 (dense)             3,168   smul_s8_s8
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  6       7      dense_7 (dense)            74,496   smul_s8_s8
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  ------- ------ ----------------------- --------- ------------
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  total                                    203,108
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  Number of operation types
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  ---------------- --------- -----------
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  operation type           #           %
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  ---------------- --------- -----------
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  smul_s8_s8         203,108      100.0%
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  Complexity report (model)
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  ------ ----------- ------------------------- ------------------------- ------
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  m_id   name        c_macc                    c_rom                     c_id
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  ------ ----------- ------------------------- ------------------------- ------
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  1      conv2d_1    ||||||||||||||||  48.5%   |||||||           23.6%   [0]
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  2      conv2d_2    ||||              12.1%   |||||             17.6%   [1]
+2025-02-18 16:02:40,700 [INFO] CmdLine:67 -  3      reshape_3   |                  1.0%   |                  1.5%   [2]
+2025-02-18 16:02:40,707 [INFO] CmdLine:67 -  4      dense_4     |                  0.1%   |                  0.1%   [3]
+2025-02-18 16:02:40,707 [INFO] CmdLine:67 -  5      dense_5     |                  0.1%   |                  0.2%   [4]
+2025-02-18 16:02:40,707 [INFO] CmdLine:67 -  6      dense_6     |                  1.6%   |                  2.5%   [5]
+2025-02-18 16:02:40,707 [INFO] CmdLine:67 -  7      dense_7     ||||||||||||      36.7%   ||||||||||||||||  54.5%   [6]
+2025-02-18 16:02:40,707 [INFO] CmdLine:67 -  ------ ----------- ------------------------- ------------------------- ------
+2025-02-18 16:02:40,707 [INFO] CmdLine:67 -  macc=203,108 weights=140,944 act=7,360 ram_io=0
+2025-02-18 16:02:40,708 [INFO] CmdLine:67 -  Requested memory size per segment ("stm32h7" series)
+2025-02-18 16:02:40,709 [INFO] CmdLine:67 -  ----------------------------- -------- --------- ------- -------
+2025-02-18 16:02:40,709 [INFO] CmdLine:67 -  module                            text    rodata    data     bss
+2025-02-18 16:02:40,709 [INFO] CmdLine:67 -  ----------------------------- -------- --------- ------- -------
+2025-02-18 16:02:40,709 [INFO] CmdLine:67 -  NetworkRuntime801_CM7_GCC.a     27,836         0       0       0
+2025-02-18 16:02:40,710 [INFO] CmdLine:67 -  network.o                          864       371   3,236     144
+2025-02-18 16:02:40,710 [INFO] CmdLine:67 -  network_data.o                      52        16      88       0
+2025-02-18 16:02:40,710 [INFO] CmdLine:67 -  lib (toolchain)*                   104         0       0       0
+2025-02-18 16:02:40,711 [INFO] CmdLine:67 -  ----------------------------- -------- --------- ------- -------
+2025-02-18 16:02:40,711 [INFO] CmdLine:67 -  RT total**                      28,856       387   3,324     144
+2025-02-18 16:02:40,712 [INFO] CmdLine:67 -  ----------------------------- -------- --------- ------- -------
+2025-02-18 16:02:40,712 [INFO] CmdLine:67 -  *weights*                            0   140,944       0       0
+2025-02-18 16:02:40,712 [INFO] CmdLine:67 -  *activations*                        0         0       0   7,360
+2025-02-18 16:02:40,713 [INFO] CmdLine:67 -  *io*                                 0         0       0       0
+2025-02-18 16:02:40,713 [INFO] CmdLine:67 -  ----------------------------- -------- --------- ------- -------
+2025-02-18 16:02:40,714 [INFO] CmdLine:67 -  TOTAL                           28,856   141,331   3,324   7,504
+2025-02-18 16:02:40,714 [INFO] CmdLine:67 -  ----------------------------- -------- --------- ------- -------
+2025-02-18 16:02:40,714 [INFO] CmdLine:67 -  *  toolchain objects (libm/libgcc*)
+2025-02-18 16:02:40,715 [INFO] CmdLine:67 -  ** RT - AI runtime objects (kernels+infrastructure)
+2025-02-18 16:02:40,715 [INFO] CmdLine:67 -   Summary per memory device type
+2025-02-18 16:02:40,715 [INFO] CmdLine:67 -   ----------------------------------------------
+2025-02-18 16:02:40,716 [INFO] CmdLine:67 -   .\device       FLASH       %      RAM       %
+2025-02-18 16:02:40,716 [INFO] CmdLine:67 -   ----------------------------------------------
+2025-02-18 16:02:40,716 [INFO] CmdLine:67 -   RT total      32,567   18.8%    3,468   32.0%
+2025-02-18 16:02:40,717 [INFO] CmdLine:67 -   ----------------------------------------------
+2025-02-18 16:02:40,717 [INFO] CmdLine:67 -   TOTAL        173,511           10,828
+2025-02-18 16:02:40,717 [INFO] CmdLine:67 -   ----------------------------------------------
+2025-02-18 16:02:40,717 [INFO] CmdLine:67 - Creating txt report file C:\Users\yh621\.stm32cubemx\network_output\network_analyze_report.txt
+2025-02-18 16:02:40,763 [INFO] CmdLine:67 - elapsed time (analyze): 3.583s
+2025-02-18 16:02:41,388 [INFO] CmdLine:132 - stm32ai exit with status: 0
+2025-02-18 16:02:41,398 [INFO] AInterface:594 - Successfully load: network
+2025-02-18 16:02:41,445 [INFO] AIModelDetailledView:2409 - Analyze complete on AI model
+2025-02-18 16:02:41,449 [INFO] AIModelDetailledView:2080 - Analysis status: done
+2025-02-18 16:02:44,372 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 1027492344 Bytes (1073741824)
+2025-02-18 16:02:50,997 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 986456992 Bytes (1073741824)
+2025-02-18 16:02:51,721 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2025-02-18 16:02:51,722 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2025-02-18 16:02:51,722 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2025-02-18 16:02:51,722 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: STMicroelectronics.X-CUBE-AI.8.0.1
+2025-02-18 16:02:51,722 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: CRC
+2025-02-18 16:02:51,722 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2025-02-18 16:02:51,723 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2025-02-18 16:02:51,724 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,725 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,725 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,725 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,725 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,725 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,725 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,725 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,725 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,726 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,726 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,726 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,726 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,726 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,726 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,726 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,726 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,726 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,726 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,727 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,727 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,727 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:02:51,728 [INFO] CodeGenerator:641 - code generatio: config db path: D:\STM32CubeIDE_1.6.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.2.1.202103241236\\db\
+2025-02-18 16:02:53,791 [INFO] IP:3321 - RTE Config file name : RTE_Component
+2025-02-18 16:02:53,791 [INFO] IP:3339 - RTE template : RTE_Components.ftl
+2025-02-18 16:02:53,822 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\MXTmpFiles\license.tmp_save
+2025-02-18 16:02:54,006 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\MXTmpFiles\license.tmp
+2025-02-18 16:02:54,168 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\MXTmpFiles\gpio.tmp_save
+2025-02-18 16:02:54,341 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\MXTmpFiles\gpio.tmp
+2025-02-18 16:02:55,646 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2025-02-18 16:02:55,656 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\MXTmpFiles\cortex.tmp_save
+2025-02-18 16:02:55,808 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\MXTmpFiles\cortex.tmp
+2025-02-18 16:02:55,812 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2025-02-18 16:02:55,814 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2025-02-18 16:02:55,819 [INFO] Middleware:1263 - No code input for Bsp Dependency
+2025-02-18 16:02:55,821 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2025-02-18 16:02:55,879 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Src\stm32h7xx_it.c_save
+2025-02-18 16:02:56,125 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Src\stm32h7xx_it.c
+2025-02-18 16:02:56,154 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Inc\stm32h7xx_it.h_save
+2025-02-18 16:02:56,326 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Inc\stm32h7xx_it.h
+2025-02-18 16:02:56,580 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Src\stm32h7xx_hal_msp.c_save
+2025-02-18 16:02:56,961 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Src\stm32h7xx_hal_msp.c
+2025-02-18 16:02:56,963 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\MXTmpFiles\system.tmp_save
+2025-02-18 16:02:57,150 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\MXTmpFiles\system.tmp
+2025-02-18 16:02:57,216 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Inc\stm32h7xx_hal_conf.h_save
+2025-02-18 16:02:57,509 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Inc\stm32h7xx_hal_conf.h
+2025-02-18 16:02:57,929 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Inc\main.h_save
+2025-02-18 16:02:58,232 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Inc\main.h
+2025-02-18 16:02:58,273 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Src\main.c_save
+2025-02-18 16:02:58,624 [INFO] CodeEngine:247 - Generated code: C:\Users\yh621\STM32CubeIDE\josh_autoenc_stm32h\autoenc_stm32h\Core\Src\main.c
+2025-02-18 16:02:59,599 [INFO] AInterface:298 - ModelName:network; files:[F:\verified_model\autoenc_full_integer_quant.tflite]; type:TFLite; compression:None
+2025-02-18 16:02:59,600 [INFO] AInterface:506 - workspaceTempDir: C:\Users\yh621\AppData\Local\Temp\mxAI_workspace70740723820010940013297707881668
+2025-02-18 16:02:59,601 [INFO] AInterface:1042 - Setting Env: C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows
+2025-02-18 16:02:59,602 [INFO] AInterface:1099 - Custom PATH variable: C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows;C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/mingw64/bin;C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/mingw64/libexec/gcc/x86_64-w64-mingw32/7.3.0;C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/node/bin
+2025-02-18 16:02:59,603 [INFO] CmdLine:100 - Command: C:/Users/yh621/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/8.0.1/Utilities/windows/stm32ai generate --name network -m F:/verified_model/autoenc_full_integer_quant.tflite --type tflite --compression none --verbosity 1 --workspace C:\Users\yh621\AppData\Local\Temp\mxAI_workspace70740723820010940013297707881668 --output C:\Users\yh621\.stm32cubemx\network_output --allocate-inputs --series stm32h7 --allocate-outputs 
+2025-02-18 16:02:59,604 [INFO] AIModelDetailledView:2080 - Analysis status: pending
+2025-02-18 16:03:24,154 [INFO] CmdLine:67 - Neural Network Tools for STM32AI v1.7.0 (STM.ai v8.0.1-19451)
+2025-02-18 16:03:25,505 [INFO] CmdLine:67 - Applied 2 of 2 optimizations
+2025-02-18 16:03:26,435 [INFO] CmdLine:67 -  
+2025-02-18 16:03:26,436 [INFO] CmdLine:67 -  Exec/report summary (generate)
+2025-02-18 16:03:26,436 [INFO] CmdLine:67 -  ----------------------------------------------------------------------------------------------------------
+2025-02-18 16:03:26,436 [INFO] CmdLine:67 -  model file         :   F:\verified_model\autoenc_full_integer_quant.tflite                                
+2025-02-18 16:03:26,436 [INFO] CmdLine:67 -  type               :   tflite                                                                             
+2025-02-18 16:03:26,437 [INFO] CmdLine:67 -  c_name             :   network                                                                            
+2025-02-18 16:03:26,437 [INFO] CmdLine:67 -  compression        :   none                                                                               
+2025-02-18 16:03:26,437 [INFO] CmdLine:67 -  options            :   allocate-inputs, allocate-outputs                                                  
+2025-02-18 16:03:26,437 [INFO] CmdLine:67 -  optimization       :   balanced                                                                           
+2025-02-18 16:03:26,437 [INFO] CmdLine:67 -  target/series      :   stm32h7                                                                            
+2025-02-18 16:03:26,438 [INFO] CmdLine:67 -  workspace dir      :   C:\Users\yh621\AppData\Local\Temp\mxAI_workspace70740723820010940013297707881668   
+2025-02-18 16:03:26,438 [INFO] CmdLine:67 -  output dir         :   C:\Users\yh621\.stm32cubemx\network_output                                         
+2025-02-18 16:03:26,438 [INFO] CmdLine:67 -  model_fmt          :   ss/sa                                                                              
+2025-02-18 16:03:26,438 [INFO] CmdLine:67 -  model_name         :   autoenc_full_integer_quant                                                         
+2025-02-18 16:03:26,439 [INFO] CmdLine:67 -  model_hash         :   2d20351c09010923a1fc1bcc47a55495                                                   
+2025-02-18 16:03:26,439 [INFO] CmdLine:67 -  params #           :   136,800 items (134.62 KiB)                                                         
+2025-02-18 16:03:26,439 [INFO] CmdLine:67 -  ----------------------------------------------------------------------------------------------------------
+2025-02-18 16:03:26,439 [INFO] CmdLine:67 -  input 1/1          :   'serving_default_input0' (domain:activations/**default**)                          
+2025-02-18 16:03:26,440 [INFO] CmdLine:67 -                     :   768 items, 768 B, ai_i8, s=0.05147701, zp=27, (1,3,1,256)                          
+2025-02-18 16:03:26,440 [INFO] CmdLine:67 -  output 1/1         :   'dense_7' (domain:activations/**default**)                                         
+2025-02-18 16:03:26,440 [INFO] CmdLine:67 -                     :   768 items, 768 B, ai_i8, s=0.00573800, zp=67, (1,1,1,768)                          
+2025-02-18 16:03:26,440 [INFO] CmdLine:67 -  macc               :   203,108                                                                            
+2025-02-18 16:03:26,441 [INFO] CmdLine:67 -  weights (ro)       :   140,944 B (137.64 KiB) (1 segment) / -406,256(-74.2%) vs float model               
+2025-02-18 16:03:26,441 [INFO] CmdLine:67 -  activations (rw)   :   7,360 B (7.19 KiB) (1 segment) *                                                   
+2025-02-18 16:03:26,441 [INFO] CmdLine:67 -  ram (total)        :   7,360 B (7.19 KiB) = 7,360 + 0 + 0                                                 
+2025-02-18 16:03:26,441 [INFO] CmdLine:67 -  ----------------------------------------------------------------------------------------------------------
+2025-02-18 16:03:26,441 [INFO] CmdLine:67 -  (*) 'input'/'output' buffers can be used from the activations buffer
+2025-02-18 16:03:26,465 [INFO] CmdLine:67 -  Unable to evaluate the requested AI memory size.
+2025-02-18 16:03:26,466 [INFO] CmdLine:67 -  -> Compiler "gcc:arm-none-eabi-gcc" is not supported/available..
+2025-02-18 16:03:26,488 [INFO] CmdLine:67 -  Generated files (7)
+2025-02-18 16:03:26,489 [INFO] CmdLine:67 -  ------------------------------------------------------------------
+2025-02-18 16:03:26,490 [INFO] CmdLine:67 -  C:\Users\yh621\.stm32cubemx\network_output\network_config.h
+2025-02-18 16:03:26,490 [INFO] CmdLine:67 -  C:\Users\yh621\.stm32cubemx\network_output\network.h
+2025-02-18 16:03:26,491 [INFO] CmdLine:67 -  C:\Users\yh621\.stm32cubemx\network_output\network.c
+2025-02-18 16:03:26,491 [INFO] CmdLine:67 -  C:\Users\yh621\.stm32cubemx\network_output\network_data_params.h
+2025-02-18 16:03:26,492 [INFO] CmdLine:67 -  C:\Users\yh621\.stm32cubemx\network_output\network_data_params.c
+2025-02-18 16:03:26,492 [INFO] CmdLine:67 -  C:\Users\yh621\.stm32cubemx\network_output\network_data.h
+2025-02-18 16:03:26,492 [INFO] CmdLine:67 -  C:\Users\yh621\.stm32cubemx\network_output\network_data.c
+2025-02-18 16:03:26,493 [INFO] CmdLine:67 - Creating txt report file C:\Users\yh621\.stm32cubemx\network_output\network_generate_report.txt
+2025-02-18 16:03:26,901 [INFO] CmdLine:67 - elapsed time (generate): 2.750s
+2025-02-18 16:03:27,864 [INFO] CmdLine:132 - stm32ai exit with status: 0
+2025-02-18 16:03:27,874 [INFO] AInterface:594 - Successfully load: network
+2025-02-18 16:03:27,937 [INFO] AIModelDetailledView:2080 - Analysis status: done
+2025-02-18 16:03:30,914 [INFO] ProjectBuilder:2460 - Time for Copy HAL[1] : 343mS.
+2025-02-18 16:03:30,915 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,915 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,915 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,916 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,916 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,916 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,916 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,916 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,916 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,916 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,916 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,916 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,917 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,917 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,917 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,917 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,917 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,918 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,918 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,918 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,918 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,918 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,918 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,919 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,919 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,919 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,919 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,919 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,919 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,919 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,920 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,920 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,920 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,920 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,920 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,920 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,920 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,920 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,920 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,920 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,920 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,921 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,921 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,921 [ERROR] Middleware:2942 - Invalid RefComponent liste
+2025-02-18 16:03:30,921 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,921 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,921 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,922 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,922 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,922 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,922 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,922 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,922 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,922 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,922 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,922 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,922 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,922 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,923 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,923 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,923 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,923 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,923 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,923 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,924 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,924 [ERROR] ThirdPartyIpManager:536 - Invalid RefComponent liste
+2025-02-18 16:03:30,934 [INFO] ProjectBuilder:3418 - Project Generator version: 3.13.0-B3
+2025-02-18 16:03:32,864 [INFO] ConfigFileManager:1242 - The Die is : DIE480
+2025-02-18 16:03:40,683 [INFO] ProjectBuilder:3584 - Time for Generating toolchain IDE Files: 9749mS.
+2025-02-18 16:03:40,685 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 1mS.
+2025-02-18 16:03:40,697 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 0mS.

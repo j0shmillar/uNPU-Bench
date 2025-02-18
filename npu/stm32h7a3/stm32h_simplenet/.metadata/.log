@@ -1,0 +1,24 @@
+!SESSION 2025-02-18 16:53:54.230 -----------------------------------------------
+eclipse.buildId=Version 1.6.1
+java.version=11.0.9.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-02-18 16:54:36.275
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-02-18 16:54:36.344
+!MESSAGE Log4j initialized with config file C:\Users\yh621\STM32CubeIDE\josh_simplenet_stm32h\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-02-18 16:54:38.547
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2025-02-18 16:54:39.168
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-02-18 16:56:29.224
+!MESSAGE Indexed 'simplenet_stm32h' (24 sources, 85 headers) in 13.5 sec: 7,595 declarations; 53,431 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0033%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-02-18 17:02:20.578
+!MESSAGE Indexed 'simplenet_stm32h' (30 sources, 111 headers) in 8.78 sec: 12,973 declarations; 73,696 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
