@@ -1,5 +1,3 @@
-# CHW (big data) configuration for MNIST
-
 arch: ai85net5
 dataset: yolov1
 
