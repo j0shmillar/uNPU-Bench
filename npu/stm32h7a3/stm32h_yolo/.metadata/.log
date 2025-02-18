@@ -1,0 +1,42 @@
+!SESSION 2025-02-18 17:07:47.796 -----------------------------------------------
+eclipse.buildId=Version 1.6.1
+java.version=11.0.9.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-02-18 17:08:20.013
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-02-18 17:08:20.083
+!MESSAGE Log4j initialized with config file C:\Users\yh621\STM32CubeIDE\josh_yolo_stm32h\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-02-18 17:08:22.290
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2025-02-18 17:08:22.889
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-02-18 17:10:12.835
+!MESSAGE Indexed 'yolo_stm32h' (24 sources, 85 headers) in 6.73 sec: 7,595 declarations; 53,431 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0033%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-02-18 17:15:58.911
+!MESSAGE Indexed 'yolo_stm32h' (30 sources, 111 headers) in 7.33 sec: 13,813 declarations; 76,093 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+!SESSION 2025-02-18 17:22:04.309 -----------------------------------------------
+eclipse.buildId=Version 1.6.1
+java.version=11.0.9.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-02-18 17:22:50.779
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-02-18 17:22:50.863
+!MESSAGE Log4j initialized with config file C:\Users\yh621\STM32CubeIDE\josh_yolo_stm32h\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-02-18 17:22:59.853
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2025-02-18 17:23:00.360
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties

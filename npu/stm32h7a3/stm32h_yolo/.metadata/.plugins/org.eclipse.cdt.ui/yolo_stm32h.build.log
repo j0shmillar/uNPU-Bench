@@ -1,0 +1,10 @@
+17:23:49 **** Incremental Build of configuration Debug for project yolo_stm32h ****
+make -j8 all 
+arm-none-eabi-size   yolo_stm32h.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 111900	  10492	 161056	 283448	  45338	yolo_stm32h.elf
+Finished building: default.size.stdout
+ 
+
+17:23:50 Build Finished. 0 errors, 0 warnings. (took 315ms)
+

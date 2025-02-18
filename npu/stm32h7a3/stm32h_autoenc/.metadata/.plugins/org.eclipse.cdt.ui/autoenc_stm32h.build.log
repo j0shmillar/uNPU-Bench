@@ -1,0 +1,10 @@
+16:12:50 **** Incremental Build of configuration Debug for project autoenc_stm32h ****
+make -j8 all 
+arm-none-eabi-size   autoenc_stm32h.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 205888	   3812	  18056	 227756	  379ac	autoenc_stm32h.elf
+Finished building: default.size.stdout
+ 
+
+16:12:50 Build Finished. 0 errors, 0 warnings. (took 338ms)
+

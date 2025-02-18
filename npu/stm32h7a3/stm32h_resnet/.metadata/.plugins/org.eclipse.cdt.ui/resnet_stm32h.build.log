@@ -1,0 +1,10 @@
+16:51:49 **** Incremental Build of configuration Debug for project resnet_stm32h ****
+make -j8 all 
+arm-none-eabi-size   resnet_stm32h.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 458552	   8424	  64256	 531232	  81b20	resnet_stm32h.elf
+Finished building: default.size.stdout
+ 
+
+16:51:49 Build Finished. 0 errors, 0 warnings. (took 284ms)
+
