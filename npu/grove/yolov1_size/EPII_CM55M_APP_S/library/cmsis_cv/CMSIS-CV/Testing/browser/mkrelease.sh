@@ -1,1 +1,0 @@
-zip -r cmsiscv_tests.zip web

@@ -37,7 +37,7 @@ build_and_clean() {
     popd
 }
 
-build_and_clean "${CURRENT_DIR}/cvi_yolo"
+build_and_clean "${CURRENT_DIR}/cvi_yolov1"
 
 echo "finish build sample!!!"
 

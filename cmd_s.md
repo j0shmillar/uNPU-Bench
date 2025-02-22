@@ -43,8 +43,8 @@ cd root/luckfox_pico_{model}_demo
 cd host-tools
 export PATH=$PATH:$(pwd)/gcc/riscv64-linux-musl-x86_64/bin
 cd npu/milk-v
-cd sample
-./compile_samples.sh
+cd model
+./compile_sample.sh
 scp -O sample_{model} root@192.168.42.1:/root/
 scp -O ../../model/{model}/{model}.cvimage
 ssh root@192.168.42.1
@@ -52,33 +52,27 @@ cd root
 ./sample_{model} {model}.cvimodel
 ```
 
-### canmv
-build boot image (linux)
-```
-docker pull ghcr.io/kendryte/k230_sdk
-docker images | grep ghcr.io/kendryte/k230_sdk
-cd k230_sdk
-git clone -b v1.0.1 --single-branch https://github.com/kendryte/k230_sdk.git
-cd k230_sdk
-make prepare_sourcecode
-docker run -u root -it -v $(pwd):$(pwd) -v $(pwd)/toolchain:/opt/toolchain -w $(pwd) ghcr.io/kendryte/k230_sdk /bin/bash
-make CONF=k230_canmv_defconfig
-```
-flash boot image with ```sudo dd if=sysimage-sdcard.img of=/dev/sdc bs=1m oflag=sync```
+### grove
 
-build app image (add app path to build_app_sub.sh) (linux)
-```
-sudo apt-get update
-sudo apt-get install -y dotnet-sdk-7.0
-cd k230_sdk
-docker run -u root -it -v $(pwd):$(pwd) -v $(pwd)/toolchain:/opt/toolchain -w $(pwd) ghcr.io/kendryte/k230_sdk /bin/bash
-cd src/reference/ai_poc
-./build_app.sh {app_name}
-```
-build written to ```k230_sdk/src/reference/ai_poc/k230_sdk```
+build (update `EPII_CM55M_APP_S/makefile`, line 133 set `APP_TYPE` for demos)
 
-flash app image
 ```
-picocom /dev/ttyACM1
-scp -r username@domain_or_IP:source_directory destination_directory_on_board
+cd ~
+wget https://developer.arm.com/-/media/Files/downloads/gnu/13.2.rel1/binrel/arm-gnu-toolchain-13.2.rel1-x86_64-arm-none-eabi.tar.xz
+tar -xvf arm-gnu-toolchain-13.2.rel1-x86_64-arm-none-eabi.tar.xz
+export PATH="$HOME/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi/bin/:$PATH"
+git clone --recursive https://github.com/HimaxWiseEyePlus/Seeed_Grove_Vision_AI_Module_V2.git
+cd Seeed_Grove_Vision_AI_Module_V2
+cd EPII_CM55M_APP_S
+gmake clean
+gmake
+cd ../we2_image_gen_local/
+cp ../EPII_CM55M_APP_S/obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/EPII_CM55M_gnu_epii_evb_WLCSP65_s.elf input_case1_secboot/
+./we2_local_image_gen_macOS_arm64 project_case1_blp_wlcsp.json
+```
+flash
+```
+pip install -r xmodem/requirements.txt
+python xmodem/xmodem_send.py --port=/dev/tty.usbmodem58C60539941 --baudrate=921600 --protocol=xmodem --file=we2_image_gen_local/output_case1_sec_wlcsp/output.img
+picocom /dev/tty.usbmodem58C60539941 -b 921600
 ```
