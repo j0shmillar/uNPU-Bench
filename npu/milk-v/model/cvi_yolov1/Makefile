@@ -226,7 +226,7 @@ SAMPLE_OPENCV_LIB = -L$(OPENCV_LIB_PATH) $(OPENCV_LIBS)
 
 SAMPLE_INIT_LIBS = $(SAMPLW_MW_LIB) $(SAMPLE_BASE_LIBS)
 SAMPLE_AUD_LIBS = $(SAMPLW_MW_LIB) $(SAMPLE_BASE_LIBS)  $(MW_AUDIO_LIBS)
-SAMPLE_YOLO_LIBS = $(SAMPLW_MW_LIB) $(SAMPLE_BASE_LIBS)  $(SAMPLE_OPENCV_LIB)
+SAMPLE_MODEL_LIBS = $(SAMPLW_MW_LIB) $(SAMPLE_BASE_LIBS)  $(SAMPLE_OPENCV_LIB)
 SAMPLE_VI_LIBS = $(SAMPLW_MW_LIB) $(SAMPLE_OPENCV_LIB) $(SAMPLE_BASE_LIBS) -L$(RTSP_LIB_PATH) $(RTSP_LIBS)
 SAMPLE_APP_LIBS = $(SAMPLW_MW_LIB) $(SAMPLE_OPENCV_LIB) $(SAMPLE_BASE_LIBS) -L$(RTSP_LIB_PATH) $(RTSP_LIBS) $(SDK_APP_LIBS)
 
@@ -277,14 +277,14 @@ TARGETS_IMAGE_SAMPLE := $(shell find . -type f -name 'sample_read_*.c' -exec bas
 TARGETS_IMAGE_SAMPLE += $(shell find . -type f -name 'sample_read_*.cpp' -exec basename {} .cpp ';')
 
 TARGETS_APP_SAMPLE := $(shell find . -type f -name 'sample_app_*.c' -exec basename {} .c ';')
-TARGETS_YOLO_SAMPLE := $(shell find . -type f -name 'sample_yolo*.cpp' -exec basename {} .cpp ';')
+TARGETS_MODEL_SAMPLE := $(shell find . -type f -name 'cvi_yolov1/yolov1*.cpp' -exec basename {} .cpp ';')
 
 TARGETS = $(TARGETS_SAMPLE_INIT) \
   	      $(TARGETS_VI_SAMPLE) \
  	      $(TARGETS_AUDIO_SAMPLE) \
 	      $(TARGETS_READ_SAMPLE) \
 	      $(TARGETS_APP_SAMPLE) \
-	      $(TARGETS_YOLO_SAMPLE)
+	      $(TARGETS_MODEL_SAMPLE)
 
 .PHONY : all clean
 
@@ -309,7 +309,7 @@ sample_aud_%: $(PWD)/sample_aud_%.o $(SDK_ROOT_PATH)/sample/utils/sample_utils.o
 	$(CXX) $(CFLAGS) $(SAMPLE_AUD_LIBS) -o $@ $^
 
 sample_yol%: $(PWD)/sample_yol%.o
-	$(CXX) $(CFLAGS) $(SAMPLE_YOLO_LIBS) -o $@ $^
+	$(CXX) $(CFLAGS) $(SAMPLE_MODEL_LIBS) -o $@ $^
 
 sample_vi_%: $(PWD)/sample_vi_%.o \
 			 $(SDK_ROOT_PATH)/sample/utils/sample_utils.o \

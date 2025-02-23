@@ -29,21 +29,6 @@ CVI_S32 get_od_model_info(const char *model_name, CVI_TDL_SUPPORTED_MODEL_E *mod
   } else if (strcmp(model_name, "yolov5") == 0) {
     *model_index = CVI_TDL_SUPPORTED_MODEL_YOLOV5;
     *inference_func = CVI_TDL_Yolov5;
-  } else if (strcmp(model_name, "simplenet") == 0){
-    *model_index = CVI_TDL_SUPPORTED_MODEL_SIMPLENET;
-    *inference_func = CVI_TDL_SimpleNet;
-  }
-  else if (strcmp(model_name, "resnet") == 0){
-    *model_index = CVI_TDL_SUPPORTED_MODEL_RESNET;
-    *inference_func = CVI_TDL_ResNet;
-  } 
-  else if (strcmp(model_name, "autoenc") == 0){
-    *model_index = CVI_TDL_SUPPORTED_MODEL_AUTOENC;
-    *inference_func = CVI_TDL_AutoEnc;
-  } 
-  else if (strcmp(model_name, " nas") == 0){
-    *model_index = CVI_TDL_SUPPORTED_MODEL_NAS;
-    *inference_func = CVI_TDL_NAS;
   }else {
     ret = CVI_TDL_FAILURE;
   }
