@@ -378,6 +378,17 @@ int cv_run() {
     xprintf("Inference time: %s us\n", time_ptr);  
 
     start = GET_DWT();
+    for (int i = 0; i < CONV_OUT_H * CONV_OUT_W * CONV_OUT_C; i++) {
+        processed_output[i] = output->data.f[i];
+    }
+    end = GET_DWT();
+    cycles = end - start;
+    time_us = (float)cycles / CPU_FREQ_MHZ;
+    time_str[CHAR_BUFF_SIZE];
+    time_ptr = _float_to_char(time_us, time_str);
+    xprintf("Memory I/O time: %s us\n", time_ptr);
+
+    start = GET_DWT();
 	int num_detections;
 	process_yolo_output((float*)output, processed_output, GRID_SIZE);
 	float confidence_threshold = 0.5f;

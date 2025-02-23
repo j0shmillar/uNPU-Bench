@@ -47,8 +47,8 @@
 #define MODEL_IN_COLOR_BGR 0
 
 #define GRID_SIZE 12
-#define NUM_CLASSES 2  // Based on the output tensor shape shown
-#define NUM_CONFIDENCE 10 // Based on the slice operations shown
+#define NUM_CLASSES 2 
+#define NUM_CONFIDENCE 10 
 #define OUTPUT_STRIDE (NUM_CLASSES + NUM_CONFIDENCE)
 
 #define CONV_OUT_H 12
@@ -76,7 +76,7 @@ typedef struct {
 	int class_id;     
 } detection_t;
 
-#define TENSOR_ARENA_BUFSIZE  (125*1024)
+#define TENSOR_ARENA_BUFSIZE  (200*1024)
 __attribute__(( section(".bss.NoInit"))) uint8_t tensor_arena_buf[TENSOR_ARENA_BUFSIZE] __ALIGNED(32);
 
 static uint8_t random_image[INPUT_SIZE_X * INPUT_SIZE_Y * INPUT_CHANNELS];
@@ -376,6 +376,17 @@ int cv_run() {
     time_str[CHAR_BUFF_SIZE]; 
     time_ptr = _float_to_char(time_us, time_str);  
     xprintf("Inference time: %s us\n", time_ptr);  
+
+    start = GET_DWT();
+    for (int i = 0; i < CONV_OUT_H * CONV_OUT_W * CONV_OUT_C; i++) {
+        processed_output[i] = output->data.f[i];
+    }
+    end = GET_DWT();
+    cycles = end - start;
+    time_us = (float)cycles / CPU_FREQ_MHZ;
+    time_str[CHAR_BUFF_SIZE];
+    time_ptr = _float_to_char(time_us, time_str);
+    xprintf("Memory I/O time: %s us\n", time_ptr);
 
     start = GET_DWT();
 	int num_detections;

@@ -26,10 +26,13 @@
 #define LOCAL_FRAQ_BITS (8)
 #define SC(A, B) ((A<<8)/B)
 
-#define INPUT_SIZE_X 96
-#define INPUT_SIZE_Y 96
+#define INPUT_SIZE_X 32
+#define INPUT_SIZE_Y 32
 #define INPUT_CHANNELS 3
 #define CPU_FREQ_MHZ 100
+#define MAX_STRING  100
+#define CHAR_BUFF_SIZE 50 
+#define OUTPUT_CLASSES 100
 
 #ifdef TRUSTZONE_SEC
 #define U55_BASE	BASE_ADDR_APB_U55_CTRL_ALIAS
@@ -41,47 +44,15 @@
 #endif
 #endif
 
-#define MODEL_IN_W 96
-#define MODEL_IN_H  96
-#define MODEL_IN_C 3
-#define MODEL_IN_COLOR_BGR 0
-
-#define GRID_SIZE 12
-#define NUM_CLASSES 2  // Based on the output tensor shape shown
-#define NUM_CONFIDENCE 10 // Based on the slice operations shown
-#define OUTPUT_STRIDE (NUM_CLASSES + NUM_CONFIDENCE)
-
-#define CONV_OUT_H 12
-#define CONV_OUT_W 12
-#define CONV_OUT_C 12
-
-#define OUT_H 12
-#define OUT_W 12
-#define SIGMOID_CH 1 
-#define SOFTMAX_CH 1 
-#define TOTAL_CH (SIGMOID_CH + SOFTMAX_CH)
-#define MAX_DETECTIONS (OUT_H * OUT_W)
-
-#define MAX_STRING  100
-#define CHAR_BUFF_SIZE 50 
-
 #define INIT_DWT()      (DWT->CTRL |= 1) 
 #define RESET_DWT()     (DWT->CYCCNT = 0) 
 #define GET_DWT()       (DWT->CYCCNT)   
-
-typedef struct {
-	float x, y;    
-	float confidence;    
-	float class_probs[NUM_CLASSES];  
-	int class_id;     
-} detection_t;
 
 #define TENSOR_ARENA_BUFSIZE  (125*1024)
 __attribute__(( section(".bss.NoInit"))) uint8_t tensor_arena_buf[TENSOR_ARENA_BUFSIZE] __ALIGNED(32);
 
 static uint8_t random_image[INPUT_SIZE_X * INPUT_SIZE_Y * INPUT_CHANNELS];
-static float processed_output[GRID_SIZE * GRID_SIZE * OUTPUT_STRIDE];
-static detection_t detections[GRID_SIZE * GRID_SIZE * 2]; // TODO increase?
+static float processed_output[OUTPUT_CLASSES];
 
 using namespace std;
 
@@ -242,110 +213,6 @@ int cv_init(bool security_enable, bool privilege_enable)
 	return ercode;
 }
 
-void softmax(const float* input, float* output, int length) {
-    float max_val = *std::max_element(input, input + length);
-    float sum = 0.0f;
-
-    for (int i = 0; i < length; i++) {
-        output[i] = expf(input[i] - max_val);
-        sum += output[i];
-    }
-
-    for (int i = 0; i < length; i++) {
-        output[i] /= sum;
-    }
-}
-
-float sigmoid(float x) {
-    if (x < -5.0f) return 0.0f;
-    if (x > 5.0f) return 1.0f;
-    return 1.0f / (1.0f + expf(-x));
-}
-
-void process_yolo_output(const float* output_array, float* final_output, int grid_size) {
-    const int confidence_stride = grid_size * grid_size * 2;  
-    
-    for (int y = 0; y < grid_size; y++) {
-        for (int x = 0; x < grid_size; x++) {
-            int grid_idx = y * grid_size + x;
-            int out_idx = grid_idx * OUTPUT_STRIDE;
-            
-            for (int i = 0; i < NUM_CONFIDENCE; i++) {
-                float conf = output_array[grid_idx * 2 + i];  
-                final_output[out_idx + i] = sigmoid(conf);
-            }
-            
-            float class_inputs[NUM_CLASSES];
-            for (int i = 0; i < NUM_CLASSES; i++) {
-                class_inputs[i] = output_array[confidence_stride + grid_idx * NUM_CLASSES + i];
-            }
-            
-            softmax(class_inputs, &final_output[out_idx + NUM_CONFIDENCE], NUM_CLASSES);
-        }
-    }
-}
-
-
-void extract_detections(const float* processed_output, 
-                       detection_t* detections,
-                       int* num_detections,
-                       float confidence_threshold,
-                       int grid_size) {
-    *num_detections = 0;
-    
-    for (int y = 0; y < grid_size; y++) {
-        for (int x = 0; x < grid_size; x++) {
-            int grid_idx = y * grid_size + x;
-            int out_idx = grid_idx * OUTPUT_STRIDE;
-            
-            float conf1 = processed_output[out_idx];
-            float conf2 = processed_output[out_idx + 1];
-            
-            if (conf1 > confidence_threshold) {
-                detection_t* det = &detections[*num_detections];
-                
-                det->x = ((float)x + 0.5f) / grid_size;
-                det->y = ((float)y + 0.5f) / grid_size;
-                det->confidence = conf1;
-                
-                float max_prob = -1.0f;
-                det->class_id = -1;
-                for (int i = 0; i < NUM_CLASSES; i++) {
-                    float prob = processed_output[out_idx + NUM_CONFIDENCE + i];
-                    det->class_probs[i] = prob;  
-                    if (prob > max_prob) {
-                        max_prob = prob;
-                        det->class_id = i;  // Assign correct class index
-                    }
-                }
-                
-                (*num_detections)++;
-            }
-            
-            if (conf2 > confidence_threshold) {
-                detection_t* det = &detections[*num_detections];
-                
-                det->x = ((float)x + 0.5f) / grid_size;
-                det->y = ((float)y + 0.5f) / grid_size;
-                det->confidence = conf2;
-                
-                float max_prob = -1.0f;
-                det->class_id = -1;
-                for (int i = 0; i < NUM_CLASSES; i++) {
-                    float prob = processed_output[out_idx + NUM_CONFIDENCE + i];
-                    det->class_probs[i] = prob;  
-                    if (prob > max_prob) {
-                        max_prob = prob;
-                        det->class_id = i;  // Assign correct class index
-                    }
-                }
-                
-                (*num_detections)++;
-            }
-        }
-    }
-}
-
 
 int cv_run() {
     generate_random_image();
@@ -378,16 +245,20 @@ int cv_run() {
     xprintf("Inference time: %s us\n", time_ptr);  
 
     start = GET_DWT();
-	int num_detections;
-	process_yolo_output((float*)output, processed_output, GRID_SIZE);
-	float confidence_threshold = 0.5f;
-	extract_detections(processed_output, detections, &num_detections, confidence_threshold, GRID_SIZE);
+    for (int i = 0; i < OUTPUT_CLASSES; i++) {
+        processed_output[i] = output->data.f[i];
+    }
     end = GET_DWT();
     cycles = end - start;
     time_us = (float)cycles / CPU_FREQ_MHZ; 
-    time_str[CHAR_BUFF_SIZE]; 
     time_ptr = _float_to_char(time_us, time_str);  
-    xprintf("Post processing time: %s us\n", time_ptr); 
+    xprintf("Memory I/O time: %s us\n", time_ptr); 
+
+    for (int i = 0; i < OUTPUT_CLASSES; i++) {
+        char float_buffer[CHAR_BUFF_SIZE];
+        char *confidence_str = _float_to_char(processed_output[i], float_buffer);
+        xprintf("Output %d: %s\n", i, confidence_str);
+    }
 
     return 0;
 }
