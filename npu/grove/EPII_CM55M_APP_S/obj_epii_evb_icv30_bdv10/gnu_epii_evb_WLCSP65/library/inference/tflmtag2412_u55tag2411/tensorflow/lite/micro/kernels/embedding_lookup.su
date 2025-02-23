@@ -1,0 +1,5 @@
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/op_macros.h:24:13:void AbortImpl()	8	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/embedding_lookup.cc:123:14:TfLiteStatus tflite::{anonymous}::EvalSimple(const OpData&, const TfLiteEvalTensor*, const TfLiteEvalTensor*, TfLiteEvalTensor*)	32	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/embedding_lookup.cc:181:14:TfLiteStatus tflite::{anonymous}::EmbeddingLookUpEval(TfLiteContext*, TfLiteNode*)	48	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/embedding_lookup.cc:68:14:TfLiteStatus tflite::{anonymous}::EmbeddingLookUpPrepare(TfLiteContext*, TfLiteNode*)	80	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/embedding_lookup.cc:209:18:TFLMRegistration tflite::Register_EMBEDDING_LOOKUP()	16	static

@@ -1,0 +1,2 @@
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/internal/common.cc:67:9:int32_t tflite::MultiplyByQuantizedMultiplier(int32_t, int32_t, int)	24	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/internal/common.cc:78:9:int32_t tflite::MultiplyByQuantizedMultiplier(int64_t, int32_t, int)	16	static

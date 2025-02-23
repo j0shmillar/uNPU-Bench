@@ -56,7 +56,7 @@ SECTIONS
     } > CM55M_S_APP_ROM
     .model : ALIGN(4)
     {
-        *person_detect_model_data_vela.o*(.text* .rodata*)
+        *model_data.o*(.text* .rodata*)
     } > CM55M_S_SRAM
     .noinit (NOLOAD): ALIGN(4)
     {

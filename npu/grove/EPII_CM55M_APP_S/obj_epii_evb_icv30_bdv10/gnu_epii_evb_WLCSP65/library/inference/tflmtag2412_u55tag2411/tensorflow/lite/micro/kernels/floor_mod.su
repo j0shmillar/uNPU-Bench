@@ -1,0 +1,7 @@
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/floor_mod.cc:65:7:void* tflite::{anonymous}::FloorModInit(TfLiteContext*, const char*, size_t)	0	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/floor_mod.cc:69:14:TfLiteStatus tflite::{anonymous}::FloorModPrepare(TfLiteContext*, TfLiteNode*)	40	static
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/op_macros.h:24:13:void AbortImpl()	8	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/floor_mod.cc:124:18:TFLMRegistration tflite::Register_FLOOR_MOD()	16	static
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/internal/common.h:1083:22:void tflite::CopyDimsToDesc(const RuntimeShape&, NdArrayDesc<N>*) [with int N = 4]	16	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/floor_mod.cc:74:14:TfLiteStatus tflite::{anonymous}::EvalFloorMod(TfLiteContext*, bool, const TfLiteEvalTensor*, const TfLiteEvalTensor*, TfLiteEvalTensor*) [with T = float]	464	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/floor_mod.cc:99:14:TfLiteStatus tflite::{anonymous}::FloorModEval(TfLiteContext*, TfLiteNode*)	24	static

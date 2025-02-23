@@ -1,0 +1,8 @@
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/op_macros.h:24:13:void AbortImpl()	8	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/pad.cc:35:7:void* tflite::{anonymous}::PadInit(TfLiteContext*, const char*, size_t)	8	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/pad.cc:123:14:TfLiteStatus tflite::PadPrepare(TfLiteContext*, TfLiteNode*)	136	static
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/internal/reference/pad.h:38:13:void tflite::reference_ops::PadImpl(const tflite::PadParams&, const tflite::RuntimeShape&, const T*, const P*, const tflite::RuntimeShape&, T*) [with T = float; P = float]	224	static
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/internal/reference/pad.h:38:13:void tflite::reference_ops::PadImpl(const tflite::PadParams&, const tflite::RuntimeShape&, const T*, const P*, const tflite::RuntimeShape&, T*) [with T = signed char; P = signed char]	216	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/pad.cc:40:14:TfLiteStatus tflite::{anonymous}::PadEval(TfLiteContext*, TfLiteNode*)	680	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/pad.cc:220:18:TFLMRegistration tflite::Register_PAD()	16	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/pad.cc:225:18:TFLMRegistration tflite::Register_PADV2()	16	static

@@ -1,0 +1,6 @@
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/op_macros.h:24:13:void AbortImpl()	8	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/prelu.cc:30:7:void* tflite::PreluInit(TfLiteContext*, const char*, size_t)	8	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/prelu.cc:71:18:TFLMRegistration tflite::Register_PRELU()	16	static
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/internal/common.h:1083:22:void tflite::CopyDimsToDesc(const RuntimeShape&, NdArrayDesc<N>*) [with int N = 4]	16	static
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/internal/reference/prelu.h:30:13:void tflite::reference_ops::BroadcastPrelu4DSlow(const tflite::PreluParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = signed char]	264	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/prelu.cc:35:14:TfLiteStatus tflite::PreluEval(TfLiteContext*, TfLiteNode*)	208	static

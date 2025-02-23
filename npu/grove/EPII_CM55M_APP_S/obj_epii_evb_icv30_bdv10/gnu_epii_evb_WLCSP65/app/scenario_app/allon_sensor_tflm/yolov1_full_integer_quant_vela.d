@@ -1,5 +1,0 @@
-obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/yolov1_full_integer_quant_vela.o \
- obj_epii_evb_icv30_bdv10/gnu_epii_evb_WLCSP65/app/scenario_app/allon_sensor_tflm/yolov1_full_integer_quant_vela.d: \
- app/scenario_app/allon_sensor_tflm/yolov1_full_integer_quant_vela.cc \
- app/scenario_app/allon_sensor_tflm/yolov1_full_integer_quant_vela.h
-app/scenario_app/allon_sensor_tflm/yolov1_full_integer_quant_vela.h:

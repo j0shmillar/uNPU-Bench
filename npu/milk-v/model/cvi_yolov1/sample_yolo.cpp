@@ -8,7 +8,11 @@
 #include "core/cvi_tdl_types_mem_internal.h"
 #include "cvi_tdl.h"
 
-// TODO add timing + post process
+double get_time_ms() {
+    struct timespec ts;
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+    return ts.tv_sec * 1000.0 + ts.tv_nsec / 1.0e6;
+}
 
 #define GRID_SIZE 12
 #define NUM_CLASSES 2 
@@ -153,6 +157,7 @@ int main(int argc, char* argv[]) {
     int img_width = 96;
     int img_height = 96;
 
+    double start_time = get_time_ms();
     cvitdl_handle_t tdl_handle = NULL;
     CVI_S32 ret = CVI_TDL_CreateHandle(&tdl_handle);
     if (ret != CVI_SUCCESS) {
@@ -169,22 +174,32 @@ int main(int argc, char* argv[]) {
     
     CVI_TDL_SetModelThreshold(tdl_handle, CVI_TDL_SUPPORTED_MODEL_YOLO, 0.5);
     CVI_TDL_SetModelNmsThreshold(tdl_handle, CVI_TDL_SUPPORTED_MODEL_YOLO, 0.5);
-    
+    double end_time = get_time_ms();
+    printf("Init time: %.3f ms\n", end_time - start_time);
+
+    start_time = get_time_ms();
     srand(time(NULL));
     std::vector<uint8_t> random_image(img_width * img_height * 3);
-    for (auto &pixel : random_image) {
+    for (auto &pixel : random_image) 
+    {
         pixel = rand() % 256;
     }
-
     VIDEO_FRAME_INFO_S fdFrame = {};
     fdFrame.stVFrame.pu8VirAddr[0] = random_image.data();
     fdFrame.stVFrame.u32Width = img_width;
     fdFrame.stVFrame.u32Height = img_height;
     fdFrame.stVFrame.enPixelFormat = PIXEL_FORMAT_RGB_888;
+    end_time = get_time_ms();
+    printf("Memory I/O time: %.3f ms\n", end_time - start_time);
 
     cvtdl_object_t obj_meta = {0};
-    CVI_TDL_Yolo(tdl_handle, &fdFrame, &obj_meta);
 
+    start_time = get_time_ms();
+    CVI_TDL_Yolo(tdl_handle, &fdFrame, &obj_meta);
+    end_time = get_time_ms();
+    printf("Inference time: %.3f ms\n", end_time - start_time);
+
+    start_time = get_time_ms();
     detection_t detections[MAX_DETECTIONS];
     int num_detections = 0;
 
@@ -213,6 +228,9 @@ int main(int argc, char* argv[]) {
                detections[i].confidence,
                detections[i].class_id);
     }
+
+    end_time = get_time_ms();
+    printf("Post process time: %.3f ms\n", end_time - start_time);
 
     CVI_TDL_Free(&obj_meta);
     CVI_TDL_DestroyHandle(tdl_handle);
