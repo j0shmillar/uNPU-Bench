@@ -7,8 +7,8 @@
 #include "common.h"
 
 #define GRID_SIZE 12
-#define NUM_CLASSES 2  // Based on the output tensor shape shown
-#define NUM_CONFIDENCE 10 // Based on the slice operations shown
+#define NUM_CLASSES 2  
+#define NUM_CONFIDENCE 10 
 #define OUTPUT_STRIDE (NUM_CLASSES + NUM_CONFIDENCE)
 
 #define CONV_OUT_H 12

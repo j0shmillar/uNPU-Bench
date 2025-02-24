@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
     }
 
     std::string model_path = argv[1];
-    ret = CVI_TDL_OpenModel(tdl_handle, CVI_TDL_SUPPORTED_MODEL_RESNET, model_path.c_str());
+    ret = CVI_TDL_OpenModel(tdl_handle, CVI_TDL_SUPPORTED_MODEL_IMAGE_CLASSIFICATION, model_path.c_str());
     if (ret != CVI_SUCCESS) {
         printf("Open model failed %#x!\n", ret);
         return ret;
@@ -56,16 +56,17 @@ int main(int argc, char* argv[]) {
     end_time = get_time_ms();
     printf("Memory I/O time: %.3f ms\n", end_time - start_time);
 
-    cvtdl_class_t class_meta = {};
+    cvtdl_class_meta_t class_meta = {};
 
     start_time = get_time_ms();
-    CVI_TDL_ResNet(tdl_handle, &fdFrame, &class_meta);
+    CVI_TDL_Image_Classification(tdl_handle, &fdFrame, &class_meta);
     end_time = get_time_ms();
     printf("Inference time: %.3f ms\n", end_time - start_time);
-    
-    printf("Predicted class: %d with confidence: %.3f\n", class_meta.best_class, class_meta.confidence);
+
+    printf("Predicted class: %d with confidence: %.3f\n", class_meta.cls[0], class_meta.score[0]);
 
     CVI_TDL_Free(&class_meta);
     CVI_TDL_DestroyHandle(tdl_handle);
     return ret;
 }
+

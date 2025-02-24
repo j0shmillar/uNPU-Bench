@@ -173,10 +173,6 @@ typedef void *cvitdl_handle_t;
   CVI_TDL_NAME_WRAP(CVI_TDL_SUPPORTED_MODEL_YOLOV8_HARDHAT)                   \                       
   CVI_TDL_NAME_WRAP(CVI_TDL_SUPPORTED_MODEL_SUPER_RESOLUTION)                 \
   CVI_TDL_NAME_WRAP(CVI_TDL_SUPPORTED_MODEL_OCR_DETECTION)                    \
-  CVI_TDL_NAME_WRAP(CVI_TDL_SUPPORTED_MODEL_SIMPLENET)                    \
-  CVI_TDL_NAME_WRAP(CVI_TDL_SUPPORTED_MODEL_RESNET)                    \
-  CVI_TDL_NAME_WRAP(CVI_TDL_SUPPORTED_MODEL_AUTOENC)                    \
-  CVI_TDL_NAME_WRAP(CVI_TDL_SUPPORTED_MODEL_NAS)                    \
 // clang-format on
 
 #define CVI_TDL_NAME_WRAP(x) x,
@@ -1669,18 +1665,6 @@ DLL_EXPORT AudioAlgParam CVI_TDL_Get_Audio_Algparam(const cvitdl_handle_t handle
 DLL_EXPORT CVI_S32 CVI_TDL_Set_Audio_Algparam(const cvitdl_handle_t handle,
                                               const CVI_TDL_SUPPORTED_MODEL_E model_index,
                                               AudioAlgParam audio_param);
-
-DLL_EXPORT CVI_S32 CVI_TDL_SimpleNet(const cvitdl_handle_t handle,
-                                              VIDEO_FRAME_INFO_S *frame, cvtdl_object_t *meta);
-
-DLL_EXPORT CVI_S32 CVI_TDL_ResNet(const cvitdl_handle_t handle,
-                                              VIDEO_FRAME_INFO_S *frame, cvtdl_object_t *meta);
-                                        
-DLL_EXPORT CVI_S32 CVI_TDL_AutoEnc(const cvitdl_handle_t handle,
-                                              VIDEO_FRAME_INFO_S *frame, cvtdl_object_t *meta);
-
-DLL_EXPORT CVI_S32 CVI_TDL_NAS(const cvitdl_handle_t handle,
-                                              VIDEO_FRAME_INFO_S *frame, cvtdl_object_t *meta);
 
 #ifdef __cplusplus
 }
