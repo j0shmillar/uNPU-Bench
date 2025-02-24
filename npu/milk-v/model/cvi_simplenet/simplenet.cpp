@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
     }
 
     std::string model_path = argv[1];
-    ret = CVI_TDL_OpenModel(tdl_handle, CVI_TDL_SUPPORTED_MODEL_IMAGE_CLASSIFICATION, model_path.c_str());
+    ret = CVI_TDL_OpenModel(tdl_handle, CVI_TDL_SUPPORTED_MODEL_YOLO, model_path.c_str());
     if (ret != CVI_SUCCESS) {
         printf("Open model failed %#x!\n", ret);
         return ret;
@@ -69,3 +69,4 @@ int main(int argc, char* argv[]) {
     CVI_TDL_DestroyHandle(tdl_handle);
     return ret;
 }
+

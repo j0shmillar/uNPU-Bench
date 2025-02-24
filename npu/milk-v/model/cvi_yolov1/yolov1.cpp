@@ -8,12 +8,6 @@
 #include "core/cvi_tdl_types_mem_internal.h"
 #include "cvi_tdl.h"
 
-double get_time_ms() {
-    struct timespec ts;
-    clock_gettime(CLOCK_MONOTONIC, &ts);
-    return ts.tv_sec * 1000.0 + ts.tv_nsec / 1.0e6;
-}
-
 #define GRID_SIZE 12
 #define NUM_CLASSES 2 
 #define NUM_CONFIDENCE 10
@@ -37,114 +31,112 @@ typedef struct {
     int class_id;     
 } detection_t;
 
-void softmax(const float* input, float* output, int length) {
-    float max_val = input[0];
-    for (int i = 1; i < length; i++) {
-        if (input[i] > max_val) {
-            max_val = input[i];
+typedef int32_t q31_t;
+typedef int16_t q15_t;
+
+#define Q15_MAX_VALUE   32767
+#define Q15_MIN_VALUE   -32768
+
+double get_time_ms() {
+    struct timespec ts;
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+    return ts.tv_sec * 1000.0 + ts.tv_nsec / 1.0e6;
+}
+
+void softmax_q17p14_q15(const q31_t * vec_in, const uint16_t dim_vec, q15_t * p_out)
+{
+    q31_t     sum;
+    int16_t   i;
+    uint8_t   shift;
+    q31_t     base;
+    base = -1 * 0x80000000;
+
+    for (i = 0; i < dim_vec; i++)
+    {
+        if (vec_in[i] > base)
+        {
+            base = vec_in[i];
         }
     }
 
-    float sum = 0.0f;
-    for (int i = 0; i < length; i++) {
-        output[i] = expf(input[i] - max_val);
-        sum += output[i];
+    base = base - (16<<14);
+
+    sum = 0;
+
+    for (i = 0; i < dim_vec; i++)
+    {
+        if (vec_in[i] > base)
+        {
+            shift = (uint8_t)((8192 + vec_in[i] - base) >> 14);
+            sum += (0x1 << shift);
+        }
     }
 
-    float inv_sum = 1.0f / sum;
-    for (int i = 0; i < length; i++) {
-        output[i] *= inv_sum;
+
+    /* This is effectively (0x1 << 32) / sum */
+    int64_t div_base = 0x100000000LL;
+    int32_t output_base = (int32_t)(div_base / sum);
+    int32_t out;
+
+    for (i = 0; i < dim_vec; i++)
+    {
+        if (vec_in[i] > base)
+        {
+            shift = (uint8_t)(17+((8191 + base - vec_in[i]) >> 14));
+
+            out = (output_base >> shift);
+
+            if (out > 32767)
+            	out = 32767;
+
+            p_out[i] = (q15_t)out;
+
+
+        } else
+        {
+            p_out[i] = 0;
+        }
+    }
+
+}
+
+void sigmoid_q15(const q31_t * vec_in, const uint16_t dim_vec, q15_t * p_out)
+{
+    for (int i = 0; i < dim_vec; i++)
+    {
+        q31_t val = vec_in[i];
+        q15_t sigmoid_val = (val < 0) ? 0 : (val > Q15_MAX_VALUE) ? Q15_MAX_VALUE : val;
+        p_out[i] = sigmoid_val;
     }
 }
 
-float sigmoid(float x) {
-    if (x < -5.0f) return 0.0f;
-    if (x > 5.0f) return 1.0f;
-    return 1.0f / (1.0f + expf(-x));
-}
-
-void process_yolo_output(const float* output_array, float* final_output, int grid_size) {
-    const int confidence_stride = grid_size * grid_size * 2;  
+q31_t**** generateArray(int n) {
+    q31_t**** array = (q31_t****)malloc(sizeof(q31_t***) * 1);
+    array[0] = (q31_t***)malloc(sizeof(q31_t**) * 12);
     
-    for (int y = 0; y < grid_size; y++) {
-        for (int x = 0; x < grid_size; x++) {
-            int grid_idx = y * grid_size + x;
-            int out_idx = grid_idx * OUTPUT_STRIDE;
-            
-            for (int i = 0; i < NUM_CONFIDENCE; i++) {
-                float conf = output_array[grid_idx * 2 + i]; 
-                final_output[out_idx + i] = sigmoid(conf);
-            }
-            
-            float class_inputs[NUM_CLASSES];
-            for (int i = 0; i < NUM_CLASSES; i++) {
-                class_inputs[i] = output_array[confidence_stride + grid_idx * NUM_CLASSES + i];
-            }
-            
-            softmax(class_inputs, &final_output[out_idx + NUM_CONFIDENCE], NUM_CLASSES);
+    for (int i = 0; i < 12; i++) {
+        array[0][i] = (q31_t**)malloc(sizeof(q31_t*) * 12);
+        for (int j = 0; j < 12; j++) {
+            array[0][i][j] = (q31_t*)malloc(sizeof(q31_t) * n);
         }
     }
-}
 
-void extract_detections(const float* processed_output, 
-                       detection_t* detections,
-                       int* num_detections,
-                       float confidence_threshold,
-                       int grid_size) {
-    *num_detections = 0;
-    
-    for (int y = 0; y < grid_size; y++) {
-        for (int x = 0; x < grid_size; x++) {
-            int grid_idx = y * grid_size + x;
-            int out_idx = grid_idx * OUTPUT_STRIDE;
-            
-            float conf1 = processed_output[out_idx];
-            float conf2 = processed_output[out_idx + 1];
-            
-            if (conf1 > confidence_threshold) {
-                detection_t* det = &detections[*num_detections];
-                
-                det->x = ((float)x + 0.5f) / grid_size;
-                det->y = ((float)y + 0.5f) / grid_size;
-                det->confidence = conf1;
-                
-                float max_prob = 0.0f;
-                for (int i = 0; i < NUM_CLASSES; i++) {
-                    float prob = processed_output[out_idx + NUM_CONFIDENCE + i];
-                    det->class_probs[i] = prob;  
-                    if (prob > max_prob) {
-                        max_prob = prob;
-                        det->class_id = i;
-                    }
+    q31_t value = 0.0f;
+    for (int i = 0; i < 1; i++) {
+        for (int j = 0; j < 12; j++) {
+            for (int k = 0; k < 12; k++) {
+                for (int l = 0; l < n; l++) {
+                    array[i][j][k][l] = value++;
                 }
-                
-                (*num_detections)++;
-            }
-            
-            if (conf2 > confidence_threshold) {
-                detection_t* det = &detections[*num_detections];
-                
-                det->x = ((float)x + 0.5f) / grid_size;
-                det->y = ((float)y + 0.5f) / grid_size;
-                det->confidence = conf2;
-                
-                float max_prob = 0.0f;
-                for (int i = 0; i < NUM_CLASSES; i++) {
-                    float prob = processed_output[out_idx + NUM_CONFIDENCE + i];
-                    det->class_probs[i] = prob;  
-                    if (prob > max_prob) {
-                        max_prob = prob;
-                        det->class_id = i;
-                    }
-                }
-                
-                (*num_detections)++;
             }
         }
     }
+
+    return array;
 }
 
 int main(int argc, char* argv[]) {
+
     int img_width = 96;
     int img_height = 96;
 
@@ -184,34 +176,36 @@ int main(int argc, char* argv[]) {
     end_time = get_time_ms();
     printf("Memory I/O time: %.3f ms\n", end_time - start_time);
 
-    cvtdl_object_t obj_meta = {0};
+    cvtdl_class_meta_t class_meta = {};
 
+    printf("Infer\n");
     start_time = get_time_ms();
-    CVI_TDL_Yolo(tdl_handle, &fdFrame, &obj_meta);
+    CVI_TDL_Image_Classification(tdl_handle, &fdFrame, &class_meta);
     end_time = get_time_ms();
     printf("Inference time: %.3f ms\n", end_time - start_time);
 
-    start_time = get_time_ms();
-    float processed_output[MAX_DETECTIONS * OUTPUT_STRIDE];
-    process_yolo_output(obj_meta.info[0].data, processed_output, GRID_SIZE);
+    q31_t**** array1 = generateArray(2);
+    q31_t**** array2 = generateArray(10);
+    
+    q31_t* class_output = &array1[0][0][0][0]; 
+    q31_t* obj_confidence = &array2[0][0][0][0];  
 
-    detection_t detections[MAX_DETECTIONS];
-    int num_detections = 0;
-    extract_detections(processed_output, detections, &num_detections, 0.5, GRID_SIZE);
+    q15_t softmax_output[OUT_H * OUT_W * NUM_CLASSES];
+    q15_t sigmoid_output[OUT_H * OUT_W * NUM_CONFIDENCE];
+
+    start_time = get_time_ms();
+    for (int i = 0; i < OUT_H * OUT_W; i++) {
+        softmax_q17p14_q15(&class_output[i * NUM_CLASSES], NUM_CLASSES, &softmax_output[i * NUM_CLASSES]);
+    }
+
+    for (int i = 0; i < OUT_H * OUT_W; i++) {
+        sigmoid_q15(&obj_confidence[i * NUM_CLASSES], NUM_CLASSES, &sigmoid_output[i * NUM_CLASSES]);
+    }
+
     end_time = get_time_ms();
     printf("Post process time: %.3f ms\n", end_time - start_time);
 
-    printf("\nDetections found: %d\n", num_detections);
-    for (int i = 0; i < num_detections; i++) {
-        printf("Detection %d: (x=%.3f, y=%.3f) conf=%.3f class=%d\n",
-               i,
-               detections[i].x,
-               detections[i].y,
-               detections[i].confidence,
-               detections[i].class_id);
-    }
-
-    CVI_TDL_Free(&obj_meta);
+    CVI_TDL_Free(&class_meta);
     CVI_TDL_DestroyHandle(tdl_handle);
     return ret;
 }

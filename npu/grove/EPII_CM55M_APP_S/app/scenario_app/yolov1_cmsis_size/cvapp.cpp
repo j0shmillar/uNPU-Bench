@@ -363,8 +363,6 @@ int cv_run() {
     char *time_ptr = _float_to_char(time_us, time_str);  
     xprintf("Memory I/O time: %s us\n", time_ptr);  
 
-    usleep(5000000);
-    
     start = GET_DWT();
     TfLiteStatus invoke_status = int_ptr->Invoke();
     if(invoke_status != kTfLiteOk) {
@@ -380,8 +378,6 @@ int cv_run() {
     time_ptr = _float_to_char(time_us, time_str);  
     xprintf("Inference time: %s us\n", time_ptr);  
 
-    usleep(5000000);
-
     start = GET_DWT();
     for (int i = 0; i < CONV_OUT_H * CONV_OUT_W * CONV_OUT_C; i++) {
         processed_output[i] = output->data.f[i];
@@ -392,8 +388,6 @@ int cv_run() {
     time_str[CHAR_BUFF_SIZE];
     time_ptr = _float_to_char(time_us, time_str);
     xprintf("Memory I/O time: %s us\n", time_ptr);
-
-    usleep(5000000);
 
     start = GET_DWT();
 	int num_detections;

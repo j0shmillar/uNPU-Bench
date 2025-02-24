@@ -46,10 +46,11 @@ cd npu/milk-v
 cd model
 ./compile_sample.sh
 scp -O sample_{model} root@192.168.42.1:/root/
-scp -O ../../model/{model}/{model}.cvimage
+scp -O ../../model/{model}/{model}.cvimodel root@192.168.42.1:/root/
 ssh root@192.168.42.1
 cd root
 ./sample_{model} {model}.cvimodel
+password = milkv
 ```
 
 ### grove
