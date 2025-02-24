@@ -1,9 +1,0 @@
-../drivers/fsl_smartdma.c:195:6:SMARTDMA_Init	16	static
-../drivers/fsl_smartdma.c:208:6:SMARTDMA_InitWithoutFirmware	8	static
-../drivers/fsl_smartdma.c:222:6:SMARTDMA_InstallFirmware	8	static
-../drivers/fsl_smartdma.c:234:6:SMARTDMA_InstallCallback	0	static
-../drivers/fsl_smartdma.c:247:6:SMARTDMA_Boot	8	static
-../drivers/fsl_smartdma.c:257:6:SMARTDMA_Deinit	0	static
-../drivers/fsl_smartdma.c:266:6:SMARTDMA_Reset	8	static
-../drivers/fsl_smartdma.c:275:6:SMARTDMA_HandleIRQ	0	static
-../drivers/fsl_smartdma.c:284:6:SMARTDMA_DriverIRQHandler	0	static

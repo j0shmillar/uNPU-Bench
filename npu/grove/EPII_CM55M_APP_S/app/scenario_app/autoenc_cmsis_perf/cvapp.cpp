@@ -253,12 +253,6 @@ int cv_run() {
     time_ptr = _float_to_char(time_us, time_str);  
     xprintf("Memory I/O time: %s us\n", time_ptr); 
 
-    for (int i = 0; i < OUTPUT_ROWS * OUTPUT_COLS; i++) {
-        char float_buffer[CHAR_BUFF_SIZE];
-        char *confidence_str = _float_to_char(processed_output[i], float_buffer);
-        xprintf("Output %d: %s\n", i, confidence_str);
-    }
-
     return 0;
 }
 

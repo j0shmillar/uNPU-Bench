@@ -1,10 +1,3 @@
-/*
- * Copyright 2020-2022 NXP
- * All rights reserved.
- *
- * SPDX-License-Identifier: BSD-3-Clause
- */
-
 #include "board_init.h"
 #include "fsl_debug_console.h"
 #include "model.h"

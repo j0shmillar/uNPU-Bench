@@ -1,4 +1,0 @@
-../source/timer.c:36:6:SysTick_Handler	0	static
-../source/timer.c:41:6:TIMER_Init	16	static
-../source/timer.c:48:5:TIMER_GetTimeInUS	4	static
-/Applications/MCUXpressoIDE_24.9.25/ide/plugins/com.nxp.mcuxpresso.tools.macosx_24.9.0.202407110857/tools/arm-none-eabi/include/sys/time.h:432:5:gettimeofday	12	static

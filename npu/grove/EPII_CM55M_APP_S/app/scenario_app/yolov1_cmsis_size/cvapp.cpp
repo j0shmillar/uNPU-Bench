@@ -84,6 +84,12 @@ static uint8_t random_image[INPUT_SIZE_X * INPUT_SIZE_Y * INPUT_CHANNELS];
 static float processed_output[GRID_SIZE * GRID_SIZE * OUTPUT_STRIDE];
 static detection_t detections[GRID_SIZE * GRID_SIZE * 2]; // TODO increase?
 
+typedef int32_t q31_t;
+typedef int16_t q15_t;
+
+#define Q15_MAX_VALUE   32767
+#define Q15_MIN_VALUE   -32768
+
 using namespace std;
 
 namespace {
@@ -95,41 +101,6 @@ struct ethosu_driver ethosu_drv;
 tflite::MicroInterpreter *int_ptr=nullptr;
 TfLiteTensor* input, *output;
 };
-
-static char * _float_to_char(float x, char *p) {
-    char *s = p + CHAR_BUFF_SIZE - 1;  
-    *s = '\0';  
-
-    uint16_t decimals;
-    int units;
-
-    if (x < 0) { 
-        decimals = (int)(x * -100) % 100; 
-        units = (int)(-1 * x);
-    } else { 
-        decimals = (int)(x * 100) % 100;
-        units = (int)x;
-    }
-
-    *--s = (decimals % 10) + '0';
-    decimals /= 10; 
-    *--s = (decimals % 10) + '0';
-    *--s = '.';
-
-    if (units == 0) {
-        *--s = '0';
-    } else {
-        while (units > 0) {
-            *--s = (units % 10) + '0';
-            units /= 10;
-        }
-    }
-
-    if (x < 0) *--s = '-';  
-
-    return s;
-}
-
 
 void enable_dwt()
 {
@@ -178,6 +149,132 @@ static int _arm_npu_init(bool security_enable, bool privilege_enable)
     xprintf("Ethos-U55 device initialised\n");
 
     return 0;
+}
+
+static char * _float_to_char(float x, char *p) {
+    char *s = p + CHAR_BUFF_SIZE - 1;  
+    *s = '\0';  
+
+    uint16_t decimals;
+    int units;
+
+    if (x < 0) { 
+        decimals = (int)(x * -100) % 100; 
+        units = (int)(-1 * x);
+    } else { 
+        decimals = (int)(x * 100) % 100;
+        units = (int)x;
+    }
+
+    *--s = (decimals % 10) + '0';
+    decimals /= 10; 
+    *--s = (decimals % 10) + '0';
+    *--s = '.';
+
+    if (units == 0) {
+        *--s = '0';
+    } else {
+        while (units > 0) {
+            *--s = (units % 10) + '0';
+            units /= 10;
+        }
+    }
+
+    if (x < 0) *--s = '-';  
+
+    return s;
+}
+
+void softmax_q17p14_q15(const q31_t * vec_in, const uint16_t dim_vec, q15_t * p_out)
+{
+    q31_t     sum;
+    int16_t   i;
+    uint8_t   shift;
+    q31_t     base;
+    base = -1 * 0x80000000;
+
+    for (i = 0; i < dim_vec; i++)
+    {
+        if (vec_in[i] > base)
+        {
+            base = vec_in[i];
+        }
+    }
+
+    base = base - (16<<14);
+
+    sum = 0;
+
+    for (i = 0; i < dim_vec; i++)
+    {
+        if (vec_in[i] > base)
+        {
+            shift = (uint8_t)((8192 + vec_in[i] - base) >> 14);
+            sum += (0x1 << shift);
+        }
+    }
+
+
+    /* This is effectively (0x1 << 32) / sum */
+    int64_t div_base = 0x100000000LL;
+    int32_t output_base = (int32_t)(div_base / sum);
+    int32_t out;
+
+    for (i = 0; i < dim_vec; i++)
+    {
+        if (vec_in[i] > base)
+        {
+            shift = (uint8_t)(17+((8191 + base - vec_in[i]) >> 14));
+
+            out = (output_base >> shift);
+
+            if (out > 32767)
+            	out = 32767;
+
+            p_out[i] = (q15_t)out;
+
+
+        } else
+        {
+            p_out[i] = 0;
+        }
+    }
+
+}
+
+void sigmoid_q15(const q31_t * vec_in, const uint16_t dim_vec, q15_t * p_out)
+{
+    for (int i = 0; i < dim_vec; i++)
+    {
+        q31_t val = vec_in[i];
+        q15_t sigmoid_val = (val < 0) ? 0 : (val > Q15_MAX_VALUE) ? Q15_MAX_VALUE : val;
+        p_out[i] = sigmoid_val;
+    }
+}
+
+q31_t**** generateArray(int n) {
+    q31_t**** array = (q31_t****)malloc(sizeof(q31_t***) * 1);
+    array[0] = (q31_t***)malloc(sizeof(q31_t**) * 12);
+    
+    for (int i = 0; i < 12; i++) {
+        array[0][i] = (q31_t**)malloc(sizeof(q31_t*) * 12);
+        for (int j = 0; j < 12; j++) {
+            array[0][i][j] = (q31_t*)malloc(sizeof(q31_t) * n);
+        }
+    }
+
+    q31_t value = 0.0f;
+    for (int i = 0; i < 1; i++) {
+        for (int j = 0; j < 12; j++) {
+            for (int k = 0; k < 12; k++) {
+                for (int l = 0; l < n; l++) {
+                    array[i][j][k][l] = value++;
+                }
+            }
+        }
+    }
+
+    return array;
 }
 
 void generate_random_image() {
@@ -243,111 +340,6 @@ int cv_init(bool security_enable, bool privilege_enable)
 	return ercode;
 }
 
-void softmax(const float* input, float* output, int length) {
-    float max_val = *std::max_element(input, input + length);
-    float sum = 0.0f;
-
-    for (int i = 0; i < length; i++) {
-        output[i] = expf(input[i] - max_val);
-        sum += output[i];
-    }
-
-    for (int i = 0; i < length; i++) {
-        output[i] /= sum;
-    }
-}
-
-float sigmoid(float x) {
-    if (x < -5.0f) return 0.0f;
-    if (x > 5.0f) return 1.0f;
-    return 1.0f / (1.0f + expf(-x));
-}
-
-void process_yolo_output(const float* output_array, float* final_output, int grid_size) {
-    const int confidence_stride = grid_size * grid_size * 2;  
-    
-    for (int y = 0; y < grid_size; y++) {
-        for (int x = 0; x < grid_size; x++) {
-            int grid_idx = y * grid_size + x;
-            int out_idx = grid_idx * OUTPUT_STRIDE;
-            
-            for (int i = 0; i < NUM_CONFIDENCE; i++) {
-                float conf = output_array[grid_idx * 2 + i];  
-                final_output[out_idx + i] = sigmoid(conf);
-            }
-            
-            float class_inputs[NUM_CLASSES];
-            for (int i = 0; i < NUM_CLASSES; i++) {
-                class_inputs[i] = output_array[confidence_stride + grid_idx * NUM_CLASSES + i];
-            }
-            
-            softmax(class_inputs, &final_output[out_idx + NUM_CONFIDENCE], NUM_CLASSES);
-        }
-    }
-}
-
-
-void extract_detections(const float* processed_output, 
-                       detection_t* detections,
-                       int* num_detections,
-                       float confidence_threshold,
-                       int grid_size) {
-    *num_detections = 0;
-    
-    for (int y = 0; y < grid_size; y++) {
-        for (int x = 0; x < grid_size; x++) {
-            int grid_idx = y * grid_size + x;
-            int out_idx = grid_idx * OUTPUT_STRIDE;
-            
-            float conf1 = processed_output[out_idx];
-            float conf2 = processed_output[out_idx + 1];
-            
-            if (conf1 > confidence_threshold) {
-                detection_t* det = &detections[*num_detections];
-                
-                det->x = ((float)x + 0.5f) / grid_size;
-                det->y = ((float)y + 0.5f) / grid_size;
-                det->confidence = conf1;
-                
-                float max_prob = -1.0f;
-                det->class_id = -1;
-                for (int i = 0; i < NUM_CLASSES; i++) {
-                    float prob = processed_output[out_idx + NUM_CONFIDENCE + i];
-                    det->class_probs[i] = prob;  
-                    if (prob > max_prob) {
-                        max_prob = prob;
-                        det->class_id = i;  // Assign correct class index
-                    }
-                }
-                
-                (*num_detections)++;
-            }
-            
-            if (conf2 > confidence_threshold) {
-                detection_t* det = &detections[*num_detections];
-                
-                det->x = ((float)x + 0.5f) / grid_size;
-                det->y = ((float)y + 0.5f) / grid_size;
-                det->confidence = conf2;
-                
-                float max_prob = -1.0f;
-                det->class_id = -1;
-                for (int i = 0; i < NUM_CLASSES; i++) {
-                    float prob = processed_output[out_idx + NUM_CONFIDENCE + i];
-                    det->class_probs[i] = prob;  
-                    if (prob > max_prob) {
-                        max_prob = prob;
-                        det->class_id = i;  // Assign correct class index
-                    }
-                }
-                
-                (*num_detections)++;
-            }
-        }
-    }
-}
-
-
 int cv_run() {
     generate_random_image();
 
@@ -389,17 +381,29 @@ int cv_run() {
     time_ptr = _float_to_char(time_us, time_str);
     xprintf("Memory I/O time: %s us\n", time_ptr);
 
+    q31_t**** array1 = generateArray(2);
+    q31_t**** array2 = generateArray(10);
+    
+    q31_t* class_output = &array1[0][0][0][0]; 
+    q31_t* obj_confidence = &array2[0][0][0][0];  
+
+    q15_t softmax_output[OUT_H * OUT_W * NUM_CLASSES];
+    q15_t sigmoid_output[OUT_H * OUT_W * NUM_CONFIDENCE];
+
     start = GET_DWT();
-	int num_detections;
-	process_yolo_output((float*)output, processed_output, GRID_SIZE);
-	float confidence_threshold = 0.5f;
-	extract_detections(processed_output, detections, &num_detections, confidence_threshold, GRID_SIZE);
+    for (int i = 0; i < OUT_H * OUT_W; i++) {
+        softmax_q17p14_q15(&class_output[i * NUM_CLASSES], NUM_CLASSES, &softmax_output[i * NUM_CLASSES]);
+    }
+
+    for (int i = 0; i < OUT_H * OUT_W; i++) {
+        sigmoid_q15(&obj_confidence[i * NUM_CLASSES], NUM_CLASSES, &sigmoid_output[i * NUM_CLASSES]);
+    }
     end = GET_DWT();
     cycles = end - start;
-    time_us = (float)cycles / CPU_FREQ_MHZ; 
-    time_str[CHAR_BUFF_SIZE]; 
-    time_ptr = _float_to_char(time_us, time_str);  
-    xprintf("Post processing time: %s us\n", time_ptr); 
+    time_us = (float)cycles / CPU_FREQ_MHZ;
+    time_str[CHAR_BUFF_SIZE];
+    time_ptr = _float_to_char(time_us, time_str);
+    xprintf("Post processing time: %s us\n", time_ptr);
 
     return 0;
 }
