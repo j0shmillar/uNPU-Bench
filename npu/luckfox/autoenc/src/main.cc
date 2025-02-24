@@ -9,7 +9,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include <unistd.h>
 #include <sys/ioctl.h>
 #include <sys/mman.h>
 #include <linux/fb.h>
@@ -33,9 +32,9 @@ int main(int argc, char **argv)
     char text[8];
     float fps = 0;
 
-    int model_width    = 96;
-    int model_height   = 96;
-    int channels = 3;
+    int model_width  = 256;
+    int model_height = 3;
+    int channels = 1; // Since the shape is 3x256, assuming a single-channel interpretation
 
     int ret;
     rknn_app_context_t rknn_app_ctx;
@@ -57,15 +56,15 @@ int main(int argc, char **argv)
     struct fb_fix_screeninfo fb_fix;
     struct fb_var_screeninfo fb_var;
 
-    int framebuffer_fd = 0; //for DMA
+    int framebuffer_fd = 0; // for DMA
     cv::Mat disp;
 
-    disp_height = 96;
-    disp_width = 96;
+    disp_height = model_height;
+    disp_width = model_width;
 
     clock_gettime(CLOCK_MONOTONIC, &start_time);
     cv::Mat bgr(disp_height, disp_width, CV_8UC3, cv::Scalar(0, 0, 0));  
-    cv::Mat bgr_model_input(model_height, model_width, CV_8UC3);
+    cv::Mat bgr_model_input(model_height, model_width, CV_8UC1); // Using single-channel matrix
     cv::randu(bgr_model_input, cv::Scalar::all(0), cv::Scalar::all(255));
     clock_gettime(CLOCK_MONOTONIC, &end_time);
     double memory_time_us = (end_time.tv_sec - start_time.tv_sec) * 1e6 + (end_time.tv_nsec - start_time.tv_nsec) / 1e3;

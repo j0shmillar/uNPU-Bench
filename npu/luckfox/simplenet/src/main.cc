@@ -33,8 +33,8 @@ int main(int argc, char **argv)
     char text[8];
     float fps = 0;
 
-    int model_width    = 96;
-    int model_height   = 96;
+    int model_width    = 32;
+    int model_height   = 32;
     int channels = 3;
 
     int ret;
@@ -60,8 +60,8 @@ int main(int argc, char **argv)
     int framebuffer_fd = 0; //for DMA
     cv::Mat disp;
 
-    disp_height = 96;
-    disp_width = 96;
+    disp_height = 32;
+    disp_width = 32;
 
     clock_gettime(CLOCK_MONOTONIC, &start_time);
     cv::Mat bgr(disp_height, disp_width, CV_8UC3, cv::Scalar(0, 0, 0));  

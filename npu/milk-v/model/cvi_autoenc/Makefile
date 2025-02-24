@@ -268,7 +268,7 @@ $(info SAMPLE_AUD_LIBS: $(SAMPLE_AUD_LIBS))
 $(info ---------------------------------------)
 endif
 
-TARGETS_MODEL_SAMPLE := $(shell find . -type f -name 'resnet.cpp' -exec basename {} .cpp ';')
+TARGETS_MODEL_SAMPLE := $(shell find . -type f -name 'autoenc.cpp' -exec basename {} .cpp ';')
 
 TARGETS = $(TARGETS_MODEL_SAMPLE)
 
@@ -288,6 +288,6 @@ $(PWD)/%.o: $(PWD)/%.cpp
 $(SDK_ROOT_PATH)/model/utils/%.o: $(SDK_ROOT_PATH)/model/utils/%.c
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-resnet: $(PWD)/resnet.o
+autoenc: $(PWD)/autoenc.o
 	$(CXX) $(CFLAGS) $(SAMPLE_MODEL_LIBS) -o $@ $^
 

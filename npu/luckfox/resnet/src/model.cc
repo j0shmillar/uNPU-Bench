@@ -6,22 +6,6 @@
 #include "model.h"
 #include "common.h"
 
-#define GRID_SIZE 12
-#define NUM_CLASSES 2  
-#define NUM_CONFIDENCE 10 
-#define OUTPUT_STRIDE (NUM_CLASSES + NUM_CONFIDENCE)
-
-#define CONV_OUT_H 12
-#define CONV_OUT_W 12
-#define CONV_OUT_C 12
-
-#define OUT_H 12
-#define OUT_W 12
-#define SIGMOID_CH 1 
-#define SOFTMAX_CH 1 
-#define TOTAL_CH (SIGMOID_CH + SOFTMAX_CH)
-#define MAX_DETECTIONS (OUT_H * OUT_W)
-
 #define Q15_MAX_VALUE   32767
 #define Q15_MIN_VALUE   -32768
 
@@ -85,36 +69,13 @@ void softmax_q17p14_q15(const q31_t * vec_in, const uint16_t dim_vec, q15_t * p_
 
 }
 
-void sigmoid_q15(const q31_t * vec_in, const uint16_t dim_vec, q15_t * p_out)
-{
-    for (int i = 0; i < dim_vec; i++)
-    {
-        q31_t val = vec_in[i];
-        q15_t sigmoid_val = (val < 0) ? 0 : (val > Q15_MAX_VALUE) ? Q15_MAX_VALUE : val;
-        p_out[i] = sigmoid_val;
-    }
-}
+q31_t** generateArray() {
+    q31_t** array = (q31_t**)malloc(sizeof(q31_t*) * 1);
+    array[0] = (q31_t*)malloc(sizeof(q31_t) * 100);  
 
-q31_t**** generateArray(int n) {
-    q31_t**** array = (q31_t****)malloc(sizeof(q31_t***) * 1);
-    array[0] = (q31_t***)malloc(sizeof(q31_t**) * 12);
-    
-    for (int i = 0; i < 12; i++) {
-        array[0][i] = (q31_t**)malloc(sizeof(q31_t*) * 12);
-        for (int j = 0; j < 12; j++) {
-            array[0][i][j] = (q31_t*)malloc(sizeof(q31_t) * n);
-        }
-    }
-
-    q31_t value = 0.0f;
-    for (int i = 0; i < 1; i++) {
-        for (int j = 0; j < 12; j++) {
-            for (int k = 0; k < 12; k++) {
-                for (int l = 0; l < n; l++) {
-                    array[i][j][k][l] = value++;
-                }
-            }
-        }
+    q31_t value = 0;
+    for (int i = 0; i < 100; i++) {
+        array[0][i] = value++; 
     }
 
     return array;
@@ -282,24 +243,11 @@ int inference_model(rknn_app_context_t *app_ctx, object_detect_result_list *od_r
     clock_gettime(CLOCK_MONOTONIC, &end_time);
     double inference_time_us = (end_time.tv_sec - start_time.tv_sec) * 1e6 + (end_time.tv_nsec - start_time.tv_nsec) / 1e3;
     printf("Inference time: %.2f microseconds\n", inference_time_us);
-
-    q31_t**** array1 = generateArray(2);
-    q31_t**** array2 = generateArray(10);
     
-    q31_t* class_output = &array1[0][0][0][0]; 
-    q31_t* obj_confidence = &array2[0][0][0][0];  
-
-    q15_t softmax_output[OUT_H * OUT_W * NUM_CLASSES];
-    q15_t sigmoid_output[OUT_H * OUT_W * NUM_CONFIDENCE];
-
-    for (int i = 0; i < OUT_H * OUT_W; i++) {
-        softmax_q17p14_q15(&class_output[i * NUM_CLASSES], NUM_CLASSES, &softmax_output[i * NUM_CLASSES]);
-    }
-
+    q31_t** array = generateArray();
+    q15_t p_out[100];
     clock_gettime(CLOCK_MONOTONIC, &start_time);
-    for (int i = 0; i < OUT_H * OUT_W; i++) {
-        sigmoid_q15(&obj_confidence[i * NUM_CLASSES], NUM_CLASSES, &sigmoid_output[i * NUM_CLASSES]);
-    }
+    softmax_q17p14_q15(array[0], 100, p_out);
     clock_gettime(CLOCK_MONOTONIC, &end_time);
     double postproc_time_us = (end_time.tv_sec - start_time.tv_sec) * 1e6 + (end_time.tv_nsec - start_time.tv_nsec) / 1e3;
     printf("Post-proc time: %.2f microseconds\n", postproc_time_us);

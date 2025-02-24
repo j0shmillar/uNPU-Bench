@@ -166,8 +166,8 @@ SDK_APP_LIBS = -lcvi_tdl_app
 #####################################################
 # Opencv
 #####################################################
-OPENCV_INC_PATH = $(SDK_ROOT_PATH)/sample/3rd/opencv/include
-OPENCV_LIB_PATH = $(SDK_ROOT_PATH)/sample/3rd/opencv/lib
+OPENCV_INC_PATH = $(SDK_ROOT_PATH)/model/3rd/opencv/include
+OPENCV_LIB_PATH = $(SDK_ROOT_PATH)/model/3rd/opencv/lib
 OPENCV_LIBS = -lopencv_core -lopencv_imgproc -lopencv_imgcodecs
 
 #####################################################
@@ -198,14 +198,14 @@ endif
 #####################################################
 # RTSP stuffs
 #####################################################
-RTSP_LIB_PATH = $(SDK_ROOT_PATH)/sample/3rd/rtsp/lib
-RTSP_INC_PATH = $(SDK_ROOT_PATH)/sample/3rd/rtsp/include/cvi_rtsp
+RTSP_LIB_PATH = $(SDK_ROOT_PATH)/model/3rd/rtsp/lib
+RTSP_INC_PATH = $(SDK_ROOT_PATH)/model/3rd/rtsp/include/cvi_rtsp
 RTSP_LIBS = -lcvi_rtsp
 
 #####################################################
 # STB
 #####################################################
-STB_INC_PATH = $(SDK_ROOT_PATH)/sample/3rd/stb/include
+STB_INC_PATH = $(SDK_ROOT_PATH)/model/3rd/stb/include
 
 #####################################################
 # CVI LIB stuffs
@@ -224,7 +224,11 @@ SAMPLE_BASE_LIBS = -L$(TPU_LIB_PATH) $(TPU_LIBS) -L$(IVE_SDK_LIB_PATH) $(IVE_LIB
 SAMPLW_MW_LIB = -L$(MW_LIB_PATH) -L$(MW_3RD_LIB_PATH) $(MW_LIBS) -L$(SDK_3RD_LIB_PATH)
 SAMPLE_OPENCV_LIB = -L$(OPENCV_LIB_PATH) $(OPENCV_LIBS)
 
+SAMPLE_INIT_LIBS = $(SAMPLW_MW_LIB) $(SAMPLE_BASE_LIBS)
+SAMPLE_AUD_LIBS = $(SAMPLW_MW_LIB) $(SAMPLE_BASE_LIBS)  $(MW_AUDIO_LIBS)
 SAMPLE_MODEL_LIBS = $(SAMPLW_MW_LIB) $(SAMPLE_BASE_LIBS)  $(SAMPLE_OPENCV_LIB)
+SAMPLE_VI_LIBS = $(SAMPLW_MW_LIB) $(SAMPLE_OPENCV_LIB) $(SAMPLE_BASE_LIBS) -L$(RTSP_LIB_PATH) $(RTSP_LIBS)
+SAMPLE_APP_LIBS = $(SAMPLW_MW_LIB) $(SAMPLE_OPENCV_LIB) $(SAMPLE_BASE_LIBS) -L$(RTSP_LIB_PATH) $(RTSP_LIBS) $(SDK_APP_LIBS)
 
 CFLAGS += -I$(SDK_INC_PATH) \
           -I$(SDK_TDL_INC_PATH) \
@@ -264,7 +268,7 @@ $(info SAMPLE_AUD_LIBS: $(SAMPLE_AUD_LIBS))
 $(info ---------------------------------------)
 endif
 
-TARGETS_MODEL_SAMPLE := $(shell find . -type f -name 'simplenet*.cpp' -exec basename {} .cpp ';')
+TARGETS_MODEL_SAMPLE := $(shell find . -type f -name 'simplenet.cpp' -exec basename {} .cpp ';')
 
 TARGETS = $(TARGETS_MODEL_SAMPLE)
 
@@ -281,10 +285,9 @@ $(PWD)/%.o: $(PWD)/%.c
 $(PWD)/%.o: $(PWD)/%.cpp
 	$(CXX) $(CFLAGS) -o $@ -c $<
 
-$(SDK_ROOT_PATH)/sample/utils/%.o: $(SDK_ROOT_PATH)/sample/utils/%.c
+$(SDK_ROOT_PATH)/model/utils/%.o: $(SDK_ROOT_PATH)/model/utils/%.c
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 simplenet: $(PWD)/simplenet.o
 	$(CXX) $(CFLAGS) $(SAMPLE_MODEL_LIBS) -o $@ $^
-
 

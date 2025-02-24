@@ -10,12 +10,12 @@ endif
 
 ifeq ($(USE_TPU_IVE), ON)
 ifndef IVE_PATH
-$(error "Please set ive sdk root path to IVE_PATH")
+$(error "Please set ive sdk root path to IVE_PATH)
 endif
 endif
 
 ifndef TPU_PATH
-$(error "Please set tpu sdk root path to TPU_PATH")
+$(error "Please set tpu sdk root path to TPU_PATH)
 endif
 endif
 
@@ -166,8 +166,8 @@ SDK_APP_LIBS = -lcvi_tdl_app
 #####################################################
 # Opencv
 #####################################################
-OPENCV_INC_PATH = $(SDK_ROOT_PATH)/sample/3rd/opencv/include
-OPENCV_LIB_PATH = $(SDK_ROOT_PATH)/sample/3rd/opencv/lib
+OPENCV_INC_PATH = $(SDK_ROOT_PATH)/model/3rd/opencv/include
+OPENCV_LIB_PATH = $(SDK_ROOT_PATH)/model/3rd/opencv/lib
 OPENCV_LIBS = -lopencv_core -lopencv_imgproc -lopencv_imgcodecs
 
 #####################################################
@@ -198,14 +198,14 @@ endif
 #####################################################
 # RTSP stuffs
 #####################################################
-RTSP_LIB_PATH = $(SDK_ROOT_PATH)/sample/3rd/rtsp/lib
-RTSP_INC_PATH = $(SDK_ROOT_PATH)/sample/3rd/rtsp/include/cvi_rtsp
+RTSP_LIB_PATH = $(SDK_ROOT_PATH)/model/3rd/rtsp/lib
+RTSP_INC_PATH = $(SDK_ROOT_PATH)/model/3rd/rtsp/include/cvi_rtsp
 RTSP_LIBS = -lcvi_rtsp
 
 #####################################################
 # STB
 #####################################################
-STB_INC_PATH = $(SDK_ROOT_PATH)/sample/3rd/stb/include
+STB_INC_PATH = $(SDK_ROOT_PATH)/model/3rd/stb/include
 
 #####################################################
 # CVI LIB stuffs
@@ -285,7 +285,7 @@ $(PWD)/%.o: $(PWD)/%.c
 $(PWD)/%.o: $(PWD)/%.cpp
 	$(CXX) $(CFLAGS) -o $@ -c $<
 
-$(SDK_ROOT_PATH)/sample/utils/%.o: $(SDK_ROOT_PATH)/sample/utils/%.c
+$(SDK_ROOT_PATH)/model/utils/%.o: $(SDK_ROOT_PATH)/model/utils/%.c
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 yolov1: $(PWD)/yolov1.o
