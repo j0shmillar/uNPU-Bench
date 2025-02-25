@@ -48,20 +48,12 @@
 #define MODEL_IN_COLOR_BGR 0
 
 #define GRID_SIZE 12
-#define NUM_CLASSES 2  // Based on the output tensor shape shown
-#define NUM_CONFIDENCE 10 // Based on the slice operations shown
+#define NUM_CLASSES 2  
+#define NUM_CONFIDENCE 10 
 #define OUTPUT_STRIDE (NUM_CLASSES + NUM_CONFIDENCE)
-
-#define CONV_OUT_H 12
-#define CONV_OUT_W 12
-#define CONV_OUT_C 12
 
 #define OUT_H 12
 #define OUT_W 12
-#define SIGMOID_CH 1 
-#define SOFTMAX_CH 1 
-#define TOTAL_CH (SIGMOID_CH + SOFTMAX_CH)
-#define MAX_DETECTIONS (OUT_H * OUT_W)
 
 #define MAX_STRING  100
 #define CHAR_BUFF_SIZE 50 
@@ -82,7 +74,6 @@ __attribute__(( section(".bss.NoInit"))) uint8_t tensor_arena_buf[TENSOR_ARENA_B
 
 static uint8_t random_image[INPUT_SIZE_X * INPUT_SIZE_Y * INPUT_CHANNELS];
 static float processed_output[GRID_SIZE * GRID_SIZE * OUTPUT_STRIDE];
-static detection_t detections[GRID_SIZE * GRID_SIZE * 2]; // TODO increase?
 
 typedef int32_t q31_t;
 typedef int16_t q15_t;

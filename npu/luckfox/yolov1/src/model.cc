@@ -11,16 +11,10 @@
 #define NUM_CONFIDENCE 10 
 #define OUTPUT_STRIDE (NUM_CLASSES + NUM_CONFIDENCE)
 
-#define CONV_OUT_H 12
-#define CONV_OUT_W 12
-#define CONV_OUT_C 12
-
 #define OUT_H 12
 #define OUT_W 12
-#define SIGMOID_CH 1 
-#define SOFTMAX_CH 1 
-#define TOTAL_CH (SIGMOID_CH + SOFTMAX_CH)
-#define MAX_DETECTIONS (OUT_H * OUT_W)
+
+static float processed_output[GRID_SIZE * GRID_SIZE * OUTPUT_STRIDE];
 
 #define Q15_MAX_VALUE   32767
 #define Q15_MIN_VALUE   -32768
@@ -283,6 +277,17 @@ int inference_model(rknn_app_context_t *app_ctx, object_detect_result_list *od_r
     double inference_time_us = (end_time.tv_sec - start_time.tv_sec) * 1e6 + (end_time.tv_nsec - start_time.tv_nsec) / 1e3;
     printf("Inference time: %.2f microseconds\n", inference_time_us);
 
+    size_t output_size = GRID_SIZE * GRID_SIZE * OUTPUT_STRIDE * sizeof(float);
+    clock_gettime(CLOCK_MONOTONIC, &start_time);
+    if (output_size > app_ctx->output_attrs[0].size) {
+        printf("Error: Output buffer size exceeds expected size!\n");
+        return -1;
+    }
+    memcpy(processed_output, app_ctx->output_mems[0]->virt_addr, output_size);
+    clock_gettime(CLOCK_MONOTONIC, &end_time);
+    double memory_time_us = (end_time.tv_sec - start_time.tv_sec) * 1e6 + (end_time.tv_nsec - start_time.tv_nsec) / 1e3;
+    printf("Memory I/O time: %.2f microseconds\n", memory_time_us);
+
     q31_t**** array1 = generateArray(2);
     q31_t**** array2 = generateArray(10);
     
@@ -292,11 +297,11 @@ int inference_model(rknn_app_context_t *app_ctx, object_detect_result_list *od_r
     q15_t softmax_output[OUT_H * OUT_W * NUM_CLASSES];
     q15_t sigmoid_output[OUT_H * OUT_W * NUM_CONFIDENCE];
 
+    clock_gettime(CLOCK_MONOTONIC, &start_time);
     for (int i = 0; i < OUT_H * OUT_W; i++) {
         softmax_q17p14_q15(&class_output[i * NUM_CLASSES], NUM_CLASSES, &softmax_output[i * NUM_CLASSES]);
     }
 
-    clock_gettime(CLOCK_MONOTONIC, &start_time);
     for (int i = 0; i < OUT_H * OUT_W; i++) {
         sigmoid_q15(&obj_confidence[i * NUM_CLASSES], NUM_CLASSES, &sigmoid_output[i * NUM_CLASSES]);
     }
