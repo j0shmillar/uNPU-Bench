@@ -6,6 +6,9 @@
 #include "model.h"
 #include "common.h"
 
+#define _POSIX_C_SOURCE 199309L
+#include <time.h>
+
 #define Q15_MAX_VALUE   32767
 #define Q15_MIN_VALUE   -32768
 
@@ -71,10 +74,10 @@ void softmax_q17p14_q15(const q31_t * vec_in, const uint16_t dim_vec, q15_t * p_
 
 q31_t** generateArray() {
     q31_t** array = (q31_t**)malloc(sizeof(q31_t*) * 1);
-    array[0] = (q31_t*)malloc(sizeof(q31_t) * 10);  
+    array[0] = (q31_t*)malloc(sizeof(q31_t) * 100);  
 
     q31_t value = 0;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 100; i++) {
         array[0][i] = value++; 
     }
 
@@ -228,7 +231,7 @@ int release_model(rknn_app_context_t *app_ctx)
     return 0;
 }
 
-int inference_model(rknn_app_context_t *app_ctx, object_detect_result_list *od_results)
+int inference_model(rknn_app_context_t *app_ctx)
 {
     struct timespec start_time, end_time;
 
@@ -243,23 +246,19 @@ int inference_model(rknn_app_context_t *app_ctx, object_detect_result_list *od_r
     clock_gettime(CLOCK_MONOTONIC, &end_time);
     double inference_time_us = (end_time.tv_sec - start_time.tv_sec) * 1e6 + (end_time.tv_nsec - start_time.tv_nsec) / 1e3;
     printf("Inference time: %.2f microseconds\n", inference_time_us);
-    
-    float processed_output[10];
-    size_t output_size = 10 * sizeof(float);
+
+    float processed_output[100];
+    size_t output_size = 100 * sizeof(int8_t);
     clock_gettime(CLOCK_MONOTONIC, &start_time);
-    if (output_size > app_ctx->output_attrs[0].size) {
-        printf("Error: Output buffer size exceeds expected size!\n");
-        return -1;
-    }
     memcpy(processed_output, app_ctx->output_mems[0]->virt_addr, output_size);
     clock_gettime(CLOCK_MONOTONIC, &end_time);
     double memory_time_us = (end_time.tv_sec - start_time.tv_sec) * 1e6 + (end_time.tv_nsec - start_time.tv_nsec) / 1e3;
     printf("Memory I/O time: %.2f microseconds\n", memory_time_us);
 
     q31_t** array = generateArray();
-    q15_t p_out[10];
+    q15_t p_out[100];
     clock_gettime(CLOCK_MONOTONIC, &start_time);
-    softmax_q17p14_q15(array[0], 10, p_out);
+    softmax_q17p14_q15(array[0], 100, p_out);
     clock_gettime(CLOCK_MONOTONIC, &end_time);
     double postproc_time_us = (end_time.tv_sec - start_time.tv_sec) * 1e6 + (end_time.tv_nsec - start_time.tv_nsec) / 1e3;
     printf("Post-proc time: %.2f microseconds\n", postproc_time_us);

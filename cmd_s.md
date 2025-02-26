@@ -42,8 +42,7 @@ cd root/luckfox_pico_{model}_demo
 ```
 cd host-tools
 export PATH=$PATH:$(pwd)/gcc/riscv64-linux-musl-x86_64/bin
-cd npu/milk-v
-cd model
+cd ../npu/milk-v/model
 ./compile_sample.sh
 scp -O sample_{model} root@192.168.42.1:/root/
 scp -O ../../model/{model}/{model}.cvimodel root@192.168.42.1:/root/

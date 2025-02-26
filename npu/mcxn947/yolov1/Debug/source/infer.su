@@ -1,5 +1,0 @@
-../source/infer.cpp:47:7:void softmax(const float*, float*, int)	40	static
-../source/infer.cpp:67:8:float sigmoid(float)	8	static
-../source/infer.cpp:73:7:void process_yolo_output(const float*, float*, int)	80	static
-../source/infer.cpp:104:7:void extract_detections(const float*, detection_t*, int*, float, int)	24	static
-../source/infer.cpp:162:7:void run()	176	static

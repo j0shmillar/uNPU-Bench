@@ -26,10 +26,8 @@ typedef struct {
     bool is_quant;
 } rknn_app_context_t;
 
-#include "postprocess.h"
-
 int init_model(const char* model_path, rknn_app_context_t* app_ctx);
 
 int release_model(rknn_app_context_t* app_ctx);
 
-int inference_model(rknn_app_context_t* app_ctx,  object_detect_result_list* od_results);
+int inference_model(rknn_app_context_t* app_ctx);

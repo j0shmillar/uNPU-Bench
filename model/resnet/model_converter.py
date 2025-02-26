@@ -70,12 +70,14 @@ def convert(input_file, arguments):
 
     try:
         print("converting to tf/tflite...", input_file)
+        # TODO args for keep_ncw_or_nchw_or_ncdhw_input_names + mean + std
         onnx2tf.convert(
             input_onnx_file_path=input_file,
             output_folder_path=args.path,
             not_use_onnxsim=True,
             verbosity="debug", 
             output_integer_quantized_tflite=True,
+#            keep_ncw_or_nchw_or_ncdhw_input_names=["input"],
             custom_input_op_name_np_data_path=[
                 ["input", "./model/resnet/sample_data_nhwc.npy", np.random.rand(3).tolist(), np.random.rand(3).tolist()]], # TODO fix
             quant_type="per-tensor",

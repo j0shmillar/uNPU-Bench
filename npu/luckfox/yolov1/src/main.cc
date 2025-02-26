@@ -39,7 +39,6 @@ int main(int argc, char **argv)
 
     int ret;
     rknn_app_context_t rknn_app_ctx;
-    object_detect_result_list od_results;
     memset(&rknn_app_ctx, 0, sizeof(rknn_app_context_t));
 
     clock_gettime(CLOCK_MONOTONIC, &start_time);
@@ -71,7 +70,7 @@ int main(int argc, char **argv)
     double memory_time_us = (end_time.tv_sec - start_time.tv_sec) * 1e6 + (end_time.tv_nsec - start_time.tv_nsec) / 1e3;
     printf("Memory I/O Time: %.2f microseconds\n", memory_time_us);
 
-    inference_model(&rknn_app_ctx, &od_results);
+    inference_model(&rknn_app_ctx);
 
     ret = release_model(&rknn_app_ctx);
     if (ret != 0)

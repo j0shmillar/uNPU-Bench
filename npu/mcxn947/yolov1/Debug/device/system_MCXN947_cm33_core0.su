@@ -1,3 +1,0 @@
-../device/system_MCXN947_cm33_core0.c:110:6:SystemCoreClockUpdate	0	static
-../device/system_MCXN947_cm33_core0.c:118:28:SystemInitHook	0	static
-../device/system_MCXN947_cm33_core0.c:59:28:SystemInit	16	static
