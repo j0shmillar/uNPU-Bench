@@ -32,6 +32,8 @@ constexpr int kTensorArenaSize = 2000;
 uint8_t tensor_arena[kTensorArenaSize];
 }  
 
+static float processed_output[INPUT_SIZE_X * INPUT_SIZE_Y];
+
 void softmax_q17p14_q15(const q31_t * vec_in, const uint16_t dim_vec, q15_t * p_out)
 {
     q31_t     sum;
@@ -162,7 +164,7 @@ void run()
   vTaskDelay(pdMS_TO_TICKS(5000));
 
   start_time = esp_timer_get_time();
-  size_t output_size = OUTPUT_CLASSES * sizeof(int8_t);
+  size_t output_size = INPUT_SIZE_X * INPUT_SIZE_Y * sizeof(int8_t);
   memcpy(processed_output, output->data.int8, output_size);
   end_time = esp_timer_get_time();
   printf("Memory I/O time: %lld us\n", end_time - start_time);
