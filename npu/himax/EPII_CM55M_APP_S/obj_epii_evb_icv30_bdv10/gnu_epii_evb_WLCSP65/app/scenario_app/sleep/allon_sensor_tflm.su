@@ -1,0 +1,5 @@
+app/scenario_app/sleep/allon_sensor_tflm.c:89:6:set_clock	8	static
+app/scenario_app/sleep/allon_sensor_tflm.c:131:6:enable_dwt	0	static
+app/scenario_app/sleep/allon_sensor_tflm.c:145:6:app_start_state	0	static
+app/scenario_app/sleep/allon_sensor_tflm.c:150:6:delay_cycles	4	static
+app/scenario_app/sleep/allon_sensor_tflm.c:156:5:app_main	72	static

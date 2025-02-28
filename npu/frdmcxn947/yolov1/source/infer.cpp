@@ -118,6 +118,13 @@ q31_t**** generateArray(int n) {
     return array;
 }
 
+void delay_ms(uint32_t ms) {
+    uint32_t start = TIMER_GetTimeInUS();
+    while ((TIMER_GetTimeInUS() - start) < (ms * 1000)) {
+        // Busy-wait
+    }
+}
+
 extern "C" {
 
 	uint32_t s_Us = 0;
@@ -136,6 +143,8 @@ extern "C" {
 		uint8_t* outputData;
 		size_t arenaSize;
 		
+		delay_ms(5000);
+
 		auto startTime = TIMER_GetTimeInUS();
 		if (MODEL_Init() != kStatus_Success)
 		{
@@ -154,6 +163,8 @@ extern "C" {
 		outputData = MODEL_GetOutputTensorData(&outputDims, &outputType);
 
 		TfLiteTensor* outputTensor = MODEL_GetOutputTensor(0);
+
+		delay_ms(5000);
 
 		while(1)
 		{
@@ -175,12 +186,16 @@ extern "C" {
 			s_Us = (uint32_t)dt;
 			PRINTF("Memory I/O: %d us\n", s_Us);
 
+			delay_ms(5000);
+
 			startTime = TIMER_GetTimeInUS();
 			MODEL_RunInference();
 			endTime = TIMER_GetTimeInUS();
 			dt = endTime - startTime;
 			s_Us = (uint32_t)dt;
 			PRINTF("Inference: %d us\n", s_Us);
+
+			delay_ms(5000);
 
 			size_t output_size = GRID_SIZE * GRID_SIZE * NUM_CONFIDENCE * sizeof(int8_t);
 			startTime = TIMER_GetTimeInUS();
@@ -200,6 +215,8 @@ extern "C" {
 			q15_t softmax_output[OUT_H * OUT_W * NUM_CLASSES];
 			q15_t sigmoid_output[OUT_H * OUT_W * NUM_CONFIDENCE];
 
+			delay_ms(5000);
+			
 			startTime = TIMER_GetTimeInUS();
 			for (int i = 0; i < OUT_H * OUT_W; i++) {
 				softmax_q17p14_q15(&class_output[i * NUM_CLASSES], NUM_CLASSES, &softmax_output[i * NUM_CLASSES]);

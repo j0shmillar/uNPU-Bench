@@ -130,7 +130,7 @@ SUPPORT_SEC_LIB ?= y
 ##
 CUSTOMER ?= seeed
 
-APP_TYPE = resnet_cmsis_size
+APP_TYPE = sleep
  
 ### Options above must be added before include options.mk ###
 override EPII_ROOT := $(strip $(subst \,/,$(EPII_ROOT)))

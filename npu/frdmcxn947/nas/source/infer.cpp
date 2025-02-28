@@ -128,8 +128,6 @@ extern "C" {
 		s_Us = (uint32_t)dt;
 		PRINTF("Init: %d us\n", s_Us);
 
-		delay_ms(5000);
-
 		size_t usedSize = MODEL_GetArenaUsedBytes(&arenaSize);
 		PRINTF("\r\n%d/%d kB (%0.2f%%) tensor arena used\r\n", usedSize / 1024, arenaSize / 1024, 100.0*usedSize/arenaSize);
 
@@ -138,6 +136,8 @@ extern "C" {
 
 		TfLiteTensor* outputTensor = MODEL_GetOutputTensor(0);
 
+		delay_ms(5000);
+		
 		while(1)
 		{
 			startTime = TIMER_GetTimeInUS();

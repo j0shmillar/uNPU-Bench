@@ -89,6 +89,13 @@ q31_t** generateArray() {
     return array;
 }
 
+void delay_ms(uint32_t ms) {
+    uint32_t start = TIMER_GetTimeInUS();
+    while ((TIMER_GetTimeInUS() - start) < (ms * 1000)) {
+        // Busy-wait
+    }
+}
+
 extern "C" {
 
 	uint32_t s_Us = 0;
@@ -107,6 +114,8 @@ extern "C" {
 		uint8_t* outputData;
 		size_t arenaSize;
 
+		delay_ms(5000);
+
 		auto startTime = TIMER_GetTimeInUS();
 		if (MODEL_Init() != kStatus_Success)
 		{
@@ -118,6 +127,8 @@ extern "C" {
 		s_Us = (uint32_t)dt;
 		PRINTF("Init: %d us\n", s_Us);
 
+		delay_ms(5000);
+
 		size_t usedSize = MODEL_GetArenaUsedBytes(&arenaSize);
 		PRINTF("\r\n%d/%d kB (%0.2f%%) tensor arena used\r\n", usedSize / 1024, arenaSize / 1024, 100.0*usedSize/arenaSize);
 
@@ -125,6 +136,8 @@ extern "C" {
 		outputData = MODEL_GetOutputTensorData(&outputDims, &outputType);
 
 		TfLiteTensor* outputTensor = MODEL_GetOutputTensor(0);
+
+		delay_ms(5000);
 
 		while(1)
 		{
@@ -146,12 +159,16 @@ extern "C" {
 			s_Us = (uint32_t)dt;
 			PRINTF("Memory I/O: %d us\n", s_Us);
 
+			delay_ms(5000);
+
 			startTime = TIMER_GetTimeInUS();
 			MODEL_RunInference();
 			endTime = TIMER_GetTimeInUS();
 			dt = endTime - startTime;
 			s_Us = (uint32_t)dt;
 			PRINTF("Inference: %d us\n", s_Us);
+
+			delay_ms(5000);
 
 			size_t output_size = N_CLASSES * sizeof(int8_t);
 			startTime = TIMER_GetTimeInUS();
@@ -161,6 +178,8 @@ extern "C" {
 			PRINTF("start_time: %d \n", (uint32_t)startTime);
 			PRINTF("end_time: %d \n", (uint32_t)endTime);
 			PRINTF("Memory I/0: %d us\n", s_Us);
+
+			delay_ms(5000);
 
 			q31_t** array = generateArray();
 			q15_t p_out[N_CLASSES];

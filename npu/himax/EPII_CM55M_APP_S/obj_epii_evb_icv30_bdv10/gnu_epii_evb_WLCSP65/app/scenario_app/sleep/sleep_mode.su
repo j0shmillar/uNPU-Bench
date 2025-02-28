@@ -1,0 +1,2 @@
+app/scenario_app/sleep/sleep_mode.c:109:6:setCM55MTimerAlarmPMU	16	static
+app/scenario_app/sleep/sleep_mode.c:123:6:app_pmu_enter_sleep	96	static
