@@ -288,6 +288,11 @@ q31_t** generateArray() {
     return array;
 }
 
+void delay_cycles(uint32_t cycles) {
+    while (cycles--) {
+        __NOP();
+    }
+}
 
 int cv_run() {
     generate_random_image();
@@ -304,6 +309,8 @@ int cv_run() {
     char *time_ptr = _float_to_char(time_us, time_str);  
     xprintf("Memory I/O time: %s us\n", time_ptr);  
 
+    delay_cycles(500000000); 
+
     start = GET_DWT();
     TfLiteStatus invoke_status = int_ptr->Invoke();
     if(invoke_status != kTfLiteOk) {
@@ -319,6 +326,8 @@ int cv_run() {
     time_ptr = _float_to_char(time_us, time_str);  
     xprintf("Inference time: %s us\n", time_ptr);  
 
+    delay_cycles(500000000); 
+
     start = GET_DWT();
     for (int i = 0; i < OUTPUT_CLASSES; i++) {
         processed_output[i] = output->data.f[i];
@@ -329,6 +338,8 @@ int cv_run() {
     time_ptr = _float_to_char(time_us, time_str);  
     xprintf("Memory I/O time: %s us\n", time_ptr); 
 
+    delay_cycles(500000000); 
+    
     start = GET_DWT();
     q31_t** array = generateArray();
     q15_t p_out[10];

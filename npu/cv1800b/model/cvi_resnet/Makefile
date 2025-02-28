@@ -10,12 +10,12 @@ endif
 
 ifeq ($(USE_TPU_IVE), ON)
 ifndef IVE_PATH
-$(error "Please set ive sdk root path to IVE_PATH)
+$(error "Please set ive sdk root path to IVE_PATH")
 endif
 endif
 
 ifndef TPU_PATH
-$(error "Please set tpu sdk root path to TPU_PATH)
+$(error "Please set tpu sdk root path to TPU_PATH")
 endif
 endif
 
@@ -166,8 +166,8 @@ SDK_APP_LIBS = -lcvi_tdl_app
 #####################################################
 # Opencv
 #####################################################
-OPENCV_INC_PATH = $(SDK_ROOT_PATH)/model/3rd/opencv/include
-OPENCV_LIB_PATH = $(SDK_ROOT_PATH)/model/3rd/opencv/lib
+OPENCV_INC_PATH = $(SDK_ROOT_PATH)/sample/3rd/opencv/include
+OPENCV_LIB_PATH = $(SDK_ROOT_PATH)/sample/3rd/opencv/lib
 OPENCV_LIBS = -lopencv_core -lopencv_imgproc -lopencv_imgcodecs
 
 #####################################################
@@ -198,14 +198,14 @@ endif
 #####################################################
 # RTSP stuffs
 #####################################################
-RTSP_LIB_PATH = $(SDK_ROOT_PATH)/model/3rd/rtsp/lib
-RTSP_INC_PATH = $(SDK_ROOT_PATH)/model/3rd/rtsp/include/cvi_rtsp
+RTSP_LIB_PATH = $(SDK_ROOT_PATH)/sample/3rd/rtsp/lib
+RTSP_INC_PATH = $(SDK_ROOT_PATH)/sample/3rd/rtsp/include/cvi_rtsp
 RTSP_LIBS = -lcvi_rtsp
 
 #####################################################
 # STB
 #####################################################
-STB_INC_PATH = $(SDK_ROOT_PATH)/model/3rd/stb/include
+STB_INC_PATH = $(SDK_ROOT_PATH)/sample/3rd/stb/include
 
 #####################################################
 # CVI LIB stuffs
@@ -215,6 +215,7 @@ DRAW_RECT_INC_PATH = $(SDK_ROOT_PATH)/include/cvi_draw_rect
 PREPROCESS_INC_PATH = $(SDK_ROOT_PATH)/include/cvi_preprocess
 
 CFLAGS += -std=gnu11 -Wno-pointer-to-int-cast -fsigned-char -Wno-format-truncation -fdiagnostics-color=always -s -lpthread -latomic
+LDFLAGS += -lwiringx
 
 SRCS := $(wildcard $(PWD)/*.c)
 CPPS := $(wildcard $(PWD)/*.cpp)
@@ -279,15 +280,16 @@ all: $(TARGETS)
 clean:
 	rm -f $(OBJS) $(TARGETS)
 
-$(PWD)/%.o: $(PWD)/%.c
-	$(CC) $(CFLAGS) -o $@ -c $<
+$(PWD)/%.o: $(PWD)/%.c 
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ -c $<
 
 $(PWD)/%.o: $(PWD)/%.cpp
-	$(CXX) $(CFLAGS) -o $@ -c $<
+	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ -c $<
 
-$(SDK_ROOT_PATH)/model/utils/%.o: $(SDK_ROOT_PATH)/model/utils/%.c
-	$(CC) $(CFLAGS) -o $@ -c $<
+$(SDK_ROOT_PATH)/sample/utils/%.o: $(SDK_ROOT_PATH)/sample/utils/%.c
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ -c $<
 
 resnet: $(PWD)/resnet.o
-	$(CXX) $(CFLAGS) $(SAMPLE_MODEL_LIBS) -o $@ $^
+	$(CXX) $(CFLAGS) $(LDFLAGS) $(SAMPLE_MODEL_LIBS) -o $@ $^
+
 

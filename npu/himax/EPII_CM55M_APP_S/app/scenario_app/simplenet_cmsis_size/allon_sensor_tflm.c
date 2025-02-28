@@ -145,6 +145,12 @@ void app_start_state()
 	dp_app_cv_eventhdl_cb();
 }
 
+void delay_cycles(uint32_t cycles) {
+    while (cycles--) {
+        __NOP();
+    }
+}
+
 int app_main(void) {
 
     set_clock(100000000);
@@ -153,6 +159,8 @@ int app_main(void) {
     enable_dwt(); 
     RESET_DWT(); 
 
+    delay_cycles(500000000); 
+    
     uint32_t start = GET_DWT();
     if(cv_init(true, true) < 0) {
         xprintf("cv init fail\n");

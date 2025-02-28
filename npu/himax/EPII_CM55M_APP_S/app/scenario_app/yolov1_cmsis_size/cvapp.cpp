@@ -332,11 +332,19 @@ int cv_init(bool security_enable, bool privilege_enable)
 	return ercode;
 }
 
+void delay_cycles(uint32_t cycles) {
+    while (cycles--) {
+        __NOP();
+    }
+}
+
 int cv_run() {
     generate_random_image();
 
     enable_dwt(); 
     RESET_DWT(); 
+    
+    delay_cycles(500000000); 
 
     uint32_t start = GET_DWT();
     img_rescale_rgb(random_image, input->data.int8);
@@ -346,6 +354,8 @@ int cv_run() {
     char time_str[CHAR_BUFF_SIZE]; 
     char *time_ptr = _float_to_char(time_us, time_str);  
     xprintf("Memory I/O time: %s us\n", time_ptr);  
+    
+    delay_cycles(500000000); 
 
     start = GET_DWT();
     TfLiteStatus invoke_status = int_ptr->Invoke();
@@ -362,6 +372,8 @@ int cv_run() {
     time_ptr = _float_to_char(time_us, time_str);  
     xprintf("Inference time: %s us\n", time_ptr);  
 
+    delay_cycles(500000000); 
+
     start = GET_DWT();
     for (int i = 0; i < OUT_H * OUT_W * OUT_C; i++) {
         processed_output[i] = output->data.f[i];
@@ -373,6 +385,8 @@ int cv_run() {
     time_ptr = _float_to_char(time_us, time_str);
     xprintf("Memory I/O time: %s us\n", time_ptr);
 
+    delay_cycles(500000000); 
+
     q31_t**** array1 = generateArray(2);
     q31_t**** array2 = generateArray(10);
     
@@ -381,6 +395,8 @@ int cv_run() {
 
     q15_t softmax_output[OUT_H * OUT_W * NUM_CLASSES];
     q15_t sigmoid_output[OUT_H * OUT_W * NUM_CONFIDENCE];
+
+    delay_cycles(500000000); 
 
     start = GET_DWT();
     for (int i = 0; i < OUT_H * OUT_W; i++) {

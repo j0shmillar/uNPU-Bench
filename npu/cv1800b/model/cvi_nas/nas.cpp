@@ -5,8 +5,11 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
+#include <unistd.h>
 #include "core/cvi_tdl_types_mem_internal.h"
 #include "cvi_tdl.h"
+
+#include <wiringx.h>
 
 typedef int32_t q31_t;
 typedef int16_t q15_t;
@@ -88,10 +91,31 @@ q31_t** generateArray() {
 
 
 int main(int argc, char* argv[]) {
+
+    int DUO_LED = 25;
+
+    if(wiringXSetup("milkv_duo", NULL) == -1) {
+        wiringXGC();
+        return 1;
+    }
+
+    if(wiringXValidGPIO(DUO_LED) != 0) {
+        printf("Invalid GPIO %d\n", DUO_LED);
+    }
+
+    pinMode(DUO_LED, PINMODE_OUTPUT);
+
     int img_width = 32;
     int img_height = 32;
     int num_classes = 10;
-    
+
+    digitalWrite(DUO_LED, HIGH);
+    sleep(1);
+    digitalWrite(DUO_LED, LOW);
+
+    sleep(5);
+
+    digitalWrite(DUO_LED, HIGH); 
     double start_time = get_time_ms();
     cvitdl_handle_t tdl_handle = NULL;
     CVI_S32 ret = CVI_TDL_CreateHandle(&tdl_handle);
@@ -99,7 +123,6 @@ int main(int argc, char* argv[]) {
         printf("Create tdl handle failed with %#x!\n", ret);
         return ret;
     }
-
     std::string model_path = argv[1];
     std::cout << "Model path: " << model_path << std::endl;
     ret = CVI_TDL_OpenModel(tdl_handle, CVI_TDL_SUPPORTED_MODEL_YOLO, model_path.c_str());
@@ -109,14 +132,19 @@ int main(int argc, char* argv[]) {
     }
     double end_time = get_time_ms();
     printf("Init time: %.3f ms\n", end_time - start_time);
+    digitalWrite(DUO_LED, LOW); 
 
-    start_time = get_time_ms();
     srand(time(NULL));
     std::vector<uint8_t> random_image(img_width * img_height * 3);
     for (auto &pixel : random_image) 
     {
         pixel = rand() % 256;
     }
+
+    sleep(5);
+
+    digitalWrite(DUO_LED, HIGH);   
+    start_time = get_time_ms();
     VIDEO_FRAME_INFO_S fdFrame = {};
     fdFrame.stVFrame.pu8VirAddr[0] = random_image.data();
     fdFrame.stVFrame.u32Width = img_width;
@@ -124,24 +152,34 @@ int main(int argc, char* argv[]) {
     fdFrame.stVFrame.enPixelFormat = PIXEL_FORMAT_RGB_888;
     end_time = get_time_ms();
     printf("Memory I/O time: %.3f ms\n", end_time - start_time);
+    digitalWrite(DUO_LED, LOW);   
 
     cvtdl_class_meta_t class_meta = {};
 
+    sleep(5);
+
+    digitalWrite(DUO_LED, HIGH);  
     start_time = get_time_ms();
     CVI_TDL_Image_Classification(tdl_handle, &fdFrame, &class_meta);
     end_time = get_time_ms();
     printf("Inference time: %.3f ms\n", end_time - start_time);
+    digitalWrite(DUO_LED, LOW);  
 
+    sleep(5);
+
+    digitalWrite(DUO_LED, HIGH);  
     start_time = get_time_ms();
     q31_t** array = generateArray();
     q15_t p_out[10];
     softmax_q17p14_q15(array[0], 10, p_out);
     end_time = get_time_ms();
-    printf("Post-processing time: %.3f ms\n", end_time - start_time);
+    digitalWrite(DUO_LED, LOW); 
+    printf("Post-processing time: %.3f ms\n", end_time - start_time); 
 
     CVI_TDL_Free(&class_meta);
     CVI_TDL_DestroyHandle(tdl_handle);
     return ret;
 }
+
 
 

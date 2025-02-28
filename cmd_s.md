@@ -42,7 +42,9 @@ cd root/luckfox_pico_{model}_demo
 ```
 cd host-tools
 export PATH=$PATH:$(pwd)/gcc/riscv64-linux-musl-x86_64/bin
-cd ../npu/milk-v/model
+cd ../duo-examples
+source envsetup.sh
+cd ../cvitek-tdl-sdk-sg200x/sample (change 2 npu/milkv or npu/cv1800b)
 ./compile_sample.sh
 scp -O sample_{model} root@192.168.42.1:/root/
 scp -O ../../model/{model}/{model}.cvimodel root@192.168.42.1:/root/
