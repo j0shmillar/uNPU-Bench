@@ -1,0 +1,34 @@
+/Users/yushanhuang/Documents/YUSHAN_JOSH/ai8x-synthesis/model/v_nas_riscv/buildrv/heap.o: \
+ /Users/yushanhuang/MaximSDK/Libraries/CMSIS/Device/Maxim/MAX78000/Source/heap.c \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/lib/gcc/riscv-none-elf/12.2.0/include/stdint.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/stdint.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/machine/_default_types.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/features.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/_newlib_version.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/_intsup.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/_stdint.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/errno.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/errno.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/reent.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/_ansi.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/newlib.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/config.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/machine/ieeefp.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/lib/gcc/riscv-none-elf/12.2.0/include/stddef.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/_types.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/machine/_types.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/lock.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/unistd.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/unistd.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/cdefs.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/types.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/machine/endian.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/machine/_endian.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/select.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/_sigset.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/_timeval.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/timespec.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/_timespec.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/_pthreadtypes.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/sys/sched.h \
+ /Users/yushanhuang/MaximSDK/Tools/xPack/riscv-none-elf-gcc/12.2.0-3.1/riscv-none-elf/include/machine/types.h
