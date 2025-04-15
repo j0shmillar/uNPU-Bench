@@ -39,6 +39,9 @@ status_t MODEL_Init(void)
         return kStatus_Fail;
     }
 
+    size_t used_bytes = s_interpreter->arena_used_bytes();
+    printf("TFLite Arena RAM usage: %d bytes\n", used_bytes);
+
     return kStatus_Success;
 }
 
