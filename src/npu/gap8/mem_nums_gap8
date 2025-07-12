@@ -1,0 +1,99 @@
+resnet
+
+Flash image resnet_L3_Flash_Const.dat (size 258328) for device AT_MEM_L3_DEFAULTFLASH successfuly generated
+
+      Shared L1 Memory size (Bytes)       : Given:      52736, Used:      52720
+             L2 Memory size (Bytes)       : Given:     400000, Used:     319768
+     DefaultRam Memory size (Bytes)       : Given:    8000000, Used:          0
+   DefaultFlash Memory size (Bytes)       : Given:   67108864, Used:     258328
+
+L3 Memory bandwidth for 1 graph run       :          0 Bytes
+L2 Memory bandwidth for 1 graph run       :     594374 Bytes
+Sum of all Kernels arguments size         :     519750 Bytes
+Tiling Bandwith overhead                  :   1.143577 Move/KerArgSize
+Sum of baseline bandwidth                 :    3049812 Bytes
+Percentage of baseline BW for L2          :    19.4889 %
+Percentage of baseline BW for L3          :          0 %
+Sum of all Kernels operations             :   18478976 Operations
+Total amount of flash coefficients        :     258328 Bytes
+
+
+yolo
+
+Flash image yolov1_L3_Flash_Const.dat (size 43288) for device AT_MEM_L3_DEFAULTFLASH successfuly generated
+
+      Shared L1 Memory size (Bytes)       : Given:      52736, Used:      51664
+             L2 Memory size (Bytes)       : Given:     400000, Used:     107800
+     DefaultRam Memory size (Bytes)       : Given:    8000000, Used:          0
+   DefaultFlash Memory size (Bytes)       : Given:   67108864, Used:      43288
+
+L3 Memory bandwidth for 1 graph run       :          0 Bytes
+L2 Memory bandwidth for 1 graph run       :     419164 Bytes
+Sum of all Kernels arguments size         :     402076 Bytes
+Tiling Bandwith overhead                  :   1.042499 Move/KerArgSize
+Sum of baseline bandwidth                 :    5063520 Bytes
+Percentage of baseline BW for L2          :    8.27811 %
+Percentage of baseline BW for L3          :          0 %
+Sum of all Kernels operations             :   21545856 Operations
+Total amount of flash coefficients        :      43288 Bytes
+
+autoenc
+
+Flash image autoenc_L3_Flash_Const.dat (size 143304) for device AT_MEM_L3_DEFAULTFLASH successfuly generated
+
+      Shared L1 Memory size (Bytes)       : Given:      52736, Used:      51744
+             L2 Memory size (Bytes)       : Given:     400000, Used:     144456
+     DefaultRam Memory size (Bytes)       : Given:    8000000, Used:          0
+   DefaultFlash Memory size (Bytes)       : Given:   67108864, Used:     143304
+
+L3 Memory bandwidth for 1 graph run       :          0 Bytes
+L2 Memory bandwidth for 1 graph run       :     147579 Bytes
+Sum of all Kernels arguments size         :     147579 Bytes
+Tiling Bandwith overhead                  :   1.000000 Move/KerArgSize
+Sum of baseline bandwidth                 :     411380 Bytes
+Percentage of baseline BW for L2          :    35.8741 %
+Percentage of baseline BW for L3          :          0 %
+Sum of all Kernels operations             :     202976 Operations
+Total amount of flash coefficients        :     143304 Bytes
+
+nas
+
+Flash image nas_L3_Flash_Const.dat (size 358464) for device AT_MEM_L3_DEFAULTFLASH successfuly generated
+
+      Shared L1 Memory size (Bytes)       : Given:      52736, Used:      52432
+             L2 Memory size (Bytes)       : Given:     400000, Used:     383040
+     DefaultRam Memory size (Bytes)       : Given:    8000000, Used:      99088
+   DefaultFlash Memory size (Bytes)       : Given:   67108864, Used:     358464
+
+L3 Memory bandwidth for 1 graph run       :      93949 Bytes
+L2 Memory bandwidth for 1 graph run       :     684386 Bytes
+Sum of all Kernels arguments size         :     646178 Bytes
+Tiling Bandwith overhead                  :   1.059129 Move/KerArgSize
+Sum of baseline bandwidth                 :   10334706 Bytes
+Percentage of baseline BW for L2          :    6.62221 %
+Percentage of baseline BW for L3          :   0.909063 %
+Sum of all Kernels operations             :   36578816 Operations
+Total amount of flash coefficients        :     358464 Bytes
+
+simplenet
+
+Flash image simplenet_L3_Flash_Const.dat (size 258264) for device AT_MEM_L3_DEFAULTFLASH successfuly generated
+
+      Shared L1 Memory size (Bytes)       : Given:      52736, Used:      51976
+             L2 Memory size (Bytes)       : Given:     400000, Used:     299224
+     DefaultRam Memory size (Bytes)       : Given:    8000000, Used:          0
+   DefaultFlash Memory size (Bytes)       : Given:   67108864, Used:     258264
+
+L3 Memory bandwidth for 1 graph run       :          0 Bytes
+L2 Memory bandwidth for 1 graph run       :     502162 Bytes
+Sum of all Kernels arguments size         :     427538 Bytes
+Tiling Bandwith overhead                  :   1.174543 Move/KerArgSize
+Sum of baseline bandwidth                 :    2957652 Bytes
+Percentage of baseline BW for L2          :    16.9784 %
+Percentage of baseline BW for L3          :          0 %
+Sum of all Kernels operations             :   18448000 Operations
+Total amount of flash coefficients        :     258264 Bytes
+
+
+Note: time on gap8 varies by about +-500us
+

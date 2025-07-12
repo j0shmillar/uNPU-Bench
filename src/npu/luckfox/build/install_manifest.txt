@@ -1,0 +1,4 @@
+/home/yushan/jdm/luckfox/luckfox_pico_rknn_example/install/resnet_demo/resnet
+/home/yushan/jdm/luckfox/luckfox_pico_rknn_example/install/resnet_demo/model/resnet.rknn
+/home/yushan/jdm/luckfox/luckfox_pico_rknn_example/install/resnet_demo/lib/librknnmrt.so
+/home/yushan/jdm/luckfox/luckfox_pico_rknn_example/install/resnet_demo/lib/librga.so

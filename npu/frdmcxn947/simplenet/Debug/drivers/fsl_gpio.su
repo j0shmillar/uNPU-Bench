@@ -1,8 +1,0 @@
-../drivers/fsl_gpio.c:98:6:GPIO_PinInit	8	static
-../drivers/fsl_gpio.c:114:6:GPIO_GetVersionInfo	0	static
-../drivers/fsl_gpio.c:153:10:GPIO_GpioGetInterruptFlags	0	static
-../drivers/fsl_gpio.c:167:10:GPIO_GpioGetInterruptChannelFlags	8	static
-../drivers/fsl_gpio.c:180:9:GPIO_PinGetInterruptFlag	0	static
-../drivers/fsl_gpio.c:208:6:GPIO_GpioClearInterruptFlags	0	static
-../drivers/fsl_gpio.c:220:6:GPIO_GpioClearInterruptChannelFlags	8	static
-../drivers/fsl_gpio.c:232:6:GPIO_PinClearInterruptFlag	0	static

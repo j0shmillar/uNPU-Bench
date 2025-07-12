@@ -1,5 +1,0 @@
-../source/person_det.cpp:47:7:void softmax(const float*, float*, int)	40	static
-../source/person_det.cpp:67:8:float sigmoid(float)	8	static
-../source/person_det.cpp:73:7:void process_yolo_output(const float*, float*, int)	80	static
-../source/person_det.cpp:104:7:void extract_detections(const float*, detection_t*, int*, float, int)	24	static
-../source/person_det.cpp:162:7:void person_det()	176	static

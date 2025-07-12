@@ -1,0 +1,45 @@
+ai8x-synthesis/ai8xize.py --config-file ai8x-synthesis/networks/cifar100-ressimplenet.yaml --prefix resnet --test-dir model/resnet --board-name EvKit_V1 --overwrite --checkpoint-file=model/resnet/resnet.pth.tar --sample-input=data_sample_int.npy --device=MAX78000
+MAX78000
+
+resnet
+WARNING: Layer 0: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+WARNING: Layer 1: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+WARNING: Layer 2: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+WARNING: Layer 3: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+WARNING: Layer 4: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+WARNING: Layer 5: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+WARNING: Layer 6: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+WARNING: Layer 7: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+WARNING: Layer 8: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+WARNING: Layer 9: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+WARNING: Layer 10: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+WARNING: Layer 11: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+WARNING: Layer 12: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+WARNING: Layer 13: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+WARNING: Layer 14: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+WARNING: Layer 15: All output values for the given sample input are zero. The generated known-answer test for this network may not be meaningful. See the log file for details.
+NOTICE: --scale-output set, but all output scales are zero. Unload operation will be realized without scaling.
+SUMMARY OF OPS
+Hardware: 18,636,416 ops (18,461,184 macc; 146,560 comp; 28,672 add; 0 mul; 0 bitwise)
+  Layer 0: 458,752 ops (442,368 macc; 16,384 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 1: 2,969,600 ops (2,949,120 macc; 20,480 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 2: 0 ops (0 macc; 0 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 3: 3,706,880 ops (3,686,400 macc; 20,480 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 4: 3,727,360 ops (3,686,400 macc; 20,480 comp; 20,480 add; 0 mul; 0 bitwise)
+  Layer 5: 947,200 ops (921,600 macc; 25,600 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 6: 0 ops (0 macc; 0 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 7: 926,720 ops (921,600 macc; 5,120 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 8: 2,043,904 ops (2,027,520 macc; 11,264 comp; 5,120 add; 0 mul; 0 bitwise)
+  Layer 9: 1,230,848 ops (1,216,512 macc; 14,336 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 10: 0 ops (0 macc; 0 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 11: 1,330,176 ops (1,327,104 macc; 3,072 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 12: 671,232 ops (663,552 macc; 4,608 comp; 3,072 add; 0 mul; 0 bitwise)
+  Layer 13: 200,192 ops (196,608 macc; 3,584 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 14: 262,656 ops (262,144 macc; 512 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 15: 148,096 ops (147,456 macc; 640 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 16: 12,800 ops (12,800 macc; 0 comp; 0 add; 0 mul; 0 bitwise)
+
+RESOURCE USAGE
+Weight memory: 47,274 bytes out of 442,368 bytes total (10.7%)
+Bias memory:   1,220 bytes out of 2,048 bytes total (59.6%)
+

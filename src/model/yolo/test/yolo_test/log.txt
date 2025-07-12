@@ -1,0 +1,4 @@
+ai8x-synthesis/ai8xize.py --avg-pool-rounding --config-file model/yolo/ai85-yolo-96-hwc.yaml --prefix yolo_test --test-dir model/yolo/test --board-name EvKit_V1 --fifo --checkpoint-file=model/yolo/yolov1.pth.tar --sample-input=data_sample_int.npy --device=MAX78000
+MAX78000
+
+yolo_test

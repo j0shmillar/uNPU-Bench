@@ -1,0 +1,10 @@
+.git
+*.log
+*.tar
+*.bin
+*.deb
+build/
+dist/
+__pycache__/
+data/
+checkpoints/

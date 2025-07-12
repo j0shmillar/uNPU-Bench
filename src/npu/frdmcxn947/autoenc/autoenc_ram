@@ -1,0 +1,22 @@
+17:01:14 **** Build of configuration Debug for project yolov1 ****
+make -r -j7 all 
+Building target: yolov1.axf
+Invoking: MCU C++ Linker
+arm-none-eabi-c++ -nostdlib -L"/Users/joshmillar/Desktop/phd/mcu-nn-eval/npu/frdmcxn947/autoenc/eiq/tensorflow-lite/lib" -L"/Users/joshmillar/Desktop/phd/mcu-nn-eval/npu/frdmcxn947/autoenc/eiq/tensorflow-lite/third_party/neutron" -Xlinker -no-warn-rwx-segments -Xlinker -Map="yolov1.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -T yolov1_Debug.ld -o "yolov1.axf" ./utilities/fsl_assert.o ./utilities/fsl_debug_console.o ./utilities/fsl_memcpy.o ./utilities/fsl_str.o  ./startup/boot_multicore_slave.o ./startup/startup_mcxn947_cm33_core0.o  ./source/model/model.o ./source/model/model_data.o ./source/model/model_ops_npu.o  ./source/infer.o ./source/main.o ./source/semihost_hardfault.o ./source/timer.o  ./eiq/tensorflow-lite/tensorflow/lite/micro/kernels/neutron/neutron.o  ./eiq/tensorflow-lite/tensorflow/lite/micro/debug_log.o  ./drivers/fsl_clock.o ./drivers/fsl_common.o ./drivers/fsl_common_arm.o ./drivers/fsl_edma.o ./drivers/fsl_edma_soc.o ./drivers/fsl_flexio.o ./drivers/fsl_flexio_mculcd.o ./drivers/fsl_flexio_mculcd_edma.o ./drivers/fsl_gpio.o ./drivers/fsl_inputmux.o ./drivers/fsl_lpflexcomm.o ./drivers/fsl_lpi2c.o ./drivers/fsl_lpuart.o ./drivers/fsl_reset.o ./drivers/fsl_smartdma.o ./drivers/fsl_spc.o  ./device/system_MCXN947_cm33_core0.o  ./component/uart/fsl_adapter_lpuart.o  ./component/lists/fsl_component_generic_list.o  ./board/board.o ./board/board_init.o ./board/clock_config.o ./board/pin_mux.o    -ltflm -lNeutronDriver -lNeutronFirmware
+Memory region         Used Size  Region Size  %age Used
+  PROGRAM_FLASH0:      267696 B         1 MB     25.53%
+  PROGRAM_FLASH1:          0 GB         1 MB      0.00%
+            SRAM:      380500 B       408 KB     91.07%
+           SRAMX:         768 B        96 KB      0.78%
+           SRAMH:          0 GB         4 KB      0.00%
+         USB_RAM:          0 GB         4 KB      0.00%
+Finished building target: yolov1.axf
+ 
+Performing post-build steps
+arm-none-eabi-size "yolov1.axf"; # arm-none-eabi-objcopy -v -O binary "yolov1.axf" "yolov1.bin" ; # checksum -p MCXN947 -d "yolov1.bin";
+   text	   data	    bss	    dec	    hex	filename
+ 265188	   2508	 378756	 646452	  9dd34	yolov1.axf
+ 
+
+17:01:16 Build Finished. 0 errors, 0 warnings. (took 1s.314ms)
+
