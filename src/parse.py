@@ -3,15 +3,11 @@ from compile import run_ai8x, run_vela, run_eiq, run_cvi
 from pth_to_ckpt import pth_to_pth_tar
 from utils import torch2onnx, onnx2tflm, setup_ai8x
 
-def compile(model, model_ckpt, target_formats, target_hardware, data_samples,
-            input_shape, input_layout, input_names, output_names, args):
-    print(f"data samples = {data_samples}")
+def compile(model, model_ckpt, target_formats, target_hardware, data_sample, input_names, output_names, args):
     if model_ckpt.endswith(".pth"):
         model_ckpt_tar = model_ckpt + ".tar"
         pth_to_pth_tar(model_ckpt, model_ckpt_tar)
         model_ckpt = model_ckpt_tar
-
-    success = False
 
     if "onnx" in target_formats:
         onnx_args = {
@@ -26,7 +22,6 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_samples,
             "keep_initializers_as_inputs": args.keep_initializers_as_inputs,
             "dynamic_axes": args.dynamic_axe}
         model_onnx = torch2onnx(model, model_ckpt, onnx_args)
-        success = success or (model_onnx is not None)
 
     if "tflm" in target_formats:
         model_onnx = torch2onnx(model, model_ckpt, args)
@@ -38,11 +33,10 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_samples,
                 "disable_group_convolution": args.disable_group_convolution,
                 "enable_batchmatmul_unfold": args.enable_batchmatmul_unfold,
                 "input_layout": args.input_layout,
-                "data_samples": data_samples,
+                "data_sample": data_sample,
                 "input_names": input_names}
             print("\nGenerating TFLM model...")
             out_tflm = onnx2tflm(model_onnx, tflm_args)
-            success = success or (out_tflm is not None)
 
     if "ai8x" in target_formats:
         setup_ai8x()
@@ -51,7 +45,7 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_samples,
             "simple1b": args.simple1b,
             "config_file": args.config_file,
             "prefix": args.prefix,
-            "test_dir": args.test_dir,
+            "test_dir": args.out_dir,
             "board_name": args.board_name,
             "overwrite": args.overwrite,
             "compact_weights": args.compact_weights,
@@ -77,8 +71,7 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_samples,
             "clip_method": args.clip_method,
             "q_scale": args.q_scale}
         print("\nGenerating AI8X model and code...")
-        out_ai8x = run_ai8x(model_ckpt, target_hardware, data_samples, args, ai8x_args)
-        success = success or (out_ai8x is not None)
+        out_ai8x = run_ai8x(model_ckpt, target_hardware, data_sample, args, ai8x_args)
 
     if "vela" in target_formats:
         onnx_args = {
@@ -109,7 +102,6 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_samples,
                 "model_name": args.model_name}
             print("\nGenerating Vela model...")
             out_vela = run_vela(model_onnx, vela_args)
-            success = success or (out_vela is not None)
 
     if "eiq" in target_formats:
         onnx_args = {
@@ -132,18 +124,18 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_samples,
                 "disable_group_convolution": args.disable_group_convolution,
                 "enable_batchmatmul_unfold": args.enable_batchmatmul_unfold,
                 "input_layout": args.input_layout,
-                "data_samples": data_samples,
+                "data_sample": data_sample,
                 "input_names": input_names
             }
             print("\nGenerating TFLM model...")
             model_tflm = onnx2tflm(model_onnx, tflm_args)
             if model_tflm:
                 eiq_args = {
-                    "eiq_path": args.eiq_path
+                    "eiq_path": args.eiq_path,
+                    "out_dir": args.out_dir
                 }
                 print("\nGenerating Vela model and code...")
                 out_eiq = run_eiq(model_tflm, target_hardware, eiq_args)
-                success = success or (out_eiq is not None)
     
     if 'cvi' in target_formats:
         onnx_args = {
@@ -166,10 +158,9 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_samples,
                 "disable_group_convolution": args.disable_group_convolution,
                 "enable_batchmatmul_unfold": args.enable_batchmatmul_unfold,
                 "input_layout": args.input_layout,
-                "data_samples": data_samples,
+                "data_sample": data_sample,
                 "input_names": input_names
             }
             print("\nGenerating CVI model and code...")   
-            out_cvi = run_cvi(model_onnx, cvi_args)
-            success = success or (out_cvi is not None)
-    return success
+            out_cvi = run_cvi(model_onnx, data_sample, cvi_args)
+

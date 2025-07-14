@@ -16,6 +16,10 @@ from flags import SUPPORTED_BIT_WIDTHS, SUPPORTED_HARDWARE, GLOBAL_FLAGS, PLATFO
 #TODO for later
 # rwd all out messages + colour-ize
 # mv from pip -> uv
+# rewrite arg 'help'
+
+# final TODO
+# rm all unnecessary code
 
 def val_bitwidth(target_formats, target_hardware, bit_width):
     for fmt in target_formats:
@@ -76,7 +80,7 @@ def parse():
     parser.add_argument('--target_format', required=True, help='Comma-separated target formats: ai8x,tflm,vela,onnx')
     parser.add_argument('--target_hardware', required=True, help='Comma-separated hardware: max78000,ethos-u55-128,...')
 
-    parser.add_argument('--data_samples', required=True, help='Comma-separated .npy dataset samples for quantization')
+    parser.add_argument('--data_sample', required=True, help='.npy dataset for quantization')
     parser.add_argument('--input_shape', type=int, nargs='+', required=True, help='Input shape, e.g. 1 3 224 224')
     parser.add_argument('--input_layout', choices=['NCHW', 'NHWC', 'NCW', 'NWC'], default='NCHW', help='Input layout')
     parser.add_argument('--input_names', required=True, help='Comma-separated input names')
@@ -105,7 +109,7 @@ def parse():
     parser.add_argument('--config_file', type=str, help='AI8X: YAML configuration file')
     parser.add_argument('--display_checkpoint', action='store_true', help='AI8X: Show parsed checkpoint data')
     parser.add_argument('--prefix', type=str, help='AI8X: Test name prefix')
-    parser.add_argument('--test_dir', type=str, help='AI8X: Test dir name')
+    parser.add_argument('--out_dir', type=str, help='AI8X: Test dir name')
     parser.add_argument('--board_name', type=str, default='EvKit_V1', help='AI8X: Target board')
     parser.add_argument('--overwrite', action='store_true', help='AI8X: Overwrite output if dir exists')
     parser.add_argument('--compact_weights', action='store_true', help='AI8X: Use memcpy for weights')
@@ -147,10 +151,9 @@ def parse():
     parser.add_argument('--vela_optimise', choices=['Size', 'Performance'], default='Performance', help='Vela: Optimisation strategy')
 
     # eIQ
-    # TODO more args
     parser.add_argument("--eiq_path", type=str, default="/opt/nxp/eIQ_Toolkit_v1.13.1/bin/neutron-converter/MCU_SDK_2.16.000/neutron-converter", help="installed eIQ Neutron SDK path")
 
-    # TPU-MLIR
+    # cvi
     parser.add_argument("--quantize", choices=["F32", "BF16", "F16", "INT8"], required=False, help="Quantization type (required): F32, BF16, F16, or INT8.")
     parser.add_argument("--calibration_table", type=str, help="Quantization table path. Required when using INT8 quantization.")
     parser.add_argument("--tolerance", type=float, help="Tolerance for minimum similarity between MLIR quantized and MLIR FP32 inference results.")
@@ -165,7 +168,6 @@ def main():
 
     target_formats = [fmt.strip() for fmt in args.target_format.split(',')]
     target_hardware = [hw.strip() for hw in args.target_hardware.split(',')]
-    data_samples = [ds.strip() for ds in args.data_samples.split(',')]
     input_names = [nm.strip() for nm in args.input_names.split(',')]
     output_names = [nm.strip() for nm in args.output_names.split(',')]
 
@@ -178,23 +180,15 @@ def main():
 
     model = get_model_from_name(args.model, args.model_module_name, args.model_module_args)
 
-    success = compile(
+    compile(
         model=model,
         model_ckpt=args.model_ckpt,
         target_formats=target_formats,
         target_hardware=target_hardware,
-        data_samples=data_samples,
-        input_shape=args.input_shape,
-        input_layout=args.input_layout,
+        data_sample=args.data_sample,
         input_names=input_names,
         output_names=output_names,
         args=args)
-
-    if success:
-        print("Compilation success.") # TODO add so if one platform fails, rest don't necessarily?
-    else:
-        print("Compilation failed.")
-        sys.exit(1)
 
 if __name__ == "__main__":
     main()

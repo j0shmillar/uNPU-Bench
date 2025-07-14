@@ -3,12 +3,11 @@ import numpy as np
 import sys
 import os
 
-# TODO add batchnorm fusion as an arg
-def run_ai8x(model, target_hardware, data_samples, args, ai8x_args):
+def run_ai8x(model, target_hardware, data_sample, args, ai8x_args):
     for hardware in target_hardware:
         if hardware in ['max78000', 'max78002']:
             if ai8x_args['qat_policy'] is None:
-                print("No QAT policy - using PTQ...")
+                print("No QAT policy - using PTQ.")
                 quantize_cmd = [
                     sys.executable, "ai8x-synthesis/quantize.py",
                     model, model.replace(".pth.tar", "-q8.pth.tar"),
@@ -17,24 +16,17 @@ def run_ai8x(model, target_hardware, data_samples, args, ai8x_args):
                     "-c", ai8x_args['config_file']
                 ]
                 if ai8x_args['clip_method']:
-                    quantize_cmd.extend([
-                        "--clip-method", ai8x_args['clip_method']
-                    ])
-
-
+                    quantize_cmd.extend(["--clip-method", ai8x_args['clip_method']])
                 print("Fusing BatchNorm layers...")
                 fuse_cmd = [
                     sys.executable, "ai8x-training/batchnormfuser.py",
                     "-i", model, "-o", model,
                     "-oa", args.model_module_name
                 ]
-                run_subproc(fuse_cmd, "BatchNorm fusing failed.")
-                print(fuse_cmd)
+                run_subproc(fuse_cmd, "BatchNorm fusion failed.")
                 print("BatchNorm fusion complete.")
                 print("Quantizing...")
                 run_subproc(quantize_cmd, "Quantization failed.")
-                print(quantize_cmd)
-                print("Quantization complete.")
 
             model = model.replace(".pth.tar", "-q8.pth.tar")
 
@@ -42,51 +34,53 @@ def run_ai8x(model, target_hardware, data_samples, args, ai8x_args):
             for arg, value in ai8x_args.items():
                 if arg == "q_scale":
                     continue
-                if arg == "no-pipeline" or arg == "max-speed":
-                    if hardware != "max78002":
-                        print(f"Invalid argument {arg} for MAX78000")
-                        return None
+                if arg in ["no-pipeline", "max-speed"] and hardware != "max78002":
+                    print(f"Invalid arg {arg} for MAX78000; supported on MAX78002 only.")
+                    return None
                 if value is True:
                     ai8xize_args.append(f"--{arg.replace('_', '-')}")
                 elif value not in [None, False]:
                     ai8xize_args.extend([f"--{arg.replace('_', '-')}", str(value)])
 
             ai8xize_args.append(f"--checkpoint-file={model}")
-            # TODO support using multiple data samples i.e. all given
-            np.save("data_sample_int.npy", np.load(data_samples[0])[0].astype(np.int64)) # TODO delete after use (also, should support multiple data samples, data samples of shape (NHWC) (i.e. current) AND (HWC), etc)
-            ai8xize_args.append(f"--sample-input=data_sample_int.npy")
+
+            data = np.load(data_sample)
+            if data.ndim ==4:  # NHWC → 1xHWC
+                data = data[0]
+            temp_path = f"ds_sample.npy"
+            np.save(temp_path, data.astype(np.int64))
+            ai8xize_args.append(f"--sample-input={temp_path}")
+
             ai8xize_args.append(f"--device={hardware.upper()}")
+            run_subproc(ai8xize_args, f"ai8x compiler failed {hardware}.")
+            
+            os.remove(temp_path)
 
-            print(ai8xize_args)
-
-            print("Generating AI8X model and code...")
-            res = run_subproc(ai8xize_args, "AI8X model/code gen failed.")
-            # TODO either return 1 / None, or output file path - don't mix and match
-            if res is not None:
-                return 1
-            else:
-                return None
-
-# TODO 
-# - fix
-# - rename 2 TPU-MLIR?
-def run_cvi(onnx_path, args):
-    """Compile model using CV180X toolchain."""
+def run_cvi(onnx_path, data_sample, args):
     model_name = os.path.basename(onnx_path).replace('.onnx', '')
     model_mlir = onnx_path.replace('.onnx', '.mlir')
     output_path = onnx_path.replace('.onnx', '.cvimodel')
     cal_table = args["calibration_table"] or gen_calibration_table(".table")
-    data_samples = args["data_samples"].split(',') # TODO avoid repetition, pass formatted list from convert/main
+
+    input_shapes = args["input_shape"]
+    shape_str = input_shapes if isinstance(input_shapes, str) else ",".join(map(str, input_shapes))
 
     transform_cmd = [
         "tpu-mlir/model_transform.py",
         "--model_name", model_name,
         "--model_def", onnx_path,
         "--mlir", model_mlir,
-        "--input_shape", args["input_shape"],
+        "--input_shape", shape_str,
         "--output_names", args["output_names"],
-        "--test_input", data_samples[0] # TODO support using multiple data samples
+        "--test_input"
     ]
+
+    data = np.load(data_sample)
+    if data.ndim ==4:  # NHWC → 1xHWC
+        data = data[0]
+    temp_path = f"ds_sample.npy"
+    np.save(temp_path, data.astype(np.int64))
+    transform_cmd.append(temp_path)
 
     optional_args = {
         "--model_data": args["caffe_model"],
@@ -101,10 +95,10 @@ def run_cvi(onnx_path, args):
     if args.keep_aspect_ratio: transform_cmd.append("--keep_aspect_ratio")
     if args.debug: transform_cmd.append("--debug")
 
-    run_subproc(transform_cmd, "Transform step failed")
+    run_subproc(transform_cmd, "cvi transform failed.")
     os.chdir(os.path.dirname(onnx_path))
 
-    dataset_path = args.data_samples or gen_ds(args.input_shape[1:])
+    dataset_path = args.data_sample or gen_ds(args.input_shape[1:])
     cali_cmd = [
         "run_calibration.py",
         model_mlir,
@@ -112,7 +106,7 @@ def run_cvi(onnx_path, args):
         "--input_num", str(args.input_shape[0]),
         "-o", cal_table
     ]
-    run_subproc(cali_cmd, "Calibration failed")
+    run_subproc(cali_cmd, "cvi calibration failed.")
 
     tol1, tol2 = 0.84, 0.45
     if args.tolerance:
@@ -134,13 +128,14 @@ def run_cvi(onnx_path, args):
     if args.excepts: deploy_cmd += ["--excepts", args.excepts]
     if args.debug: deploy_cmd.append("--debug")
 
-    run_subproc(deploy_cmd, "Deploy failed")
+    run_subproc(deploy_cmd, "cvi compiler failed.")
     os.chdir("..")
+
+    os.remove(temp_path)
+
     return output_path
 
-
 def run_vela(out_dir, args):
-    """Compile a TFLite model using Vela."""
     tflite_model = os.path.join(out_dir, f"{args.model_name}_full_integer_quant.tflite")
     vela_cmd = [
         "vela",
@@ -167,18 +162,15 @@ def run_vela(out_dir, args):
     if args.force_symmetric_int_weights:
         vela_cmd.append("--force-symmetric-int-weights")
 
-    run_subproc(vela_cmd, "Vela compilation failed")
+    run_subproc(vela_cmd, "ARM Vela compiler failed.")
     return out_dir
-    
-# TODO need to loop over target hardware and run cmd for each of supported by run_eiq
-# TODO rename to 'neutron'?
+
 def run_eiq(tflm_model, target_hardware, eiq_args):
-    """Run NXP's Neutron compiler."""
     eiq_cmd = [
         eiq_args['eiq_path'],
         "--input", tflm_model,
-        "--output", "out_path", # TODO softcode
+        "--output", eiq_args["out_dir"],
         "--custom-options", f"target {target_hardware}"
     ]
-    run_subproc(eiq_cmd, "Neutron compile failed")
-    return "out_path"
+    run_subproc(eiq_cmd, "eIQ compiler failed.")
+    return eiq_args["out_dir"]
