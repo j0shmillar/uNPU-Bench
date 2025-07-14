@@ -1,8 +1,9 @@
-# TODO update to appropriate (need software + hardware supported bit_widths)
 SUPPORTED_BIT_WIDTHS = {
     "ai8x": [1, 2, 4, 8],
     "vela": [8, 16, 32],
-    "tflm": [8],
+    "eiq": [8],
+    "tflm": [8, 16, 32],
+    "cvi": [8, 16, 32],
     "onnx": [32],
 }
 

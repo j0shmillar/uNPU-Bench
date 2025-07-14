@@ -1,5 +1,6 @@
 from utils import run_subproc, gen_calibration_table, gen_ds
 import numpy as np
+import sys
 import os
 
 # TODO add batchnorm fusion as an arg
@@ -9,7 +10,7 @@ def run_ai8x(model, target_hardware, data_samples, args, ai8x_args):
             if ai8x_args['qat_policy'] is None:
                 print("No QAT policy - using PTQ...")
                 quantize_cmd = [
-                    "python", "ai8x-synthesis/quantize.py",
+                    sys.executable, "ai8x-synthesis/quantize.py",
                     model, model.replace(".pth.tar", "-q8.pth.tar"),
                     "--device", hardware,
                     "--scale", ai8x_args['q_scale'],
@@ -20,19 +21,24 @@ def run_ai8x(model, target_hardware, data_samples, args, ai8x_args):
                         "--clip-method", ai8x_args['clip_method']
                     ])
 
+
                 print("Fusing BatchNorm layers...")
                 fuse_cmd = [
-                    "python", "ai8x-training/batchnormfuser.py",
+                    sys.executable, "ai8x-training/batchnormfuser.py",
                     "-i", model, "-o", model,
                     "-oa", args.model_module_name
                 ]
                 run_subproc(fuse_cmd, "BatchNorm fusing failed.")
+                print(fuse_cmd)
                 print("BatchNorm fusion complete.")
                 print("Quantizing...")
                 run_subproc(quantize_cmd, "Quantization failed.")
+                print(quantize_cmd)
                 print("Quantization complete.")
 
-            ai8xize_args = ["python", "ai8x-synthesis/ai8xize.py"]
+            model = model.replace(".pth.tar", "-q8.pth.tar")
+
+            ai8xize_args = [sys.executable, "ai8x-synthesis/ai8xize.py"]
             for arg, value in ai8x_args.items():
                 if arg == "q_scale":
                     continue
@@ -47,9 +53,11 @@ def run_ai8x(model, target_hardware, data_samples, args, ai8x_args):
 
             ai8xize_args.append(f"--checkpoint-file={model}")
             # TODO support using multiple data samples i.e. all given
-            np.save("data_sample_int.npy", np.load(data_samples[0]).astype(np.int64)) # TODO delete after use
+            np.save("data_sample_int.npy", np.load(data_samples[0])[0].astype(np.int64)) # TODO delete after use (also, should support multiple data samples, data samples of shape (NHWC) (i.e. current) AND (HWC), etc)
             ai8xize_args.append(f"--sample-input=data_sample_int.npy")
             ai8xize_args.append(f"--device={hardware.upper()}")
+
+            print(ai8xize_args)
 
             print("Generating AI8X model and code...")
             res = run_subproc(ai8xize_args, "AI8X model/code gen failed.")

@@ -1,4 +1,32 @@
-ai8x-synthesis/ai8xize.py --avg-pool-rounding --config-file model/yolo/ai85-yolo-96-hwc.yaml --prefix yolo_test --test-dir model/yolo/test --board-name EvKit_V1 --fifo --checkpoint-file=model/yolo/yolov1.pth.tar --sample-input=data_sample_int.npy --device=MAX78000
+ai8x-synthesis/ai8xize.py --avg-pool-rounding --config-file model/yolo/ai85-yolo-96-hwc.yaml --prefix yolo_test --test-dir model/yolo/test --board-name EvKit_V1 --overwrite --fifo --checkpoint-file=model/yolo/yolov1-q8.pth.tar --sample-input=data_sample_int.npy --device=MAX78000
 MAX78000
 
 yolo_test
+NOTICE: --scale-output set, but all output scales are zero. Unload operation will be realized without scaling.
+SUMMARY OF OPS
+Hardware: 22,910,976 ops (22,404,096 macc; 506,880 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 0: 4,128,768 ops (3,981,312 macc; 147,456 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 1: 5,492,736 ops (5,308,416 macc; 184,320 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 2: 1,373,184 ops (1,327,104 macc; 46,080 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 3: 2,672,640 ops (2,654,208 macc; 18,432 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 4: 304,128 ops (294,912 macc; 9,216 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 5: 2,672,640 ops (2,654,208 macc; 18,432 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 6: 304,128 ops (294,912 macc; 9,216 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 7: 2,672,640 ops (2,654,208 macc; 18,432 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 8: 94,464 ops (73,728 macc; 20,736 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 9: 668,160 ops (663,552 macc; 4,608 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 10: 76,032 ops (73,728 macc; 2,304 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 11: 668,160 ops (663,552 macc; 4,608 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 12: 76,032 ops (73,728 macc; 2,304 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 13: 668,160 ops (663,552 macc; 4,608 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 14: 76,032 ops (73,728 macc; 2,304 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 15: 668,160 ops (663,552 macc; 4,608 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 16: 152,064 ops (147,456 macc; 4,608 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 17: 76,032 ops (73,728 macc; 2,304 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 18: 39,168 ops (36,864 macc; 2,304 comp; 0 add; 0 mul; 0 bitwise)
+  Layer 19: 27,648 ops (27,648 macc; 0 comp; 0 add; 0 mul; 0 bitwise)
+
+RESOURCE USAGE
+Weight memory: 42,352 bytes out of 442,368 bytes total (9.6%)
+Bias memory:   396 bytes out of 2,048 bytes total (19.3%)
+

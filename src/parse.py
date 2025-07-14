@@ -1,18 +1,11 @@
-import os
-import sys
 import numpy as np
-from src.compile import run_ai8x, run_vela, run_eiq, run_cvi
+from compile import run_ai8x, run_vela, run_eiq, run_cvi
 from pth_to_ckpt import pth_to_pth_tar
-from utils import torch2onnx, onnx2tflm
+from utils import torch2onnx, onnx2tflm, setup_ai8x
 
-# TODO update eiq etc arg options
-# TODO if ai8x needs import path adjustment
-sys.path.append("/Users/joshmillar/Desktop/phd/mcu-nn-eval/ai8x-training")
-import ai8x
-ai8x.set_device(85, 0, True)  # Only if MAX78000/2 required
-
-def convert(model, model_ckpt, target_formats, target_hardware, data_samples,
+def compile(model, model_ckpt, target_formats, target_hardware, data_samples,
             input_shape, input_layout, input_names, output_names, args):
+    print(f"data samples = {data_samples}")
     if model_ckpt.endswith(".pth"):
         model_ckpt_tar = model_ckpt + ".tar"
         pth_to_pth_tar(model_ckpt, model_ckpt_tar)
@@ -20,7 +13,6 @@ def convert(model, model_ckpt, target_formats, target_hardware, data_samples,
 
     success = False
 
-    # TODO add onnx args
     if "onnx" in target_formats:
         onnx_args = {
             "opset": args.opset,
@@ -47,15 +39,14 @@ def convert(model, model_ckpt, target_formats, target_hardware, data_samples,
                 "enable_batchmatmul_unfold": args.enable_batchmatmul_unfold,
                 "input_layout": args.input_layout,
                 "data_samples": data_samples,
-                "input_names": input_names
-            }
+                "input_names": input_names}
             print("\nGenerating TFLM model...")
             out_tflm = onnx2tflm(model_onnx, tflm_args)
             success = success or (out_tflm is not None)
 
     if "ai8x" in target_formats:
+        setup_ai8x()
         ai8x_args = {
-            # (same as previous detailed structured ai8x_args dictionary)
             "avg_pool_rounding": args.avg_pool_rounding,
             "simple1b": args.simple1b,
             "config_file": args.config_file,
@@ -84,15 +75,24 @@ def convert(model, model_ckpt, target_formats, target_hardware, data_samples,
             "no_scale_output": args.no_scale_output,
             "qat_policy": args.qat_policy,
             "clip_method": args.clip_method,
-            "q_scale": args.q_scale
-        }
+            "q_scale": args.q_scale}
         print("\nGenerating AI8X model and code...")
         out_ai8x = run_ai8x(model_ckpt, target_hardware, data_samples, args, ai8x_args)
         success = success or (out_ai8x is not None)
 
     if "vela" in target_formats:
-        # TODO add onnx args    
-        model_onnx = torch2onnx(model, model_ckpt, args)
+        onnx_args = {
+            "opset": args.opset,
+            "opset_version": args.opset_version,
+            "custom_opsets": args.custom_opsets,
+            "export_params": args.export_params,
+            "do_constant_folding": args.do_constant_folding,
+            "input_names": input_names,
+            "input_shape": args.input_shape,
+            "output_names": output_names,
+            "keep_initializers_as_inputs": args.keep_initializers_as_inputs,
+            "dynamic_axes": args.dynamic_axe}
+        model_onnx = torch2onnx(model, model_ckpt, onnx_args) 
         if model_onnx:
             vela_args = {
                 "config_vela": args.config_vela,
@@ -106,15 +106,24 @@ def convert(model, model_ckpt, target_formats, target_hardware, data_samples,
                 "recursion_limit": args.recursion_limit,
                 "hillclimb_max_iterations": args.hillclimb_max_iterations,
                 "vela_optimise": args.vela_optimise,
-                "model_name": args.model_name
-            }
-            print("\nGenerating Vela model and code...")
+                "model_name": args.model_name}
+            print("\nGenerating Vela model...")
             out_vela = run_vela(model_onnx, vela_args)
             success = success or (out_vela is not None)
 
     if "eiq" in target_formats:
-        # TODO add onnx args 
-        model_onnx = torch2onnx(model, model_ckpt, args)
+        onnx_args = {
+            "opset": args.opset,
+            "opset_version": args.opset_version,
+            "custom_opsets": args.custom_opsets,
+            "export_params": args.export_params,
+            "do_constant_folding": args.do_constant_folding,
+            "input_names": input_names,
+            "input_shape": args.input_shape,
+            "output_names": output_names,
+            "keep_initializers_as_inputs": args.keep_initializers_as_inputs,
+            "dynamic_axes": args.dynamic_axe}
+        model_onnx = torch2onnx(model, model_ckpt, onnx_args)
         if model_onnx:
             tflm_args = {
                 "use_onnxsim": args.use_onnxsim,
@@ -137,8 +146,18 @@ def convert(model, model_ckpt, target_formats, target_hardware, data_samples,
                 success = success or (out_eiq is not None)
     
     if 'cvi' in target_formats:
-        # TODO add onnx args 
-        model_onnx = torch2onnx(model, model_ckpt, args)
+        onnx_args = {
+            "opset": args.opset,
+            "opset_version": args.opset_version,
+            "custom_opsets": args.custom_opsets,
+            "export_params": args.export_params,
+            "do_constant_folding": args.do_constant_folding,
+            "input_names": input_names,
+            "input_shape": args.input_shape,
+            "output_names": output_names,
+            "keep_initializers_as_inputs": args.keep_initializers_as_inputs,
+            "dynamic_axes": args.dynamic_axe}
+        model_onnx = torch2onnx(model, model_ckpt, onnx_args)
         if model_onnx:     
             cvi_args = {
                 "use_onnxsim": args.use_onnxsim,

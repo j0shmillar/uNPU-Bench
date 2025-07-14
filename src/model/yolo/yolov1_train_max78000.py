@@ -61,7 +61,7 @@ def log_init():
     return logger
     
 def dataset_init(logger):
-    dataset_root = "./model/yolo/data/VOC2007"
+    dataset_root = "./data/VOC2007"
     
     dataSet = YoloV1DataSet(
         imgs_dir=f"{dataset_root}/JPEGImages",

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+source /opt/anaconda3/etc/profile.d/conda.sh
+conda activate ai8x
+
 python main.py \
     --model model/yolo/yolov1_96_max78000.py \
     --model_ckpt model/yolo/yolov1.pth.tar \
@@ -7,8 +10,8 @@ python main.py \
     --model_module_name Yolov1_net \
     --target_format ai8x \
     --target_hardware max78000 \
-    --data_samples model/yolo/sample_data_nhwc.npy \
-    --input_shape 96 96 3 \
+    --data_samples model/yolo/sample_data_nchw.npy \
+    --input_shape 1 3 96 96 \
     --input_names input \
     --output_names output \
     --bit_width 8 \
@@ -17,5 +20,6 @@ python main.py \
     --fifo \
     --config_file model/yolo/ai85-yolo-96-hwc.yaml \
     --prefix yolo_test \
-    --test_dir model/yolo/test
+    --test_dir model/yolo/test \
+    --overwrite
 

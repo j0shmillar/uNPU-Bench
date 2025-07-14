@@ -1,15 +1,17 @@
 import sys
 import argparse
 from utils import get_model_from_name
-from convert import convert
+from parse import compile
 from flags import SUPPORTED_BIT_WIDTHS, SUPPORTED_HARDWARE, GLOBAL_FLAGS, PLATFORM_FLAGS
 
 #TODO
 # ask chatgpt to update arg list in convert to match argparse
-# add MILK-V?
+# fix (at least) YOLO script (+ maybe others)
+# mega super rename (esp. under 'models')
 # update Dockerfile to install ai8x etc
 # - and rm unused packages from reqs.txt
 # generate loads of tests with gpt (for yolo 1st, then other models)
+# LAST, TIDY ALL
 
 #TODO for later
 # rwd all out messages + colour-ize
@@ -24,13 +26,11 @@ def val_bitwidth(target_formats, target_hardware, bit_width):
         if hw not in SUPPORTED_HARDWARE:
             raise ValueError(f"'{hw}' is not supported (supported: {SUPPORTED_HARDWARE})")
 
-def val_flags(args, target_hardware, target_formats):
-    user_flags = set()
-    for arg, val in vars(args).items():
-        if isinstance(val, bool) and val:
-            user_flags.add(arg)
-        elif val not in [None, False] and arg != "model_module_args":
-            user_flags.add(arg)
+def val_flags(target_hardware, target_formats):
+    specified_flags = {
+        arg.lstrip('-').replace('-', '_')
+        for arg in sys.argv[1:]
+        if arg.startswith('--')}
 
     platform_to_flags = {}
     for fmt in target_formats:
@@ -45,7 +45,7 @@ def val_flags(args, target_hardware, target_formats):
         for flag in flags:
             flag_to_platforms.setdefault(flag, set()).add(platform)
 
-    for flag in user_flags:
+    for flag in specified_flags:
         if flag in GLOBAL_FLAGS:
             continue
 
@@ -89,8 +89,6 @@ def parse():
     parser.add_argument('--custom_opsets', required=False, default=None, help='dictionary: KEY (str): opset domain name VALUE (int): opset version')
     parser.add_argument('--export_params', required=False, default=True, help='ONNX export params')
     parser.add_argument('--do_constant_folding', required=False, default=True, help='do constant folding')
-    parser.add_argument('--input_names', required=False, default=['input'], help='names to assign to the input nodes')
-    parser.add_argument('--output_names', required=False, default=['output'], help='names to assign to the output nodes')
     parser.add_argument('--keep_initializers_as_inputs', required=False, default=False, help='adds initializers to exported weights')
     parser.add_argument('--dynamic_axes', required=False, default=None, help='dict schema for dynamic input/output shape')
     
@@ -150,7 +148,6 @@ def parse():
 
     # eIQ
     # TODO more args
-    # TODO update - user should specify path on install (maybe add a set_default_eiq_path script that updates this default value)
     parser.add_argument("--eiq_path", type=str, default="/opt/nxp/eIQ_Toolkit_v1.13.1/bin/neutron-converter/MCU_SDK_2.16.000/neutron-converter", help="installed eIQ Neutron SDK path")
 
     # TPU-MLIR
@@ -174,14 +171,14 @@ def main():
 
     try:
         val_bitwidth(target_formats, target_hardware, args.bit_width)
-        val_flags(args, target_hardware, target_formats)
+        val_flags(target_hardware, target_formats)
     except ValueError as e:
         print(str(e))
         sys.exit(1)
 
     model = get_model_from_name(args.model, args.model_module_name, args.model_module_args)
 
-    success = convert(
+    success = compile(
         model=model,
         model_ckpt=args.model_ckpt,
         target_formats=target_formats,
@@ -194,7 +191,7 @@ def main():
         args=args)
 
     if success:
-        print("Compilation success for requested targets.") # TODO add so if one platform fails, rest don't necessarily
+        print("Compilation success.") # TODO add so if one platform fails, rest don't necessarily?
     else:
         print("Compilation failed.")
         sys.exit(1)

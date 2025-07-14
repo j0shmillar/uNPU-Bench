@@ -1,10 +1,9 @@
-# CHW (big data) configuration for MNIST
-
+---
 arch: Yolov1_net
 dataset: yolov1
 
 layers:
-  #self.Conv_96
+  # self.Conv_96
   - pad: 1
     activate: ReLU
     out_offset: 0x2000
@@ -17,7 +16,7 @@ layers:
     streaming: true
     quantization: 8
 
-  #self.Conv_48
+  # self.Conv_48
   - pad: 1
     activate: ReLU
     out_offset: 0x3000
@@ -31,7 +30,7 @@ layers:
     pool_stride: 2
     quantization: 8
 
-  #self.Conv_24
+  # self.Conv_24
   - pad: 0
     activate: ReLU
     out_offset: 0x4000
@@ -53,7 +52,7 @@ layers:
     #                 stride=1, padding=1, bias=bias, **kwargs),
     op: conv2d
     kernel_size: 3x3
-  #  streaming: true
+    #  streaming: true
     quantization: 8
 
   - pad: 0
@@ -64,7 +63,7 @@ layers:
     #                 stride=1, padding=0, bias=bias, **kwargs),
     op: conv2d
     kernel_size: 1x1
-  #  streaming: true
+    #  streaming: true
     quantization: 8
 
   - pad: 1
@@ -75,7 +74,7 @@ layers:
     #                 stride=1, padding=1, bias=bias, **kwargs),
     op: conv2d
     kernel_size: 3x3
-  #  streaming: true
+    #  streaming: true
     quantization: 8
 
   - pad: 0
@@ -86,7 +85,7 @@ layers:
     #                 stride=1, padding=0, bias=bias, **kwargs),
     op: conv2d
     kernel_size: 1x1
-  #  streaming: true
+    #  streaming: true
     quantization: 8
 
   - pad: 1
@@ -97,10 +96,10 @@ layers:
     #                 stride=1, padding=1, bias=bias, **kwargs),
     op: conv2d
     kernel_size: 3x3
-  #  streaming: true
+    #  streaming: true
     quantization: 8
 
-  #self.Conv_12
+  # self.Conv_12
   - pad: 0
     activate: ReLU
     out_offset: 0x4000
@@ -164,7 +163,7 @@ layers:
     quantization: 8
 
 
-  #self.Conv_7
+  # self.Conv_7
   - pad: 0
     activate: ReLU
     out_offset: 0x4000
@@ -185,7 +184,7 @@ layers:
     kernel_size: 3x3
     quantization: 8
 
-  #self.Conv_Res
+  # self.Conv_Res
   - pad: 0
     activate: ReLU
     out_offset: 0x4000
