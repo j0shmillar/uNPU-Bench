@@ -76,10 +76,11 @@ def setup_ai8x(device_id=85, use_8bit=True):
         ai8x.set_device(device_id, 0, use_8bit)
         return ai8x
     except ImportError as e:
-        print("ai8x module not found. Make sure AI8X_TRAIN is set correctly.")
+        print("ai8x module not found. Make sure AI8X_TRAIN_PATH is set correctly.") # TODO make red
         raise e
 
 def get_model_from_name(path, class_name, args=None):
+    setup_ai8x() # TODO move
     module_path = path.replace('.py', '').replace('/', '.')
     module = importlib.import_module(module_path)
     model_class = getattr(module, class_name)
