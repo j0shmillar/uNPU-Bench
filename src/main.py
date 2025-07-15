@@ -5,23 +5,22 @@ from parse import compile
 from flags import SUPPORTED_BIT_WIDTHS, SUPPORTED_HARDWARE, GLOBAL_FLAGS, PLATFORM_FLAGS
 
 #TODO
-# ensure uniformatiy with NCHW
+# ensure uniformaity with NCHW
 # target_hardware can be blank (i.e. just model_gen)
 # clean template code (e.g. 'scenario_app') to be minimal and consistent across boards
 # fix templates and add code gen
-# fix INVALID_ARGUMENT : Unexpected input data type. Actual: (tensor(double)) , expected: (tensor(float)) wth TFLM
+# fix INVALID_ARGUMENT : Unexpected input data type. Actual: (tensor(double)) , expected: (tensor(float)) with TFLM
 # ask chatgpt to update arg list in convert to match argparse
 # fix (at least) YOLO script (+ maybe others)
-# add GAP8?
 # mega super rename (esp. under 'models')
-# update Dockerfile to install ai8x etc
-# - and rm unused packages from reqs.txt
 # generate loads of tests with gpt (for yolo 1st, then other models)
+# also test generated code runs on device
 # LAST, TIDY ALL
 
 #TODO for later
 # rwd all out messages + colour-ize
 # mv from pip -> uv
+# tidy template code (rm all but necessary)
 # rewrite arg 'help'
 
 # final TODO
@@ -76,7 +75,6 @@ def val_flags(target_hardware, target_formats):
 def parse():
     parser = argparse.ArgumentParser(description="µNPU Universal Compiler Wrapper", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    # Common
     parser.add_argument('--model', required=True, help='Path to model file')
     parser.add_argument('--model_ckpt', required=True, help='Path to checkpoint file')
     parser.add_argument('--model_name', required=True, help='Model name')

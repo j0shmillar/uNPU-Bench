@@ -125,7 +125,8 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_sample, inp
                     "hillclimb_max_iterations": args.hillclimb_max_iterations,
                     "vela_optimise": args.vela_optimise,
                     "model_name": args.model_name,
-                    "ethos_hardware": args.ethos_hardware}
+                    "ethos_hardware": args.ethos_hardware,
+                    "bit_width": args.bit_width}
                 print("\nGenerating Vela model...")
                 out_name = out_onnx.split('.')[0]
                 out_vela = run_vela(out_name, vela_args)
@@ -165,7 +166,7 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_sample, inp
                     "eiq_path": args.eiq_path,
                     "out_dir": args.out_dir
                 }
-                print("\nGenerating Vela model and code...")
+                print("\nGenerating eIQ model and code...")
                 out_eiq = run_eiq(model_tflm, target_hardware, eiq_args)
                 if out_eiq:
                     if "mcxn947" in target_hardware:

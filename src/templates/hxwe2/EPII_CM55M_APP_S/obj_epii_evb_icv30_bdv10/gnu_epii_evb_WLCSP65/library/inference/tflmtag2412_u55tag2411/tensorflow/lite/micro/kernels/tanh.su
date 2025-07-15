@@ -1,8 +1,0 @@
-./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/op_macros.h:24:13:void AbortImpl()	8	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/tanh.cc:44:7:void* tflite::{anonymous}::TanhInit(TfLiteContext*, const char*, size_t)	8	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/tanh.cc:134:14:TfLiteStatus tflite::{anonymous}::TanhPrepare(TfLiteContext*, TfLiteNode*)	64	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/tanh.cc:195:18:TFLMRegistration tflite::Register_TANH()	16	static
-./library/inference/tflmtag2412_u55tag2411/third_party/gemmlowp/fixedpoint/fixedpoint.h:795:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::one_minus_x_over_one_plus_x_for_x_in_0_1(FixedPoint<tRawType, 0>) [with tRawType = long int]	64	static
-./library/inference/tflmtag2412_u55tag2411/third_party/gemmlowp/fixedpoint/fixedpoint.h:721:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::exp_on_interval_between_negative_one_quarter_and_0_excl(FixedPoint<tRawType, 0>) [with tRawType = long int]	20	static
-./library/inference/tflmtag2412_u55tag2411/third_party/gemmlowp/fixedpoint/fixedpoint.h:746:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::exp_on_negative_values(FixedPoint<tRawType, tIntegerBits_a>) [with tRawType = long int; int tIntegerBits = 5]	64	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/tanh.cc:150:14:TfLiteStatus tflite::{anonymous}::TanhEval(TfLiteContext*, TfLiteNode*)	256	static

@@ -14,8 +14,6 @@ def exp2_symbolic(g, input):
 
 torch.onnx.register_custom_op_symbolic("aten::exp2", exp2_symbolic, opset_version=12)
 
-# TODO add support for dynamic axes
-# TODO add args support properly
 def torch2onnx(model, pth_path, args, out_dir):
     checkpoint = torch.load(pth_path, map_location='cpu')
     state_dict = checkpoint.get("state_dict", checkpoint)
@@ -23,10 +21,12 @@ def torch2onnx(model, pth_path, args, out_dir):
     if not state_dict:
         print("No state_dict found.")
         return None
-    
+
     model.eval()
 
-    onnx_path = out_dir + '/' + pth_path.replace(".pth.tar", ".onnx").split('/')[-1] # TODO make a lot more robust (also don't hardcode /, add dynamically if needed)
+    base_name = os.path.basename(pth_path).replace(".pth.tar", ".onnx")
+    onnx_path = os.path.join(out_dir, base_name)
+
     dummy_input = torch.randn(*args["input_shape"])
 
     try:
@@ -34,33 +34,39 @@ def torch2onnx(model, pth_path, args, out_dir):
             model,
             dummy_input,
             onnx_path,
-            export_params=True,
-            do_constant_folding=True,
+            export_params=args.get("export_params", True),
+            do_constant_folding=args.get("do_constant_folding", True),
             input_names=args["input_names"],
-            output_names=args["output_names"]
-        )
+            output_names=args["output_names"],
+            opset_version=args.get("opset_version", 12),
+            dynamic_axes=args.get("dynamic_axes", None),
+            keep_initializers_as_inputs=args.get("keep_initializers_as_inputs", False),
+            custom_opsets=args.get("custom_opsets", None))
         print(f"✅ Saved ONNX model to {onnx_path}")
         return onnx_path
     except Exception as e:
         print(f"❌ ONNX export failed: {e}")
         return None
-    
-# TODO add args support properly
+
 def onnx2tflm(onnx_path, args):
-    sample = np.load(args["data_sample"]) # TODO fix -- make dynamic (i.e. can handle 3D, 4D inputs)
+    sample = np.load(args["data_sample"])
     layout = args["input_layout"]
+
     if layout == "NCHW":
         sample = sample.transpose(0, 2, 3, 1)
     elif layout == "NCW":
         sample = sample.transpose(0, 2, 1)
 
-    sample = sample.squeeze() # sample has to be 3D, not 4
+    if sample.ndim == 4:
+        sample = sample[1:]
+    elif sample.ndim != 3:
+        raise ValueError(f"Expected 3D sample, got shape {sample.shape}")
 
-    # TODO delete after use
-    np.save("sample_rs.npy", sample)
+    temp_sample_path = "sample_rs.npy"
+    np.save(temp_sample_path, sample)
 
     mean, std = sample.mean(), sample.std()
-    
+
     onnx2tf.convert(
         input_onnx_file_path=onnx_path,
         output_folder_path=os.path.dirname(onnx_path),
@@ -70,8 +76,9 @@ def onnx2tflm(onnx_path, args):
         quant_type=args["tflm_quant_type"],
         disable_group_convolution=args["disable_group_convolution"],
         enable_batchmatmul_unfold=args["enable_batchmatmul_unfold"],
-        custom_input_op_name_np_data_path=[[args["input_names"][0], "sample_rs.npy", mean, std]]
-    )
+        custom_input_op_name_np_data_path=[[args["input_names"][0], temp_sample_path, mean, std]])
+
+    os.remove(temp_sample_path)
 
     print(f"✅ Saved TFLM model to {os.path.dirname(onnx_path)}")
     return os.path.dirname(onnx_path)
@@ -85,11 +92,11 @@ def setup_ai8x(device_id=85, use_8bit=True):
         ai8x.set_device(device_id, 0, use_8bit)
         return ai8x
     except ImportError as e:
-        print("ai8x module not found. Make sure AI8X_TRAIN_PATH is set correctly.") # TODO make red
+        print("\033[91mai8x module not found. Make sure AI8X_TRAIN_PATH is set correctly.\033[0m")
         raise e
 
 def get_model_from_name(path, class_name, args=None):
-    setup_ai8x() # TODO move
+    setup_ai8x()
     module_path = path.replace('.py', '').replace('/', '.')
     module = importlib.import_module(module_path)
     model_class = getattr(module, class_name)

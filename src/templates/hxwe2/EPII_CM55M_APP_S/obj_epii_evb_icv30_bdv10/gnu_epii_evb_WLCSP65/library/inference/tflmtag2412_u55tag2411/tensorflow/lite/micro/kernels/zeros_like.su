@@ -1,4 +1,0 @@
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/zeros_like.cc:28:14:TfLiteStatus tflite::{anonymous}::ZerosLikePrepare(TfLiteContext*, TfLiteNode*)	40	static
-./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/op_macros.h:24:13:void AbortImpl()	8	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/zeros_like.cc:53:14:TfLiteStatus tflite::{anonymous}::ZerosLikeEval(TfLiteContext*, TfLiteNode*)	88	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/zeros_like.cc:84:18:TFLMRegistration tflite::Register_ZEROS_LIKE()	16	static

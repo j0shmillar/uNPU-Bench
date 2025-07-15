@@ -1,5 +1,0 @@
-app/scenario_app/nas_cmsis_size/allon_sensor_tflm.c:87:6:set_clock	8	static
-app/scenario_app/nas_cmsis_size/allon_sensor_tflm.c:129:6:enable_dwt	0	static
-app/scenario_app/nas_cmsis_size/allon_sensor_tflm.c:143:6:app_start_state	0	static
-app/scenario_app/nas_cmsis_size/allon_sensor_tflm.c:148:6:delay_cycles	4	static
-app/scenario_app/nas_cmsis_size/allon_sensor_tflm.c:154:5:app_main	72	static

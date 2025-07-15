@@ -1,5 +1,0 @@
-./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/op_macros.h:24:13:void AbortImpl()	8	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/depthwise_conv_common.cc:42:17:tflite::DepthwiseParams tflite::DepthwiseConvParamsFloat(const TfLiteDepthwiseConvParams&, const OpDataConv&)	24	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/depthwise_conv_common.cc:60:17:tflite::DepthwiseParams tflite::DepthwiseConvParamsQuantized(const TfLiteDepthwiseConvParams&, const OpDataConv&)	32	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/depthwise_conv_common.cc:81:14:TfLiteStatus tflite::CalculateOpDataDepthwiseConv(TfLiteContext*, TfLiteNode*, const TfLiteDepthwiseConvParams&, int, int, int, int, int, int, TfLiteType, OpDataConv*)	104	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/depthwise_conv_common.cc:139:14:TfLiteStatus tflite::DepthwiseConvPrepare(TfLiteContext*, TfLiteNode*)	136	static

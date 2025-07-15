@@ -4,10 +4,16 @@ import shutil
 import re
 import os
 
-# TODO update to not have old_value
 def replace_define(content, key, value):
-    pattern = rf'(#define\s+{key}\s+)(\d+)(\s*)'
-    return re.sub(pattern, lambda m: f"{m.group(1)}{value}{m.group(3)}", content)
+    pattern = rf'^\s*#define\s+{key}(\s+\S*)?\s*$'
+    replacement = f"#define {key} {value}"
+    
+    if re.search(pattern, content, re.MULTILINE):
+        content = re.sub(pattern, replacement, content, flags=re.MULTILINE)
+    else:
+        content += f"\n{replacement}"
+    
+    return content
 
 def patch_model_defines(filepath, model_config):
     with open(filepath, "r") as f:
@@ -19,15 +25,14 @@ def patch_model_defines(filepath, model_config):
     with open(filepath, "w") as f:
         f.write(content)
 
-    print(f"Updated {filepath} with: {model_config}")
+    print(f"✅ Updated {filepath} with defines: {model_config}")
 
 def generate_model_cc(tflite_path, output_cc_path, array_name="g_model_data", header_name="model_data.h"):
     with open(tflite_path, "rb") as f:
         model_data = f.read()
 
-    # Split bytes into hex strings
     hex_lines = []
-    for i in range(0, len(model_data), 12):  # 12 bytes per line
+    for i in range(0, len(model_data), 12):
         line = ", ".join(f"0x{b:02x}" for b in model_data[i:i+12])
         hex_lines.append("  " + line + ",")
 
@@ -44,17 +49,24 @@ alignas(16) const unsigned char {array_name}[] = {{
         f.write(cc_code)
 
     print(f"✅ C source written to {output_cc_path} with {len(model_data)} bytes.")
-
     return output_cc_path
+
+def _prepare_template(src, dst):
+    if os.path.exists(dst):
+        print(f"Directory {dst} already exists. Renaming it to avoid overwrite.")
+        backup_path = dst + "_backup"
+        if os.path.exists(backup_path):
+            shutil.rmtree(backup_path)
+        shutil.move(dst, backup_path)
+        print(f"📦 Existing directory moved to {backup_path}")
+    shutil.copytree(src, dst)
 
 def mcxn947_code_gen(out_eiq, input_shape, output_shape_concat):  
     src = "templates/mcxn947"
     out_dir = os.path.dirname(out_eiq)
     dst = os.path.join(out_dir, "mcxn947")
 
-    if os.path.exists(dst):  # TODO maybe not best idea?
-        shutil.rmtree(dst)
-    shutil.copytree(src, dst)
+    _prepare_template(src, dst)
 
     model_config = {
         'MODEL_IN_W': input_shape[1],
@@ -63,26 +75,23 @@ def mcxn947_code_gen(out_eiq, input_shape, output_shape_concat):
         'OUT_SIZE': output_shape_concat
     }
 
-    input_file = os.path.join(out_dir, "mcxn947/source/infer.cpp")
+    input_file = os.path.join(dst, "source", "infer.cpp")
     patch_model_defines(input_file, model_config)
 
-    model_dst = os.path.join(out_dir, "mcxn947/source/model/model.tflite")
+    model_dst = os.path.join(dst, "source", "model", "model.tflite")
     os.makedirs(os.path.dirname(model_dst), exist_ok=True)
     shutil.copy(out_eiq, model_dst)
 
-    print(f"mcxn947 model inference code saved to {out_dir}.")
+    print(f"✅ mcxn947 model inference code saved to {dst}.")
 
 def hxwe2_code_gen(out_vela, input_shape, output_shape_concat):
-    
-    # TODO doesn't work if path already exists - fix
     src = "templates/hxwe2"
     out_dir = os.path.dirname(out_vela)
     dst = os.path.join(out_dir, "hxwe2")
-    if os.path.exists(dst): # TODO maybe not best idea?
-        shutil.rmtree(dst)
-    shutil.copytree(src, dst)
 
-    if len(input_shape)==4:
+    _prepare_template(src, dst)
+
+    if len(input_shape) == 4:
         input_shape = input_shape[1:]
 
     model_config = {
@@ -92,10 +101,10 @@ def hxwe2_code_gen(out_vela, input_shape, output_shape_concat):
         'OUT_SIZE': output_shape_concat
     }
 
-    input_file = f"{out_dir}/hxwe2/EPII_CM55M_APP_S/app/scenario_app/template/cvapp.cpp"
+    input_file = os.path.join(dst, "app", "scenario_app", "template", "cvapp.cpp")
     patch_model_defines(input_file, model_config)
 
-    output_cc_path = f"{out_dir}/hxwe2/EPII_CM55M_APP_S/app/scenario_app/template/model_data.cc"
+    output_cc_path = os.path.join(dst, "app", "scenario_app", "template", "model_data.cc")
     generate_model_cc(out_vela, output_cc_path)
 
-    print(f"hxwe2 model inference code saved to {out_dir}.")
+    print(f"✅ hxwe2 model inference code saved to {dst}.")

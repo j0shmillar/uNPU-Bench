@@ -4,12 +4,10 @@
 #include "timer.h"
 #include "math.h"
 
-#define MODEL_IN_W 96 // TODO make dynamic
-#define MODEL_IN_H  96 // TODO make dynamic
-#define MODEL_IN_C 3 // TODO make dynamic
-#define MODEL_IN_COLOR_BGR 0
-
-#define OUT_SIZE 128 // TODO make dynamic
+#define MODEL_IN_W 
+#define MODEL_IN_H 
+#define MODEL_IN_C 
+#define OUT_SIZE
 
 #define Q15_MAX_VALUE 32767
 #define Q15_MIN_VALUE -32768

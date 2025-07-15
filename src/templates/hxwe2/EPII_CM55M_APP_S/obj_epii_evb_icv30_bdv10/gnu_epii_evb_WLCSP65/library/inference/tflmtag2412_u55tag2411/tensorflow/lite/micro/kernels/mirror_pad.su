@@ -1,6 +1,0 @@
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/mirror_pad.cc:59:5:int tflite::{anonymous}::GetFlatIndex(int, int, const TfLiteEvalTensor*, const TfLiteIntArray*, int*, int*, int)	56	static
-./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/op_macros.h:24:13:void AbortImpl()	8	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/mirror_pad.cc:164:7:void* tflite::{anonymous}::MirrorPadInit(TfLiteContext*, const char*, size_t)	8	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/mirror_pad.cc:169:14:TfLiteStatus tflite::{anonymous}::MirrorPadPrepare(TfLiteContext*, TfLiteNode*)	80	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/mirror_pad.cc:103:14:TfLiteStatus tflite::{anonymous}::MirrorPadEval(TfLiteContext*, TfLiteNode*)	64	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/mirror_pad.cc:211:18:TFLMRegistration tflite::Register_MIRROR_PAD()	16	static

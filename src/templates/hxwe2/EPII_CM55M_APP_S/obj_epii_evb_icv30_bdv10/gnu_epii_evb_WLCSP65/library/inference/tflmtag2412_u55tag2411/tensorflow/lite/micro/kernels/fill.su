@@ -1,4 +1,0 @@
-./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/op_macros.h:24:13:void AbortImpl()	8	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/fill.cc:67:14:TfLiteStatus tflite::{anonymous}::FillPrepare(TfLiteContext*, TfLiteNode*)	56	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/fill.cc:110:14:TfLiteStatus tflite::{anonymous}::FillEval(TfLiteContext*, TfLiteNode*)	192	static
-library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/fill.cc:136:18:TFLMRegistration tflite::Register_FILL()	16	static
