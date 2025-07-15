@@ -5,17 +5,12 @@ from parse import compile
 from flags import SUPPORTED_BIT_WIDTHS, SUPPORTED_HARDWARE, GLOBAL_FLAGS, PLATFORM_FLAGS
 
 #TODO
-# ensure uniformaity with NCHW
-# target_hardware can be blank (i.e. just model_gen)
-# clean template code (e.g. 'scenario_app') to be minimal and consistent across boards
-# fix templates and add code gen
-# fix INVALID_ARGUMENT : Unexpected input data type. Actual: (tensor(double)) , expected: (tensor(float)) with TFLM
-# ask chatgpt to update arg list in convert to match argparse
-# fix (at least) YOLO script (+ maybe others)
 # mega super rename (esp. under 'models')
+# fix training, etc scripts (+ maybe others)
 # generate loads of tests with gpt (for yolo 1st, then other models)
 # also test generated code runs on device
 # LAST, TIDY ALL
+# & Add README
 
 #TODO for later
 # rwd all out messages + colour-ize
@@ -82,7 +77,7 @@ def parse():
     parser.add_argument("--model_module_args", type=str, help="Additional model-specific arguments")
 
     parser.add_argument('--target_format', required=True, help='Comma-separated target formats: ai8x,tflm,vela,onnx')
-    parser.add_argument('--target_hardware', required=True, help='Comma-separated hardware: max78000,ethos-u55-128,...')
+    parser.add_argument('--target_hardware', required=False, default=['max78000'], help='Comma-separated hardware: max78000,ethos-u55-128,...')
 
     parser.add_argument('--data_sample', required=True, help='.npy dataset for quantization')
     parser.add_argument('--input_names', required=True, help='Comma-separated input names')

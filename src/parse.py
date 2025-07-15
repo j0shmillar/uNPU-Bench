@@ -21,7 +21,7 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_sample, inp
             "input_shape": args.input_shape,
             "output_names": output_names,
             "keep_initializers_as_inputs": args.keep_initializers_as_inputs,
-            "dynamic_axes": args.dynamic_axe}
+            "dynamic_axes": args.dynamic_axes}
         model_onnx = torch2onnx(model, model_ckpt, onnx_args, args.out_dir)
 
     if "tflm" in target_formats:
@@ -35,7 +35,7 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_sample, inp
             "input_shape": args.input_shape,
             "output_names": output_names,
             "keep_initializers_as_inputs": args.keep_initializers_as_inputs,
-            "dynamic_axes": args.dynamic_axe}
+            "dynamic_axes": args.dynamic_axes}
         model_onnx = torch2onnx(model, model_ckpt, onnx_args, args.out_dir)
         if model_onnx:
             tflm_args = {
@@ -146,7 +146,7 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_sample, inp
             "input_shape": args.input_shape,
             "output_names": output_names,
             "keep_initializers_as_inputs": args.keep_initializers_as_inputs,
-            "dynamic_axes": args.dynamic_axe}
+            "dynamic_axes": args.dynamic_axes}
         model_onnx = torch2onnx(model, model_ckpt, onnx_args, args.out_dir)
         if model_onnx:
             tflm_args = {
@@ -183,7 +183,7 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_sample, inp
             "input_shape": args.input_shape,
             "output_names": output_names,
             "keep_initializers_as_inputs": args.keep_initializers_as_inputs,
-            "dynamic_axes": args.dynamic_axe}
+            "dynamic_axes": args.dynamic_axes}
         model_onnx = torch2onnx(model, model_ckpt, onnx_args, args.out_dir)
         if model_onnx:     
             cvi_args = {

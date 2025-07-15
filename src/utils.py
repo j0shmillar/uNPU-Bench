@@ -63,7 +63,7 @@ def onnx2tflm(onnx_path, args):
         raise ValueError(f"Expected 3D sample, got shape {sample.shape}")
 
     temp_sample_path = "sample_rs.npy"
-    np.save(temp_sample_path, sample)
+    np.save(temp_sample_path, sample.astype(float))
 
     mean, std = sample.mean(), sample.std()
 
