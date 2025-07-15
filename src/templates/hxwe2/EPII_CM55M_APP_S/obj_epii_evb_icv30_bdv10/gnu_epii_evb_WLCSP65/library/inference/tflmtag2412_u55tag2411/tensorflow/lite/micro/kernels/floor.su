@@ -1,0 +1,3 @@
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/op_macros.h:24:13:void AbortImpl()	8	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/floor.cc:29:14:TfLiteStatus tflite::{anonymous}::FloorEval(TfLiteContext*, TfLiteNode*)	104	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/floor.cc:44:18:TFLMRegistration tflite::Register_FLOOR()	16	static

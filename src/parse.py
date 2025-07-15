@@ -1,5 +1,6 @@
 import numpy as np
-from compile import run_ai8x, run_vela, run_eiq, run_cvi
+from model_gen import run_ai8x, run_vela, run_eiq, run_cvi
+from code_gen import hxwe2_code_gen, mcxn947_code_gen
 from pth_to_ckpt import pth_to_pth_tar
 from utils import torch2onnx, onnx2tflm, setup_ai8x
 
@@ -21,10 +22,21 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_sample, inp
             "output_names": output_names,
             "keep_initializers_as_inputs": args.keep_initializers_as_inputs,
             "dynamic_axes": args.dynamic_axe}
-        model_onnx = torch2onnx(model, model_ckpt, onnx_args)
+        model_onnx = torch2onnx(model, model_ckpt, onnx_args, args.out_dir)
 
     if "tflm" in target_formats:
-        model_onnx = torch2onnx(model, model_ckpt, args)
+        onnx_args = {
+            "opset": args.opset,
+            "opset_version": args.opset_version,
+            "custom_opsets": args.custom_opsets,
+            "export_params": args.export_params,
+            "do_constant_folding": args.do_constant_folding,
+            "input_names": input_names,
+            "input_shape": args.input_shape,
+            "output_names": output_names,
+            "keep_initializers_as_inputs": args.keep_initializers_as_inputs,
+            "dynamic_axes": args.dynamic_axe}
+        model_onnx = torch2onnx(model, model_ckpt, onnx_args, args.out_dir)
         if model_onnx:
             tflm_args = {
                 "use_onnxsim": args.use_onnxsim,
@@ -84,24 +96,43 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_sample, inp
             "input_shape": args.input_shape,
             "output_names": output_names,
             "keep_initializers_as_inputs": args.keep_initializers_as_inputs,
-            "dynamic_axes": args.dynamic_axe}
-        model_onnx = torch2onnx(model, model_ckpt, onnx_args) 
-        if model_onnx:
-            vela_args = {
-                "config_vela": args.config_vela,
-                "config_vela_system": args.config_vela_system,
-                "force_symmetric_int_weights": args.force_symmetric_int_weights,
-                "memory_mode": args.memory_mode,
-                "tensor_allocator": args.tensor_allocator,
-                "max_block_dependency": args.max_block_dependency,
-                "arena_cache_size": args.arena_cache_size,
-                "cpu_tensor_alignment": args.cpu_tensor_alignment,
-                "recursion_limit": args.recursion_limit,
-                "hillclimb_max_iterations": args.hillclimb_max_iterations,
-                "vela_optimise": args.vela_optimise,
-                "model_name": args.model_name}
-            print("\nGenerating Vela model...")
-            out_vela = run_vela(model_onnx, vela_args)
+            "dynamic_axes": args.dynamic_axes}
+        onnx_args = {k: v for k, v in onnx_args.items() if v is not None}
+        out_onnx = torch2onnx(model, model_ckpt, onnx_args, args.out_dir) 
+        if out_onnx:
+            tflm_args = {
+                "use_onnxsim": args.use_onnxsim,
+                "output_integer_quantized_tflite": args.output_integer_quantized_tflite,
+                "tflm_quant_type": args.tflm_quant_type,
+                "disable_group_convolution": args.disable_group_convolution,
+                "enable_batchmatmul_unfold": args.enable_batchmatmul_unfold,
+                "input_layout": args.input_layout,
+                "data_sample": data_sample,
+                "input_names": input_names}
+            print("\nGenerating TFLM model...")
+            out_tflm = onnx2tflm(out_onnx, tflm_args)
+            if out_tflm:
+                vela_args = {
+                    "config_vela": args.config_vela,
+                    "config_vela_system": args.config_vela_system,
+                    "force_symmetric_int_weights": args.force_symmetric_int_weights,
+                    "memory_mode": args.memory_mode,
+                    "tensor_allocator": args.tensor_allocator,
+                    "max_block_dependency": args.max_block_dependency,
+                    "arena_cache_size": args.arena_cache_size,
+                    "cpu_tensor_alignment": args.cpu_tensor_alignment,
+                    "recursion_limit": args.recursion_limit,
+                    "hillclimb_max_iterations": args.hillclimb_max_iterations,
+                    "vela_optimise": args.vela_optimise,
+                    "model_name": args.model_name,
+                    "ethos_hardware": args.ethos_hardware}
+                print("\nGenerating Vela model...")
+                out_name = out_onnx.split('.')[0]
+                out_vela = run_vela(out_name, vela_args)
+                if out_vela:
+                    if "hxwe2" in target_hardware:
+                        hxwe2_code_gen(out_vela, args.input_shape, sum([x * y for x, y in zip(args.output_shape, args.output_shape)]))
+
 
     if "eiq" in target_formats:
         onnx_args = {
@@ -115,7 +146,7 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_sample, inp
             "output_names": output_names,
             "keep_initializers_as_inputs": args.keep_initializers_as_inputs,
             "dynamic_axes": args.dynamic_axe}
-        model_onnx = torch2onnx(model, model_ckpt, onnx_args)
+        model_onnx = torch2onnx(model, model_ckpt, onnx_args, args.out_dir)
         if model_onnx:
             tflm_args = {
                 "use_onnxsim": args.use_onnxsim,
@@ -136,6 +167,9 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_sample, inp
                 }
                 print("\nGenerating Vela model and code...")
                 out_eiq = run_eiq(model_tflm, target_hardware, eiq_args)
+                if out_eiq:
+                    if "mcxn947" in target_hardware:
+                        mcxn947_code_gen(out_eiq, args.input_shape, sum([x * y for x, y in zip(args.output_shape, args.output_shape)]))
     
     if 'cvi' in target_formats:
         onnx_args = {
@@ -149,7 +183,7 @@ def compile(model, model_ckpt, target_formats, target_hardware, data_sample, inp
             "output_names": output_names,
             "keep_initializers_as_inputs": args.keep_initializers_as_inputs,
             "dynamic_axes": args.dynamic_axe}
-        model_onnx = torch2onnx(model, model_ckpt, onnx_args)
+        model_onnx = torch2onnx(model, model_ckpt, onnx_args, args.out_dir)
         if model_onnx:     
             cvi_args = {
                 "use_onnxsim": args.use_onnxsim,

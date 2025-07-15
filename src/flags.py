@@ -11,14 +11,15 @@ SUPPORTED_HARDWARE = [
     "max78000", "max78002", 
     "ethos-u55-32", "ethos-u55-64", "ethos-u55-128", "ethos-u55-256", "ethos-u65-256", "ethos-u65-512",
     "bm1684x",
-    "mcxn947"
+    "mcxn947",
+    "hxwe2"
 ]
 
 GLOBAL_FLAGS = {
     "model", "model_ckpt", "model_name", "model_module_name",
     "input_shape", "target_hardware", "target_format",
-    "data_samples", "input_names", "output_names", "input_layout",
-    "bit_width", "model_module_args"
+    "data_sample", "input_names", "output_names", "output_shape", "input_layout",
+    "bit_width", "model_module_args", "out_dir", "overwrite"
 }
 
 PLATFORM_FLAGS = {
@@ -39,7 +40,7 @@ PLATFORM_FLAGS = {
             "config_vela", "config_vela_system", "force_symmetric_int_weights",
             "memory_mode", "tensor_allocator", "max_block_dependency",
             "arena_cache_size", "cpu_tensor_alignment", "recursion_limit",
-            "hillclimb_max_iterations", "vela_optimise"
+            "hillclimb_max_iterations", "vela_optimise", "ethos_hardware"
         ]
     },
     "tflm": {

@@ -1,0 +1,7 @@
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/op_macros.h:24:13:void AbortImpl()	8	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/activations.cc:33:7:void* tflite::{anonymous}::ReluInit(TfLiteContext*, const char*, size_t)	8	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/activations.cc:71:7:void* tflite::{anonymous}::Relu6Init(TfLiteContext*, const char*, size_t)	8	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/activations.cc:38:14:TfLiteStatus tflite::{anonymous}::ReluEval(TfLiteContext*, TfLiteNode*)	144	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/activations.cc:76:14:TfLiteStatus tflite::{anonymous}::Relu6Eval(TfLiteContext*, TfLiteNode*)	216	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/activations.cc:121:18:TFLMRegistration tflite::Register_RELU()	16	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/activations.cc:125:18:TFLMRegistration tflite::Register_RELU6()	16	static

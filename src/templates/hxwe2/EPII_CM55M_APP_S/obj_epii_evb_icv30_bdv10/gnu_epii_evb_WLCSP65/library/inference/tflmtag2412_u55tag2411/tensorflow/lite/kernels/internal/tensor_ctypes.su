@@ -1,0 +1,2 @@
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/internal/tensor_ctypes.cc:22:14:tflite::RuntimeShape tflite::GetTensorShape(const TfLiteTensor*)	8	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/internal/tensor_ctypes.cc:33:14:tflite::RuntimeShape tflite::GetTensorShape(std::vector<long int>)	8	static

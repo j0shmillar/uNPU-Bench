@@ -1,0 +1,12 @@
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/op_macros.h:24:13:void AbortImpl()	8	static
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/internal/reference/process_broadcast_shapes.h:40:13:bool tflite::reference_ops::ProcessBroadcastShapes(const tflite::RuntimeShape&, const tflite::RuntimeShape&, tflite::ArithmeticParams*)	88	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/cmsis_nn/mul.cc:172:18:TFLMRegistration tflite::Register_MUL()	16	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/cmsis_nn/mul.cc:176:18:TFLMRegistration tflite::Register_MUL_INT8()	16	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/cmsis_nn/mul.cc:180:18:TFLMRegistration tflite::Register_MUL_INT16()	16	static
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/internal/common.h:1083:22:void tflite::CopyDimsToDesc(const RuntimeShape&, NdArrayDesc<N>*) [with int N = 6]	16	static
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/internal/reference/integer_ops/mul.h:94:13:void tflite::reference_integer_ops::BroadcastMul6DSlow(const tflite::ArithmeticParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = signed char]	408	static
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/internal/reference/integer_ops/mul.h:94:13:void tflite::reference_integer_ops::BroadcastMul6DSlow(const tflite::ArithmeticParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = short int]	408	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/cmsis_nn/mul.cc:32:6:void tflite::{anonymous}::EvalQuantized(TfLiteContext*, TfLiteNode*, const tflite::OpDataMul*, const TfLiteEvalTensor*, const TfLiteEvalTensor*, TfLiteEvalTensor*)	576	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/cmsis_nn/mul.cc:154:14:TfLiteStatus tflite::EvalInt16(TfLiteContext*, TfLiteNode*)	24	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/cmsis_nn/mul.cc:136:14:TfLiteStatus tflite::EvalInt8(TfLiteContext*, TfLiteNode*)	24	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/cmsis_nn/mul.cc:99:14:TfLiteStatus tflite::Eval(TfLiteContext*, TfLiteNode*)	48	static

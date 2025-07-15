@@ -5,8 +5,14 @@ from parse import compile
 from flags import SUPPORTED_BIT_WIDTHS, SUPPORTED_HARDWARE, GLOBAL_FLAGS, PLATFORM_FLAGS
 
 #TODO
+# ensure uniformatiy with NCHW
+# target_hardware can be blank (i.e. just model_gen)
+# clean template code (e.g. 'scenario_app') to be minimal and consistent across boards
+# fix templates and add code gen
+# fix INVALID_ARGUMENT : Unexpected input data type. Actual: (tensor(double)) , expected: (tensor(float)) wth TFLM
 # ask chatgpt to update arg list in convert to match argparse
 # fix (at least) YOLO script (+ maybe others)
+# add GAP8?
 # mega super rename (esp. under 'models')
 # update Dockerfile to install ai8x etc
 # - and rm unused packages from reqs.txt
@@ -81,11 +87,14 @@ def parse():
     parser.add_argument('--target_hardware', required=True, help='Comma-separated hardware: max78000,ethos-u55-128,...')
 
     parser.add_argument('--data_sample', required=True, help='.npy dataset for quantization')
+    parser.add_argument('--input_names', required=True, help='Comma-separated input names')
     parser.add_argument('--input_shape', type=int, nargs='+', required=True, help='Input shape, e.g. 1 3 224 224')
     parser.add_argument('--input_layout', choices=['NCHW', 'NHWC', 'NCW', 'NWC'], default='NCHW', help='Input layout')
-    parser.add_argument('--input_names', required=True, help='Comma-separated input names')
     parser.add_argument('--output_names', required=True, help='Comma-separated output names')
+    parser.add_argument('--output_shape', type=int, nargs='+', required=True, help='Output shape, e.g. 1 3 224 224')
     parser.add_argument('--bit_width', type=int, default=8, help='Quantization bit-width')
+
+    parser.add_argument('--out_dir', required=True, type=str, help='model/code out dir')
 
     # ONNX
     parser.add_argument('--opset', required=False, default=19, help='ONNX opset')
@@ -97,11 +106,11 @@ def parse():
     parser.add_argument('--dynamic_axes', required=False, default=None, help='dict schema for dynamic input/output shape')
     
     # TFLM
-    parser.add_argument('--use_onnxsim', action='store_true', help='TFLM: Use onnxsim')
-    parser.add_argument('--output_integer_quantized_tflite', action='store_true', help='TFLM: Output INT8 quantized TFLite')
+    parser.add_argument('--use_onnxsim', default=False, action='store_true', help='TFLM: Use onnxsim')
+    parser.add_argument('--output_integer_quantized_tflite', default=True, action='store_true', help='TFLM: Output INT8 quantized TFLite')
     parser.add_argument('--tflm_quant_type', type=str, default='per_tensor', help='TFLM: Quantization type')
-    parser.add_argument('--disable_group_convolution', action='store_true', help='TFLM: Disable group convolution')
-    parser.add_argument('--enable_batchmatmul_unfold', action='store_true', help='TFLM: Enable batchmatmul unfold')
+    parser.add_argument('--disable_group_convolution', default=False, action='store_true', help='TFLM: Disable group convolution')
+    parser.add_argument('--enable_batchmatmul_unfold', default=False, action='store_true', help='TFLM: Enable batchmatmul unfold')
 
     # ai8x
     parser.add_argument('--avg_pool_rounding', action='store_true', help='AI8X: Round average pooling results')
@@ -109,7 +118,6 @@ def parse():
     parser.add_argument('--config_file', type=str, help='AI8X: YAML configuration file')
     parser.add_argument('--display_checkpoint', action='store_true', help='AI8X: Show parsed checkpoint data')
     parser.add_argument('--prefix', type=str, help='AI8X: Test name prefix')
-    parser.add_argument('--out_dir', type=str, help='AI8X: Test dir name')
     parser.add_argument('--board_name', type=str, default='EvKit_V1', help='AI8X: Target board')
     parser.add_argument('--overwrite', action='store_true', help='AI8X: Overwrite output if dir exists')
     parser.add_argument('--compact_weights', action='store_true', help='AI8X: Use memcpy for weights')
@@ -149,6 +157,7 @@ def parse():
     parser.add_argument('--recursion_limit', type=int, default=1000, help='Vela: Recursion limit')
     parser.add_argument('--hillclimb_max_iterations', type=int, default=99999, help='Vela: HillClimb iterations')
     parser.add_argument('--vela_optimise', choices=['Size', 'Performance'], default='Performance', help='Vela: Optimisation strategy')
+    parser.add_argument('--ethos_hardware', choices=["ethos-u55-32", "ethos-u55-64", "ethos-u55-128", "ethos-u55-256", "ethos-u65-256", "ethos-u65-512"], default="ethos-u55-64", help='The Ethos-U chip being used')
 
     # eIQ
     parser.add_argument("--eiq_path", type=str, default="/opt/nxp/eIQ_Toolkit_v1.13.1/bin/neutron-converter/MCU_SDK_2.16.000/neutron-converter", help="installed eIQ Neutron SDK path")

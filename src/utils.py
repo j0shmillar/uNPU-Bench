@@ -14,7 +14,9 @@ def exp2_symbolic(g, input):
 
 torch.onnx.register_custom_op_symbolic("aten::exp2", exp2_symbolic, opset_version=12)
 
-def torch2onnx(model, pth_path, args):
+# TODO add support for dynamic axes
+# TODO add args support properly
+def torch2onnx(model, pth_path, args, out_dir):
     checkpoint = torch.load(pth_path, map_location='cpu')
     state_dict = checkpoint.get("state_dict", checkpoint)
     model.load_state_dict(state_dict)
@@ -24,7 +26,7 @@ def torch2onnx(model, pth_path, args):
     
     model.eval()
 
-    onnx_path = pth_path.replace(".pth.tar", ".onnx")
+    onnx_path = out_dir + '/' + pth_path.replace(".pth.tar", ".onnx").split('/')[-1] # TODO make a lot more robust (also don't hardcode /, add dynamically if needed)
     dummy_input = torch.randn(*args["input_shape"])
 
     try:
@@ -34,8 +36,8 @@ def torch2onnx(model, pth_path, args):
             onnx_path,
             export_params=True,
             do_constant_folding=True,
-            input_names=[args["input_names"]],
-            output_names=[args["output_names"]]
+            input_names=args["input_names"],
+            output_names=args["output_names"]
         )
         print(f"✅ Saved ONNX model to {onnx_path}")
         return onnx_path
@@ -43,27 +45,34 @@ def torch2onnx(model, pth_path, args):
         print(f"❌ ONNX export failed: {e}")
         return None
     
+# TODO add args support properly
 def onnx2tflm(onnx_path, args):
-    sample = np.load(args["data_samples"][0])
+    sample = np.load(args["data_sample"]) # TODO fix -- make dynamic (i.e. can handle 3D, 4D inputs)
     layout = args["input_layout"]
     if layout == "NCHW":
         sample = sample.transpose(0, 2, 3, 1)
     elif layout == "NCW":
         sample = sample.transpose(0, 2, 1)
 
-    np.save("sample_rs.npy", sample)
-    mean, std = sample.mean(), sample.std()
+    sample = sample.squeeze() # sample has to be 3D, not 4
 
+    # TODO delete after use
+    np.save("sample_rs.npy", sample)
+
+    mean, std = sample.mean(), sample.std()
+    
     onnx2tf.convert(
         input_onnx_file_path=onnx_path,
         output_folder_path=os.path.dirname(onnx_path),
         output_integer_quantized_tflite=args["output_integer_quantized_tflite"],
         not_use_onnxsim=not args["use_onnxsim"],
+        verbosity="debug", 
         quant_type=args["tflm_quant_type"],
         disable_group_convolution=args["disable_group_convolution"],
         enable_batchmatmul_unfold=args["enable_batchmatmul_unfold"],
         custom_input_op_name_np_data_path=[[args["input_names"][0], "sample_rs.npy", mean, std]]
     )
+
     print(f"✅ Saved TFLM model to {os.path.dirname(onnx_path)}")
     return os.path.dirname(onnx_path)
 

@@ -1,0 +1,4 @@
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/split.cc:70:14:TfLiteStatus tflite::{anonymous}::SplitPrepare(TfLiteContext*, TfLiteNode*)	24	static
+./library/inference/tflmtag2412_u55tag2411/tensorflow/lite/kernels/op_macros.h:24:13:void AbortImpl()	8	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/split.cc:85:14:TfLiteStatus tflite::{anonymous}::SplitEval(TfLiteContext*, TfLiteNode*)	64	static
+library/inference/tflmtag2412_u55tag2411/tensorflow/lite/micro/kernels/split.cc:121:18:TFLMRegistration tflite::Register_SPLIT()	16	static
