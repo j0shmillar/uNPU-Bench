@@ -1,6 +1,6 @@
 absl-py==2.2.2
 Cython==3.0.0
-ethos-u-vela==3.9.0
+ethos-u-vela==4.3.0
 flatbuffers==2.0.7
 joblib==1.4.2
 lit==16.0.6

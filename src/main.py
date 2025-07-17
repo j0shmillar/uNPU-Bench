@@ -5,10 +5,8 @@ from parse import compile
 from flags import SUPPORTED_BIT_WIDTHS, SUPPORTED_HARDWARE, GLOBAL_FLAGS, PLATFORM_FLAGS
 
 #TODO
-# mega super rename (esp. under 'models')
-# fix training, etc scripts (+ maybe others)
 # generate loads of tests with gpt (for yolo 1st, then other models)
-# also test generated code runs on device
+# test generated code runs on device
 # LAST, TIDY ALL
 # & Add README
 
@@ -17,6 +15,7 @@ from flags import SUPPORTED_BIT_WIDTHS, SUPPORTED_HARDWARE, GLOBAL_FLAGS, PLATFO
 # mv from pip -> uv
 # tidy template code (rm all but necessary)
 # rewrite arg 'help'
+# fix training, etc scripts, models, etc (where is train for not yolo?)
 
 # final TODO
 # rm all unnecessary code
