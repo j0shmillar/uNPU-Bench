@@ -5,17 +5,17 @@ sys.path.insert(0, os.path.join(PROJECT_ROOT, "../../", "ai8x-training"))
 
 import importlib
 
-import cv2
 import random
 import numpy as np
 
 import torch
-from torch.utils.data import DataLoader, Dataset
+from torchvision import transforms
+from torch.utils.data import DataLoader
 
 from tqdm import tqdm
 
 from yolo_dataset import YoloV1DataSet
-from yolov1_loss_function import Yolov1_Loss
+from yolov1_loss import Yolov1_Loss
 
 mod = importlib.import_module("yolov1_96_max78000")
 
@@ -24,17 +24,15 @@ import ai8x
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('--max_epoch', type=int, default=400, help='Maximum training epoch.')
-parser.add_argument('--qat_strt_epoch', type=int, default=1, help='Maximum training epoch.')
 parser.add_argument('--lr', type=float, default=3e-5, help='Learning rate.')
 parser.add_argument('--batch_size', type=int, default=16, help='Minibatch size.')
 parser.add_argument('--img_train', type=str, default="300", help='Image number per class for training.')
 parser.add_argument('--gpu', type=int, default=0, help='Use which gpu to train the model.')
-parser.add_argument('--exp', type=str, default="QAT", help='Experiment name.')
+parser.add_argument('--exp', type=str, default="NOQAT_gridsize12", help='Experiment name.')
 parser.add_argument('--seed', type=int, default=7, help='Random seed.')
-parser.add_argument('--root_dir', type=str, default="../coco_person_only/", help='Dataset.')
-parser.add_argument('--n_classes', type=int, default=2, help='Number of classes.')
 args = parser.parse_args()
 
+torch.set_default_dtype(torch.float32)
 
 def setup_seed(seed):
     torch.manual_seed(seed)
@@ -63,13 +61,16 @@ def log_init():
     return logger
     
 def dataset_init(logger):
-    dataset_root = "./model/yolo/data/VOC2007"
-    dataSet = YoloV1DataSet(imgs_dir=f"{dataset_root}/JPEGImages",
-                            annotations_dir=f"{dataset_root}/Annotations",
-                            ClassesFile=f"{dataset_root}/VOC_person.data",
-                            train_root=f"{dataset_root}/ImageSets/Main/",
-                            ms_logger=logger,
-                            img_size=96)
+    dataset_root = "./data/VOC2007"
+    
+    dataSet = YoloV1DataSet(
+        imgs_dir=f"{dataset_root}/JPEGImages",
+        annotations_dir=f"{dataset_root}/Annotations",
+        ClassesFile=f"{dataset_root}/VOC_person.data",
+        train_root=f"{dataset_root}/ImageSets/Main/",
+        ms_logger=logger,
+        img_size=96
+    )
     
     dataLoader = DataLoader(dataSet, batch_size=args.batch_size, shuffle=True, num_workers=4)
     return dataSet, dataLoader
@@ -88,7 +89,6 @@ def train(logger):
     scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer,milestones=[50, 100,200,300,400,500,600,700,800,900,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,20000,30000,40000],gamma=0.8)
 
     num_epochs = args.max_epoch
-    qat_policy = {'start_epoch':args.qat_strt_epoch, 'weight_bits':8, 'bias_bits':8, 'shift_quantile': 0.99}
 
     for epoch in tqdm(range(0, num_epochs)):
 
@@ -99,13 +99,6 @@ def train(logger):
         epoch_iou = 0
         epoch_object_num = 0
         grid_size, img_size = dataSet.grid_cell_size, dataSet.img_size
-
-        if epoch > 0 and epoch == qat_policy['start_epoch']:
-            logger.info('QAT is starting!')
-            torch.save(Yolo.state_dict(), os.path.join(args.output_dir, "hpd_noaffine_shift{}_maxim_yolo_beforeQAT_ep{}.pth".format(qat_policy["shift_quantile"], epoch)))
-            ai8x.fuse_bn_layers(Yolo)
-            ai8x.initiate_qat(Yolo, qat_policy)
-            Yolo.to(args.device)
 
         for _, batch_train in tqdm(enumerate(dataLoader)):
             optimizer.zero_grad()
@@ -128,10 +121,6 @@ def train(logger):
         scheduler.step()
 
         if epoch % 1 == 0:
-            if epoch >= qat_policy['start_epoch']:
-                torch.save(Yolo.state_dict(), os.path.join(args.output_dir, "hpd_noaffine_shift{}_maxim_yolo_qat_ep{}.pth".format(qat_policy["shift_quantile"], epoch)))
-            else:
-                torch.save(Yolo.state_dict(), os.path.join(args.output_dir, "hpd_noaffine_shift{}_maxim_yolo_ep{}.pth".format(qat_policy["shift_quantile"], epoch)))
             torch.save(Yolo.state_dict(), os.path.join(args.output_dir, "hpd_noaffine_shift_maxim_yolo_ep{}.pth".format(epoch)))
         batch_num = len(dataLoader)
         avg_loss= loss_sum/batch_num
