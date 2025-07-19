@@ -3,58 +3,63 @@ import numpy as np
 import sys
 import os
 
+# TODO does this work if not quantizing i.e. q8 suffix
+def run_ai8x(model, target_hardware, data_sample, ai8x_args, args):
+    if target_hardware in ['max78000', 'max78002']:
+        print("Fusing BatchNorm layers...")
+        fuse_cmd = [
+            sys.executable, "ai8x-training/batchnormfuser.py",
+            "-i", model, "-o", f"{model}_bn",
+            "-oa", args.model_module_name
+        ]
+        res = run_subproc(fuse_cmd, "BatchNorm fusion failed.")
+        if res is None:
+            return None
+        print("BatchNorm fusion complete.")
+        if ai8x_args['qat_policy'] is None:
+            print("No QAT policy - using PTQ.")
+            quantize_cmd = [
+                sys.executable, "ai8x-synthesis/quantize.py",
+                f"{model}_bn", f"{model}_bn".replace(".pth.tar", "_q8.pth.tar"),
+                "--device", target_hardware,
+                "--scale", ai8x_args['q_scale'],
+                "-c", ai8x_args['config_file']
+            ]
+            if ai8x_args['clip_method']:
+                quantize_cmd.extend(["--clip-method", ai8x_args['clip_method']])
+            print("Quantizing...")
+            res = run_subproc(quantize_cmd, "Quantization failed.")
+            if res is None:
+                return None
+        model = f"{model}_bn".replace(".pth.tar", "_q8.pth.tar")
 
-def run_ai8x(model, target_hardware, data_sample, args, ai8x_args):
-    for hardware in target_hardware:
-        if hardware in ['max78000', 'max78002']:
-            if ai8x_args['qat_policy'] is None:
-                print("No QAT policy - using PTQ.")
-                quantize_cmd = [
-                    sys.executable, "ai8x-synthesis/quantize.py",
-                    f"{model}_bn", f"{model}_bn".replace(".pth.tar", "_q8.pth.tar"),
-                    "--device", hardware,
-                    "--scale", ai8x_args['q_scale'],
-                    "-c", ai8x_args['config_file']
-                ]
-                if ai8x_args['clip_method']:
-                    quantize_cmd.extend(["--clip-method", ai8x_args['clip_method']])
-                print("Fusing BatchNorm layers...")
-                fuse_cmd = [
-                    sys.executable, "ai8x-training/batchnormfuser.py",
-                    "-i", model, "-o", f"{model}_bn",
-                    "-oa", args.model_module_name
-                ]
-                run_subproc(fuse_cmd, "BatchNorm fusion failed.")
-                print("BatchNorm fusion complete.")
-                print("Quantizing...")
-                run_subproc(quantize_cmd, "Quantization failed.")
+        ai8xize_args = [sys.executable, "ai8x-synthesis/ai8xize.py"]
+        for arg, value in ai8x_args.items():
+            if arg == "q_scale":
+                continue
+            if arg in ["no-pipeline", "max-speed"] and target_hardware != "max78002":
+                print(f"Invalid arg {arg} for MAX78000; supported on MAX78002 only.")
+                return None
+            if value is True:
+                ai8xize_args.append(f"--{arg.replace('_', '-')}")
+            elif value not in [None, False]:
+                ai8xize_args.extend([f"--{arg.replace('_', '-')}", str(value)])
 
-            model = f"{model}_bn".replace(".pth.tar", "_q8.pth.tar")
+        ai8xize_args.append(f"--checkpoint-file={model}")
 
-            ai8xize_args = [sys.executable, "ai8x-synthesis/ai8xize.py"]
-            for arg, value in ai8x_args.items():
-                if arg == "q_scale":
-                    continue
-                if arg in ["no-pipeline", "max-speed"] and hardware != "max78002":
-                    print(f"Invalid arg {arg} for MAX78000; supported on MAX78002 only.")
-                    return None
-                if value is True:
-                    ai8xize_args.append(f"--{arg.replace('_', '-')}")
-                elif value not in [None, False]:
-                    ai8xize_args.extend([f"--{arg.replace('_', '-')}", str(value)])
-
-            ai8xize_args.append(f"--checkpoint-file={model}")
-
-            data = np.load(data_sample)
-            if data.ndim == 4:
-                data = data[0]
-            temp_path = "ds_sample.npy"
-            np.save(temp_path, data.astype(np.int64))
-            ai8xize_args.append(f"--sample-input={temp_path}")
-            ai8xize_args.append(f"--device={hardware.upper()}")
-            run_subproc(ai8xize_args, f"ai8x compiler failed {hardware}.")
-            os.remove(temp_path)
-
+        data = np.load(data_sample)
+        if data.ndim == 4:
+            data = data[0]
+        temp_path = "ds_sample.npy"
+        np.save(temp_path, data.astype(np.int64))
+        ai8xize_args.append(f"--sample-input={temp_path}")
+        ai8xize_args.append(f"--device={target_hardware.upper()}")
+        res = run_subproc(ai8xize_args, "ai8x compiler failed")
+        if res is None:
+            return None
+        os.remove(temp_path)
+    print(f"ai8x model/code saved to {args.out_dir}")
+    return args.out_dir
 
 def run_cvi(onnx_path, data_sample, args):
     model_name = os.path.splitext(os.path.basename(onnx_path))[0]
@@ -98,7 +103,9 @@ def run_cvi(onnx_path, data_sample, args):
     if args.get("debug"):
         transform_cmd.append("--debug")
 
-    run_subproc(transform_cmd, "cvi transform failed.")
+    res = run_subproc(transform_cmd, "cvi transform failed.")
+    if res is None:
+        return None
     os.chdir(os.path.dirname(onnx_path))
 
     dataset_path = args.get("data_sample") or gen_ds(args["input_shape"][1:])
@@ -109,8 +116,10 @@ def run_cvi(onnx_path, data_sample, args):
         "--input_num", str(args["input_shape"][0]),
         "-o", cal_table
     ]
-    run_subproc(cali_cmd, "cvi calibration failed.")
-
+    res = run_subproc(cali_cmd, "cvi calibration failed.")
+    if res is None:
+        return None
+    
     tol1, tol2 = 0.84, 0.45
     if args.get("tolerance"):
         split = args["tolerance"].split(',')
@@ -118,10 +127,11 @@ def run_cvi(onnx_path, data_sample, args):
         if len(split) > 1:
             tol2 = float(split[1])
 
+    quant = {8: "INT", 16: "F16", 32: "F32"}
     deploy_cmd = [
         "model_deploy.py",
         "--mlir", model_mlir,
-        "--quantize", args["quantize"],
+        "--quantize", quant[args["bit_width"]],
         "--calibration_table", cal_table,
         "--processor", args["target_hardware"],
         "--tolerance", str(tol1),
@@ -135,7 +145,10 @@ def run_cvi(onnx_path, data_sample, args):
     if args.get("debug"):
         deploy_cmd.append("--debug")
 
-    run_subproc(deploy_cmd, "cvi compiler failed.")
+    res = run_subproc(deploy_cmd, "cvi compiler failed.")
+    if res is None:
+        return None
+    
     os.chdir("..")
     os.remove(temp_path)
 
@@ -149,46 +162,57 @@ def run_vela(out_name, args):
     }.get(args.get("bit_width", 8), "_full_integer_quant.tflite")
 
     tflite_model = f"{out_name}{quant_suffix}"
+    
+    ethos_hardware = ["hxwe2", "ethos-u55-32", "ethos-u55-64", "ethos-u55-128", "ethos-u55-256", "ethos-u65-256", "ethos-u65-512"]
 
-    vela_cmd = [
-        "vela",
-        "--accelerator-config", args["ethos_hardware"],
-        "--recursion-limit", str(args["recursion_limit"]),
-        "--optimise", args["vela_optimise"],
-        tflite_model,
-        "--output-dir", os.path.dirname(out_name)
-    ]
+    if args["target_hardware"] == "hxwe2":
+        args["target_hardware"] = "ethos-u55-64"
+    if args["target_hardware"] in ethos_hardware:
+        vela_cmd = [
+            "vela",
+            "--accelerator-config", args["target_hardware"],
+            "--recursion-limit", str(args["recursion_limit"]),
+            "--optimise", args["vela_optimise"],
+            tflite_model,
+            "--output-dir", os.path.dirname(out_name)
+        ]
 
-    config_flags = {
-        "--config": args.get("config_vela"),
-        "--system-config": args.get("config_vela_system"),
-        "--memory-mode": args.get("memory_mode"),
-        "--tensor-allocator": args.get("tensor_allocator"),
-        "--max-block-dependency": args.get("max_block_dependency"),
-        "--arena-cache-size": args.get("arena_cache_size"),
-        "--cpu-tensor-alignment": args.get("cpu_tensor_alignment"),
-        "--hillclimb-max-iterations": args.get("hillclimb_max_iterations"),
-    }
+        config_flags = {
+            "--config": args.get("config_vela"),
+            "--system-config": args.get("config_vela_system"),
+            "--memory-mode": args.get("memory_mode"),
+            "--tensor-allocator": args.get("tensor_allocator"),
+            "--max-block-dependency": args.get("max_block_dependency"),
+            "--arena-cache-size": args.get("arena_cache_size"),
+            "--cpu-tensor-alignment": args.get("cpu_tensor_alignment"),
+            "--hillclimb-max-iterations": args.get("hillclimb_max_iterations"),
+        }
 
-    for k, v in config_flags.items():
-        if v is not None:
-            vela_cmd.extend([k, str(v)])
-    if args.get("force_symmetric_int_weights"):
-        vela_cmd.append("--force-symmetric-int-weights")
+        for k, v in config_flags.items():
+            if v is not None:
+                vela_cmd.extend([k, str(v)])
+        if args.get("force_symmetric_int_weights"):
+            vela_cmd.append("--force-symmetric-int-weights")
 
-    run_subproc(vela_cmd, "ARM Vela compiler failed.")
-    return os.path.splitext(tflite_model)[0] + "_vela.tflite"
+        res = run_subproc(vela_cmd, "ARM Vela compiler failed.")
+        if res is None:
+            return None
+    else:
+        print(f"Hardware platform {args['target_hardware']} not supported by ARM Vela.")
+        return None
+    return tflite_model
 
 
-def run_eiq(tflm_model, target_hardware, eiq_args):
-    base_name = os.path.splitext(tflm_model)[0]
-    eiq_model = f"{base_name}_eiq.tflite"
+def run_eiq(base_name, target_hardware, model_name, eiq_args):
+    tflm_model = f"{base_name}/{model_name}_full_integer_quant_tflm.tflite"
+    eiq_model = f"{base_name}/{model_name}_full_integer_quant_eiq.tflite"
 
     eiq_cmd = [
         eiq_args['eiq_path'],
         "--input", tflm_model,
         "--output", eiq_model,
-        "--custom-options", f"target {target_hardware}"
-    ]
-    run_subproc(eiq_cmd, "eIQ compiler failed.")
+        "--custom-options", f"target {target_hardware}"]
+    res = run_subproc(eiq_cmd, "eIQ compiler failed.")
+    if res is None:
+        return None
     return eiq_model

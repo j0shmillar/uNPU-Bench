@@ -51,22 +51,30 @@ alignas(16) const unsigned char {array_name}[] = {{
     print(f"✅ C source written to {output_cc_path} with {len(model_data)} bytes.")
     return output_cc_path
 
-def _prepare_template(src, dst):
+def _prepare_template(src, dst, overwrite=False):
     if os.path.exists(dst):
-        print(f"Directory {dst} already exists. Renaming it to avoid overwrite.")
-        backup_path = dst + "_backup"
-        if os.path.exists(backup_path):
-            shutil.rmtree(backup_path)
-        shutil.move(dst, backup_path)
-        print(f"📦 Existing directory moved to {backup_path}")
+        if overwrite:
+            print(f"🗑️  Overwriting existing directory {dst}")
+            shutil.rmtree(dst)
+        else:
+            base_backup = dst + "_backup"
+            backup_path = base_backup
+            i = 1
+            while os.path.exists(backup_path):
+                backup_path = f"{base_backup}_{i}"
+                i += 1
+            print(f"📁 Directory {dst} already exists. Moving it to {backup_path}")
+            shutil.move(dst, backup_path)
+            print(f"📦 Existing directory moved to {backup_path}")
     shutil.copytree(src, dst)
+    print(f"✅ Template copied from {src} to {dst}")
 
-def mcxn947_code_gen(out_eiq, input_shape, output_shape_concat):  
+def mcxn947_code_gen(out_eiq, input_shape, output_shape_concat, overwrite):  
     src = "templates/mcxn947"
     out_dir = os.path.dirname(out_eiq)
     dst = os.path.join(out_dir, "mcxn947")
 
-    _prepare_template(src, dst)
+    _prepare_template(src, dst, overwrite)
 
     model_config = {
         'MODEL_IN_W': input_shape[1],
@@ -84,12 +92,12 @@ def mcxn947_code_gen(out_eiq, input_shape, output_shape_concat):
 
     print(f"✅ mcxn947 model inference code saved to {dst}.")
 
-def hxwe2_code_gen(out_vela, input_shape, output_shape_concat):
+def hxwe2_code_gen(out_vela, input_shape, output_shape_concat, overwrite):
     src = "templates/hxwe2"
     out_dir = os.path.dirname(out_vela)
     dst = os.path.join(out_dir, "hxwe2")
 
-    _prepare_template(src, dst)
+    _prepare_template(src, dst, overwrite)
 
     if len(input_shape) == 4:
         input_shape = input_shape[1:]

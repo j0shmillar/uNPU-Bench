@@ -1,11 +1,3 @@
-###################################################################################################
-#
-# Copyright (C) 2020 Maxim Integrated Products, Inc. All Rights Reserved.
-#
-# Maxim Integrated Products, Inc. Default Copyright Notice:
-# https://www.maximintegrated.com/en/aboutus/legal/copyrights.html
-#
-###################################################################################################
 """
 SimpleNet_v1 network with added residual layers for AI85.
 Simplified version of the network proposed in [1].
@@ -13,18 +5,20 @@ Simplified version of the network proposed in [1].
 [1] HasanPour, Seyyed Hossein, et al. "Lets keep it simple, using simple architectures to
     outperform deeper and more complex architectures." arXiv preprint arXiv:1608.06037 (2016).
 """
+import os
 import sys
-
 import torch.nn as nn
 
-sys.path.append("/Users/joshmillar/Desktop/phd/mcu-nn-eval/ai8x-training") # TODO fix
+train_path = os.environ.get("AI8X_TRAIN_PATH")
+if not train_path:
+    raise EnvironmentError("AI8X_TRAIN_PATH is not set.")
+
+sys.path.append(train_path)
+
 import ai8x
 
 
 class AI85ResNet(nn.Module):
-    """
-    Residual SimpleNet v1 Model
-    """
     def __init__(
             self,
             num_classes=100,
@@ -61,7 +55,6 @@ class AI85ResNet(nn.Module):
                                   wide=True, **kwargs)
 
     def forward(self, x):  # pylint: disable=arguments-differ
-        """Forward prop"""
         x = self.conv1(x)          # 16x32x32
         x_res = self.conv2(x)      # 20x32x32
         x = self.conv3(x_res)      # 20x32x32
@@ -84,8 +77,5 @@ class AI85ResNet(nn.Module):
 
 
 def ai85ressimplenet(pretrained=False, **kwargs):
-    """
-    Residual SimpleNet v1 model.
-    """
     assert not pretrained
     return AI85ResNet(**kwargs)

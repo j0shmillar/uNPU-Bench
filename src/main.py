@@ -5,20 +5,15 @@ from parse import compile
 from flags import SUPPORTED_BIT_WIDTHS, SUPPORTED_HARDWARE, GLOBAL_FLAGS, PLATFORM_FLAGS
 
 #TODO
-# generate loads of tests with gpt (for yolo 1st, then other models)
-# test generated code runs on device
-# LAST, TIDY ALL
+# add proper input validation (e.g. bit_width can't be 2 if not using max78000)
+# fix all_scripts (+ rename)
+# check eiq & cvi
+# reformat files with GPT
 # & Add README
 
-#TODO for later
-# rwd all out messages + colour-ize
-# mv from pip -> uv
-# tidy template code (rm all but necessary)
-# rewrite arg 'help'
-# fix training, etc scripts, models, etc (where is train for not yolo?)
-
-# final TODO
-# rm all unnecessary code
+# TODO for later
+# test generated code runs on device + tidy device templates
+# maybe fix WARNING: axes don't match array
 
 def val_bitwidth(target_formats, target_hardware, bit_width):
     for fmt in target_formats:
@@ -73,93 +68,87 @@ def parse():
     parser.add_argument('--model_ckpt', required=True, help='Path to checkpoint file')
     parser.add_argument('--model_name', required=True, help='Model name')
     parser.add_argument('--model_module_name', required=True, help='Model module name')
-    parser.add_argument("--model_module_args", type=str, help="Additional model-specific arguments")
+    parser.add_argument("--model_module_args", type=str, help="Any required model-specific arguments")
 
     parser.add_argument('--target_format', required=True, help='Comma-separated target formats: ai8x,tflm,vela,onnx')
-    parser.add_argument('--target_hardware', required=False, default=['max78000'], help='Comma-separated hardware: max78000,ethos-u55-128,...')
+    parser.add_argument('--target_hardware', required=False, default='max78000', help='Comma-separated hardware: max78000,ethos-u55-128,...')
 
     parser.add_argument('--data_sample', required=True, help='.npy dataset for quantization')
-    parser.add_argument('--input_names', required=True, help='Comma-separated input names')
+    parser.add_argument('--input_names', required=True, help='Comma-separated model input names')
     parser.add_argument('--input_shape', type=int, nargs='+', required=True, help='Input shape, e.g. 1 3 224 224')
     parser.add_argument('--input_layout', choices=['NCHW', 'NHWC', 'NCW', 'NWC'], default='NCHW', help='Input layout')
-    parser.add_argument('--output_names', required=True, help='Comma-separated output names')
+    parser.add_argument('--output_names', required=True, help='Comma-separated model output names')
     parser.add_argument('--output_shape', type=int, nargs='+', required=True, help='Output shape, e.g. 1 3 224 224')
     parser.add_argument('--bit_width', type=int, default=8, help='Quantization bit-width')
 
-    parser.add_argument('--out_dir', required=True, type=str, help='model/code out dir')
+    parser.add_argument('--out_dir', required=True, type=str, help='Output directory')
+    parser.add_argument('--overwrite', action='store_true', help='Overwrite output if out_dir exists')
 
     # ONNX
     parser.add_argument('--opset', required=False, default=19, help='ONNX opset')
-    parser.add_argument('--opset_version', required=False, default=True, help='do constant folding')
-    parser.add_argument('--custom_opsets', required=False, default=None, help='dictionary: KEY (str): opset domain name VALUE (int): opset version')
+    parser.add_argument('--custom_opsets', required=False, default=None, help='Custom ONNX opset/ops (format: KEY (str): opset domain name VALUE (int): opset version)')
     parser.add_argument('--export_params', required=False, default=True, help='ONNX export params')
-    parser.add_argument('--do_constant_folding', required=False, default=True, help='do constant folding')
-    parser.add_argument('--keep_initializers_as_inputs', required=False, default=False, help='adds initializers to exported weights')
-    parser.add_argument('--dynamic_axes', required=False, default=None, help='dict schema for dynamic input/output shape')
+    parser.add_argument('--do_constant_folding', required=False, default=True, help='Do constant folding')
+    parser.add_argument('--keep_initializers_as_inputs', required=False, default=False, help='Add initializer to exported weights')
+    parser.add_argument('--dynamic_axes', required=False, default=None, help='Schema for dynamic input/output shape')
     
     # TFLM
-    parser.add_argument('--use_onnxsim', default=False, action='store_true', help='TFLM: Use onnxsim')
-    parser.add_argument('--output_integer_quantized_tflite', default=True, action='store_true', help='TFLM: Output INT8 quantized TFLite')
-    parser.add_argument('--tflm_quant_type', type=str, default='per_tensor', help='TFLM: Quantization type')
-    parser.add_argument('--disable_group_convolution', default=False, action='store_true', help='TFLM: Disable group convolution')
-    parser.add_argument('--enable_batchmatmul_unfold', default=False, action='store_true', help='TFLM: Enable batchmatmul unfold')
+    parser.add_argument('--use_onnxsim', default=False, action='store_true', help='Use onnxsim for TFLM')
+    parser.add_argument('--output_integer_quantized_tflite', default=True, action='store_true', help='INT8 quantized TFLM')
+    parser.add_argument('--tflm_quant_type', type=str, choices=["per_tensor", "per_channel"], default='per_channel', help='TFLM quantization method')
+    parser.add_argument('--disable_group_convolution', default=False, action='store_true', help='Disable group convolution')
+    parser.add_argument('--enable_batchmatmul_unfold', default=False, action='store_true', help='Enable batchmatmul unfold')
 
     # ai8x
-    parser.add_argument('--avg_pool_rounding', action='store_true', help='AI8X: Round average pooling results')
-    parser.add_argument('--simple1b', action='store_true', help='AI8X: Use simple XOR instead of 1-bit multiplication')
-    parser.add_argument('--config_file', type=str, help='AI8X: YAML configuration file')
-    parser.add_argument('--display_checkpoint', action='store_true', help='AI8X: Show parsed checkpoint data')
-    parser.add_argument('--prefix', type=str, help='AI8X: Test name prefix')
-    parser.add_argument('--board_name', type=str, default='EvKit_V1', help='AI8X: Target board')
-    parser.add_argument('--overwrite', action='store_true', help='AI8X: Overwrite output if dir exists')
-    parser.add_argument('--compact_weights', action='store_true', help='AI8X: Use memcpy for weights')
-    parser.add_argument('--mlator', action='store_true', help='AI8X: Use hardware byte swap')
-    parser.add_argument('--softmax', action='store_true', help='AI8X: Add software Softmax')
-    parser.add_argument('--boost', type=float, help='AI8X: Boost CNN supply voltage')
-    parser.add_argument('--timer', type=int, help='AI8X: Insert inference timing')
-    parser.add_argument('--no_wfi', action='store_true', help='AI8X: Disable WFI instructions')
-    parser.add_argument('--max_speed', action='store_true', help='AI8X: Prioritize speed')
-    parser.add_argument('--fifo', action='store_true', help='AI8X: Use FIFO for streaming')
-    parser.add_argument('--fast_fifo', action='store_true', help='AI8X: Use fast FIFO')
-    parser.add_argument('--fast_fifo_quad', action='store_true', help='AI8X: Use fast FIFO in quad mode')
-    parser.add_argument('--riscv', action='store_true', help='AI8X: Use RISC-V')
-    parser.add_argument('--riscv_exclusive', action='store_true', help='AI8X: Exclusive SRAM for RISC-V')
-    parser.add_argument('--input_offset', type=str, help='AI8X: First layer input offset (hex)')
-    parser.add_argument('--write_zero_registers', action='store_true', help='AI8X: Write zero registers')
-    parser.add_argument('--init_tram', action='store_true', help='AI8X: Init TRAM to 0')
-    parser.add_argument('--zero_sram', action='store_true', help='AI8X: Zero SRAM')
-    parser.add_argument('--zero_unused', action='store_true', help='AI8X: Zero unused registers')
-    parser.add_argument('--max_verify_length', type=int, help='AI8X: Max output verify length')
-    parser.add_argument('--no_unload', action='store_true', help='AI8X: No cnn_unload()')
-    parser.add_argument('--no_deduplicate_weights', action='store_true', help='AI8X: No weight deduplication')
-    parser.add_argument('--no_scale_output', action='store_true', help='AI8X: Do not scale output')
-    parser.add_argument('--qat_policy', type=str, default=None, help='AI8X: QAT policy')
-    parser.add_argument('--clip_method', type=str, choices=['AVGMAX', 'MAX', 'STDDEV', 'SCALE'], default=None, help='AI8X: Clip method for quantization')
-    parser.add_argument('--q_scale', type=str, default="0.85", help='AI8X: Quantization scale')
+    parser.add_argument('--avg_pool_rounding', action='store_true', help='Round average pooling results')
+    parser.add_argument('--simple1b', action='store_true', help='Use simple XOR instead of 1-bit multiplication')
+    parser.add_argument('--config_file', type=str, help='YAML model config file path')
+    parser.add_argument('--board_name', type=str, default='EvKit_V1', help='Target board')
+    parser.add_argument('--compact_weights', action='store_true', help='Use memcpy for weights')
+    parser.add_argument('--mlator', action='store_true', help='Use hardware byte swap')
+    parser.add_argument('--softmax', action='store_true', help='Add software softmax')
+    parser.add_argument('--boost', type=float, help='Boost CNN supply voltage')
+    parser.add_argument('--no_wfi', action='store_true', help='Disable WFI instructions')
+    parser.add_argument('--max_speed', action='store_true', help='Prioritize speed')
+    parser.add_argument('--fifo', action='store_true', help='Use FIFO for streaming')
+    parser.add_argument('--fast_fifo', action='store_true', help='Use fast FIFO')
+    parser.add_argument('--fast_fifo_quad', action='store_true', help='Use fast FIFO in quad mode')
+    parser.add_argument('--riscv', action='store_true', help='Use RISC-V')
+    parser.add_argument('--riscv_exclusive', action='store_true', help='Exclusive SRAM for RISC-V')
+    parser.add_argument('--input_offset', type=str, help='First layer input offset (hex)')
+    parser.add_argument('--write_zero_registers', action='store_true', help='Write zero registers')
+    parser.add_argument('--init_tram', action='store_true', help='Init TRAM to 0')
+    parser.add_argument('--zero_sram', action='store_true', help='Zero SRAM')
+    parser.add_argument('--zero_unused', action='store_true', help='Zero unused registers')
+    parser.add_argument('--max_verify_length', type=int, help='Max output verify length')
+    parser.add_argument('--no_unload', action='store_true', help='No cnn_unload()')
+    parser.add_argument('--no_deduplicate_weights', action='store_true', help='No weight deduplication')
+    parser.add_argument('--no_scale_output', action='store_true', help='Do not scale output')
+    parser.add_argument('--qat_policy', type=str, default=None, help='QAT policy')
+    parser.add_argument('--clip_method', type=str, choices=['AVGMAX', 'MAX', 'STDDEV', 'SCALE'], default=None, help='Clip method for quantization')
+    parser.add_argument('--q_scale', type=str, default="0.85", help='Quantization scale')
 
     # Vela
-    parser.add_argument('--config_vela', type=str, help='Vela: Config file')
-    parser.add_argument('--config_vela_system', type=str, default="internal-default", help='Vela: System config')
-    parser.add_argument('--force_symmetric_int_weights', action='store_true', help='Vela: Force symmetric int weights')
-    parser.add_argument('--memory_mode', type=str, default="internal-default", help='Vela: Memory mode')
-    parser.add_argument('--tensor_allocator', choices=['LinearAlloc', 'Greedy', 'HillClimb'], default='HillClimb', help='Vela: Tensor allocator')
-    parser.add_argument('--max_block_dependency', type=int, choices=[0, 1, 2, 3], default=3, help='Vela: Max block dependency')
-    parser.add_argument('--arena_cache_size', type=int, help='Vela: Arena cache size')
-    parser.add_argument('--cpu_tensor_alignment', type=int, default=16, help='Vela: CPU tensor alignment')
-    parser.add_argument('--recursion_limit', type=int, default=1000, help='Vela: Recursion limit')
-    parser.add_argument('--hillclimb_max_iterations', type=int, default=99999, help='Vela: HillClimb iterations')
-    parser.add_argument('--vela_optimise', choices=['Size', 'Performance'], default='Performance', help='Vela: Optimisation strategy')
-    parser.add_argument('--ethos_hardware', choices=["ethos-u55-32", "ethos-u55-64", "ethos-u55-128", "ethos-u55-256", "ethos-u65-256", "ethos-u65-512"], default="ethos-u55-64", help='The Ethos-U chip being used')
+    parser.add_argument('--config_vela', type=str, help='Vela config file')
+    parser.add_argument('--config_vela_system', type=str, default="internal-default", help='Vela system config')
+    parser.add_argument('--force_symmetric_int_weights', action='store_true', help='Force symmetric int weights')
+    parser.add_argument('--memory_mode', type=str, default="internal-default", help='Memory mode')
+    parser.add_argument('--tensor_allocator', choices=['LinearAlloc', 'Greedy', 'HillClimb'], default='HillClimb', help='Tensor allocator')
+    parser.add_argument('--max_block_dependency', type=int, choices=[0, 1, 2, 3], default=3, help='Max block dependency')
+    parser.add_argument('--arena_cache_size', type=int, help='Arena cache size')
+    parser.add_argument('--cpu_tensor_alignment', type=int, default=16, help='CPU tensor alignment')
+    parser.add_argument('--recursion_limit', type=int, default=1000, help='Recursion limit')
+    parser.add_argument('--hillclimb_max_iterations', type=int, default=99999, help='HillClimb iterations')
+    parser.add_argument('--vela_optimise', choices=['Size', 'Performance'], default='Performance', help='Optimisation strategy')
 
     # eIQ
-    parser.add_argument("--eiq_path", type=str, default="/opt/nxp/eIQ_Toolkit_v1.13.1/bin/neutron-converter/MCU_SDK_2.16.000/neutron-converter", help="installed eIQ Neutron SDK path")
+    parser.add_argument("--eiq_path", type=str, default="/opt/nxp/eIQ_Toolkit_v1.13.1/bin/neutron-converter/MCU_SDK_2.16.000/neutron-converter", help="eIQ Neutron SDK path")
 
-    # cvi
-    parser.add_argument("--quantize", choices=["F32", "BF16", "F16", "INT8"], required=False, help="Quantization type (required): F32, BF16, F16, or INT8.")
-    parser.add_argument("--calibration_table", type=str, help="Quantization table path. Required when using INT8 quantization.")
-    parser.add_argument("--tolerance", type=float, help="Tolerance for minimum similarity between MLIR quantized and MLIR FP32 inference results.")
-    parser.add_argument("--correctness", type=str, default="0.99,0.90", help="Tolerance for minimum similarity between simulator and MLIR quantized inference results. Default: '0.99,0.90'.")
-    parser.add_argument("--dynamic", action="store_true", help="Enable dynamic code generation to support dynamic shapes.")
+    # CVI
+    parser.add_argument("--calibration_table", type=str, help="Quantization table path. Required when using INT8 quantization for CVI")
+    parser.add_argument("--tolerance", type=float, help="Tolerance for minimum similarity between MLIR quantized and MLIR FP32 inference results")
+    parser.add_argument("--correctness", type=str, default="0.99,0.90", help="Tolerance for minimum similarity between simulator and MLIR quantized inference results. Default: '0.99,0.90'")
+    parser.add_argument("--dynamic", action="store_true", help="Support dynamic input shapes")
 
     return parser
 
@@ -183,6 +172,7 @@ def main():
 
     compile(
         model=model,
+        model_name=args.model_name,
         model_ckpt=args.model_ckpt,
         target_formats=target_formats,
         target_hardware=target_hardware,

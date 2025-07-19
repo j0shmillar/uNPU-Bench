@@ -74,6 +74,6 @@ RUN git config --global --add safe.directory '*'
 RUN cd src && git clone --recursive https://github.com/analogdevicesinc/ai8x-training.git && \
     git clone --recursive https://github.com/analogdevicesinc/ai8x-synthesis.git
 
-RUN export AI8X_TRAIN_PATH=/workspace/src/ai8x-training
+ENV AI8X_TRAIN_PATH=/workspace/src/ai8x-training/
 
 CMD ["/bin/bash"]

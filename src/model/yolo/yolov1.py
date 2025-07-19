@@ -1,11 +1,16 @@
 import os
 import sys
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))  
-sys.path.insert(0, os.path.join(PROJECT_ROOT, "../../", "ai8x-training"))
 
-import torch.nn as nn
+train_path = os.environ.get("AI8X_TRAIN_PATH")
+if not train_path:
+    raise EnvironmentError("AI8X_TRAIN_PATH is not set.")
+
+sys.path.append(train_path)
+
 import torch
+import torch.nn as nn
 
+import ai8x
 from ai8x import FusedLinearReLU, Linear, FusedConv1dReLU, FusedConv1dBNReLU, Conv1d, Conv2d
 from ai8x import FusedConv2dReLU, FusedMaxPoolConv2dReLU, FusedConv2dBNReLU, FusedMaxPoolConv2dBNReLU
 from ai8x import QuantizationAwareModule
@@ -79,16 +84,10 @@ class Yolov1_net(nn.Module):
         #         nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
 
     def forward(self, x): # forward not influence the board
-
         x = self.Conv_224(x)
-        #print("First Layer:",x)
         x = self.Conv_112(x)
-        # import numpy as np
-        # print("Second Layer: Unique Values:->", np.unique(x.detach().reshape(-1).numpy().astype(np.int)),"Complete Output: ",x)
         x = self.Conv_56_1(x)
-        #print("First Layer:",x)
         x = self.Conv_56_2(x)
-        #print("First Layer:",x)
         x = self.Conv_56_3(x)
         x = self.Conv_56_4(x)
         x = self.Conv_28_1(x)
@@ -108,7 +107,6 @@ class Yolov1_net(nn.Module):
         x = self.Conv_Res_1(x)
         x = self.Conv_Res_2(x)
         x = self.Conv_Res_3(x)
-        #print("Final Conv:", x)
         x_fl_output = self.Conv_Res_4(x)
         x = x_fl_output.permute(0, 2, 3, 1)
         class_possible = torch.softmax(x[:, :, :, 10:], dim=3)
@@ -121,7 +119,6 @@ class Yolov1_net(nn.Module):
         if layer_index is None or qat_policy is None:
             return
 
-        # print(layer_index)
         layer_buf = list(self.children())
         layer = layer_buf[layer_index]
         layer.init_module(qat_policy['weight_bits'], qat_policy['bias_bits'], True)
@@ -131,7 +128,6 @@ class Yolov1_net(nn.Module):
         if layer_index is None:
             return
 
-        # print(layer_index)
         layer_buf = list(self.children())
         layer = layer_buf[layer_index]
         if isinstance(layer, QuantizationAwareModule) and layer.bn is not None:
@@ -157,14 +153,9 @@ class Yolov1_net(nn.Module):
             layer.op.bias.data = b_new
             layer.bn = None
 
-
 def yolov1_net(pretrained=False, **kwargs):
-    """
-    Constructs a AI85Net5 model.
-    """
     assert not pretrained
     return Yolov1_net(**kwargs)
-
 
 models = [
     {

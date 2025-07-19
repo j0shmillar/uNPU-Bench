@@ -15,11 +15,12 @@ onnxsim==0.4.17
 opt-einsum==3.3.0
 protobuf==3.20.3
 pybind11-global==2.11.1
+PyGithub==2.6.1
+psutil==7.0.0
 requests==2.32.3
 sng4onnx==1.0.4
 tensorflow==2.13.1
 tensorboard==2.13.0
-tf2onnx==1.8.4
 tpu-mlir==1.19
 torch==2.1.0
 torchaudio==2.1.0

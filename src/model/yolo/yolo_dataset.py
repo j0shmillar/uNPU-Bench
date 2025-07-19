@@ -1,26 +1,32 @@
-from torch.utils.data import Dataset
-import os
+import os 
+import sys
+
+train_path = os.environ.get("AI8X_TRAIN_PATH")
+if not train_path:
+    raise EnvironmentError("AI8X_TRAIN_PATH is not set.")
+
+sys.path.append(train_path)
+
+import ai8x
+
 import cv2
 import xml.etree.ElementTree as ET
 import torch
+from torch.utils.data import Dataset
 import torchvision.transforms as transforms
-
-import ai8x
 
 class YoloV1DataSet(Dataset):
 
     def __init__(self, imgs_dir="./VOC2007/Train/JPEGImages",
                  annotations_dir="./VOC2007/Train/Annotations", img_size=224, S=12, B=2,
                  ClassesFile="./VOC2007/Train/VOC_remain_class.data", img_per_class=None,
-                 train_root="./VOC2007/Train/ImageSets/Main/", ms_logger=None):
+                 train_root="./VOC2007/Train/ImageSets/Main/"):
         
-
         self.transfrom = transforms.Compose([
             #transforms.ToPILImage(),
             #transforms.Resize((224,224)),
             transforms.ToTensor(), # height * width * channel -> channel * height * width
-            transforms.Normalize(mean=(0.5,0.5,0.5),std=(0.5,0.5,0.5))
-        ])
+            transforms.Normalize(mean=(0.5,0.5,0.5),std=(0.5,0.5,0.5))])
 
         self.img_size = img_size
         self.S = S
@@ -34,30 +40,14 @@ class YoloV1DataSet(Dataset):
         self.generate_ClassNameToInt(ClassesFile)
         self.getGroundTruth()
 
-        ## loggout the dataset
-        if ms_logger is None:
-            print("Number of images: {}, {} classes".format(len(self.img_path), self.Classes))
-            print("Number of annotation: {}".format(len(self.annotation_path)))
-            print("Class name to Int: {}".format(self.ClassNameToInt))
-            print("Int to Class name: {}".format(self.IntToClassName))
-            print("Number of images per class: {}".format(self.Class_img_num))
-        else:
-            ms_logger.info("Number of images: %s, %s classes", str(len(self.img_path)), str(self.Classes))
-            ms_logger.info("Number of annotation: %s", str(len(self.annotation_path)))
-            ms_logger.info("Class name to Int: %s", str(self.ClassNameToInt))
-            ms_logger.info("Int to Class name: %s", str(self.IntToClassName))
-            ms_logger.info("Number of images per class: %s", str(self.Class_img_num))
-
-
     def generate_img_path(self, img_names, imgs_dir):
-        img_names.sort() # 图片和文件排序后可以按照相同索引对应
+        img_names.sort() 
         self.img_path = []
         for img_name in img_names:
             self.img_path.append(os.path.join(imgs_dir, img_name))
-   
 
     def generate_annotation_path(self, annotation_names, annotations_dir):
-        annotation_names.sort()  # 图片和文件排序后可以按照相同索引对应
+        annotation_names.sort() 
         self.annotation_path = []
         for annotation_name in annotation_names:
             self.annotation_path.append(os.path.join(annotations_dir, annotation_name))
@@ -72,22 +62,18 @@ class YoloV1DataSet(Dataset):
                 line = line.replace('\n', '')
                 self.ClassNameToInt[line] = classIndex
                 self.IntToClassName[classIndex] = line
-                # self.instance_counting[line] = 0
                 classIndex = classIndex + 1
-        self.Classes = classIndex  # 一共的类别个数
+        self.Classes = classIndex 
 
     def img_selection(self, ClassesFile, train_root):
-        #Generate image paths for classes in ClassesFile with img_per_class number of images per class
 
         def generate_class_index_fname(train_root, class_name):
             class_index_fname_buf = os.listdir(train_root)
 
             if class_name + "_test.txt" in class_index_fname_buf:
-                return os.path.join(train_root, class_name + "_test.txt") # testing set
+                return os.path.join(train_root, class_name + "_test.txt")
             else:
-                return os.path.join(train_root, class_name + "_trainval.txt") # training set
-                # return os.path.join(train_root, class_name + "_train.txt") # training set
-                # return os.path.join(train_root, class_name + "_val.txt") # training set
+                return os.path.join(train_root, class_name + "_trainval.txt") 
 
         def one_class_img(img_index_fname):
             img_num = 0
@@ -116,61 +102,46 @@ class YoloV1DataSet(Dataset):
         self.annot = []
         self.Class_img_num = {}
         for class_name, img_index_fname in self.img_index_fpaths.items():
-            # print(class_name, img_index_fname)
             img_num_class = one_class_img(img_index_fname)
             self.Class_img_num[class_name] = img_num_class
 
 
-    # PyTorch 无法将长短不一的list合并为一个Tensor
     def getGroundTruth(self):
         self.ground_truth = [[[list() for i in range(self.S)] for j in range(self.S)] for k in
-                             range(len(self.img_path))]  # 根据标注文件生成ground_truth
+                             range(len(self.img_path))]  
         ground_truth_index = 0
         for annotation_file in self.annotation_path:
             ground_truth = [[list() for i in range(self.S)] for j in range(self.S)]
-            # 解析xml文件--标注文件
             tree = ET.parse(annotation_file)
             annotation_xml = tree.getroot()
-            # 计算 目标尺寸 -> 原图尺寸 self.img_size * self.img_size , x的变化比例
             width = (int)(annotation_xml.find("size").find("width").text)
             scaleX = self.img_size / width
-            # 计算 目标尺寸 -> 原图尺寸 self.img_size * self.img_size , y的变化比例
             height = (int)(annotation_xml.find("size").find("height").text)
             scaleY = self.img_size / height
-            # 因为两次除法的误差可能比较大 这边采用除一次乘一次的方式
-            # 一个注解文件可能有多个object标签，一个object标签内部包含一个bnd标签
             objects_xml = annotation_xml.findall("object")
             for object_xml in objects_xml:
-                # 获取目标的名字
                 class_name = object_xml.find("name").text
-                if class_name not in self.ClassNameToInt: # 不属于我们规定的类
+                if class_name not in self.ClassNameToInt: 
                     continue
                 bnd_xml = object_xml.find("bndbox")
-                # 目标尺度放缩
                 xmin = (int)((int)(bnd_xml.find("xmin").text) * scaleX)
                 ymin = (int)((int)(bnd_xml.find("ymin").text) * scaleY)
                 xmax = (int)((int)(bnd_xml.find("xmax").text) * scaleX)
                 ymax = (int)((int)(bnd_xml.find("ymax").text) * scaleY)
-                # 目标中心点
                 centerX = (xmin + xmax) / 2
                 centerY = (ymin + ymax) / 2
-                # 当前物体的中心点落于 第indexI行 第indexJ列的 grid cell内
                 indexI = (int)(centerY / self.grid_cell_size)
                 indexJ = (int)(centerX / self.grid_cell_size)
-                # 真实物体的list
                 ClassIndex = self.ClassNameToInt[class_name]
                 ClassList = [0 for i in range(self.Classes)]
                 ClassList[ClassIndex] = 1
                 ground_box = list([centerX / self.grid_cell_size - indexJ,centerY / self.grid_cell_size - indexI,(xmax-xmin)/self.img_size,(ymax-ymin)/self.img_size,1,xmin,ymin,xmax,ymax,(xmax-xmin)*(ymax-ymin)])
-                #增加上类别
                 ground_box.extend(ClassList)
                 ground_truth[indexI][indexJ].append(ground_box)
 
-            #同一个grid cell内的多个groudn_truth，选取面积最大的两个
             for i in range(self.S):
                 for j in range(self.S):
                     if len(ground_truth[i][j]) == 0:
-                        #print(self.Classes,"class")
                         ClassList = [0 for i in range(self.Classes)]
                         ClassList[0] = 1
                         dummy_arr = [0 for _ in range(10)] + ClassList
@@ -197,23 +168,16 @@ class YoloV1DataSet(Dataset):
 
 def YoloV1_getdataset(data, load_train=True, load_test=True):
 
-    """ Returns FaceID Dataset for dimensionality reduction
-    """
     (data_dir, args) = data
 
-    train_transform = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.RandomHorizontalFlip(p=0.5),
-        ai8x.normalize(args=args)])
-
     if load_train:
-        train_dataset = YoloV1DataSet() # pass img_dir, annotations_dir, ClassesFile, etc for train
+        train_dataset = YoloV1DataSet() 
         print(f'Train dataset length: {len(train_dataset)}\n')
     else:
         train_dataset = None
 
     if load_test:
-        train_dataset = YoloV1DataSet() # pass img_dir, annotations_dir, ClassesFile, etc for test
+        train_dataset = YoloV1DataSet() 
         print(f'Test dataset length: {len(test_dataset)}\n')
     else:
         test_dataset = None

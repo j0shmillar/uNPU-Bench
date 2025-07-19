@@ -1,7 +1,11 @@
 import os
 import sys
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))  
-sys.path.insert(0, os.path.join(PROJECT_ROOT, "../../", "ai8x-training"))
+
+train_path = os.environ.get("AI8X_TRAIN_PATH")
+if not train_path:
+    raise EnvironmentError("AI8X_TRAIN_PATH is not set.")
+
+sys.path.append(train_path)
 
 import importlib
 
@@ -14,16 +18,16 @@ from torch.utils.data import DataLoader
 
 from tqdm import tqdm
 
-from yolo_dataset import YoloV1DataSet
 from yolov1_loss import Yolov1_Loss
+from yolo_dataset import YoloV1DataSet
 
-mod = importlib.import_module("yolov1_96_max78000")
+mod = importlib.import_module("yolov1_96")
 
 import ai8x
 
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument('--max_epoch', type=int, default=400, help='Maximum training epoch.')
+parser.add_argument('--max_epoch', type=int, default=1, help='Maximum training epoch.')
 parser.add_argument('--lr', type=float, default=3e-5, help='Learning rate.')
 parser.add_argument('--batch_size', type=int, default=16, help='Minibatch size.')
 parser.add_argument('--img_train', type=str, default="300", help='Image number per class for training.')
@@ -61,14 +65,13 @@ def log_init():
     return logger
     
 def dataset_init(logger):
-    dataset_root = "./data/VOC2007"
+    dataset_root = "./model/yolo/data/VOC2007"
     
     dataSet = YoloV1DataSet(
         imgs_dir=f"{dataset_root}/JPEGImages",
         annotations_dir=f"{dataset_root}/Annotations",
         ClassesFile=f"{dataset_root}/VOC_person.data",
         train_root=f"{dataset_root}/ImageSets/Main/",
-        ms_logger=logger,
         img_size=96
     )
     
@@ -105,7 +108,7 @@ def train(logger):
             train_data = batch_train[0].float().to(args.device)
             train_data.requires_grad = True
             label_data = batch_train[1].float().to(args.device)
-            bb_pred, _ = Yolo(train_data)
+            bb_pred, _, _ = Yolo(train_data)
             loss = loss_function(bounding_boxes=bb_pred, ground_truth=label_data, grid_size=grid_size, img_size=img_size)
             batch_loss = loss[0]
             loss_coord = loss_coord + loss[1]
