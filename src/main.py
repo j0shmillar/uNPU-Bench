@@ -5,10 +5,10 @@ from parse import compile
 from flags import SUPPORTED_BIT_WIDTHS, SUPPORTED_HARDWARE, GLOBAL_FLAGS, PLATFORM_FLAGS
 
 #TODO
-# add proper input validation (e.g. bit_width can't be 2 if not using max78000)
-# fix all_scripts (+ rename)
 # check eiq & cvi
-# reformat files with GPT
+# add proper input validation with YAML (see chatgpt)
+# fix all_scripts (+ rename)
+# reformat files with GPT (make it easy to add new chips, etc)
 # & Add README
 
 # TODO for later
