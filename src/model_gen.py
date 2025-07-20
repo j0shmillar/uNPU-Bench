@@ -3,7 +3,6 @@ import numpy as np
 import sys
 import os
 
-# TODO does this work if not quantizing i.e. q8 suffix
 def run_ai8x(model, target_hardware, data_sample, ai8x_args, args):
     if target_hardware in ['max78000', 'max78002']:
         print("Fusing BatchNorm layers...")
@@ -16,11 +15,11 @@ def run_ai8x(model, target_hardware, data_sample, ai8x_args, args):
         if res is None:
             return None
         print("BatchNorm fusion complete.")
-        if ai8x_args['qat_policy'] is None:
-            print("No QAT policy - using PTQ.")
+        if ai8x_args['qat_policy'] is None and args.bit_width==8:
+            print("No QAT policy, bit width set to INT8 - using PTQ.")
             quantize_cmd = [
                 sys.executable, "ai8x-synthesis/quantize.py",
-                f"{model}_bn", f"{model}_bn".replace(".pth.tar", "_q8.pth.tar"),
+                f"{model}_bn", f"{model}_bn",
                 "--device", target_hardware,
                 "--scale", ai8x_args['q_scale'],
                 "-c", ai8x_args['config_file']
@@ -31,7 +30,6 @@ def run_ai8x(model, target_hardware, data_sample, ai8x_args, args):
             res = run_subproc(quantize_cmd, "Quantization failed.")
             if res is None:
                 return None
-        model = f"{model}_bn".replace(".pth.tar", "_q8.pth.tar")
 
         ai8xize_args = [sys.executable, "ai8x-synthesis/ai8xize.py"]
         for arg, value in ai8x_args.items():
@@ -61,39 +59,37 @@ def run_ai8x(model, target_hardware, data_sample, ai8x_args, args):
     print(f"ai8x model/code saved to {args.out_dir}")
     return args.out_dir
 
+# TODO fix
 def run_cvi(onnx_path, data_sample, args):
-    model_name = os.path.splitext(os.path.basename(onnx_path))[0]
-    model_mlir = os.path.splitext(onnx_path)[0] + ".mlir"
-    output_path = os.path.splitext(onnx_path)[0] + ".cvimodel"
-    cal_table = args.get("calibration_table") or gen_calibration_table(".table")
+    model_name = "/workspace/src/"+os.path.splitext(os.path.basename(onnx_path))[0]
+    model_mlir = "/workspace/src/"+os.path.splitext(onnx_path)[0] + ".mlir"
+    output_path = "/workspace/src/"+os.path.splitext(onnx_path)[0] + ".cvimodel"
+    cal_table = args.get("calibration_table") or gen_calibration_table(".table") # TODO print / warn user no calibrate table provided so generating one
 
     input_shapes = args["input_shape"]
     shape_str = input_shapes if isinstance(input_shapes, str) else ",".join(map(str, input_shapes))
 
     transform_cmd = [
-        "tpu-mlir/model_transform.py",
+        "model_transform.py",
         "--model_name", model_name,
         "--model_def", onnx_path,
         "--mlir", model_mlir,
         "--input_shape", shape_str,
         "--output_names", args["output_names"],
-        "--test_input"
     ]
 
     data = np.load(data_sample)
     if data.ndim == 4:
         data = data[0]
-    temp_path = "ds_sample.npy"
+    os.makedirs("/workspace/src/temp", exist_ok=True)
+    temp_path = "/workspace/src/temp/ds_sample.npy" 
     np.save(temp_path, data.astype(np.int64))
-    transform_cmd.append(temp_path)
 
     optional_args = {
         "--model_data": args.get("caffe_model"),
         "--resize_dims": args.get("resize_dims"),
         "--pixel_format": args.get("pixel_format"),
-        "--test_result": args.get("val_result_file"),
-        "--excepts": args.get("excepts"),
-    }
+        "--excepts": args.get("excepts")}
 
     for k, v in optional_args.items():
         if v:
@@ -103,39 +99,31 @@ def run_cvi(onnx_path, data_sample, args):
     if args.get("debug"):
         transform_cmd.append("--debug")
 
-    res = run_subproc(transform_cmd, "cvi transform failed.")
+    res = run_subproc(transform_cmd, "cvi transform failed")
     if res is None:
         return None
     os.chdir(os.path.dirname(onnx_path))
 
-    dataset_path = args.get("data_sample") or gen_ds(args["input_shape"][1:])
     cali_cmd = [
         "run_calibration.py",
         model_mlir,
-        "--dataset", dataset_path,
+        "--dataset", temp_path,
         "--input_num", str(args["input_shape"][0]),
         "-o", cal_table
     ]
-    res = run_subproc(cali_cmd, "cvi calibration failed.")
+    res = run_subproc(cali_cmd, "cvi calibration failed")
     if res is None:
         return None
-    
-    tol1, tol2 = 0.84, 0.45
-    if args.get("tolerance"):
-        split = args["tolerance"].split(',')
-        tol1 = float(split[0])
-        if len(split) > 1:
-            tol2 = float(split[1])
 
-    quant = {8: "INT", 16: "F16", 32: "F32"}
+    quant = {8: "INT8", 16: "F16", 32: "F32"}
+    # support all supported hardware formats + bit widths?
     deploy_cmd = [
         "model_deploy.py",
         "--mlir", model_mlir,
         "--quantize", quant[args["bit_width"]],
         "--calibration_table", cal_table,
         "--processor", args["target_hardware"],
-        "--tolerance", str(tol1),
-        "--correctness", str(tol2),
+        "--tolerance", str(args["tolerance"]),
         "--model", output_path
     ]
     if args.get("dynamic"):
@@ -145,7 +133,7 @@ def run_cvi(onnx_path, data_sample, args):
     if args.get("debug"):
         deploy_cmd.append("--debug")
 
-    res = run_subproc(deploy_cmd, "cvi compiler failed.")
+    res = run_subproc(deploy_cmd, "cvi compilation failed")
     if res is None:
         return None
     

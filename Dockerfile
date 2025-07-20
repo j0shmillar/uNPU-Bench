@@ -51,8 +51,9 @@ COPY eiq-toolkit-v1.12.1.77-1_amd64_b240708.deb.bin.zip /tmp/
 RUN cd /tmp && \
     unzip eiq-toolkit-v1.12.1.77-1_amd64_b240708.deb.bin.zip && \
     chmod +x eiq-toolkit-v1.12.1.77-1_amd64_b240708.deb.bin && \
-    ./eiq-toolkit-v1.12.1.77-1_amd64_b240708.deb.bin && \
-    rm -f eiq-toolkit-v1.12.1.77-1_amd64_b240708.deb.bin eiq-toolkit-v1.12.1.77-1_amd64_b240708.deb.bin.zip
+    ./eiq-toolkit-v1.12.1.77-1_amd64_b240708.deb.bin --noexec --target ./eiq_extract && \
+    dpkg -i ./eiq_extract/*.deb && \
+    rm -rf /tmp/eiq-toolkit* /tmp/eiq_extract
 
 RUN python3 -m pip install --upgrade pip==22.0.2 setuptools==59.6.0 wheel==0.37.1
 

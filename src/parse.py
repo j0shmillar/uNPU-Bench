@@ -34,8 +34,8 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 }
                 model_onnx = torch2onnx(model, model_ckpt, onnx_args, args.out_dir)
                 if not model_onnx:
-                    print(f"❌ ONNX export failed for bit-width {args.bit_width}")
-                    continue
+                    print(f"❌ ONNX export failed")
+                    return None
                 onnx_cache[args.bit_width] = model_onnx
             else:
                 model_onnx = onnx_cache[args.bit_width]
@@ -55,7 +55,11 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 "input_names": input_names
             }
             print("🛠️ Generating TFLM model...")
-            onnx2tflm(model_onnx, tflm_args)
+            model_tflm = onnx2tflm(model_onnx, tflm_args)
+            if not model_tflm:
+                print(f"❌ TFLM export failed")
+                return None 
+
 
         elif fmt == "vela":
             tflm_args = {
@@ -68,8 +72,11 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 "data_sample": data_sample,
                 "input_names": input_names
             }
-            out_tflm = onnx2tflm(model_onnx, tflm_args)
-            if out_tflm:
+            model_tflm = onnx2tflm(model_onnx, tflm_args)
+            if not model_tflm:
+                print(f"❌ TFLM export failed")
+                return None 
+            else:
                 vela_args = {
                     "target_hardware": hw,
                     "config_vela": args.config_vela,
@@ -87,9 +94,13 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                     "bit_width": args.bit_width
                 }
                 out_name = model_onnx.split('.')[0]
-                out_vela = run_vela(out_name, vela_args)
-                if out_vela and hw == "hxwe2":
-                    hxwe2_code_gen(out_vela, args.input_shape, sum([x * y for x, y in zip(args.output_shape, args.output_shape)]), args.overwrite)
+                model_vela = run_vela(out_name, vela_args)
+                if not model_vela:
+                    print(f"❌ TFLM export failed")
+                    return None 
+                else:
+                    if hw == "hxwe2":
+                        hxwe2_code_gen(model_vela, args.input_shape, sum([x * y for x, y in zip(args.output_shape, args.output_shape)]), args.overwrite)
 
         elif fmt == "ai8x":
             setup_ai8x()
@@ -123,8 +134,11 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 "clip_method": args.clip_method,
                 "q_scale": args.q_scale
             }
-            run_ai8x(model_ckpt, hw, data_sample, ai8x_args, args)
-
+            model_ai8x = run_ai8x(model_ckpt, hw, data_sample, ai8x_args, args)
+            if not model_ai8x:
+                print(f"❌ AI8X export failed")
+                return None 
+            
         elif fmt == "eiq":
             tflm_args = {
                 "use_onnxsim": args.use_onnxsim,
@@ -136,15 +150,22 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 "data_sample": data_sample,
                 "input_names": input_names
             }
-            tflm_base = onnx2tflm(model_onnx, tflm_args)
-            if tflm_base:
+            model_tflm = onnx2tflm(model_onnx, tflm_args)
+            if not model_tflm:
+                print(f"❌ TFLM export failed")
+                return None 
+            else:
                 eiq_args = {
                     "eiq_path": args.eiq_path,
                     "out_dir": args.out_dir
                 }
-                out_eiq = run_eiq(tflm_base, hw, model_name, eiq_args)
-                if out_eiq and hw == "mcxn947":
-                    mcxn947_code_gen(out_eiq, args.input_shape, sum([x * y for x, y in zip(args.output_shape, args.output_shape)]), args.overwrite)
+                model_eiq = run_eiq(model_tflm, hw, model_name, eiq_args)
+                if not model_eiq:
+                    print(f"❌ EIQ export failed")
+                    return None 
+                else:
+                    if hw == "mcxn947":
+                        mcxn947_code_gen(model_eiq, args.input_shape, sum([x * y for x, y in zip(args.output_shape, args.output_shape)]), args.overwrite)
 
         elif fmt == "cvi":
             cvi_args = {
@@ -165,4 +186,7 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 "correctness": args.correctness,
                 "dynamic": args.dynamic
             }
-            run_cvi(model_onnx, data_sample, cvi_args)
+            model_cvi = run_cvi(model_onnx, data_sample, cvi_args)
+            if not model_cvi:
+                print(f"❌ CVI export failed")
+                return None 

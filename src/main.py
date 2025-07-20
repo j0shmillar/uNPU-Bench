@@ -5,10 +5,11 @@ from parse import compile
 from flags import SUPPORTED_BIT_WIDTHS, SUPPORTED_HARDWARE, GLOBAL_FLAGS, PLATFORM_FLAGS
 
 #TODO
-# check eiq & cvi
-# add proper input validation with YAML (see chatgpt)
-# fix all_scripts (+ rename)
-# reformat files with GPT (make it easy to add new chips, etc)
+# add eiq_path as an EXPORT
+# add proper input validation with YAML (see chatgpt) DOING
+# fix eval .sh
+# reformat files with GPT (make it easy to add new chips, etc) DOING
+# add all constraints i can think of (detect batchnorm layers, bit_width incompatible with target format and/or hardware)
 # & Add README
 
 # TODO for later
@@ -146,8 +147,7 @@ def parse():
 
     # CVI
     parser.add_argument("--calibration_table", type=str, help="Quantization table path. Required when using INT8 quantization for CVI")
-    parser.add_argument("--tolerance", type=float, help="Tolerance for minimum similarity between MLIR quantized and MLIR FP32 inference results")
-    parser.add_argument("--correctness", type=str, default="0.99,0.90", help="Tolerance for minimum similarity between simulator and MLIR quantized inference results. Default: '0.99,0.90'")
+    parser.add_argument("--tolerance", type=float, default=0.99, help="Tolerance for minimum similarity between MLIR quantized and MLIR FP32 inference results")
     parser.add_argument("--dynamic", action="store_true", help="Support dynamic input shapes")
 
     return parser

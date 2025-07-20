@@ -174,8 +174,8 @@ def make_out_dir(args):
 def run_subproc(command, error_msg):
     try:
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-        for line in process.stdout:
-            print(line, end="")  
+        # for line in process.stdout: # TODO add back?
+        #     print(line, end="")  
         process.wait()
         if process.returncode != 0:
             print(f"{error_msg} (exit code {process.returncode})")
