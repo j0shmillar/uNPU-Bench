@@ -66,15 +66,11 @@ def run_cvi(onnx_path, data_sample, args):
     output_path = "/workspace/src/"+os.path.splitext(onnx_path)[0] + ".cvimodel"
     cal_table = args.get("calibration_table") or gen_calibration_table(".table") # TODO print / warn user no calibrate table provided so generating one
 
-    input_shapes = args["input_shape"]
-    shape_str = input_shapes if isinstance(input_shapes, str) else ",".join(map(str, input_shapes))
-
     transform_cmd = [
         "model_transform.py",
         "--model_name", model_name,
         "--model_def", onnx_path,
         "--mlir", model_mlir,
-        "--input_shape", shape_str,
         "--output_names", args["output_names"],
     ]
 
@@ -82,7 +78,7 @@ def run_cvi(onnx_path, data_sample, args):
     if data.ndim == 4:
         data = data[0]
     os.makedirs("/workspace/src/temp", exist_ok=True)
-    temp_path = "/workspace/src/temp/ds_sample.npy" 
+    temp_path = "/workspace/src/temp/" 
     np.save(temp_path, data.astype(np.int64))
 
     optional_args = {

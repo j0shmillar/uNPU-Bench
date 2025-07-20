@@ -183,7 +183,6 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 "target_hardware": hw,
                 "calibration_table": args.calibration_table,
                 "tolerance": args.tolerance,
-                "correctness": args.correctness,
                 "dynamic": args.dynamic
             }
             model_cvi = run_cvi(model_onnx, data_sample, cvi_args)

@@ -183,4 +183,6 @@ def run_subproc(command, error_msg):
         return True
     except Exception as e:
         print(f"{error_msg}: {e}")
+        print("⚠️ stderr:\n", e.stderr)
+        print("⚠️ stdout:\n", e.stdout)
         return None

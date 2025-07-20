@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM sophgo/tpuc_dev:latest
 
 LABEL maintainer="JDM jm4622@ic.ac.uk"
 

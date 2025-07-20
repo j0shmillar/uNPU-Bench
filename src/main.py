@@ -6,6 +6,8 @@ from flags import SUPPORTED_BIT_WIDTHS, SUPPORTED_HARDWARE, GLOBAL_FLAGS, PLATFO
 
 #TODO
 # add eiq_path as an EXPORT
+# error reported in main but with error message passed from model_gen etc
+# remove DEBUG?
 # add proper input validation with YAML (see chatgpt) DOING
 # fix eval .sh
 # reformat files with GPT (make it easy to add new chips, etc) DOING
@@ -143,7 +145,7 @@ def parse():
     parser.add_argument('--vela_optimise', choices=['Size', 'Performance'], default='Performance', help='Optimisation strategy')
 
     # eIQ
-    parser.add_argument("--eiq_path", type=str, default="/opt/nxp/eIQ_Toolkit_v1.13.1/bin/neutron-converter/MCU_SDK_2.16.000/neutron-converter", help="eIQ Neutron SDK path")
+    parser.add_argument("--eiq_path", type=str, default="/opt/nxp/eIQ_Toolkit_v1.12.1/bin/neutron-converter/MCU_SDK_2.16.000/neutron-converter", help="eIQ Neutron SDK path")
 
     # CVI
     parser.add_argument("--calibration_table", type=str, help="Quantization table path. Required when using INT8 quantization for CVI")
