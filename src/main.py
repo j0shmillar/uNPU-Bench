@@ -5,18 +5,15 @@
 # TODO
 # add more quant ops for TFLM, etc
 
-TYPE_MAP = {
-    "int": int,
-    "float": float,
-    "str": str,
-    "bool": bool}
-
 import sys
 import warnings
 import torch.nn as nn
-from utils import get_model_from_name
+
 from parse import compile
+from utils import get_model_from_name
 from val import load_platform_spec, argval
+
+TYPE_MAP = {"int": int, "float": float, "str": str, "bool": bool}
 
 def resolve_format_dependencies(target_formats, spec):
     resolved = set()
@@ -88,7 +85,7 @@ def parse():
     parser.add_argument('--output_shape', type=int, nargs='+', required=True, help='Output shape')
     parser.add_argument('--bit_width', type=int, default=8, help='Quantization bit-width')
     parser.add_argument('--out_dir', type=str, required=True, help='Output directory')
-    parser.add_argument('--debug', type=bool, default=True, help='Debug subprocess outputs')
+    parser.add_argument('--debug', type=bool, default=False, help='Debug subprocess outputs')
     parser.add_argument('--overwrite', action='store_true', help='Overwrite outputs')
 
     return parser

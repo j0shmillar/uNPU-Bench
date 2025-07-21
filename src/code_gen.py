@@ -88,7 +88,7 @@ def mcxn947_code_gen(out_eiq, input_shape, output_shape_concat, overwrite):
     os.makedirs(os.path.dirname(model_dst), exist_ok=True)
     shutil.copy(out_eiq, model_dst)
 
-    print(f"✅ Model inf template saved to {dst}.")
+    print(f"✅ Model inf template saved to {dst}")
 
 def hxwe2_code_gen(out_vela, input_shape, output_shape_concat, overwrite):
     src = "templates/hxwe2"
@@ -113,4 +113,4 @@ def hxwe2_code_gen(out_vela, input_shape, output_shape_concat, overwrite):
     output_cc_path = os.path.join(dst, "app", "scenario_app", "template", "model_data.cc")
     generate_model_cc(out_vela, output_cc_path)
 
-    print(f"✅ Model inf template saved to {dst}.")
+    print(f"✅ Model inf template saved to {dst}")
