@@ -4,7 +4,7 @@ This repository includes a universal model compiler wrapper and deployment pipel
 
 ---
 
-## 🧰 Supported Platforms & Formats  
+## Supported Platforms & Formats  
 
 | Format  | Target Hardware          | 
 |---------|--------------------------|
@@ -41,19 +41,18 @@ docker run --rm -it -v $(pwd):/workspace unpu-bench bash
         pip install -r requirements.txt  
     ```
 
-2. **Optional: Platform-Specific Setup**  
-   | Platform | Setup |  
-   |----------|-------------|  
-   | ai8x     | git clone --recursive [https://github.com/MaximIntegrated/ai8x-training](https://github.com/analogdevicesinc/ai8x-training)  
-<br> Set env var: export AI8X_TRAIN_PATH=/path/to/ai8x-training |  
-   | eIQ      | Download [eIQ Toolkit](https://www.nxp.com/design/design-center/software/eiq-ai-development-environment/eiq-toolkit-for-end-to-end-model-development-and-deployment:EIQ-TOOLKIT) from NXP  
-<br> Set env var: export EIQ_NEUTRON_PATH=/path/to/neutron-converter |  
-   | CVI      | Use Docker image (Linux only) |  
-   | ONNX, TFLM, Vela | No extra setup |  
+2. **Optional: Platform-Specific Setup**   
+
+| Platform             | Setup                                                                                                                                              |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| **ai8x**             | - Clone repo: `git clone --recursive https://github.com/analogdevicesinc/ai8x-training`<br>- Set env var: `export AI8X_TRAIN_PATH=/path/to/ai8x-training` |
+| **eIQ**              | - Download [eIQ Toolkit](https://www.nxp.com/design/design-center/software/eiq-ai-development-environment/eiq-toolkit-for-end-to-end-model-development-and-deployment:EIQ-TOOLKIT)`<br>- Set env var: `export EIQ_NEUTRON_PATH=/path/to/neutron-converter` |
+| **CVI**              | Use Docker image (Linux only)                                                                                                                       |
+| **ONNX, TFLM, Vela** | No extra setup needed     
 
 ---
 
-## 🚀 Example Usage  
+## Example Usage  
 ```bash
 python3 main.py \
     --model model/yolo/yolov1_96.py \
@@ -111,7 +110,7 @@ python3 main.py \
 | `--debug`             | bool      | `False`       | Print debug info from subprocesses |  
 | `--overwrite`         | flag      | `False`       | Overwrite output directory if exists |  
 
-### 🔧 Platform-Specific Dynamic Arguments
+### Platform-Specific Dynamic Arguments
 
 Below are additional CLI arguments specific to each target format, defined in `platforms.yaml`.
 
