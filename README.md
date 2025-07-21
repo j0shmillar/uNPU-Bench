@@ -46,7 +46,7 @@ docker run --rm -it -v $(pwd):/workspace unpu-bench bash
 | Platform             | Setup                                                                                                                                              |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | **ai8x**             | - Clone repo: `git clone --recursive https://github.com/analogdevicesinc/ai8x-training`<br>- Set env var: `export AI8X_TRAIN_PATH=/path/to/ai8x-training` |
-| **eIQ**              | - Download [eIQ Toolkit](https://www.nxp.com/design/design-center/software/eiq-ai-development-environment/eiq-toolkit-for-end-to-end-model-development-and-deployment:EIQ-TOOLKIT)`<br>- Set env var: `export EIQ_NEUTRON_PATH=/path/to/neutron-converter` |
+| **eIQ**              | - Download [eIQ Toolkit](https://www.nxp.com/design/design-center/software/eiq-ai-development-environment/eiq-toolkit-for-end-to-end-model-development-and-deployment:EIQ-TOOLKIT) <br>- Set env var: `export EIQ_NEUTRON_PATH=/path/to/neutron-converter` |
 | **CVI**              | Use Docker image (Linux only)                                                                                                                       |
 | **ONNX, TFLM, Vela** | No extra setup needed     
 
@@ -78,6 +78,7 @@ python3 main.py \
 
 ## Structure 
 
+```
 ├── main.py                # Entry point
 ├── parse.py               # Argparse + compiler routing
 ├── utils.py               # Export, quant, subproc helpers
@@ -86,7 +87,7 @@ python3 main.py \
 ├── code_gen.py            # C/C++ codegen for deployment
 ├── templates/             # C/C++ project templates
 ├── model/                 # Your models!
-
+```
 
 ## CLI Arguments  
 
@@ -171,11 +172,11 @@ Below are additional CLI arguments specific to each target format, defined in `p
 
 ## Adding New Formats or Platforms
 
-# Add Format
+### Add Format
 Define its compiler backend: model_gen/<yourformat>.py with export(...)
 Optionally, add C codegen: code_gen.py
 
-# Add to platforms.yaml
+### Add to platforms.yaml
 
 For example,
 
