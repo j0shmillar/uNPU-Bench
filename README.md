@@ -1,12 +1,10 @@
-# µNPU Universal Compiler Wrapper  
+# µNPU-Bench
 
-📌 **This repository accompanies the paper [Benchmarking Ultra-Low-Power µNPUs](https://arxiv.org/abs/2503.22567), to appear at ACM MobiCom 2025.**
-
-This repository ... a universal model compiler wrapper and deployment pipeline for a variety of MCU-scale neural processing units (µNPUs). It automates model export, quantization, compilation, and deployment code generation using platform-specific toolchains — all from a single Torch-based source model.
+This repository includes a model compiler wrapper and deployment pipeline for a variety of MCU-scale neural processing units (µNPUs). It automates model export, quantization, compilation, and deployment code generation using platform-specific toolchains, all from a single Torch-based source model.
 
 ---
 
-## 🧰 Supported Platforms & Formats  
+## Supported Platforms & Formats  
 
 | Format  | Target Hardware          | 
 |---------|--------------------------|
@@ -19,13 +17,13 @@ This repository ... a universal model compiler wrapper and deployment pipeline f
 
 ---
 
-## Notable Features
+## Features
 
-# - Fully declarative CLI: Compiler args are defined in platforms.yaml, not hardcoded.
-# - Automatically handles multi-stage dependencies. 
-# - Generates device-specific source trees for deployment.
-# - Automatically handles PTQ or QAT when needed.
-# - Preserves builds with backups unless --overwrite.
+- Fully declarative CLI: Compiler args are defined in platforms.yaml, not hardcoded.
+- Automatically handles multi-stage dependencies. 
+- Generates device-specific source trees for deployment.
+- Automatically handles PTQ or QAT when needed.
+- Preserves builds with backups unless --overwrite.
 
 --- 
 ## Setup  
@@ -43,19 +41,18 @@ docker run --rm -it -v $(pwd):/workspace unpu-bench bash
         pip install -r requirements.txt  
     ```
 
-2. **Optional: Platform-Specific Setup**  
-   | Platform | Setup |  
-   |----------|-------------|  
-   | ai8x     | git clone --recursive https://github.com/MaximIntegrated/ai8x-training  
-Set env var: export AI8X_TRAIN_PATH=/path/to/ai8x-training |  
-   | eIQ      | Download [eIQ Toolkit](https://www.nxp.com/design/design-center/software/eiq-ai-development-environment/eiq-toolkit-for-end-to-end-model-development-and-deployment:EIQ-TOOLKIT) from NXP  
-Set env var: export EIQ_NEUTRON_PATH=/path/to/neutron-converter |  
-   | CVI      | Use Docker image (Linux only) |  
-   | ONNX, TFLM, Vela | No extra setup |  
+2. **Optional: Platform-Specific Setup**   
+
+| Platform             | Setup                                                                                                                                              |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| **ai8x**             | - Clone repo: `git clone --recursive https://github.com/analogdevicesinc/ai8x-training`<br>- Set env var: `export AI8X_TRAIN_PATH=/path/to/ai8x-training` |
+| **eIQ**              | - Download [eIQ Toolkit](https://www.nxp.com/design/design-center/software/eiq-ai-development-environment/eiq-toolkit-for-end-to-end-model-development-and-deployment:EIQ-TOOLKIT) <br>- Set env var: `export EIQ_NEUTRON_PATH=/path/to/neutron-converter` |
+| **CVI**              | Use Docker image (Linux only)                                                                                                                       |
+| **ONNX, TFLM, Vela** | No extra setup needed     
 
 ---
 
-## 🚀 Example Usage  
+## Example Usage  
 ```bash
 python3 main.py \
     --model model/yolo/yolov1_96.py \
@@ -81,6 +78,7 @@ python3 main.py \
 
 ## Structure 
 
+```
 ├── main.py                # Entry point
 ├── parse.py               # Argparse + compiler routing
 ├── utils.py               # Export, quant, subproc helpers
@@ -89,7 +87,7 @@ python3 main.py \
 ├── code_gen.py            # C/C++ codegen for deployment
 ├── templates/             # C/C++ project templates
 ├── model/                 # Your models!
-
+```
 
 ## CLI Arguments  
 
@@ -113,7 +111,7 @@ python3 main.py \
 | `--debug`             | bool      | `False`       | Print debug info from subprocesses |  
 | `--overwrite`         | flag      | `False`       | Overwrite output directory if exists |  
 
-### 🔧 Platform-Specific Dynamic Arguments
+### Platform-Specific Dynamic Arguments
 
 Below are additional CLI arguments specific to each target format, defined in `platforms.yaml`.
 
@@ -174,11 +172,11 @@ Below are additional CLI arguments specific to each target format, defined in `p
 
 ## Adding New Formats or Platforms
 
-# Add Format
+### Add Format
 Define its compiler backend: model_gen/<yourformat>.py with export(...)
 Optionally, add C codegen: code_gen.py
 
-# Add to platforms.yaml
+### Add to platforms.yaml
 
 For example,
 
