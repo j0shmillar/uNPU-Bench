@@ -1,7 +1,5 @@
 # µNPU Universal Compiler Wrapper  
 
-📌 **This repository accompanies our paper [Benchmarking Ultra-Low-Power µNPUs](https://arxiv.org/abs/2503.22567), appearing at ACM MobiCom 2025.**
-
 This repository includes a universal model compiler wrapper and deployment pipeline for a variety of MCU-scale neural processing units (µNPUs). It automates model export, quantization, compilation, and deployment code generation using platform-specific toolchains — all from a single Torch-based source model.
 
 ---
@@ -46,10 +44,10 @@ docker run --rm -it -v $(pwd):/workspace unpu-bench bash
 2. **Optional: Platform-Specific Setup**  
    | Platform | Setup |  
    |----------|-------------|  
-   | ai8x     | git clone --recursive https://github.com/MaximIntegrated/ai8x-training  
-Set env var: export AI8X_TRAIN_PATH=/path/to/ai8x-training |  
+   | ai8x     | git clone --recursive [https://github.com/MaximIntegrated/ai8x-training](https://github.com/analogdevicesinc/ai8x-training)  
+<br> Set env var: export AI8X_TRAIN_PATH=/path/to/ai8x-training |  
    | eIQ      | Download [eIQ Toolkit](https://www.nxp.com/design/design-center/software/eiq-ai-development-environment/eiq-toolkit-for-end-to-end-model-development-and-deployment:EIQ-TOOLKIT) from NXP  
-Set env var: export EIQ_NEUTRON_PATH=/path/to/neutron-converter |  
+<br> Set env var: export EIQ_NEUTRON_PATH=/path/to/neutron-converter |  
    | CVI      | Use Docker image (Linux only) |  
    | ONNX, TFLM, Vela | No extra setup |  
 
