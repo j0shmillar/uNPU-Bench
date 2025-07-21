@@ -1,6 +1,10 @@
 # TODO for later
-# Add README
 # test generated code runs on device + tidy device templates
+# add code compilation instructions to README
+# update .gitignore and .dockerignore
+# rename to frdmmcxn947
+# TIDY CODE UNDER NPU
+# ADD OPS GEN FOR NXPMCXN947
 
 # TODO
 # add more quant ops for TFLM, etc

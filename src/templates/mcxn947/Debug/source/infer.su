@@ -1,0 +1,4 @@
+../source/infer.cpp:24:6:void softmax_q17p14_q15(const q31_t*, uint16_t, q15_t*)	24	static
+../source/infer.cpp:81:9:q31_t** generateArray()	24	static
+../source/infer.cpp:93:6:void delay_ms(uint32_t)	16	static
+../source/infer.cpp:107:7:void run()	96	static

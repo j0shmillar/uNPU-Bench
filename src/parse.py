@@ -1,10 +1,11 @@
+from itertools import product
+import numpy as np
+
 from model_gen import ai8x, vela, eiq, cvi
-from code_gen import hxwe2_code_gen, mcxn947_code_gen # TODO update
+from code_gen import hxwe2_code_gen, mcxn947_code_gen
 
 from pth_to_ckpt import pth_to_pth_tar
 from utils import setup_ai8x, torch2onnx, onnx2tflm, make_out_dir
-
-from itertools import product
 
 
 def get_args(args, keys_with_defaults):
@@ -20,7 +21,7 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
     onnx_cache = {}
 
     for fmt, hw in product(target_formats, target_hardware):
-        print(f"\n🚀 Compiling for format: {fmt}, hardware: {hw}")
+        print(f"\nCompiling for format: {fmt}, hardware: {hw}")
 
         if fmt in {"onnx", "tflm", "vela", "eiq", "cvi"}:
             if args.bit_width not in onnx_cache:
@@ -105,7 +106,7 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 else:
                     print(f"✅ VELA export success. Outputs saved to {model_ai8x}")
                     if hw == "hxwe2":
-                        hxwe2_code_gen(model_vela, args.input_shape, sum([x * y for x, y in zip(args.output_shape, args.output_shape)]), args.overwrite)
+                        hxwe2_code_gen(model_vela, args.input_shape, np.prod(args.output_shape), args.overwrite)
                 
         elif fmt == "ai8x":
             setup_ai8x()
@@ -172,7 +173,7 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 else:
                     print(f"✅ eIQ export success. Outputs saved to {model_ai8x}")
                     if hw == "mcxn947":
-                        mcxn947_code_gen(model_eiq, args.input_shape, sum([x * y for x, y in zip(args.output_shape, args.output_shape)]), args.overwrite)
+                        mcxn947_code_gen(model_eiq, args.input_shape, np.prod(args.output_shape), args.overwrite)
 
         elif fmt == "cvi":
             cvi_args = get_args(args, {

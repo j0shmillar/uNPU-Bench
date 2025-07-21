@@ -44,23 +44,12 @@
 #endif
 #endif
 
-#define OUT_H 12
-#define OUT_W 12
-#define OUT_C 10
-
 #define MAX_STRING  100
 #define CHAR_BUFF_SIZE 50 
 
 #define INIT_DWT()      (DWT->CTRL |= 1) 
 #define RESET_DWT()     (DWT->CYCCNT = 0) 
 #define GET_DWT()       (DWT->CYCCNT)   
-
-typedef struct {
-	float x, y;    
-	float confidence;    
-	float class_probs[NUM_CLASSES];  
-	int class_id;     
-} detection_t;
 
 #define TENSOR_ARENA_BUFSIZE  (125*1024)
 __attribute__(( section(".bss.NoInit"))) uint8_t tensor_arena_buf[TENSOR_ARENA_BUFSIZE] __ALIGNED(32);

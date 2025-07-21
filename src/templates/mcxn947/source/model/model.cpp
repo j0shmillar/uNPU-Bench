@@ -11,9 +11,8 @@ static tflite::MicroInterpreter* s_interpreter = nullptr;
 
 extern tflite::MicroOpResolver &MODEL_GetOpsResolver();
 extern uint8_t npu_model_data[];
-constexpr int kTensorArenaSize = (330) * 1024; // TODO make dynamic
+constexpr int kTensorArenaSize = (330) * 1024;
 static uint8_t s_tensorArena[kTensorArenaSize] __ALIGNED(16);
-const char* MODEL_NAME = "model";
 
 status_t MODEL_Init(void)
 {
@@ -38,9 +37,6 @@ status_t MODEL_Init(void)
         PRINTF("AllocateTensors() failed");
         return kStatus_Fail;
     }
-
-    size_t used_bytes = s_interpreter->arena_used_bytes();
-    printf("TFLite Arena RAM usage: %d bytes\n", used_bytes);
 
     return kStatus_Success;
 }
@@ -121,11 +117,6 @@ void MODEL_ConvertInput(uint8_t* data, tensor_dims_t* dims, tensor_type_t type)
         default:
             assert("Unknown input tensor data type");
     }
-}
-
-const char* MODEL_GetModelName(void)
-{
-    return MODEL_NAME;
 }
 
 size_t MODEL_GetArenaUsedBytes(size_t *pMaxSize) {
