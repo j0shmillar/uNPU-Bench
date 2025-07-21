@@ -1,8 +1,8 @@
 # µNPU Universal Compiler Wrapper  
 
-📌 **This repository accompanies the paper [Benchmarking Ultra-Low-Power µNPUs](https://arxiv.org/abs/2503.22567), to appear at ACM MobiCom 2025.**
+📌 **This repository accompanies our paper [Benchmarking Ultra-Low-Power µNPUs](https://arxiv.org/abs/2503.22567), appearing at ACM MobiCom 2025.**
 
-This repository ... a universal model compiler wrapper and deployment pipeline for a variety of MCU-scale neural processing units (µNPUs). It automates model export, quantization, compilation, and deployment code generation using platform-specific toolchains — all from a single Torch-based source model.
+This repository includes a universal model compiler wrapper and deployment pipeline for a variety of MCU-scale neural processing units (µNPUs). It automates model export, quantization, compilation, and deployment code generation using platform-specific toolchains — all from a single Torch-based source model.
 
 ---
 
