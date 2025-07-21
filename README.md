@@ -19,13 +19,13 @@ This repository includes a universal model compiler wrapper and deployment pipel
 
 ---
 
-## Notable Features
+## Features
 
-# - Fully declarative CLI: Compiler args are defined in platforms.yaml, not hardcoded.
-# - Automatically handles multi-stage dependencies. 
-# - Generates device-specific source trees for deployment.
-# - Automatically handles PTQ or QAT when needed.
-# - Preserves builds with backups unless --overwrite.
+- Fully declarative CLI: Compiler args are defined in platforms.yaml, not hardcoded.
+- Automatically handles multi-stage dependencies. 
+- Generates device-specific source trees for deployment.
+- Automatically handles PTQ or QAT when needed.
+- Preserves builds with backups unless --overwrite.
 
 --- 
 ## Setup  
