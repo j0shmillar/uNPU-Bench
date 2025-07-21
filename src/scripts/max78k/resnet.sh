@@ -15,6 +15,6 @@ python3 main.py \
     --bit_width 8 \
     --avg_pool_rounding \
     --q_scale 0.85 \
-    --config_file ai8x-synthesis/networks/cifar100-ressimplenet.yaml \
+    --config_file model/resnet/resnet.yaml \
     --out_dir model/resnet/out \
     --overwrite

@@ -1,7 +1,6 @@
 ---
-# Generated for MAX78000 with input format CHW
 
-arch: ai85nas
+arch: AI85NASCifarNet
 dataset: CIFAR10
 
 layers:
@@ -126,11 +125,15 @@ layers:
     max_pool: 2
     pool_stride: 2
     pool_dilation: [1, 1]
+    # output shape: (128, 2, 2)
 
   # Layer 10
-  - name: fc_Gemm_4
+  - name: fc_Gemm_4  # avgpool.pool fused with fc_Gemm_4
+    # input shape: (128, 2, 2)
     processors: 0xffffffffffffffff
     out_offset: 0x4000
     op: Linear
-    flatten: true
     activate: None
+    avg_pool: 2
+    pool_stride: 2
+    # output shape: (10,)
