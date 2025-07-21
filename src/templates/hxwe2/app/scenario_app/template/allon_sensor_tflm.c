@@ -88,43 +88,7 @@ void set_clock(uint32_t speed)
 {
 	hx_drv_swreg_aon_set_pllfreq(speed);
 	SystemCoreClock = speed;
-    xprintf("Clock set to 100 MHz\n");
 }
-
-static char * _float_to_char(float x, char *p) {
-    char *s = p + CHAR_BUFF_SIZE - 1;  
-    *s = '\0';  
-
-    uint16_t decimals;
-    int units;
-
-    if (x < 0) { 
-        decimals = (int)(x * -100) % 100; 
-        units = (int)(-1 * x);
-    } else { 
-        decimals = (int)(x * 100) % 100;
-        units = (int)x;
-    }
-
-    *--s = (decimals % 10) + '0';
-    decimals /= 10; 
-    *--s = (decimals % 10) + '0';
-    *--s = '.';
-
-    if (units == 0) {
-        *--s = '0';
-    } else {
-        while (units > 0) {
-            *--s = (units % 10) + '0';
-            units /= 10;
-        }
-    }
-
-    if (x < 0) *--s = '-';  
-
-    return s;
-}
-
 
 void enable_dwt()
 {
@@ -145,35 +109,15 @@ void app_start_state()
 	dp_app_cv_eventhdl_cb();
 }
 
-void delay_cycles(uint32_t cycles) {
-    while (cycles--) {
-        __NOP();
-    }
-}
-
 int app_main(void) {
-
-    set_clock(100000000);
-    printf("clock speed: %lu Hz\n", SystemCoreClock);
 
     enable_dwt(); 
     RESET_DWT(); 
 
-    delay_cycles(500000000); 
-
-    uint32_t start = GET_DWT();
     if(cv_init(true, true) < 0) {
         xprintf("cv init fail\n");
         return -1;
     }
-    uint32_t end = GET_DWT();
-    uint32_t cycles = end - start;
-    float time_us = (float)cycles / CPU_FREQ_MHZ; 
-    char time_str[CHAR_BUFF_SIZE];  
-    char *time_ptr = _float_to_char(time_us, time_str);  
-    xprintf("Init time: %s us\n", time_ptr);  
-
-    delay_cycles(500000000); 
 
 	app_start_state();
 	

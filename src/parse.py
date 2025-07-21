@@ -104,7 +104,7 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                     print(f"❌ TFLM export failed")
                     return None
                 else:
-                    print(f"✅ VELA export success. Outputs saved to {model_ai8x}")
+                    print(f"✅ VELA export success. Outputs saved to {model_vela}")
                     if hw == "hxwe2":
                         hxwe2_code_gen(model_vela, args.input_shape, np.prod(args.output_shape), args.overwrite)
                 
@@ -171,7 +171,7 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                     print(f"❌ eIQ export failed")
                     return None
                 else:
-                    print(f"✅ eIQ export success. Outputs saved to {model_ai8x}")
+                    print(f"✅ eIQ export success. Outputs saved to {model_eiq}")
                     if hw == "mcxn947":
                         mcxn947_code_gen(model_eiq, args.input_shape, np.prod(args.output_shape), args.overwrite)
 
@@ -198,5 +198,5 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 print(f"❌ CVI export failed")
                 return None
             else:
-                print(f"✅ CVI export success. Outputs saved to {model_ai8x}")
+                print(f"✅ CVI export success. Outputs saved to {model_cvi}")
     return 1

@@ -160,14 +160,26 @@ int cv_init(bool security_enable, bool privilege_enable)
 		xprintf("model's schema version %d\n", model->version());
 	}
 
-	static tflite::MicroMutableOpResolver<7> op_resolver;
+	static tflite::MicroMutableOpResolver<17> op_resolver;
 
-    op_resolver.AddDepthwiseConv2D();
+    op_resolver.AddPad();
+    op_resolver.AddConcatenation();
+    op_resolver.AddSlice();
+    op_resolver.AddResizeNearestNeighbor();
+    op_resolver.AddTranspose();
+    op_resolver.AddSplit();
+    op_resolver.AddConv2D();
+    op_resolver.AddRelu();
 	op_resolver.AddRelu6();
-	op_resolver.AddConv2D();
+    op_resolver.AddMul();
+    op_resolver.AddAdd();
+    op_resolver.AddSub();
+    op_resolver.AddMaxPool2D();
 	op_resolver.AddAveragePool2D();
-	op_resolver.AddReshape();
-	op_resolver.AddSoftmax();
+    op_resolver.AddDepthwiseConv2D();
+    op_resolver.AddReshape();
+    op_resolver.AddLogistic();
+
 	if (kTfLiteOk != op_resolver.AddEthosU()){
 		xprintf("failed to add Arm NPU support to op resolver.");
 		return false;
@@ -207,9 +219,9 @@ int cv_run() {
         return -1;
     }
 	else
-		xprintf("invoke pass\n");
+		xprintf("Inference passed\n");
 
-    for (int i = 0; i < OUT_H * OUT_W * OUT_C; i++) {
+    for (int i = 0; i < OUT_SIZE; i++) {
         processed_output[i] = output->data.f[i];
     }
 
