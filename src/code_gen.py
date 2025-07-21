@@ -1,8 +1,6 @@
-from utils import run_subproc
-
-import shutil
-import re
 import os
+import re
+import shutil
 
 def replace_define(content, key, value):
     pattern = rf'^\s*#define\s+{key}(\s+\S*)?\s*$'
@@ -48,13 +46,13 @@ alignas(16) const unsigned char {array_name}[] = {{
     with open(output_cc_path, "w") as f:
         f.write(cc_code)
 
-    print(f"✅ C source written to {output_cc_path} with {len(model_data)} bytes.")
+    print(f"✅ C model written to {output_cc_path} with {len(model_data)} bytes.")
     return output_cc_path
 
 def _prepare_template(src, dst, overwrite=False):
     if os.path.exists(dst):
         if overwrite:
-            print(f"🗑️  Overwriting existing directory {dst}")
+            print(f"🗑️ Overwriting existing directory {dst}")
             shutil.rmtree(dst)
         else:
             base_backup = dst + "_backup"
@@ -90,7 +88,7 @@ def mcxn947_code_gen(out_eiq, input_shape, output_shape_concat, overwrite):
     os.makedirs(os.path.dirname(model_dst), exist_ok=True)
     shutil.copy(out_eiq, model_dst)
 
-    print(f"✅ mcxn947 model inference code saved to {dst}.")
+    print(f"✅ Model inf template saved to {dst}.")
 
 def hxwe2_code_gen(out_vela, input_shape, output_shape_concat, overwrite):
     src = "templates/hxwe2"
@@ -115,4 +113,4 @@ def hxwe2_code_gen(out_vela, input_shape, output_shape_concat, overwrite):
     output_cc_path = os.path.join(dst, "app", "scenario_app", "template", "model_data.cc")
     generate_model_cc(out_vela, output_cc_path)
 
-    print(f"✅ hxwe2 model inference code saved to {dst}.")
+    print(f"✅ Model inf template saved to {dst}.")

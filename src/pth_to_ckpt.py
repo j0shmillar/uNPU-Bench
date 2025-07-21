@@ -11,11 +11,11 @@ def pth_to_pth_tar(input_pth, output_pth_tar, epoch=100, optimizer_state=None):
     print(f"{input_pth} to {output_pth_tar} with additional fields")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description=".pth to .pth.tar with checkpoint fields.")
-    parser.add_argument("input_pth", type=str, help="path to input .pth file")
-    parser.add_argument("output_pth_tar", type=str, help="path to output .pth.tar file")
-    parser.add_argument("--epoch", type=int, default=100, help="epoch number to include in checkpoint")
-    parser.add_argument("--optimizer", type=str, default=None, help="path to optional optimizer state .pth file")
+    parser = argparse.ArgumentParser(description=".pth to .pth.tar with ckpt fields.")
+    parser.add_argument("input_pth", type=str, help="Path to input .pth file")
+    parser.add_argument("output_pth_tar", type=str, help="Path to output .pth.tar file")
+    parser.add_argument("--epoch", type=int, default=100, help="Epoch number to include in ckpt")
+    parser.add_argument("--optimizer", type=str, default=None, help="Path to optional optimizer state .pth file")
     
     args = parser.parse_args()
     

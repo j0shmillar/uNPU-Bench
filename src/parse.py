@@ -1,9 +1,14 @@
-from model_gen import run_ai8x, run_vela, run_eiq, run_cvi
-from code_gen import hxwe2_code_gen, mcxn947_code_gen
+from model_gen import ai8x, vela, eiq, cvi
+from code_gen import hxwe2_code_gen, mcxn947_code_gen # TODO update
+
 from pth_to_ckpt import pth_to_pth_tar
-from utils import torch2onnx, onnx2tflm, setup_ai8x
-from utils import make_out_dir
+from utils import setup_ai8x, torch2onnx, onnx2tflm, make_out_dir
+
 from itertools import product
+
+
+def get_args(args, keys_with_defaults):
+    return {key: getattr(args, key, default) for key, default in keys_with_defaults.items()}
 
 def compile(model, model_name, model_ckpt, target_formats, target_hardware, data_sample, input_names, output_names, args):
     if model_ckpt.endswith(".pth"):
@@ -19,19 +24,19 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
 
         if fmt in {"onnx", "tflm", "vela", "eiq", "cvi"}:
             if args.bit_width not in onnx_cache:
-                onnx_args = {
-                    "opset": args.opset,
-                    "opset_version": args.opset,
-                    "custom_opsets": args.custom_opsets,
-                    "export_params": args.export_params,
-                    "do_constant_folding": args.do_constant_folding,
+                onnx_args = get_args(args, {
+                    "opset": 19,
+                    "opset_version": 19,
+                    "custom_opsets": None,
+                    "export_params": True,
+                    "do_constant_folding": True,
                     "input_names": input_names,
                     "input_shape": args.input_shape,
                     "output_names": output_names,
-                    "keep_initializers_as_inputs": args.keep_initializers_as_inputs,
-                    "dynamic_axes": args.dynamic_axes,
-                    "model_name": args.model_name
-                }
+                    "keep_initializers_as_inputs": False,
+                    "dynamic_axes": None,
+                    "model_name": args.model_name,
+                    "debug": args.debug})
                 model_onnx = torch2onnx(model, model_ckpt, onnx_args, args.out_dir)
                 if not model_onnx:
                     print(f"❌ ONNX export failed")
@@ -44,148 +49,149 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
             continue
 
         elif fmt == "tflm":
-            tflm_args = {
-                "use_onnxsim": args.use_onnxsim,
-                "output_integer_quantized_tflite": args.output_integer_quantized_tflite,
-                "tflm_quant_type": args.tflm_quant_type,
-                "disable_group_convolution": args.disable_group_convolution,
-                "enable_batchmatmul_unfold": args.enable_batchmatmul_unfold,
+            tflm_args = get_args(args, {
+                "use_onnxsim": False,
+                "output_integer_quantized_tflite": True,
+                "tflm_quant_type": "per_channel",
+                "disable_group_convolution": False,
+                "enable_batchmatmul_unfold": False,
                 "input_layout": args.input_layout,
                 "data_sample": data_sample,
-                "input_names": input_names
-            }
+                "input_names": input_names,
+                "debug": args.debug})
             print("🛠️ Generating TFLM model...")
             model_tflm = onnx2tflm(model_onnx, tflm_args)
             if not model_tflm:
                 print(f"❌ TFLM export failed")
-                return None 
-
+                return None
 
         elif fmt == "vela":
-            tflm_args = {
-                "use_onnxsim": args.use_onnxsim,
-                "output_integer_quantized_tflite": args.output_integer_quantized_tflite,
-                "tflm_quant_type": args.tflm_quant_type,
-                "disable_group_convolution": args.disable_group_convolution,
-                "enable_batchmatmul_unfold": args.enable_batchmatmul_unfold,
+            tflm_args = get_args(args, {
+                "use_onnxsim": False,
+                "output_integer_quantized_tflite": True,
+                "tflm_quant_type": "per_channel",
+                "disable_group_convolution": False,
+                "enable_batchmatmul_unfold": False,
                 "input_layout": args.input_layout,
                 "data_sample": data_sample,
-                "input_names": input_names
-            }
+                "input_names": input_names,
+                "debug": args.debug})
             model_tflm = onnx2tflm(model_onnx, tflm_args)
             if not model_tflm:
                 print(f"❌ TFLM export failed")
-                return None 
+                return None
             else:
-                vela_args = {
+                vela_args = get_args(args, {
                     "target_hardware": hw,
-                    "config_vela": args.config_vela,
-                    "config_vela_system": args.config_vela_system,
-                    "force_symmetric_int_weights": args.force_symmetric_int_weights,
-                    "memory_mode": args.memory_mode,
-                    "tensor_allocator": args.tensor_allocator,
-                    "max_block_dependency": args.max_block_dependency,
-                    "arena_cache_size": args.arena_cache_size,
-                    "cpu_tensor_alignment": args.cpu_tensor_alignment,
-                    "recursion_limit": args.recursion_limit,
-                    "hillclimb_max_iterations": args.hillclimb_max_iterations,
-                    "vela_optimise": args.vela_optimise,
+                    "config_vela": None,
+                    "config_vela_system": "internal-default",
+                    "force_symmetric_int_weights": False,
+                    "memory_mode": "internal-default",
+                    "tensor_allocator": "HillClimb",
+                    "max_block_dependency": 3,
+                    "arena_cache_size": None,
+                    "cpu_tensor_alignment": 16,
+                    "recursion_limit": 1000,
+                    "hillclimb_max_iterations": 99999,
+                    "vela_optimise": "Performance",
                     "model_name": args.model_name,
-                    "bit_width": args.bit_width
-                }
+                    "bit_width": args.bit_width,
+                    "debug": args.debug})
                 out_name = model_onnx.split('.')[0]
-                model_vela = run_vela(out_name, vela_args)
+                model_vela = vela.export(out_name, vela_args)
                 if not model_vela:
                     print(f"❌ TFLM export failed")
-                    return None 
+                    return None
                 else:
                     if hw == "hxwe2":
                         hxwe2_code_gen(model_vela, args.input_shape, sum([x * y for x, y in zip(args.output_shape, args.output_shape)]), args.overwrite)
-
+                
         elif fmt == "ai8x":
             setup_ai8x()
-            ai8x_args = {
-                "avg_pool_rounding": args.avg_pool_rounding,
-                "simple1b": args.simple1b,
-                "config_file": args.config_file,
+            ai8x_args = get_args(args, {
+                "avg_pool_rounding": False,
+                "simple1b": False,
+                "config_file": None,
                 "prefix": args.out_dir,
                 "test_dir": args.out_dir,
-                "board_name": args.board_name,
+                "board_name": "EvKit_V1",
                 "overwrite": args.overwrite,
-                "compact_weights": args.compact_weights,
-                "mlator": args.mlator,
-                "softmax": args.softmax,
-                "boost": args.boost,
-                "no_wfi": args.no_wfi,
-                "zero_sram": args.zero_sram,
-                "zero_unused": args.zero_unused,
-                "max_speed": args.max_speed,
-                "fifo": args.fifo,
-                "fast_fifo": args.fast_fifo,
-                "fast_fifo_quad": args.fast_fifo_quad,
-                "riscv": args.riscv,
-                "riscv_exclusive": args.riscv_exclusive,
-                "input_offset": args.input_offset,
-                "write_zero_registers": args.write_zero_registers,
-                "no_unload": args.no_unload,
-                "no_deduplicate_weights": args.no_deduplicate_weights,
-                "no_scale_output": args.no_scale_output,
-                "qat_policy": args.qat_policy,
-                "clip_method": args.clip_method,
-                "q_scale": args.q_scale
-            }
-            model_ai8x = run_ai8x(model_ckpt, hw, data_sample, ai8x_args, args)
+                "compact_weights": False,
+                "mlator": False,
+                "softmax": False,
+                "boost": None,
+                "no_wfi": False,
+                "zero_sram": False,
+                "zero_unused": False,
+                "max_speed": False,
+                "fifo": False,
+                "fast_fifo": False,
+                "fast_fifo_quad": False,
+                "riscv": False,
+                "riscv_exclusive": False,
+                "input_offset": None,
+                "write_zero_registers": False,
+                "no_unload": False,
+                "no_deduplicate_weights": False,
+                "no_scale_output": False,
+                "qat_policy": None,
+                "clip_method": None,
+                "q_scale": "0.85"})
+            model_ai8x = ai8x.export(model_ckpt, hw, data_sample, ai8x_args, args)
             if not model_ai8x:
                 print(f"❌ AI8X export failed")
-                return None 
-            
+                return None
+            else:
+                print(f"✅ AI8X export success. Outputs saved to {model_ai8x}")
+
         elif fmt == "eiq":
-            tflm_args = {
-                "use_onnxsim": args.use_onnxsim,
-                "output_integer_quantized_tflite": args.output_integer_quantized_tflite,
-                "tflm_quant_type": args.tflm_quant_type,
-                "disable_group_convolution": args.disable_group_convolution,
-                "enable_batchmatmul_unfold": args.enable_batchmatmul_unfold,
+            tflm_args = get_args(args, {
+                "use_onnxsim": False,
+                "output_integer_quantized_tflite": True,
+                "tflm_quant_type": "per_channel",
+                "disable_group_convolution": False,
+                "enable_batchmatmul_unfold": False,
                 "input_layout": args.input_layout,
                 "data_sample": data_sample,
-                "input_names": input_names
-            }
+                "input_names": input_names,
+                "debug": args.debug})
             model_tflm = onnx2tflm(model_onnx, tflm_args)
             if not model_tflm:
                 print(f"❌ TFLM export failed")
-                return None 
+                return None
             else:
-                eiq_args = {
-                    "eiq_path": args.eiq_path,
-                    "out_dir": args.out_dir
-                }
-                model_eiq = run_eiq(model_tflm, hw, model_name, eiq_args)
+                eiq_args = get_args(args, {
+                    "eiq_path": "/opt/nxp/eIQ_Toolkit_v1.12.1/bin/neutron-converter/MCU_SDK_2.16.000/neutron-converter",
+                    "out_dir": args.out_dir,
+                    "debug": args.debug})
+                model_eiq = eiq.export(model_tflm, hw, model_name, eiq_args)
                 if not model_eiq:
                     print(f"❌ EIQ export failed")
-                    return None 
+                    return None
                 else:
                     if hw == "mcxn947":
                         mcxn947_code_gen(model_eiq, args.input_shape, sum([x * y for x, y in zip(args.output_shape, args.output_shape)]), args.overwrite)
 
         elif fmt == "cvi":
-            cvi_args = {
+            cvi_args = get_args(args, {
                 "bit_width": args.bit_width,
-                "use_onnxsim": args.use_onnxsim,
-                "output_integer_quantized_tflite": args.output_integer_quantized_tflite,
-                "tflm_quant_type": args.tflm_quant_type,
-                "disable_group_convolution": args.disable_group_convolution,
-                "enable_batchmatmul_unfold": args.enable_batchmatmul_unfold,
+                "use_onnxsim": False,
+                "output_integer_quantized_tflite": True,
+                "tflm_quant_type": "per_channel",
+                "disable_group_convolution": False,
+                "enable_batchmatmul_unfold": False,
                 "input_layout": args.input_layout,
                 "data_sample": data_sample,
                 "input_names": input_names,
                 "input_shape": args.input_shape,
                 "output_names": args.output_names,
                 "target_hardware": hw,
-                "calibration_table": args.calibration_table,
-                "tolerance": args.tolerance,
-                "dynamic": args.dynamic
-            }
-            model_cvi = run_cvi(model_onnx, data_sample, cvi_args)
+                "calibration_table": None,
+                "tolerance": 0.99,
+                "dynamic": False,
+                "debug": args.debug})
+            model_cvi = cvi.export(model_onnx, data_sample, cvi_args)
             if not model_cvi:
                 print(f"❌ CVI export failed")
-                return None 
+                return None
+    return 1

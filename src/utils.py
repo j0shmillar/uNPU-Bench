@@ -1,13 +1,11 @@
 import os
 import sys
-import tempfile
-import subprocess
-import importlib
-import numpy as np
 import torch
 import onnx2tf
-
-import shutil
+import tempfile
+import importlib
+import subprocess
+import numpy as np
 
 # reg custom op for ONNX export
 def exp2_symbolic(g, input):
@@ -77,7 +75,7 @@ def onnx2tflm(onnx_path, args):
 
     elif layout == "NCW":
         if sample.ndim == 3:
-            sample = sample.transpose(1, 2, 0)  # e.g., NCW to CWN -> customize as needed
+            sample = sample.transpose(1, 2, 0)  # e.g., NCW to CWN
             print(f"Transposed to match NCW layout: {sample.shape}")
         elif sample.ndim == 2:
             sample = sample.transpose(1, 0)
@@ -85,7 +83,12 @@ def onnx2tflm(onnx_path, args):
         else:
             raise ValueError(f"Unsupported shape for NCW input layout: {sample.shape}")
 
-
+    if sample.ndim != 3:
+        raise ValueError(f"Expected 3D sample before reshaping, got {sample.shape}")
+    
+    N, W, C = sample.shape
+    sample = sample.reshape((1, 1, N, W, C))
+    
     temp_sample_path = "sample_rs.npy"
     np.save(temp_sample_path, sample.astype(float))
 
@@ -171,18 +174,17 @@ def make_out_dir(args):
     args.out_dir = out_dir
     return args
 
-def run_subproc(command, error_msg):
+def run_subproc(command, debug, error_msg):
     try:
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-        # for line in process.stdout: # TODO add back?
-        #     print(line, end="")  
-        process.wait()
+        if debug:
+            for line in process.stdout:
+                print(line, end="")  
+            process.wait()
         if process.returncode != 0:
             print(f"{error_msg} (exit code {process.returncode})")
             return None
         return True
     except Exception as e:
         print(f"{error_msg}: {e}")
-        print("⚠️ stderr:\n", e.stderr)
-        print("⚠️ stdout:\n", e.stdout)
         return None

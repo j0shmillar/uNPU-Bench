@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python main.py \
+python3 main.py \
     --model model/autoenc/autoenc.py \
     --model_ckpt model/autoenc/autoenc.pth.tar \
     --model_name ai85autoencoder \
@@ -16,5 +16,5 @@ python main.py \
     --avg_pool_rounding \
     --q_scale 0.85 \
     --config_file ai8x-synthesis/networks/ai85-autoencoder.yaml \
-    --out_dir model/autoenc/test \
+    --out_dir model/autoenc/out \
     --overwrite

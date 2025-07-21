@@ -1,11 +1,12 @@
 #!/bin/bash
 
-python main.py \
+python3 main.py \
     --model model/autoenc/autoenc.py \
     --model_ckpt model/autoenc/autoenc.pth.tar \
     --model_name ai85autoencoder \
     --model_module_name AI85AutoEncoder \
     --target_format cvi \
+    --target_hardware cv180x \
     --data_sample model/autoenc/sample_data_nhwc.npy \
     --input_layout NCW \
     --input_shape 1 256 3 \
@@ -13,4 +14,4 @@ python main.py \
     --input_names input \
     --output_names output \
     --bit_width 8 \
-    --out_dir model/autoenc/test
+    --out_dir model/autoenc/out

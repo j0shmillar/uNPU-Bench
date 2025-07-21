@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python main.py \
+python3 main.py \
     --model model/yolo/yolov1_96.py \
     --model_ckpt model/yolo/yolov1.pth.tar \
     --model_name ai85yolo96 \
@@ -13,4 +13,4 @@ python main.py \
     --input_names input \
     --output_names output \
     --bit_width 8 \
-    --out_dir model/yolo/test
+    --out_dir model/yolo/out

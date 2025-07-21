@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python main.py \
+python3 main.py \
     --model model/nas/nas.py \
     --model_ckpt model/nas/nas.pth.tar \
     --model_name ai85nas \
@@ -16,5 +16,5 @@ python main.py \
     --avg_pool_rounding \
     --q_scale 0.85 \
     --config_file ai8x-training/nas.yaml \
-    --out_dir model/nas/test \
+    --out_dir model/nas/out \
     --overwrite

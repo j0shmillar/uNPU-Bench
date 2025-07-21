@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python main.py \
+python3 main.py \
     --model model/resnet/resnet.py \
     --model_ckpt model/resnet/resnet.pth.tar \
     --model_name ai85ressimplenet \
@@ -13,4 +13,4 @@ python main.py \
     --input_names input \
     --output_names output \
     --bit_width 8 \
-    --out_dir model/resnet/test
+    --out_dir model/resnet/out

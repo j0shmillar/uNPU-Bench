@@ -8,7 +8,8 @@ ENV LC_ALL=C.UTF-8
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    software-properties-common && \
+    software-properties-common \
+    gnupg && \
     add-apt-repository ppa:deadsnakes/ppa && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -76,5 +77,7 @@ RUN cd src && git clone --recursive https://github.com/analogdevicesinc/ai8x-tra
     git clone --recursive https://github.com/analogdevicesinc/ai8x-synthesis.git
 
 ENV AI8X_TRAIN_PATH=/workspace/src/ai8x-training/
+
+ENV EIQ_NEUTRON_PATH=/opt/nxp/eIQ_Toolkit_v1.12.1/bin/neutron-converter/MCU_SDK_2.16.000/neutron-converter
 
 CMD ["/bin/bash"]

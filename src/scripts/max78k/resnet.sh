@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python main.py \
+python3 main.py \
     --model model/resnet/resnet.py \
     --model_ckpt model/resnet/resnet.pth.tar \
     --model_name ai85ressimplenet \
@@ -16,5 +16,5 @@ python main.py \
     --avg_pool_rounding \
     --q_scale 0.85 \
     --config_file ai8x-synthesis/networks/cifar100-ressimplenet.yaml \
-    --out_dir model/resnet/test \
+    --out_dir model/resnet/out \
     --overwrite

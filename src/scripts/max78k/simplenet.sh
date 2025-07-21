@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python main.py \
+python3 main.py \
     --model model/simplenet/simplenet.py \
     --model_ckpt model/simplenet/simplenet.pth.tar \
     --model_name ai85simplenet \
@@ -16,5 +16,5 @@ python main.py \
     --avg_pool_rounding \
     --q_scale 0.85 \
     --config_file ai8x-synthesis/networks/cifar100-simple.yaml \
-    --out_dir model/simplenet/test \
+    --out_dir model/simplenet/out \
     --overwrite

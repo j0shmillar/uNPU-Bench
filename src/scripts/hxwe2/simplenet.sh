@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python main.py \
+python3 main.py \
     --model model/simplenet/simplenet.py \
     --model_ckpt model/simplenet/simplenet.pth.tar \
     --model_name ai85simplenet \
@@ -13,4 +13,4 @@ python main.py \
     --input_names input \
     --output_names output \
     --bit_width 8 \
-    --out_dir model/simplenet/test \
+    --out_dir model/simplenet/out
