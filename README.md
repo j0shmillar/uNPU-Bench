@@ -1,6 +1,6 @@
 # µNPU-Bench
 
-This repository includes a universal model compiler wrapper and deployment pipeline for a variety of MCU-scale neural processing units (µNPUs). It automates model export, quantization, compilation, and deployment code generation using platform-specific toolchains — all from a single Torch-based source model.
+This repository includes a model compiler wrapper and deployment pipeline for a variety of MCU-scale neural processing units (µNPUs). It automates model export, quantization, compilation, and deployment code generation using platform-specific toolchains — all from a single Torch-based source model.
 
 ---
 
