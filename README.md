@@ -33,7 +33,7 @@ This repository includes a model compiler wrapper and deployment pipeline for a 
 docker build -t unpu-bench .  
 docker run --rm -it -v $(pwd):/workspace unpu-bench bash  
 ```
-**⚠️ Requires Linux x86_64 (for CVI & eIQ support).**
+**⚠️ Requires Linux x86_64 (for CVI & eIQ support)**
 
 ### 🔧 Manual  
 1. **Install Python dependencies:**  
