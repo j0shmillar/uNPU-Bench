@@ -28,7 +28,7 @@ def export(onnx_path, data_sample, args):
     transform_cmd = [
         "model_transform.py",
         "--model_name", model_name,
-        "--model_def", "/workspace/src"+onnx_path,
+        "--model_def", "/workspace/src/"+onnx_path,
         "--mlir", model_mlir,
         "--output_names", out_str
     ]
@@ -47,7 +47,6 @@ def export(onnx_path, data_sample, args):
     if args.get("keep_aspect_ratio"):
         transform_cmd.append("--keep_aspect_ratio")
 
-    print("Transforming...")
     if run_subproc(transform_cmd, args['debug'], "CVI - transform failed") is None:
         return None
 
@@ -59,7 +58,6 @@ def export(onnx_path, data_sample, args):
         "-o", cal_table
     ]
 
-    print("Calibrating...")
     if run_subproc(cali_cmd, args['debug'], "CVI - Calib failed") is None:
         return None
 
@@ -79,15 +77,13 @@ def export(onnx_path, data_sample, args):
         "--calibration_table", cal_table,
         "--processor", args["target_hardware"],
         "--tolerance", str(args["tolerance"]),
-        "--model", output_path
-    ]
+        "--model", output_path]
 
     if args.get("dynamic"):
         deploy_cmd.append("--dynamic")
     if args.get("excepts"):
         deploy_cmd += ["--excepts", args["excepts"]]
 
-    print("Deploying...")
     if run_subproc(deploy_cmd, args['debug'], "CVI - Compile failed") is None:
         return None
 

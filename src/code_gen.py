@@ -2,6 +2,8 @@ import os
 import re
 import shutil
 
+import numpy as np
+
 def replace_define(content, key, value):
     pattern = rf'^\s*#define\s+{key}(\s+\S*)?\s*$'
     replacement = f"#define {key} {value}"
@@ -74,12 +76,20 @@ def mcxn947_code_gen(out_eiq, input_shape, output_shape_concat, overwrite):
 
     _prepare_template(src, dst, overwrite)
 
-    model_config = {
-        'MODEL_IN_W': input_shape[1],
-        'MODEL_IN_H': input_shape[2],
-        'MODEL_IN_C': input_shape[0],
-        'OUT_SIZE': output_shape_concat
-    }
+    input_shape = np.array(input_shape).squeeze()
+
+    if input_shape.ndim == 2:
+        model_config = {
+            'MODEL_IN_W': input_shape[1],
+            'MODEL_IN_H': 1,
+            'MODEL_IN_C': input_shape[0],
+            'OUT_SIZE': output_shape_concat}
+    else:
+        model_config = {
+            'MODEL_IN_W': input_shape[1],
+            'MODEL_IN_H': input_shape[2],
+            'MODEL_IN_C': input_shape[0],
+            'OUT_SIZE': output_shape_concat}
 
     input_file = os.path.join(dst, "source", "infer.cpp")
     patch_model_defines(input_file, model_config)
@@ -91,21 +101,27 @@ def mcxn947_code_gen(out_eiq, input_shape, output_shape_concat, overwrite):
     print(f"✅ Model inf template saved to {dst}")
 
 def hxwe2_code_gen(out_vela, input_shape, output_shape_concat, overwrite):
+    print(input_shape)
     src = "templates/hxwe2"
     out_dir = os.path.dirname(out_vela)
     dst = os.path.join(out_dir, "hxwe2")
 
     _prepare_template(src, dst, overwrite)
 
-    if len(input_shape) == 4:
-        input_shape = input_shape[1:]
+    input_shape = np.array(input_shape).squeeze()
 
-    model_config = {
-        'MODEL_IN_W': input_shape[1],
-        'MODEL_IN_H': input_shape[2],
-        'MODEL_IN_C': input_shape[0],
-        'OUT_SIZE': output_shape_concat
-    }
+    if input_shape.ndim == 2:
+        model_config = {
+            'MODEL_IN_W': input_shape[1],
+            'MODEL_IN_H': 1,
+            'MODEL_IN_C': input_shape[0],
+            'OUT_SIZE': output_shape_concat}
+    else:
+        model_config = {
+            'MODEL_IN_W': input_shape[1],
+            'MODEL_IN_H': input_shape[2],
+            'MODEL_IN_C': input_shape[0],
+            'OUT_SIZE': output_shape_concat}
 
     input_file = os.path.join(dst, "app", "scenario_app", "template", "cvapp.cpp")
     patch_model_defines(input_file, model_config)

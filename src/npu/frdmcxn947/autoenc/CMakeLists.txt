@@ -41,8 +41,8 @@ SET(LIBRARY_OUTPUT_PATH ${ProjDirPath}/${CMAKE_BUILD_TYPE})
 
 set(CMAKE_USER_MAKE_RULES_OVERRIDE "user_override.cmake")
 
-project(yolov1)
-set(MCUX_SDK_PROJECT_NAME yolov1.elf)
+project(autoenc)
+set(MCUX_SDK_PROJECT_NAME autoenc.elf)
 
 include(${ProjDirPath}/flags.cmake)
 

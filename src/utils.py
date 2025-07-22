@@ -177,14 +177,19 @@ def make_out_dir(args):
 def run_subproc(command, debug, error_msg):
     try:
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-        if debug:
-            for line in process.stdout:
-                print(line, end="")  
-            process.wait()
+        output_lines = []
+        for line in process.stdout:
+            if debug:
+                print(line, end="")
+            output_lines.append(line)
+        process.wait()
         if process.returncode != 0:
+            # if not debug:
+            #     print(''.join(output_lines), end="") 
             print(f"{error_msg} (exit code {process.returncode})")
             return None
         return True
     except Exception as e:
         print(f"{error_msg}: {e}")
         return None
+

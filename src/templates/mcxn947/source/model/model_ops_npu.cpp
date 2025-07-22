@@ -6,7 +6,7 @@
  */
 
 #include "tensorflow/lite/micro/kernels/micro_ops.h"
-#include "tensorflow/lite/micro/micro_mutable_s_microOpResolver.h"
+#include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
 #include "tensorflow/lite/micro/kernels/neutron/neutron.h"
 
 tflite::MicroOpResolver &MODEL_GetOpsResolver()

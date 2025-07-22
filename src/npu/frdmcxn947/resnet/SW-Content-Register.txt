@@ -1,4 +1,4 @@
-Package: yolov1
+Package: resnet
 Version: 1.0
 Outgoing License: LA_OPT_NXP_Software_License v53 December 2023 - Additional Distribution License granted, license in Section 2.3 applies
 License File: LICENSE
