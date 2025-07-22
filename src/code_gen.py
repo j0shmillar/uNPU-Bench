@@ -25,7 +25,7 @@ def patch_model_defines(filepath, model_config):
     with open(filepath, "w") as f:
         f.write(content)
 
-    print(f"✅ Updated {filepath} with defines: {model_config}")
+    print(f"Updated {filepath} with defines: {model_config}")
 
 def generate_model_cc(tflite_path, output_cc_path, array_name="g_model_data", header_name="model_data.h"):
     with open(tflite_path, "rb") as f:
@@ -48,7 +48,7 @@ alignas(16) const unsigned char {array_name}[] = {{
     with open(output_cc_path, "w") as f:
         f.write(cc_code)
 
-    print(f"✅ C model written to {output_cc_path} with {len(model_data)} bytes.")
+    print(f"C model written to {output_cc_path} with {len(model_data)} bytes.")
     return output_cc_path
 
 def _prepare_template(src, dst, overwrite=False):
@@ -67,7 +67,7 @@ def _prepare_template(src, dst, overwrite=False):
             shutil.move(dst, backup_path)
             print(f"📦 Existing directory moved to {backup_path}")
     shutil.copytree(src, dst)
-    print(f"✅ Template copied from {src} to {dst}")
+    print(f"Template copied from {src} to {dst}")
 
 def mcxn947_code_gen(out_eiq, input_shape, output_shape_concat, overwrite):  
     src = "templates/mcxn947"
@@ -98,7 +98,7 @@ def mcxn947_code_gen(out_eiq, input_shape, output_shape_concat, overwrite):
     os.makedirs(os.path.dirname(model_dst), exist_ok=True)
     shutil.copy(out_eiq, model_dst)
 
-    print(f"✅ Model inf template saved to {dst}")
+    print(f"Model inf template saved to {dst}")
 
 def hxwe2_code_gen(out_vela, input_shape, output_shape_concat, overwrite):
     print(input_shape)
@@ -129,4 +129,4 @@ def hxwe2_code_gen(out_vela, input_shape, output_shape_concat, overwrite):
     output_cc_path = os.path.join(dst, "app", "scenario_app", "template", "model_data.cc")
     generate_model_cc(out_vela, output_cc_path)
 
-    print(f"✅ Model inf template saved to {dst}")
+    print(f"Model inf template saved to {dst}")

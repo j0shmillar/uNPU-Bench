@@ -42,10 +42,10 @@ def torch2onnx(model, pth_path, args, out_dir):
             dynamic_axes=args.get("dynamic_axes", None),
             keep_initializers_as_inputs=args.get("keep_initializers_as_inputs", False),
             custom_opsets=args.get("custom_opsets", None))
-        print(f"✅ Saved ONNX model to {onnx_path}")
+        print(f"Saved ONNX model to {onnx_path}")
         return onnx_path
     except Exception as e:
-        print(f"❌ ONNX export failed: {e}")
+        print(f"ONNX export failed: {e}")
         return None
 
 def onnx2tflm(onnx_path, args):
@@ -107,7 +107,7 @@ def onnx2tflm(onnx_path, args):
 
     os.remove(temp_sample_path)
 
-    print(f"✅ Saved TFLM model to {os.path.dirname(onnx_path)}")
+    print(f"Saved TFLM model to {os.path.dirname(onnx_path)}")
     return os.path.dirname(onnx_path)
 
 def setup_ai8x(device_id=85, use_8bit=True):
@@ -153,7 +153,7 @@ def make_out_dir(args):
 
     if args.overwrite:
         os.makedirs(out_dir, exist_ok=True)
-        print(f"📝 Using output directory (overwrite enabled): {out_dir}")
+        print(f"Using output directory (overwrite enabled): {out_dir}")
     else:
         if is_empty(out_dir):
             os.makedirs(out_dir, exist_ok=True)

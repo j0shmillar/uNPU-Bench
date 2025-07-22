@@ -40,7 +40,7 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                     "debug": args.debug})
                 model_onnx = torch2onnx(model, model_ckpt, onnx_args, args.out_dir)
                 if not model_onnx:
-                    print(f"❌ ONNX export failed")
+                    print(f"ONNX export failed")
                     return None
                 onnx_cache[args.bit_width] = model_onnx
             else:
@@ -60,10 +60,10 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 "data_sample": data_sample,
                 "input_names": input_names,
                 "debug": args.debug})
-            print("🛠️ Generating TFLM model...")
+            print("Generating TFLM model...")
             model_tflm = onnx2tflm(model_onnx, tflm_args)
             if not model_tflm:
-                print(f"❌ TFLM export failed")
+                print(f"TFLM export failed")
                 return None
 
         elif fmt == "vela":
@@ -79,7 +79,7 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 "debug": args.debug})
             model_tflm = onnx2tflm(model_onnx, tflm_args)
             if not model_tflm:
-                print(f"❌ TFLM export failed")
+                print(f"TFLM export failed")
                 return None
             else:
                 vela_args = get_args(args, {
@@ -101,10 +101,10 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 out_name = model_onnx.split('.')[0]
                 model_vela = vela.export(out_name, vela_args)
                 if not model_vela:
-                    print(f"❌ TFLM export failed")
+                    print(f"TFLM export failed")
                     return None
                 else:
-                    print(f"✅ VELA export success. Outputs saved to {model_vela}")
+                    print(f"Vela export success. Outputs saved to {model_vela}")
                     if hw == "hxwe2":
                         hxwe2_code_gen(model_vela, args.input_shape, np.prod(args.output_shape), args.overwrite)
                 
@@ -141,10 +141,10 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 "q_scale": "0.85"})
             model_ai8x = ai8x.export(model_ckpt, hw, data_sample, ai8x_args, args)
             if not model_ai8x:
-                print(f"❌ AI8X export failed")
+                print(f"AI8X export failed")
                 return None
             else:
-                print(f"✅ AI8X export success. Outputs saved to {model_ai8x}")
+                print(f"AI8X export success. Outputs saved to {model_ai8x}")
 
         elif fmt == "eiq":
             tflm_args = get_args(args, {
@@ -159,7 +159,7 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 "debug": args.debug})
             model_tflm = onnx2tflm(model_onnx, tflm_args)
             if not model_tflm:
-                print(f"❌ TFLM export failed")
+                print(f"TFLM export failed")
                 return None
             else:
                 eiq_args = get_args(args, {
@@ -168,10 +168,10 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                     "debug": args.debug})
                 model_eiq = eiq.export(model_tflm, hw, model_name, eiq_args)
                 if not model_eiq:
-                    print(f"❌ eIQ export failed")
+                    print(f"eIQ export failed")
                     return None
                 else:
-                    print(f"✅ eIQ export success. Outputs saved to {model_eiq}")
+                    print(f"eIQ export success. Outputs saved to {model_eiq}")
                     if hw == "mcxn947":
                         mcxn947_code_gen(model_eiq, args.input_shape, np.prod(args.output_shape), args.overwrite)
 
@@ -195,8 +195,8 @@ def compile(model, model_name, model_ckpt, target_formats, target_hardware, data
                 "debug": args.debug})
             model_cvi = cvi.export(model_onnx, data_sample, cvi_args)
             if not model_cvi:
-                print(f"❌ CVI export failed")
+                print(f"CVI export failed")
                 return None
             else:
-                print(f"✅ CVI export success. Outputs saved to {model_cvi}")
+                print(f"CVI export success. Outputs saved to {model_cvi}")
     return 1

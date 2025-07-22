@@ -8,13 +8,13 @@ SCRIPTS=$(find scripts -type f -name "*.sh" | sort)
 for script in $SCRIPTS; do
     if [[ -f "$script" ]]; then
         ((TOTAL++))
-        echo "🔧 Running: $script"
+        echo "Running: $script"
 
         if bash "$script"; then
-            echo "✅ Passed: $script"
+            echo "Passed: $script"
             ((PASSED++))
         else
-            echo "❌ Failed: $script"
+            echo "Failed: $script"
         fi
 
         echo

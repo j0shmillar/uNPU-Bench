@@ -101,7 +101,7 @@ def main():
     spec = load_platform_spec("platforms.yaml")
     errors = argval(args, target_formats, target_hardware, spec)
     if errors:
-        print("\n❌ Configuration error:")
+        print("\nConfiguration error:")
         for e in errors:
             print(" -", e)
         sys.exit(1)
