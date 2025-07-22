@@ -1,6 +1,8 @@
 # µNPU-Bench
 
-This repository includes a model compiler wrapper and deployment pipeline for a variety of MCU-scale neural processing units (µNPUs). It automates model export, quantization, compilation, and deployment code generation using platform-specific toolchains, all from a single Torch-based source model.
+### This repo accompanies our paper, "[Benchmarking Ultra-Low-Power μNPUs](https://arxiv.org/abs/2503.22567)", accepted at [The 31st International Conference on Mobile Computing and Networking](https://www.sigmobile.org/mobicom/2025/).
+
+This repo includes a model compiler wrapper and deployment pipeline for a variety of MCU-scale neural processing units (µNPUs). It automates model export, quantization, compilation, and deployment code generation using platform-specific toolchains, all from a single Torch-based source model.
 
 ---
 
@@ -45,10 +47,10 @@ docker run --rm -it -v $(pwd):/workspace unpu-bench bash
 
 | Platform             | Setup                                                                                                                                              |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| **ai8x**             | - Clone repo: `git clone --recursive https://github.com/analogdevicesinc/ai8x-training`<br>- Set env var: `export AI8X_TRAIN_PATH=/path/to/ai8x-training` |
-| **eIQ**              | - Download [eIQ Toolkit](https://www.nxp.com/design/design-center/software/eiq-ai-development-environment/eiq-toolkit-for-end-to-end-model-development-and-deployment:EIQ-TOOLKIT) <br>- Set env var: `export EIQ_NEUTRON_PATH=/path/to/neutron-converter` |
-| **CVI**              | Use Docker image (Linux only)                                                                                                                       |
-| **ONNX, TFLM, Vela** | No extra setup needed     
+| [**ai8x**](https://github.com/analogdevicesinc/ai8x-synthesis)             | - Clone repo: `git clone --recursive https://github.com/analogdevicesinc/ai8x-training`<br>- Set env var: `export AI8X_TRAIN_PATH=/path/to/ai8x-training` |
+| [**eIQ**](https://www.nxp.com/design/design-center/software/eiq-ai-development-environment:EIQ)              | - Download [eIQ Toolkit](https://www.nxp.com/design/design-center/software/eiq-ai-development-environment/eiq-toolkit-for-end-to-end-model-development-and-deployment:EIQ-TOOLKIT) <br>- Set env var: `export EIQ_NEUTRON_PATH=/path/to/neutron-converter` |
+| [**CVI**](https://github.com/sophgo/tpu-mlir)              | Use Docker image (Linux only)                                                                                                                       |
+| [**ONNX](https://onnx.ai/), [TFLM](https://github.com/tensorflow/tflite-micro), [Vela](https://developer.arm.com/documentation/109267/latest/Tool-support-for-the-Arm-Ethos-U-NPU/Ethos-U-Vela-compiler)** | No extra setup needed     
 
 ---
 
